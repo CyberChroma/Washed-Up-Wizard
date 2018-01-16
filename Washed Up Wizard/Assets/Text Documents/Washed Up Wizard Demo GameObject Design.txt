@@ -1,0 +1,70 @@
+Washed Up Wizard Gameobject Design
+Structure:
+Name of object
+	Components (Excluding Transform)
+	Scripts - Brief description if name is not obvious
+	Child objects
+		Components
+		Scripts - Brief description if name in not obvious
+
+Event Dipatch System
+	EventDispatchScript - Stores events, other scripts listen for events to be called and reponds to it.
+	(EventDispatchFunctions)
+
+Input Controller
+	PlayerInputReciever
+	TriggerMoveOnInput
+	SpellInputReciever
+	TriggerCastSpellOnInput
+
+Wizard (Player)
+	Sprite Renderer
+	Animator
+	Box Collider 2d
+	Rigidbody 2d
+	MoveOnEvent
+	TriggerFollowPlayerOnAwake
+	CastSpellOnEvent
+	Health
+	DamageOnEvent
+
+Main Camera
+	Camera
+	FollowTargetAndChangeTargetOnEvent
+
+Spell Spawn
+	Sprite Renderer
+	(Collider 2d)
+	(Rigidbody 2d)
+	SpellEmitter
+	Spell
+		(Spell Components)
+
+
+Wizard Health Bar
+	(Scripts involved with Health Bar UI)
+	TriggerUpdateHealthBar - Calculates percentage of health bar
+
+Harpy
+	Sprite Renderer
+	Animator
+	Box Collider 2d
+	Rigidbody 2d
+	HarpyAI
+	MoveOnEvent
+	Health
+	DamageOnEvent
+	AttackOnEvent
+		(Spell Components)
+
+Wendigo
+	Sprite Renderer
+	Animator
+	Box Collider 2d
+	Rigidbody 2d
+	WndigoAI
+	MoveOnEvent
+	Health
+	DamageOnEvent
+	AttackEvent
+		(Spell Components)
