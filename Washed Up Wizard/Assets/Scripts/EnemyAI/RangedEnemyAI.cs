@@ -56,8 +56,10 @@ public class RangedEnemyAI : MonoBehaviour {
 				}
 			}
 		}
-		Quaternion targetRotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (player.position - transform.position), 0.5f);
-		transform.rotation = Quaternion.Euler (0, targetRotation.eulerAngles.y, 0);
+		if (player) {
+			Quaternion targetRotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (player.position - transform.position), 0.5f);
+			transform.rotation = Quaternion.Euler (0, targetRotation.eulerAngles.y, 0);
+		}
 	}
 
 	void OnCollisionEnter (Collision other) {

@@ -11,11 +11,13 @@ public class PlayerAbilities : MonoBehaviour {
 	private Transform cursorPosition;
 	private GameObject tempReticle;
 	private SpecialInputReceiver specialInputReceiver; // Reference to input manager
+	private AudioSource audioSource;
 
 	// Use this for initialization
 	void Awake () {
 		cursorPosition = GameObject.Find ("Cursor Position").transform;
 		specialInputReceiver = GameObject.Find ("Input Controller").GetComponent <SpecialInputReceiver> ();
+		audioSource = GetComponent<AudioSource> ();
 	}
 
 	void OnEnable () {
@@ -27,13 +29,12 @@ public class PlayerAbilities : MonoBehaviour {
 		if (canTeleport) {
 			if (specialInputReceiver.inputTD) {
 				tempReticle = Instantiate (reticle, cursorPosition); // Spawns the object as a parent of a transform
-			} else if (specialInputReceiver.inputTU) {
-				if (tempReticle != null) {
-					Destroy (tempReticle);
-					tempReticle = null;
-				}
+			} else if (specialInputReceiver.inputTU && tempReticle != null) {
+				Destroy (tempReticle);
+				tempReticle = null;
 				if (!Physics.Linecast (transform.position, cursorPosition.position)) {
 					transform.position = cursorPosition.position;
+					audioSource.Play ();
 					StartCoroutine (WaitToTeleport ());
 				}
 			}
