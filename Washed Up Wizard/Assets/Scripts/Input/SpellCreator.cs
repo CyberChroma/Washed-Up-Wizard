@@ -81,13 +81,7 @@ public class SpellCreator : MonoBehaviour {
 						activeEmitters [i] = tempSpawnObjectByInput.gameObject;
 					}
 				}
-				craftingSlot1Components [spellID [0]].SetActive (false);
-				craftingSlot2Components [spellID [1]].SetActive (false);
-				craftingSlot3Components [spellID [2]].SetActive (false);
 				spellCraftingPanel.Activate ();
-				currentArrayNum = 0;
-				spellSetUp = false;
-				spellID = new int[3];
 				StartCoroutine (WaitToCreateSpell ());
 			}
 		}
@@ -95,6 +89,12 @@ public class SpellCreator : MonoBehaviour {
 
 	IEnumerator WaitToCreateSpell () {
 		yield return new WaitForSeconds (0.2f);
+		craftingSlot1Components [spellID [0]].SetActive (false);
+		craftingSlot2Components [spellID [1]].SetActive (false);
+		craftingSlot3Components [spellID [2]].SetActive (false);
+		currentArrayNum = 0;
+		spellSetUp = false;
+		spellID = new int[3];
 		creatingSpell = false;
 	}
 }
