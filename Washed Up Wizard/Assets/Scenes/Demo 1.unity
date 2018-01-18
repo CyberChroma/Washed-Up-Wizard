@@ -4224,6 +4224,23 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 410883490}
+--- !u!1 &411660532 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: b4340ec707685084a920b471c4d3423d, type: 3}
+  m_PrefabInternal: {fileID: 1531499932}
+--- !u!136 &411660533
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 411660532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.8
+  m_Direction: 2
+  m_Center: {x: -0.014178246, y: -0.0058397814, z: -0.05127753}
 --- !u!1001 &419084809
 Prefab:
   m_ObjectHideFlags: 0
@@ -4965,7 +4982,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5a76f8e4a7afb1943aac7950de02c0d1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8217,6 +8234,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6, y: 3.6, z: 2.6}
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!1 &528632084 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: b4340ec707685084a920b471c4d3423d, type: 3}
+  m_PrefabInternal: {fileID: 1345438771}
+--- !u!136 &528632085
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 528632084}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.8
+  m_Direction: 2
+  m_Center: {x: -0.014178246, y: -0.005840258, z: -0.05127753}
 --- !u!1001 &548216554
 Prefab:
   m_ObjectHideFlags: 0
@@ -10031,6 +10065,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6, y: 3.6, z: 2.6}
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!1 &729535783 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: b4340ec707685084a920b471c4d3423d, type: 3}
+  m_PrefabInternal: {fileID: 419084809}
+--- !u!136 &729535784
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 729535783}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.8
+  m_Direction: 2
+  m_Center: {x: -0.014178246, y: -0.0058397814, z: -0.05127753}
 --- !u!1001 &734242258
 Prefab:
   m_ObjectHideFlags: 0
@@ -10954,6 +11005,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6, y: 3.6, z: 2.6}
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!1 &823182352 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: b4340ec707685084a920b471c4d3423d, type: 3}
+  m_PrefabInternal: {fileID: 820844748}
+--- !u!136 &823182353
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 823182352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.8
+  m_Direction: 2
+  m_Center: {x: -0.014178246, y: -0.0058397814, z: -0.05127753}
 --- !u!1 &823702260
 GameObject:
   m_ObjectHideFlags: 0
@@ -15022,7 +15090,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -892600280
+  randomSeed: -1687557892
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -18580,6 +18648,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6, y: 3.6, z: 2.6}
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!1 &1289723563 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: b4340ec707685084a920b471c4d3423d, type: 3}
+  m_PrefabInternal: {fileID: 1627830297}
+--- !u!136 &1289723564
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1289723563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.8
+  m_Direction: 2
+  m_Center: {x: -0.014178246, y: -0.005840258, z: -0.05127753}
 --- !u!1001 &1302262181
 Prefab:
   m_ObjectHideFlags: 0
@@ -20623,6 +20708,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6, y: 3.6, z: 2.6}
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!1 &1450002731 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: b4340ec707685084a920b471c4d3423d, type: 3}
+  m_PrefabInternal: {fileID: 2000502512}
+--- !u!136 &1450002732
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1450002731}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.8
+  m_Direction: 2
+  m_Center: {x: -0.014178246, y: -0.005840258, z: -0.05127753}
 --- !u!1001 &1462201698
 Prefab:
   m_ObjectHideFlags: 0
@@ -24137,6 +24239,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1780839726 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: b4340ec707685084a920b471c4d3423d, type: 3}
+  m_PrefabInternal: {fileID: 1353615023}
+--- !u!136 &1780839727
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1780839726}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.8
+  m_Direction: 2
+  m_Center: {x: -0.014178246, y: -0.005840258, z: -0.05127753}
 --- !u!1001 &1808296687
 Prefab:
   m_ObjectHideFlags: 0
@@ -27551,6 +27670,23 @@ MonoBehaviour:
     type: 2}
   parent: {fileID: 566434938}
   cooldown: 0
+--- !u!1 &2077812100 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: b4340ec707685084a920b471c4d3423d, type: 3}
+  m_PrefabInternal: {fileID: 964029571}
+--- !u!136 &2077812101
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2077812100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.8
+  m_Direction: 2
+  m_Center: {x: -0.014178246, y: -0.005840258, z: -0.05127753}
 --- !u!1001 &2089479621
 Prefab:
   m_ObjectHideFlags: 0
