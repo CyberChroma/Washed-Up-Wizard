@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class SpellCreator : MonoBehaviour {
 
-	public GameObject[] craftingSlot1Components;
-	public GameObject[] craftingSlot2Components;
-	public GameObject[] craftingSlot3Components;
-	public ActivateFollowTarget spellCraftingPanel;
+	public GameObject[] craftingComponents;
+	public GameObject[] glows;
+	public GameObject[] spellSlots;
+
+	public ActivateFollowTarget componentsPanel;
+	public Transform activeSpellsPanel;
 
 	[HideInInspector] public bool creatingSpell = false;
 	private int currentArrayNum;
@@ -17,6 +19,7 @@ public class SpellCreator : MonoBehaviour {
 	private ComponentInputReceiver componentInputReceiver;
 	private SpellInputReceiver spellInputReceiver;
 	private SpawnObjectByInput tempSpawnObjectByInput;
+	private Transform tempSpellSprite;
 	private GameObject[] activeEmitters = new GameObject[3];
 
 	// Use this for initialization
@@ -36,11 +39,11 @@ public class SpellCreator : MonoBehaviour {
 		if (currentArrayNum == 1 || currentArrayNum == 2) {
 			for (int i = 0; i < spellInputReceiver.inputSD.Length; i++) {
 				if (spellInputReceiver.inputSD [i] && !EventSystem.current.IsPointerOverGameObject ()) {
-					craftingSlot1Components [spellID [0]].SetActive (false);
+					glows [0].SetActive (false);
 					if (currentArrayNum == 2) {
-						craftingSlot2Components [spellID [1]].SetActive (false);
+						glows [1].SetActive (false);
 					}
-					spellCraftingPanel.Activate ();
+					componentsPanel.Activate ();
 					currentArrayNum = 0;
 					spellSetUp = false;
 					creatingSpell = false;
@@ -56,12 +59,15 @@ public class SpellCreator : MonoBehaviour {
 				spellID [currentArrayNum] = i;
 				currentArrayNum++;
 				if (currentArrayNum == 1) {
-					craftingSlot1Components [spellID [currentArrayNum - 1]].SetActive (true);
-					spellCraftingPanel.Activate ();
+					glows [0].transform.position = craftingComponents [spellID [currentArrayNum - 1]].transform.position;
+					glows [0].SetActive (true);
+					componentsPanel.Activate ();
 				} else if (currentArrayNum == 2) {
-					craftingSlot2Components [spellID [currentArrayNum - 1]].SetActive (true);
+					glows [1].transform.position = craftingComponents [spellID [currentArrayNum - 1]].transform.position;
+					glows [1].SetActive (true);
 				} else if (currentArrayNum == 3) {
-					craftingSlot3Components [spellID [currentArrayNum - 1]].SetActive (true);
+					glows [2].transform.position = craftingComponents [spellID [currentArrayNum - 1]].transform.position;
+					glows [2].SetActive (true);
 					spellSetUp = true;
 				}
 			}
@@ -78,10 +84,15 @@ public class SpellCreator : MonoBehaviour {
 					if (GameObject.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name + " Emitter")) {
 						tempSpawnObjectByInput = GameObject.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name + " Emitter").GetComponent<SpawnObjectByInput> ();
 						tempSpawnObjectByInput.emitterNum = i + 1;
+						if (activeSpellsPanel.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name)) {
+							tempSpellSprite = activeSpellsPanel.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name);
+							tempSpellSprite.position = spellSlots [i].transform.position;
+							tempSpellSprite.gameObject.SetActive (true);
+						}
 						activeEmitters [i] = tempSpawnObjectByInput.gameObject;
 					}
 				}
-				spellCraftingPanel.Activate ();
+				componentsPanel.Activate ();
 				StartCoroutine (WaitToCreateSpell ());
 			}
 		}
@@ -89,9 +100,9 @@ public class SpellCreator : MonoBehaviour {
 
 	IEnumerator WaitToCreateSpell () {
 		yield return new WaitForSeconds (0.2f);
-		craftingSlot1Components [spellID [0]].SetActive (false);
-		craftingSlot2Components [spellID [1]].SetActive (false);
-		craftingSlot3Components [spellID [2]].SetActive (false);
+		glows [0].SetActive (false);
+		glows [1].SetActive (false);
+		glows [2].SetActive (false);
 		currentArrayNum = 0;
 		spellSetUp = false;
 		spellID = new int[3];

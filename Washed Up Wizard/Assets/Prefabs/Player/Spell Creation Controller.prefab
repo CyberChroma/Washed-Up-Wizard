@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ca4acab3681ee7488219ff62cb23305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingSlot1Components:
+  craftingComponents:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -63,29 +63,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  craftingSlot2Components:
+  glows:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  spellSlots:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  craftingSlot3Components:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  spellCraftingPanel: {fileID: 0}
+  componentsPanel: {fileID: 0}
+  activeSpellsPanel: {fileID: 0}
   creatingSpell: 0
 --- !u!114 &114956994266752574
 MonoBehaviour:

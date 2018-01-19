@@ -28,8 +28,4 @@ public class ComponentInputReceiver : MonoBehaviour {
 			}
 		}
 	}
-
-	public void TriggerInput (int componentNum) {
-		inputC [componentNum] = true;
-	}
 }
