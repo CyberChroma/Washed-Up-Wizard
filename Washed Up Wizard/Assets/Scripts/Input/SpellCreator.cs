@@ -21,6 +21,7 @@ public class SpellCreator : MonoBehaviour {
 	private SpawnObjectByInput tempSpawnObjectByInput;
 	private Transform tempSpellSprite;
 	private GameObject[] activeEmitters = new GameObject[3];
+	private GameObject[] activeSpellSprites = new GameObject[3];
 
 	// Use this for initialization
 	void Start () {
@@ -81,6 +82,9 @@ public class SpellCreator : MonoBehaviour {
 					if (activeEmitters [i] != null) {
 						activeEmitters [i].GetComponent<SpawnObjectByInput> ().emitterNum = 0;
 					}
+					if (activeSpellSprites [i] != null) {
+						activeSpellSprites [i].SetActive (false);
+					}
 					if (GameObject.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name + " Emitter")) {
 						tempSpawnObjectByInput = GameObject.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name + " Emitter").GetComponent<SpawnObjectByInput> ();
 						tempSpawnObjectByInput.emitterNum = i + 1;
@@ -90,6 +94,7 @@ public class SpellCreator : MonoBehaviour {
 							tempSpellSprite.gameObject.SetActive (true);
 						}
 						activeEmitters [i] = tempSpawnObjectByInput.gameObject;
+						activeSpellSprites [i] = tempSpellSprite.gameObject;
 					}
 				}
 				componentsPanel.Activate ();
