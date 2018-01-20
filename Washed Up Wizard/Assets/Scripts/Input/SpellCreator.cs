@@ -66,14 +66,14 @@ public class SpellCreator : MonoBehaviour {
 				spellID [currentArrayNum] = i;
 				currentArrayNum++;
 				if (currentArrayNum == 1) {
-					glows [0].transform.position = craftingComponents [spellID [currentArrayNum - 1]].transform.position;
+					glows [0].transform.position = craftingComponents [i].transform.position;
 					glows [0].SetActive (true);
 					componentsPanel.Activate ();
 				} else if (currentArrayNum == 2) {
-					glows [1].transform.position = craftingComponents [spellID [currentArrayNum - 1]].transform.position;
+					glows [1].transform.position = craftingComponents [i].transform.position;
 					glows [1].SetActive (true);
 				} else if (currentArrayNum == 3) {
-					glows [2].transform.position = craftingComponents [spellID [currentArrayNum - 1]].transform.position;
+					glows [2].transform.position = craftingComponents [i].transform.position;
 					glows [2].SetActive (true);
 					spellSetUp = true;
 				}

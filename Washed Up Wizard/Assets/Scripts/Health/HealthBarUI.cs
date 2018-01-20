@@ -40,7 +40,7 @@ public class HealthBarUI : MonoBehaviour {
 	}
 
 	void MoveSlider () { // Moves the slider and sets the colors based on the value
-		slider.value = Mathf.MoveTowards(slider.value, health.currentHealth, currentSliderMoveSpeed / 10); // Setting the slider to match the current health
+		slider.value = Mathf.MoveTowards(slider.value, health.currentHealth, currentSliderMoveSpeed * Time.deltaTime); // Setting the slider to match the current health
 		if (slider.value > slider.maxValue / 2) { // If the value is over half
 			fillImage.color = Color.Lerp (halfColor, fullColor, (slider.value - (slider.maxValue / 2)) / (slider.value / 2)); // Sets the color of the image
 		} else { // If the value is under half
