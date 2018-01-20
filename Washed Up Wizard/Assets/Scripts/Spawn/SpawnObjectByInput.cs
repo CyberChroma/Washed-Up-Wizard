@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnObjectByInput : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class SpawnObjectByInput : MonoBehaviour {
 	public bool OnRelease = false;
 	public GameObject reticle;
 	public int emitterNum = 1;
+	public Slider cooldownWheel;
 
 	private bool canSpawn = true;
 	private SpellInputReceiver spellInputReceiver;
@@ -44,6 +46,9 @@ public class SpawnObjectByInput : MonoBehaviour {
 				}
 			}
 		}
+		if (!canSpawn) {
+			cooldownWheel.value -= Time.deltaTime;
+		}
 	}
 
 	void Spawn (GameObject spawnObject) {
@@ -67,7 +72,10 @@ public class SpawnObjectByInput : MonoBehaviour {
 
 	IEnumerator WaitToSpawn () {
 		canSpawn = false;
+		cooldownWheel.gameObject.SetActive (true);
+		cooldownWheel.value = cooldown;
 		yield return new WaitForSeconds (cooldown);
 		canSpawn = true;
+		cooldownWheel.gameObject.SetActive (false);
 	}
 }

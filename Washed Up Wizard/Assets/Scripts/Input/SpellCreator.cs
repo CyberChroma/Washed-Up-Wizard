@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 public class SpellCreator : MonoBehaviour {
 
 	public GameObject[] craftingComponents;
 	public GameObject[] glows;
 	public GameObject[] spellSlots;
+	public Slider[] cooldownWheels;
 
 	public ActivateFollowTarget componentsPanel;
 	public Transform activeSpellsPanel;
 
 	[HideInInspector] public bool creatingSpell = false;
+	private bool canCreate = true;
 	private int currentArrayNum;
 	private int[] spellID = new int[3];
 	private bool spellSetUp = false;
@@ -32,22 +36,24 @@ public class SpellCreator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (spellSetUp) {
-			CreateSpell ();
-		} else { 	
-			SetUpSpell ();
-		}
-		if (currentArrayNum == 1 || currentArrayNum == 2) {
-			for (int i = 0; i < spellInputReceiver.inputSD.Length; i++) {
-				if (spellInputReceiver.inputSD [i] && !EventSystem.current.IsPointerOverGameObject ()) {
-					glows [0].SetActive (false);
-					if (currentArrayNum == 2) {
-						glows [1].SetActive (false);
+		if (canCreate) {
+			if (spellSetUp) {
+				CreateSpell ();
+			} else { 	
+				SetUpSpell ();
+			}
+			if (currentArrayNum == 1 || currentArrayNum == 2) {
+				for (int i = 0; i < spellInputReceiver.inputSD.Length; i++) {
+					if (spellInputReceiver.inputSD [i] && !EventSystem.current.IsPointerOverGameObject ()) {
+						glows [0].SetActive (false);
+						if (currentArrayNum == 2) {
+							glows [1].SetActive (false);
+						}
+						componentsPanel.Activate ();
+						currentArrayNum = 0;
+						spellSetUp = false;
+						creatingSpell = false;
 					}
-					componentsPanel.Activate ();
-					currentArrayNum = 0;
-					spellSetUp = false;
-					creatingSpell = false;
 				}
 			}
 		}
@@ -88,6 +94,8 @@ public class SpellCreator : MonoBehaviour {
 					if (GameObject.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name + " Emitter")) {
 						tempSpawnObjectByInput = GameObject.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name + " Emitter").GetComponent<SpawnObjectByInput> ();
 						tempSpawnObjectByInput.emitterNum = i + 1;
+						tempSpawnObjectByInput.cooldownWheel = cooldownWheels [i];
+						cooldownWheels [i].maxValue = tempSpawnObjectByInput.cooldown; 
 						if (activeSpellsPanel.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name)) {
 							tempSpellSprite = activeSpellsPanel.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name);
 							tempSpellSprite.position = spellSlots [i].transform.position;
@@ -104,6 +112,7 @@ public class SpellCreator : MonoBehaviour {
 	}
 
 	IEnumerator WaitToCreateSpell () {
+		canCreate = false;
 		yield return new WaitForSeconds (0.2f);
 		glows [0].SetActive (false);
 		glows [1].SetActive (false);
@@ -112,5 +121,6 @@ public class SpellCreator : MonoBehaviour {
 		spellSetUp = false;
 		spellID = new int[3];
 		creatingSpell = false;
+		canCreate = true;
 	}
 }
