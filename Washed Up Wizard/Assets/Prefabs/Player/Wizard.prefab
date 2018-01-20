@@ -28,6 +28,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1643376818935078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4374478289465950}
+  - component: {fileID: 114502460229029826}
+  - component: {fileID: 114677887696797058}
+  m_Layer: 0
+  m_Name: Slimeball Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1683934039748020
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,7 +94,7 @@ GameObject:
   - component: {fileID: 54665653705387846}
   - component: {fileID: 65220063332326076}
   - component: {fileID: 82402163125549816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wizard
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -156,9 +173,23 @@ Transform:
   - {fileID: 4192633232291692}
   - {fileID: 4382324615719108}
   - {fileID: 4027070848525286}
+  - {fileID: 4374478289465950}
   - {fileID: 4964145246644232}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4374478289465950
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1643376818935078}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4259664070678644}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4382324615719108
 Transform:
@@ -197,7 +228,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4259664070678644}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
 --- !u!23 &23523035904231548
 MeshRenderer:
@@ -469,6 +500,25 @@ MonoBehaviour:
   target: {fileID: 0}
   once: 0
   speed: Infinity
+--- !u!114 &114502460229029826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1643376818935078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fda3fdc53432714e9c200646a167efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1399542279224294, guid: cc0eb1fcab6123243887de56dbeacce9,
+    type: 2}
+  parent: {fileID: 0}
+  cooldown: 1
+  OnRelease: 0
+  reticle: {fileID: 0}
+  emitterNum: 0
+  cooldownWheel: {fileID: 0}
 --- !u!114 &114626884325535386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -488,6 +538,20 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
+--- !u!114 &114677887696797058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1643376818935078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce8233c448c6cc49b9b321f482c8728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  once: 0
+  speed: Infinity
 --- !u!114 &114765603627076656
 MonoBehaviour:
   m_ObjectHideFlags: 1

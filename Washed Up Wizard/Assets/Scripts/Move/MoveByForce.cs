@@ -7,6 +7,7 @@ public class MoveByForce : MonoBehaviour {
 	public float force = 30; // The force being applied
 	public Vector3 dir = Vector3.zero; // Direction of force
 	public bool relative = false; // Whether the object moves on the global or local axis
+	public bool once = false;
 
 	private Rigidbody rb; // Reference to rigidbody
 
@@ -15,12 +16,24 @@ public class MoveByForce : MonoBehaviour {
 		rb = GetComponent<Rigidbody> (); // Getting the reference
 	}
 
+	void OnEnable () {
+		if (once) {
+			if (relative) {
+				rb.AddRelativeForce (dir.normalized * force); // Applying the force
+			} else {
+				rb.AddForce (dir.normalized * force); // Applying the force
+			}
+		}
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (relative) {
-			rb.AddRelativeForce (dir.normalized * force); // Applying the force
-		} else {
-			rb.AddForce (dir.normalized * force); // Applying the force
+		if (!once) {
+			if (relative) {
+				rb.AddRelativeForce (dir.normalized * force); // Applying the force
+			} else {
+				rb.AddForce (dir.normalized * force); // Applying the force
+			}
 		}
 	}
 }
