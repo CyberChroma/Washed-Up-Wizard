@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour {
 
-	public GameObject parent;
+    public GameObject parent; // The object parent (to destroy)
 	public float startHealth = 10; // The health the object starts with
 	public float tempStopHitsTime = 2; // Time between hits
-	public AudioClip audioClip;
-	public GameObject soundPlayer;
-	public float volume = 0.5f;
+	public AudioClip audioClip; // The death sound
+	public GameObject soundPlayer; // The object that plays the sound
+	public float volume = 0.5f; // The volume of the sound
 
 	[HideInInspector] public bool healthChanged; // UI updates when true
 	[HideInInspector] public float currentHealth; // The current health
-	[HideInInspector] public bool canBeHit = true;
+	[HideInInspector] public bool canBeHit = true; // Whether the object can be hit
 
-	private AudioSource audioSource;
+	private AudioSource audioSource; // Reference to the sound player
 
 	// Use this for initialization
 	void Start () {
@@ -27,12 +27,12 @@ public class Health : MonoBehaviour {
 	public void ChangeHealth () {
 		healthChanged = true; // Updates the UI
 		if (currentHealth <= 0) { // If the object has no health left
-			if (audioClip) {
-				audioSource = Instantiate (soundPlayer, transform.position, Quaternion.identity).GetComponent<AudioSource> ();
+			if (audioClip) { // If the audio clip is not null
+				audioSource = Instantiate (soundPlayer, transform.position, Quaternion.identity).GetComponent<AudioSource> (); // Creates the sound player and gets the reference to the audio source
 			}
-			audioSource.volume = volume;
-			audioSource.clip = audioClip;
-			audioSource.Play ();
+			audioSource.volume = volume; // Sets the volume
+			audioSource.clip = audioClip; // Sets the clip
+			audioSource.Play (); // Plays the sound
 			// Destroying gameobject (Temporary)
 			Destroy (parent);
 		}

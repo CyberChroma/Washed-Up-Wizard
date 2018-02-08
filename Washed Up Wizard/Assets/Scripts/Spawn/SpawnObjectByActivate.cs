@@ -5,19 +5,19 @@ using UnityEngine;
 public class SpawnObjectByActivate : MonoBehaviour {
 
 	public GameObject objectToSpawn; // The object to spawn
-	public Transform parent;
-	public float cooldown = 1;
+	public Transform parent; // The object to parent the spawned object under
+	public float cooldown = 1; // The time between spawning
 
-	private bool canSpawn = true;
-	private Transform spellsParent;
+	private bool canSpawn = true; // Whether this emitter can spawn objects
+	private Transform spellsParent; // The default parent of the spell
 
 	void Start () {
-		spellsParent = GameObject.Find ("Spells").transform;
+		spellsParent = GameObject.Find ("Spells").transform; // Getting the reference
 	}
 
 	public void Spawn () {
-		if (canSpawn) {
-			if (parent != null) {
+		if (canSpawn) { // If the emitter can spawn objects
+			if (parent != null) { // If there is a parent
 				Instantiate (objectToSpawn, transform.position, transform.rotation, parent); // Spawns the object as a parent of a transform
 			} else {
 				Instantiate (objectToSpawn, transform.position, transform.rotation, spellsParent); // Spawns the object as a parent of a transform
@@ -28,7 +28,7 @@ public class SpawnObjectByActivate : MonoBehaviour {
 
 	IEnumerator WaitToSpawn () {
 		canSpawn = false;
-		yield return new WaitForSeconds (cooldown);
+		yield return new WaitForSeconds (cooldown); // Wait...
 		canSpawn = true;
 	}
 }

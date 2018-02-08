@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CombinationsMenu : MonoBehaviour {
 
-	public PlayerSpellsReference playerSpellReference;
-	public float highestCombo = 120;
+	public PlayerSpellsReference playerSpellReference; // Script reference
+	public float highestCombo = 120; // How high the highest combo is placed
 	public float spaceBetweenCombos = 60;
 	public float combosPerPage = 2;
 
@@ -13,31 +13,26 @@ public class CombinationsMenu : MonoBehaviour {
 	private int currentPage = 0;
 	private int maxPage;
 	private Transform tempCombo;
-	private List<Transform> combos = new List<Transform> ();
+	private List<Transform> combos = new List<Transform> (); // Different than an array because the length can be changed
 
 	// Use this for initialization
 	void Start () {
 		SetUpCombinations ();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
 	}
 
 	void SetUpCombinations () {
 		spellNum = 0;
 		currentPage = 0;
 		combos.Clear ();
-		for (int i = 0; i < playerSpellReference.spells.Length; i++) {
+		for (int i = 0; i < playerSpellReference.spells.Length; i++) { // i and j go are used to go through each spell, which is an array inside of an array
 			for (int j = 0; j < playerSpellReference.spells [i].componentSpells.Length; j++) {
-				if (playerSpellReference.spells [i].componentSpells [j] != null) {
-					if (spellNum - combosPerPage * currentPage >= combosPerPage) {
+				if (playerSpellReference.spells [i].componentSpells [j] != null) { // If the spell exists
+					if (spellNum - combosPerPage * currentPage >= combosPerPage) { // If the spell should go to the next page
 						currentPage++;
 					}
-					tempCombo = transform.Find (playerSpellReference.spells [i].componentSpells [j].name);
-					tempCombo.localPosition = new Vector3 (600, highestCombo - spaceBetweenCombos * (spellNum - combosPerPage * currentPage), 0);
-					combos.Add (tempCombo);
+					tempCombo = transform.Find (playerSpellReference.spells [i].componentSpells [j].name); // Reference to the spell combo sprites
+					tempCombo.localPosition = new Vector3 (600, highestCombo - spaceBetweenCombos * (spellNum - combosPerPage * currentPage), 0); // Moving the spell combo sprites
+					combos.Add (tempCombo); // Adding it to the list
 					spellNum++;
 
 				}
@@ -47,7 +42,7 @@ public class CombinationsMenu : MonoBehaviour {
 		SetPage (0);
 	}
 
-	void SetPage (int page) {
+	void SetPage (int page) { // Sets the spells on the current page active and everything else inactive
 		foreach (Transform combo in combos) {
 			combo.gameObject.SetActive (false);
 		}
@@ -55,15 +50,11 @@ public class CombinationsMenu : MonoBehaviour {
 			if (i >= combosPerPage * page && i < combosPerPage * (page + 1)) {
 				combos [i].gameObject.SetActive (true);
 			}
-			/*if (i > combosPerPage * page + 1) {
-				break;
-			}*/
 		}
 		currentPage = page;
 	}
 
 	public void NextPage () {
-		//print (currentPage);
 		if (currentPage != maxPage) {
 			SetPage (currentPage + 1);
 		}

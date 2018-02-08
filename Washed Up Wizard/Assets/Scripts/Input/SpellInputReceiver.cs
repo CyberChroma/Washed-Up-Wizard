@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpellInputReceiver : MonoBehaviour {
 
+    // Button references
 	public KeyCode[] spellSlots = new KeyCode[] { KeyCode.Mouse0, KeyCode.Mouse1, KeyCode.Space };
 
 	// Bools for whether the object is pressing the button
@@ -24,9 +25,9 @@ public class SpellInputReceiver : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (spellSlots.Length != inputSD.Length) {
-			inputSD = new bool[spellSlots.Length];
-			inputSU = new bool[spellSlots.Length];
+        if (spellSlots.Length != inputSD.Length || spellSlots.Length != inputSU.Length) { // If these arrays have different lengths
+			inputSD = new bool[spellSlots.Length]; // Makes array same length
+			inputSU = new bool[spellSlots.Length]; // Makes array same length
 		}
 
  		for (int i = 0; i < inputSD.Length; i++) {

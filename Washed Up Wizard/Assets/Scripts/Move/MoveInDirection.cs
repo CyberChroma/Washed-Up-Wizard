@@ -24,11 +24,11 @@ public class MoveInDirection : MonoBehaviour {
 		} else {
 			rb.velocity = dir * speed; // Setting the start speed
 		}
-		if (rb.velocity.magnitude < minSpeed) {
-			rb.velocity = rb.velocity.normalized * minSpeed;
-		} else if (rb.velocity.magnitude > maxSpeed) {
-			rb.velocity = rb.velocity.normalized * maxSpeed;
+		if (rb.velocity.magnitude < minSpeed) { // If the velocity is less than the min speed
+			rb.velocity = rb.velocity.normalized * minSpeed; // Makes the velocity the min speed
+		} else if (rb.velocity.magnitude > maxSpeed) { // If the velocity is greater  than the max speed
+			rb.velocity = rb.velocity.normalized * maxSpeed; // Make the velocity the max speed
 		}
-		speed += acceleration * Time.deltaTime;
+		speed += acceleration * Time.deltaTime; // Increasing the speed
 	}
 }

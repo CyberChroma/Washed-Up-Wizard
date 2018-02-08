@@ -6,44 +6,45 @@ public class MoveInDirectionPattern : MonoBehaviour {
 
 	[System.Serializable]
 	public class State {
-		public float speed = 10;
-		public float speedChangeSpeed = 1;
-		public Vector3 dir = Vector3.up;
-		public float dirChangeSpeed = 1;
-		public float duration = 1;
+        public float speed = 10; // The speed of the object
+		public float speedChangeSpeed = 1; // How fast the speed changes
+		public Vector3 dir = Vector3.up; // The direction to move
+		public float dirChangeSpeed = 1; // How fast the direction changes
+		public float duration = 1; // The time this state lasts
 	}
 
 	public State[] states;
 
-	private int stateNum = 0;
-	private MoveInDirection moveInDirection;
-	private float timeToNextState;
+	private int stateNum = 0; // The state the object is currently in
+	private MoveInDirection moveInDirection; // Reference to the move script
+	private float timeToNextState; // The time to change states
 
 	// Use this for initialization
 	void Awake () {
-		moveInDirection = GetComponent<MoveInDirection> ();
+		moveInDirection = GetComponent<MoveInDirection> (); // Getting the reference
 	}
 
 	void OnEnable () {
-		moveInDirection.speed = states [stateNum].speed;
-		moveInDirection.dir = states [stateNum].dir;
-		timeToNextState = Time.time + states [stateNum].duration;
+        stateNum = 0;
+		moveInDirection.speed = states [stateNum].speed; // Sets the speed to the first state
+		moveInDirection.dir = states [stateNum].dir; // Sets the direction to the first state
+		timeToNextState = Time.time + states [stateNum].duration; // Sets the time to the first state
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		moveInDirection.speed = Mathf.MoveTowards (moveInDirection.speed, states [stateNum].speed, states [stateNum].speedChangeSpeed);
-		moveInDirection.dir = Vector3.MoveTowards (moveInDirection.dir, states [stateNum].dir, states [stateNum].dirChangeSpeed);
-		if (timeToNextState <= Time.time) {
+		moveInDirection.speed = Mathf.MoveTowards (moveInDirection.speed, states [stateNum].speed, states [stateNum].speedChangeSpeed); // Changing the speed
+		moveInDirection.dir = Vector3.MoveTowards (moveInDirection.dir, states [stateNum].dir, states [stateNum].dirChangeSpeed); // Changing the direction
+		if (timeToNextState <= Time.time) { // Seeing the time has elapsed
 			NextState ();
 		}
 	}
 
 	void NextState () {
-		stateNum++;
-		if (stateNum >= states.Length) {
-			stateNum = 0;
+		stateNum++; // Increasing the state number
+		if (stateNum >= states.Length) { // If the state number is greater than the length
+			stateNum = 0; // Going back to state 1
 		}
-		timeToNextState = Time.time + states [stateNum].duration;
+		timeToNextState = Time.time + states [stateNum].duration; // Setting the duration
 	}
 }

@@ -51,7 +51,7 @@ public class FollowTargetChangeOnReach : MonoBehaviour {
 		yield return new WaitForSeconds (delay); // Waits...
 		targetNum++; // Increasing the target number
 		if (targetNum > targets.Length - 1) { // If the end of the array has been reached
-			targetNum = 0; // Reset the target number.
+			targetNum = 0; // Reset the target number
 		}
 		if (followTargetConstant) { // If this has a value
 			rb.position = followTargetConstant.target.position; // Moving the object to the target's position

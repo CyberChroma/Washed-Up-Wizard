@@ -8,7 +8,7 @@ public class DestroyByTouchCollision : MonoBehaviour {
 	public string[] tagsToDestroy; // The tags to destroy self (Any if null)
 	public string[] tagsToIgnore; // The tags to ignore (If damage all tags)
 
-	private bool setToDestroy;
+	private bool setToDestroy; // Whether the object has been set to destroy itself
 
 	void OnCollisionEnter (Collision other) {
 		if (tagsToDestroy.Length != 0) { // If the tags to destroy is not null
@@ -17,14 +17,14 @@ public class DestroyByTouchCollision : MonoBehaviour {
 					Destroy (gameObject, delay); // Destroy this object after a delay
 				}
 			}
-		} else if (tagsToIgnore.Length != 0) { // If the the tags to ignore
-			setToDestroy = true;
+		} else if (tagsToIgnore.Length != 0) { // If the tags to ignore is not null
+			setToDestroy = true; // Setting the bool
 			foreach (string tag in tagsToIgnore) { // Goes through each tag
 				if (other.collider.CompareTag (tag)) { // If the collided object is not something that should cause this object to destroy itself
-					setToDestroy = false;
+					setToDestroy = false; // Setting the bool
 				}
 			}
-			if (setToDestroy) {
+			if (setToDestroy) { // If the bool is still true
 				Destroy (gameObject, delay); // Destroy this object after a delay
 			}
 		} else {

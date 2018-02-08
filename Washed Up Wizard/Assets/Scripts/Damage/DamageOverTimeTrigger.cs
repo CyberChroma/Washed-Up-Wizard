@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamageOverTimeTrigger : MonoBehaviour {
 
-	public float totalDamage = 5; // The total ammount of damage to give
+	public float totalDamage = 5; // The total amount of damage to give
 	public float duration = 3; // The time over which to deal the damage
 	public bool oneTime = false; // Whether to only damage once
 	public string[] tagsToDamage; // The tags to damage

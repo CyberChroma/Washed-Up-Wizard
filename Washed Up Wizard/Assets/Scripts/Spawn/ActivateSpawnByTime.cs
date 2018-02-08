@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class ActivateSpawnByTime : MonoBehaviour {
 
-	public float activateTime = 2;
-	public float deactivateTime = 3;
-	public GameObject[] emitters;
-	public float startTime = 1;
+	public float activateTime = 2; // The delay to activate the emitter
+	public float deactivateTime = 3; // The delay to deactivate the emitter
+	public GameObject[] emitters; // The emitters to activate
+	public float startTime = 1; // The delay to initially start the emitter
 
 	void OnEnable () {
-		foreach (GameObject emitter in emitters) {
-			emitter.SetActive (false);
+		foreach (GameObject emitter in emitters) { // Goes through each emitter
+			emitter.SetActive (false); // Disables it
 		}
 		StartCoroutine (WaitToActivate (startTime));
 	}
 
 	IEnumerator WaitToActivate (float delay) {
 		yield return new WaitForSeconds (delay);
-		foreach (GameObject emitter in emitters) {
-			emitter.SetActive (true);
+        foreach (GameObject emitter in emitters) { // Goes through each emitter
+            emitter.SetActive (true); // Enables it
 		}
 		StartCoroutine (WaitToDeactivate ());
 	}
 
 	IEnumerator WaitToDeactivate () {
-		yield return new WaitForSeconds (deactivateTime);
-		foreach (GameObject emitter in emitters) {
-			emitter.SetActive (false);
+		yield return new WaitForSeconds (deactivateTime); // Waits...
+        foreach (GameObject emitter in emitters) { // Goes through each emitter
+            emitter.SetActive (false); // Disables it
 		}
-		StartCoroutine (WaitToActivate (activateTime));
+		StartCoroutine (WaitToActivate (activateTime)); // Waits...
 	}
 }

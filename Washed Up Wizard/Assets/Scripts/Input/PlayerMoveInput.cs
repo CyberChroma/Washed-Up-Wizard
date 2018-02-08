@@ -20,6 +20,7 @@ public class PlayerMoveInput : MonoBehaviour {
 	}
 
 	void OnDisable () {
+        // Resetting variables
 		v = 0;
 		h = 0;
 		moveVector = Vector3.zero;
@@ -43,15 +44,15 @@ public class PlayerMoveInput : MonoBehaviour {
 		} else {
 			h = Mathf.MoveTowards (h, 0, moveSensitivity);
 		}
-		moveVector = new Vector3 (h, 0, v);
-		if (moveVector.magnitude > 1) {
+		moveVector = new Vector3 (h, 0, v); // Setting move vector for direction
+		if (moveVector.magnitude > 1) { // If the move vector is greater than 1
 			moveVector.Normalize (); // Setting direction
 		}
-		moveVector *= moveSpeed * Time.deltaTime;
-		if (moveVector != Vector3.zero) {
-			transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (moveVector), 5f * Time.deltaTime); // Rotates after object
-			transform.rotation = Quaternion.Euler (new Vector3 (0, transform.rotation.eulerAngles.y, 0));
+		moveVector *= moveSpeed * Time.deltaTime; // Multiplying move vector for magnutude
+		if (moveVector != Vector3.zero) { // Of the move vector is not zero
+			transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (moveVector), 5f * Time.deltaTime); // Rotates in direction of movement
+			transform.rotation = Quaternion.Euler (new Vector3 (0, transform.rotation.eulerAngles.y, 0)); // Ignores x and z rotation
 		}
-		rb.MovePosition (rb.position + moveVector);
+		rb.MovePosition (rb.position + moveVector); // Moves player
 	}
 }

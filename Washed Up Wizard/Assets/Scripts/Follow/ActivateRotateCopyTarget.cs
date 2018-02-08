@@ -5,9 +5,9 @@ using UnityEngine;
 public class ActivateRotateCopyTarget : MonoBehaviour {
 
 	public Transform[] objectsToTrigger; // References to the objects that will be activated
-	public bool oneTime;
+    public bool oneTime; // Whether the object can only be activated once
 
-	private bool isActivated; // Bool for whether the objects have been activated
+	private bool isActivated; // Whether the objects have been activated
 
 	// Use this for initialization
 	void Start () {

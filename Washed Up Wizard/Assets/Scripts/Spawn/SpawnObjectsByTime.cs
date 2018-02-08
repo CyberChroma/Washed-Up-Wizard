@@ -5,20 +5,20 @@ using UnityEngine;
 public class SpawnObjectsByTime : MonoBehaviour {
 
 	public GameObject objectToSpawn; // The object to spawn
-	public Transform parent;
-	public float delay = 1;
-	public float randDelay = 0.1f;
-	public int numToSpawn = 5;
-	public float radius = 90;
-	public float offset = 0;
+    public Transform parent; // The object to parent the spawned object under
+    public float delay = 1; // The time between spawning
+    public float randDelay = 0.1f; // Adds slight randomness to the delay
+	public int numToSpawn = 5; // The number of objects to spawn
+	public float radius = 90; // The radius to spawn objects around
+	public float offset = 0; // Adding an offet to the spawn radius
 
-	[HideInInspector] public GameObject[] spawnedObjects;
-	private bool canSpawn = true;
-	private Transform spellsParent;
-	private float timeUntilNextSpawn;
+    [HideInInspector] public GameObject[] spawnedObjects; // References to the spawned objects
+    private bool canSpawn = true; // Whether a object can be spawned
+    private Transform spellsParent; // The default parent
+    private float timeUntilNextSpawn; // The delay before starting to spawn again
 
 	void Awake () {
-		spellsParent = GameObject.Find ("Spells").transform;
+		spellsParent = GameObject.Find ("Spells").transform; // Getting the reference
 	}
 
 	void OnEnable () {
@@ -26,7 +26,7 @@ public class SpawnObjectsByTime : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		if (Time.time >= timeUntilNextSpawn) {
+		if (Time.time >= timeUntilNextSpawn) { // If the time has elapsed
 			canSpawn = true;
 		}
 		if (canSpawn) {
@@ -35,9 +35,9 @@ public class SpawnObjectsByTime : MonoBehaviour {
 	}
 
 	void Spawn () {
-		if (numToSpawn != 1) {
-			spawnedObjects = new GameObject[numToSpawn];
-			if (parent != null) {
+		if (numToSpawn != 1) { // If the number of objects to spawn is not 1
+			spawnedObjects = new GameObject[numToSpawn]; // Resetting the array
+			if (parent != null) { // If there is a parent reference
 				for (int i = 0; i < numToSpawn; i++) {
 					spawnedObjects [i] = Instantiate (objectToSpawn, parent.position, Quaternion.Euler (parent.rotation.eulerAngles.x, parent.rotation.eulerAngles.y + (-(radius / 2) + (radius / (numToSpawn - 1)) * i) + offset, parent.rotation.eulerAngles.z), parent); // Spawns the object as a parent of a transform
 				}
@@ -48,6 +48,6 @@ public class SpawnObjectsByTime : MonoBehaviour {
 			}
 		}
 		canSpawn = false;
-		timeUntilNextSpawn = Time.time + delay + Random.Range (-randDelay, randDelay);
+		timeUntilNextSpawn = Time.time + delay + Random.Range (-randDelay, randDelay); // Sets the delay with slight randomness
 	}
 }

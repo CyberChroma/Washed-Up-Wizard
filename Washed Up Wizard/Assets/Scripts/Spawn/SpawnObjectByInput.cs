@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class SpawnObjectByInput : MonoBehaviour {
 
 	public GameObject objectToSpawn; // The object to spawn
-	public Transform parent;
-	public float cooldown = 1;
-	public bool OnRelease = false;
-	public GameObject reticle;
-	public int emitterNum = 1;
-	public Slider cooldownWheel;
+    public Transform parent; // The object to parent the spawned object under
+    public float cooldown = 1; // The time between spawning
+	public bool onRelease = false; // Whether the object should be spawned when a button is released
+	public GameObject reticle; // The reticle to use when the button is held down
+	public int emitterNum = 0; // The emitter number
+	public Slider cooldownWheel; // The cooldown wheel 
 
-	private bool canSpawn = true;
+	private bool canSpawn = true; // Whether the emitter can spawn objects
+    // References to scripts and gameobjects
 	private SpellInputReceiver spellInputReceiver;
 	private SpellCreator spellCreator;
 	private Transform cursorPosition;
@@ -21,27 +22,28 @@ public class SpawnObjectByInput : MonoBehaviour {
 	private Transform spellsParent;
 
 	void Start () {
-		spellInputReceiver = GameObject.Find ("Input Controller").GetComponent<SpellInputReceiver>(); // Getting the reference
+        // Getting references
+		spellInputReceiver = GameObject.Find ("Input Controller").GetComponent<SpellInputReceiver>();
 		cursorPosition = GameObject.Find ("Cursor Position").transform;
 		spellsParent = GameObject.Find ("Spells").transform;
 		spellCreator = GameObject.Find ("Spell Creation Controller").GetComponent<SpellCreator> ();
 	}
 
 	void Update () {
-		if (emitterNum != 0 && !spellCreator.creatingSpell) {
-			if (OnRelease) {
-				if (spellInputReceiver.inputSD [emitterNum - 1]) {
+		if (emitterNum != 0 && !spellCreator.creatingSpell) { // If the emitter is active and the user is not creating a spell
+			if (onRelease) { // If the emitter is activated when the user releases a button
+				if (spellInputReceiver.inputSD [emitterNum - 1]) { // If the user has pressed the required button
 					SpawnReticle (reticle, out tempReticle);
 				}
-				if (spellInputReceiver.inputSU [emitterNum - 1]) {
-					if (tempReticle) {
+                if (spellInputReceiver.inputSU [emitterNum - 1]) { // If the user has released the required button
+					if (tempReticle) { // If there is a temp reticle active
 						Spawn (objectToSpawn);
-						Destroy (tempReticle);
-						tempReticle = null;
+						Destroy (tempReticle); // Destroys the reticle
+						tempReticle = null; // Gets rid of the reference
 					}
 				}
 			} else {
-				if (spellInputReceiver.inputSU [emitterNum - 1]) {
+                if (spellInputReceiver.inputSD [emitterNum - 1]) {  // If the user has pressed the required button
 					Spawn (objectToSpawn);
 				}
 			}
@@ -51,7 +53,7 @@ public class SpawnObjectByInput : MonoBehaviour {
 		}
 	}
 
-	void Spawn (GameObject spawnObject) {
+	void Spawn (GameObject spawnObject) { // Creates and parents the objet
 		if (canSpawn) {
 			if (parent != null) {
 				Instantiate (spawnObject, parent); // Spawns the object as a parent of a transform
@@ -62,7 +64,7 @@ public class SpawnObjectByInput : MonoBehaviour {
 		}
 	}
 
-	void SpawnReticle (GameObject spawnObject, out GameObject objectReference) {
+	void SpawnReticle (GameObject spawnObject, out GameObject objectReference) { // Spawns the reticle and creates a reference
 		if (canSpawn) {
 			objectReference = Instantiate (spawnObject, cursorPosition); // Spawns the object as a parent of a transform
 		} else {
@@ -70,7 +72,7 @@ public class SpawnObjectByInput : MonoBehaviour {
 		}
 	}
 
-	IEnumerator WaitToSpawn () {
+	IEnumerator WaitToSpawn () { // Waits before spawning another object
 		canSpawn = false;
 		cooldownWheel.gameObject.SetActive (true);
 		cooldownWheel.value = cooldown;
