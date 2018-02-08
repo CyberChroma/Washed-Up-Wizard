@@ -10,13 +10,17 @@ public class PlayerMoveInput : MonoBehaviour {
 	private Vector3 moveVector;
 	private float v = 0; // Vertical direction
 	private float h = 0; // Horizontal direction
+    // Getting refferences
 	private Rigidbody rb;
+    private Animator anim;
 	private MoveInputReceiver moveInputReceiver; // Reference to input manager
 
 	// Use this for initialization
 	void Awake () {
-		rb = GetComponent<Rigidbody> ();
-		moveInputReceiver = GameObject.Find ("Input Controller").GetComponent<MoveInputReceiver>(); // Getting the reference
+        // Getting references
+		rb = GetComponent<Rigidbody>();
+        anim = GetComponentInChildren<Animator>();
+        moveInputReceiver = GameObject.Find("Input Controller").GetComponent<MoveInputReceiver>();
 	}
 
 	void OnDisable () {
@@ -44,6 +48,11 @@ public class PlayerMoveInput : MonoBehaviour {
 		} else {
 			h = Mathf.MoveTowards (h, 0, moveSensitivity);
 		}
+        if (v != 0 || h != 0) {
+            anim.SetBool("IsWalking", true);
+        } else {
+            anim.SetBool("IsWalking", false);
+        }
 		moveVector = new Vector3 (h, 0, v); // Setting move vector for direction
 		if (moveVector.magnitude > 1) { // If the move vector is greater than 1
 			moveVector.Normalize (); // Setting direction
