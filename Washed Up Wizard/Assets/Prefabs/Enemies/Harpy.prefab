@@ -1454,7 +1454,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1172672012317196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 18}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4060578907953092}
@@ -1980,7 +1980,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 1649386861065480, guid: 7544d2e35e54e47498be5d1f2c6d11be,
     type: 2}
   parent: {fileID: 0}
-  delay: 0.5
+  delay: 0
   randDelay: 0
   spawnedObject: {fileID: 0}
 --- !u!114 &114108077739884256
@@ -2018,7 +2018,7 @@ MonoBehaviour:
   moveDelay: 2
   moveSensitivity: 0.1
   attackDelay: 0.6
-  attackTime: 0.01
+  attackTime: 0
   boundaries:
     minx: -10
     maxx: 10

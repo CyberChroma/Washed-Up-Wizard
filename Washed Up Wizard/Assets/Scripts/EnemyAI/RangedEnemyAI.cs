@@ -76,10 +76,14 @@ public class RangedEnemyAI : MonoBehaviour {
 		foreach (GameObject emitter in emitters) { // Goes through each emitter
 			emitter.SetActive (true); // Sets the emitter active
 		}
-		yield return new WaitForSeconds (attackTime); // Waits...
-		foreach (GameObject emitter in emitters) { // Goes through each emitter
-			emitter.SetActive (false); // Sets the emitter inactive
-		}
+        if (attackTime != 0)
+        {
+            yield return new WaitForSeconds(attackTime); // Waits...
+            foreach (GameObject emitter in emitters)
+            { // Goes through each emitter
+                emitter.SetActive(false); // Sets the emitter inactive
+            }
+        }
 	}
 
 	IEnumerator ChangeTarget () {

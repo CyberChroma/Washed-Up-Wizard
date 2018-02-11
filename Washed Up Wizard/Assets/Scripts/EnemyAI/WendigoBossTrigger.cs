@@ -7,7 +7,8 @@ public class WendigoBossTrigger : MonoBehaviour {
     public GameObject wendigo;
     public GameObject wenidgoHealthBar;
     public GameObject harpy;
-    public ActivateFollowTarget iceWall;
+    public ActivateFollowTarget startIceWall;
+    public ActivateFollowTarget endIceWall;
 
 	// Use this for initialization
 	void Awake () {
@@ -26,7 +27,8 @@ public class WendigoBossTrigger : MonoBehaviour {
             wendigo.SetActive(true);
             wenidgoHealthBar.SetActive(true);
             harpy.SetActive(true);
-            iceWall.Activate();
+            startIceWall.Activate();
+            endIceWall.Activate();
             Destroy(gameObject, 1f);
         }
     }
