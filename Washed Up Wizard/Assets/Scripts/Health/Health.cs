@@ -11,6 +11,7 @@ public class Health : MonoBehaviour {
 	public AudioClip audioClip; // The death sound
 	public GameObject soundPlayer; // The object that plays the sound
 	public float volume = 0.5f; // The volume of the sound
+    public bool disableOnDeath = false;
 
 	[HideInInspector] public bool healthChanged; // UI updates when true
 	[HideInInspector] public float currentHealth; // The current health
@@ -33,8 +34,9 @@ public class Health : MonoBehaviour {
 			audioSource.volume = volume; // Sets the volume
 			audioSource.clip = audioClip; // Sets the clip
 			audioSource.Play (); // Plays the sound
-			// Destroying gameobject (Temporary)
-			Destroy (parent);
+            if (disableOnDeath) {
+                gameObject.SetActive(false);
+            }
 		}
 	}
 

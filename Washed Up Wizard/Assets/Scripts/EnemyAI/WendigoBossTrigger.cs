@@ -5,7 +5,7 @@ using UnityEngine;
 public class WendigoBossTrigger : MonoBehaviour {
 
     public GameObject wendigo;
-    public GameObject wenidgoHealthBar;
+    public GameObject wendigoHealthBar;
     public GameObject playerCamera;
     public GameObject inputController;
     public Rigidbody player;
@@ -13,10 +13,12 @@ public class WendigoBossTrigger : MonoBehaviour {
     public ActivateFollowTarget startIceWall;
     public ActivateFollowTarget endIceWall;
 
+    private bool activated = false;
     private Animator cameraAnim;
     private FollowTargetLerp cameraMove;
     private TakeDamage playerTakeDamage;
     private TakeDamage wendigoTakeDamage;
+    private Health wendigoHealth;
     private MoveInputReceiver moveInputReceiver;
     private SpellInputReceiver spellInputReceiver;
     private ComponentInputReceiver componentInputReceiver;
@@ -25,22 +27,33 @@ public class WendigoBossTrigger : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         wendigo.SetActive(false);
-        wenidgoHealthBar.SetActive(false);
+        wendigoHealthBar.SetActive(false);
         cameraAnim = playerCamera.GetComponent<Animator>();
         cameraMove = playerCamera.GetComponent<FollowTargetLerp>();
         playerTakeDamage = player.GetComponent<TakeDamage>();
         wendigoTakeDamage = wendigo.GetComponent<TakeDamage>();
+        wendigoHealth = wendigo.GetComponent<Health>();
         moveInputReceiver = inputController.GetComponent<MoveInputReceiver>();
         spellInputReceiver = inputController.GetComponent<SpellInputReceiver>();
         componentInputReceiver = inputController.GetComponent<ComponentInputReceiver>();
         playerAbilities = player.GetComponent<PlayerAbilities>();
         cameraAnim.enabled = false;
-
 	}
+
+    void Update () {
+        if (wendigo.activeInHierarchy) {
+            if (wendigoHealth.currentHealth <= 0)
+            {
+                StartCoroutine(EndBoss());
+            }
+        }
+    }
 
     void OnTriggerEnter (Collider other) {
         if (other.CompareTag("Player")) {
-            StartCoroutine(ActivateBoss ());
+            if (!activated) {
+                StartCoroutine(ActivateBoss());
+            }
         }
     }
 
@@ -61,7 +74,7 @@ public class WendigoBossTrigger : MonoBehaviour {
         endIceWall.Activate();
         yield return new WaitForSeconds(3f);
         startIceWall.Activate();
-        wenidgoHealthBar.SetActive(true);
+        wendigoHealthBar.SetActive(true);
         yield return new WaitForSeconds(1f);
         wendigo.GetComponent<WendigoAI>().enabled = true;
         cameraMove.enabled = true;
@@ -73,6 +86,27 @@ public class WendigoBossTrigger : MonoBehaviour {
         cameraMove.target = player;
         playerTakeDamage.enabled = true;
         wendigoTakeDamage.enabled = true;
-        Destroy(gameObject, 1f);
+        activated = true;
+    }
+
+    IEnumerator EndBoss () {
+        moveInputReceiver.enabled = false;
+        spellInputReceiver.enabled = false;
+        componentInputReceiver.enabled = false;
+        playerAbilities.enabled = false;
+        cameraMove.target = wendigo.GetComponent<Rigidbody> ();
+        playerTakeDamage.enabled = false;
+        yield return new WaitForSeconds(5f);
+        startIceWall.Activate();
+        endIceWall.Activate();
+        moveInputReceiver.enabled = true;
+        spellInputReceiver.enabled = true;
+        componentInputReceiver.enabled = true;
+        playerAbilities.enabled = true;
+        cameraAnim.enabled = false;
+        cameraMove.target = player;
+        wendigo.SetActive(false);
+        playerTakeDamage.enabled = true;
+        wendigoTakeDamage.enabled = true;
     }
 }

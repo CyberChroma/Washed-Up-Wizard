@@ -1061,7 +1061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wendigo: {fileID: 1611493533}
-  wenidgoHealthBar: {fileID: 1909211839}
+  wendigoHealthBar: {fileID: 1909211839}
   playerCamera: {fileID: 1643933423}
   inputController: {fileID: 1416416591}
   player: {fileID: 1812389780}
@@ -3683,8 +3683,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0, g: 0.0896554, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 10
+  m_Intensity: 1
+  m_Range: 15
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -7858,8 +7858,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0, g: 0.0896554, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 10
+  m_Intensity: 1
+  m_Range: 15
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -14266,8 +14266,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0, g: 0.0896554, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 10
+  m_Intensity: 1
+  m_Range: 15
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -14614,6 +14614,16 @@ Prefab:
     - target: {fileID: 1897975555965378, guid: f657a0cf890b6bc4cbe5758201ccef86, type: 2}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 114127489707250282, guid: f657a0cf890b6bc4cbe5758201ccef86,
+        type: 2}
+      propertyPath: destroyOnDeath
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114127489707250282, guid: f657a0cf890b6bc4cbe5758201ccef86,
+        type: 2}
+      propertyPath: disableOnDeath
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f657a0cf890b6bc4cbe5758201ccef86, type: 2}
@@ -16389,11 +16399,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114377495998480298, guid: b1bcc4c62d520a34481b650ab1918785,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 508027263}
     - target: {fileID: 114836178769768280, guid: b1bcc4c62d520a34481b650ab1918785,
         type: 2}
       propertyPath: harpySpawnObjectByActivate.Array.data[0]
@@ -16459,6 +16464,16 @@ Prefab:
       propertyPath: wayPoints.Array.data[8]
       value: 
       objectReference: {fileID: 1740497904}
+    - target: {fileID: 114377495998480298, guid: b1bcc4c62d520a34481b650ab1918785,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 508027263}
+    - target: {fileID: 114172722067793442, guid: b1bcc4c62d520a34481b650ab1918785,
+        type: 2}
+      propertyPath: startHealth
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1bcc4c62d520a34481b650ab1918785, type: 2}
   m_IsPrefabParent: 0
@@ -19152,7 +19167,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -868283091
+  randomSeed: -393073774
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -30507,8 +30522,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0, g: 0.0896554, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 10
+  m_Intensity: 1
+  m_Range: 15
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:

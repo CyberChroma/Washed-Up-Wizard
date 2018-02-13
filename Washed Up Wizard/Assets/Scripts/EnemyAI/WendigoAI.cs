@@ -102,6 +102,12 @@ public class WendigoAI : MonoBehaviour {
 			transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (moveByForce.dir), 3f * Time.deltaTime); // Rotates after object
 			transform.rotation = Quaternion.Euler (new Vector3 (0, transform.rotation.eulerAngles.y, 0));
 		}
+        if (health.currentHealth <= 0) {
+            moveByForce.dir = Vector3.zero;
+            moveByForce.force = 0;
+            anim.SetTrigger("Death");
+            enabled = false;
+        }
 	}
 
 	void Move () {
