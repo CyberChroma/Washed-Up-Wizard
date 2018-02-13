@@ -89,12 +89,12 @@ public class RangedEnemyAI : MonoBehaviour {
 	IEnumerator ChangeTarget () {
 		canMove = false; 
 		yield return new WaitForSeconds (moveDelay); // Waits...
-        while (true) {
+        //while (true) {
 		    targetLocation.position = new Vector3 (Random.Range (boundaries.minx, boundaries.maxx), 0, Random.Range (boundaries.miny, boundaries.maxy)); // Sets the location to a random point
-            if (!Physics.Linecast (transform.position, targetLocation.position)) {
-                break;
-            }
-        }
+            //if (!Physics.Linecast (transform.position, targetLocation.position)) {
+               // break;
+           // }
+        //}
         canMove = true;
 	}
 }

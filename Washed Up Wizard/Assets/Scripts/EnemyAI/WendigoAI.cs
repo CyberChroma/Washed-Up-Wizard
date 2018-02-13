@@ -61,7 +61,7 @@ public class WendigoAI : MonoBehaviour {
 	private int phase = 1;
 	private bool canAttack = false;
 	private bool isAttacking = false;
-	private int moveState = 0; // 0 = stop, 1 = move towards player, 2 = move to random waypoint
+	private int moveState = 1; // 0 = stop, 1 = move towards player, 2 = move to random waypoint
 	private int attackNum;
 	private int oldAttackNum = -1;
 	private int timesActivated;
@@ -83,8 +83,6 @@ public class WendigoAI : MonoBehaviour {
 
 	void OnEnable () {
 		StartCoroutine (WaitToChangeMoveState (Random.Range (phase1.moveSpeeds.changeStatesTime - phase1.moveSpeeds.randomDelay, phase1.moveSpeeds.changeStatesTime + phase1.moveSpeeds.randomDelay)));
-		moveByForce.force = 0;
-		moveByForce.dir = Vector3.zero;
 		foreach (ProjectileAttack projectileAttack in phase1.projectileAttacks) {
 			projectileAttack.emitter.SetActive (false);
 		}
@@ -164,13 +162,6 @@ public class WendigoAI : MonoBehaviour {
 			StartCoroutine (WaitToChangeMoveState (Random.Range (phase3.moveSpeeds.changeStatesTime - phase3.moveSpeeds.randomDelay, phase3.moveSpeeds.changeStatesTime + phase3.moveSpeeds.randomDelay)));
 		}
 	}
-
-	/*void OnCollisionEnter (Collision other) {
-		if (other.collider.CompareTag ("Untagged")) { // Collided with environment
-			print ("Change State");
-			ChangeMoveState ();
-		}
-	}*/
 
 	void Attack () {
 		timesActivated = 1;
@@ -288,6 +279,7 @@ public class WendigoAI : MonoBehaviour {
 		inputController.GetComponent<SpellInputReceiver> ().enabled = false;
 		inputController.GetComponent<SpecialInputReceiver> ().enabled = false;
 		moveByForce.dir = Vector3.zero;
+        anim.SetTrigger("Roar");
 		yield return new WaitForSeconds (phaseChangeDelay);
 		phase = newPhase;
 		changingPhase = false;

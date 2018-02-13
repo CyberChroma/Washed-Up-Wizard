@@ -37,10 +37,10 @@ public class SpawnObjectByInput : MonoBehaviour {
 				}
                 if (spellInputReceiver.inputSU [emitterNum - 1]) { // If the user has released the required button
 					if (tempReticle) { // If there is a temp reticle active
-						Spawn (objectToSpawn);
 						Destroy (tempReticle); // Destroys the reticle
 						tempReticle = null; // Gets rid of the reference
 					}
+                    Spawn (objectToSpawn);
 				}
 			} else {
                 if (spellInputReceiver.inputSD [emitterNum - 1]) {  // If the user has pressed the required button
@@ -65,7 +65,10 @@ public class SpawnObjectByInput : MonoBehaviour {
 	}
 
 	void SpawnReticle (GameObject spawnObject, out GameObject objectReference) { // Spawns the reticle and creates a reference
-		if (canSpawn) {
+        if (tempReticle) {
+            Destroy(tempReticle);
+        }
+        if (canSpawn) {
 			objectReference = Instantiate (spawnObject, cursorPosition); // Spawns the object as a parent of a transform
 		} else {
 			objectReference = null;

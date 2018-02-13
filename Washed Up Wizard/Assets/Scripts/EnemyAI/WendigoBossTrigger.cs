@@ -7,7 +7,6 @@ public class WendigoBossTrigger : MonoBehaviour {
     public GameObject wendigo;
     public GameObject wenidgoHealthBar;
     public GameObject playerCamera;
-    public GameObject harpy;
     public GameObject inputController;
     public Rigidbody player;
     public Rigidbody cameraStartPos;
@@ -16,18 +15,25 @@ public class WendigoBossTrigger : MonoBehaviour {
 
     private Animator cameraAnim;
     private FollowTargetLerp cameraMove;
+    private TakeDamage playerTakeDamage;
+    private TakeDamage wendigoTakeDamage;
     private MoveInputReceiver moveInputReceiver;
     private SpellInputReceiver spellInputReceiver;
+    private ComponentInputReceiver componentInputReceiver;
+    private PlayerAbilities playerAbilities;
 
 	// Use this for initialization
 	void Awake () {
         wendigo.SetActive(false);
         wenidgoHealthBar.SetActive(false);
-        harpy.SetActive(false);
         cameraAnim = playerCamera.GetComponent<Animator>();
         cameraMove = playerCamera.GetComponent<FollowTargetLerp>();
+        playerTakeDamage = player.GetComponent<TakeDamage>();
+        wendigoTakeDamage = wendigo.GetComponent<TakeDamage>();
         moveInputReceiver = inputController.GetComponent<MoveInputReceiver>();
         spellInputReceiver = inputController.GetComponent<SpellInputReceiver>();
+        componentInputReceiver = inputController.GetComponent<ComponentInputReceiver>();
+        playerAbilities = player.GetComponent<PlayerAbilities>();
         cameraAnim.enabled = false;
 
 	}
@@ -41,8 +47,12 @@ public class WendigoBossTrigger : MonoBehaviour {
     IEnumerator ActivateBoss () {
         moveInputReceiver.enabled = false;
         spellInputReceiver.enabled = false;
+        componentInputReceiver.enabled = false;
+        playerAbilities.enabled = false;
         cameraMove.target = cameraStartPos;
         wendigo.SetActive(true);
+        playerTakeDamage.enabled = false;
+        wendigoTakeDamage.enabled = false;
         yield return new WaitForSeconds(0.5f);
         cameraMove.enabled = false;
         cameraAnim.enabled = true;
@@ -53,13 +63,16 @@ public class WendigoBossTrigger : MonoBehaviour {
         startIceWall.Activate();
         wenidgoHealthBar.SetActive(true);
         yield return new WaitForSeconds(1f);
-        harpy.SetActive(true);
         wendigo.GetComponent<WendigoAI>().enabled = true;
         cameraMove.enabled = true;
         moveInputReceiver.enabled = true;
         spellInputReceiver.enabled = true;
+        componentInputReceiver.enabled = true;
+        playerAbilities.enabled = true;
         cameraAnim.enabled = false;
         cameraMove.target = player;
+        playerTakeDamage.enabled = true;
+        wendigoTakeDamage.enabled = true;
         Destroy(gameObject, 1f);
     }
 }

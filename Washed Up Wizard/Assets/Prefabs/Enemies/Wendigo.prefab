@@ -4742,7 +4742,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1048663356304428}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4414332760602256}
@@ -7694,7 +7694,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1773639933820852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4986765914006020}
@@ -7915,7 +7915,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1161536641643620}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4159705975701342}
@@ -13606,8 +13606,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phase1:
     moveSpeeds:
-      toPlayer: 350
-      toWaypoint: 400
+      toPlayer: 700
+      toWaypoint: 800
       changeStatesTime: 2.5
       randomDelay: 1
     projectileAttacks:
@@ -13645,8 +13645,8 @@ MonoBehaviour:
     randomDelay: 1
   phase2:
     moveSpeeds:
-      toPlayer: 400
-      toWaypoint: 450
+      toPlayer: 800
+      toWaypoint: 900
       changeStatesTime: 2
       randomDelay: 0.5
     projectileAttacks:
@@ -13673,8 +13673,8 @@ MonoBehaviour:
     harpiesToSpawn: 3
   phase3:
     moveSpeeds:
-      toPlayer: 450
-      toWaypoint: 500
+      toPlayer: 900
+      toWaypoint: 1000
       changeStatesTime: 1.5
       randomDelay: 0.5
     projectileAttacks:
