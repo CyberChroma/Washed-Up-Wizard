@@ -15,6 +15,13 @@ public class MoveInputReceiver : MonoBehaviour {
 	[HideInInspector] public bool inputML;
 	[HideInInspector] public bool inputMR;
 
+    void OnDisable () {
+        inputMF = false;
+        inputMB = false;
+        inputML = false;
+        inputMR = false;
+    }
+
 	// Update is called once per frame
 	void Update () {
 		inputMF = Input.GetKey (moveForward); // Getting input for moving forward

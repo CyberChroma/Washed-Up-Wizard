@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4322325400035532}
   - component: {fileID: 54941379979522006}
   - component: {fileID: 114102436710002326}
+  - component: {fileID: 95355696815501822}
   m_Layer: 0
   m_Name: Camera Pos
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1517896599083940}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.8, z: -10}
+  m_LocalPosition: {x: 0, y: 2, z: -45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4859976874054766}
@@ -66,13 +67,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1324686180738710}
-  m_LocalRotation: {x: 0.60876137, y: 0, z: 0, w: 0.7933534}
-  m_LocalPosition: {x: 0, y: 15, z: -4}
+  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: 0, y: 10, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4322325400035532}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 75, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!20 &20169263851889168
 Camera:
   m_ObjectHideFlags: 1
@@ -82,7 +83,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.078431375, g: 0.19607842, b: 0.21568628, a: 0}
+  m_BackGroundColor: {r: 0, g: 1, b: 0.8758622, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -104,6 +105,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -130,6 +132,23 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1324686180738710}
   m_Enabled: 1
+--- !u!95 &95355696815501822
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517896599083940}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c16971ec9b8a89f42b6578b9dd54738f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114102436710002326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f35b94482c6194ba35a7ea4bc1d83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothing: 0.5
+  smoothing: 0.7
   target: {fileID: 0}
 --- !u!124 &124232686230984012
 Behaviour:
