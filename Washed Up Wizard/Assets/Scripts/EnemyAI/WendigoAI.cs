@@ -69,14 +69,16 @@ public class WendigoAI : MonoBehaviour {
 	private FollowTargetLerp cameraFollowTargetLerp;
 	private Transform currentWaypoint;
 	private GameObject inputController;
+    private Animator anim;
 
 	// Use this for initialization
 	void Awake () {
 		player = GameObject.Find ("Player").transform;
-		cameraFollowTargetLerp = Camera.main.GetComponentInParent<FollowTargetLerp> ();
-		moveByForce = GetComponent<MoveByForce> ();
-		health = GetComponent<Health> ();
+		cameraFollowTargetLerp = Camera.main.GetComponentInParent<FollowTargetLerp>();
+		moveByForce = GetComponent<MoveByForce>();
+		health = GetComponent<Health>();
 		inputController = GameObject.Find ("Input Controller");
+        anim = GetComponentInChildren<Animator>();
 	}
 
 	void OnEnable () {
@@ -117,6 +119,11 @@ public class WendigoAI : MonoBehaviour {
 				moveByForce.dir = (currentWaypoint.position - transform.position).normalized;
 			}
 		}
+        if (moveByForce.dir == Vector3.zero) {
+            anim.SetBool("IsWalking", false);
+        } else {
+            anim.SetBool("IsWalking", true);
+        }
 	}
 
 	IEnumerator WaitToChangeMoveState (float delay) {
