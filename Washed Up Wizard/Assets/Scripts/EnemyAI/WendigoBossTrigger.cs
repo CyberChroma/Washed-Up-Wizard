@@ -23,6 +23,7 @@ public class WendigoBossTrigger : MonoBehaviour {
     private SpellInputReceiver spellInputReceiver;
     private ComponentInputReceiver componentInputReceiver;
     private PlayerAbilities playerAbilities;
+    private bool ended = false;
 
 	// Use this for initialization
 	void Awake () {
@@ -42,9 +43,9 @@ public class WendigoBossTrigger : MonoBehaviour {
 
     void Update () {
         if (wendigo.activeInHierarchy) {
-            if (wendigoHealth.currentHealth <= 0)
-            {
+            if (wendigoHealth.currentHealth <= 0 && !ended) {
                 StartCoroutine(EndBoss());
+                ended = true;
             }
         }
     }
@@ -96,7 +97,7 @@ public class WendigoBossTrigger : MonoBehaviour {
         playerAbilities.enabled = false;
         cameraMove.target = wendigo.GetComponent<Rigidbody> ();
         playerTakeDamage.enabled = false;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         startIceWall.Activate();
         endIceWall.Activate();
         moveInputReceiver.enabled = true;
@@ -105,8 +106,6 @@ public class WendigoBossTrigger : MonoBehaviour {
         playerAbilities.enabled = true;
         cameraAnim.enabled = false;
         cameraMove.target = player;
-        wendigo.SetActive(false);
         playerTakeDamage.enabled = true;
-        wendigoTakeDamage.enabled = true;
     }
 }

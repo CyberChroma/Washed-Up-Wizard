@@ -7,18 +7,20 @@ public class PlayerDeathSceneReset : MonoBehaviour {
 
 	public float delay = 2; // How long after the player has died should the scene reset
 
-	private GameObject player; // Reference to the player
+    private Health health;
+    private bool resetting = false;
 
 	// Use this for initialization
 	void Awake () {
-		player = GameObject.Find ("Player"); // Gets a reference to the player
+        health = GameObject.Find ("Player").GetComponent<Health>(); // Gets a reference to the player
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (player == null) { // If the player is not in the scene (has died and been destroyed)
-			StartCoroutine (ResetScene ());
-		}
+        if (health.currentHealth <= 0 && !resetting) {
+            StartCoroutine(ResetScene());
+            resetting = true;
+        }
 	}
 
 	IEnumerator ResetScene () {

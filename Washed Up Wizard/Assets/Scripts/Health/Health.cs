@@ -12,31 +12,39 @@ public class Health : MonoBehaviour {
 	public GameObject soundPlayer; // The object that plays the sound
 	public float volume = 0.5f; // The volume of the sound
     public bool disableOnDeath = false;
+    public float disableDelay = 1;
 
 	[HideInInspector] public bool healthChanged; // UI updates when true
 	[HideInInspector] public float currentHealth; // The current health
 	[HideInInspector] public bool canBeHit = true; // Whether the object can be hit
+    private bool dead = false;
 
+    private Animator anim;
 	private AudioSource audioSource; // Reference to the sound player
 
 	// Use this for initialization
 	void Start () {
 		// Setting start values
 		currentHealth = startHealth;
+        anim = GetComponentInChildren<Animator>();
 	}
 
 	public void ChangeHealth () {
 		healthChanged = true; // Updates the UI
-		if (currentHealth <= 0) { // If the object has no health left
+        if (currentHealth <= 0 && !dead) { // If the object has no health left
 			if (audioClip) { // If the audio clip is not null
 				audioSource = Instantiate (soundPlayer, transform.position, Quaternion.identity).GetComponent<AudioSource> (); // Creates the sound player and gets the reference to the audio source
 			}
 			audioSource.volume = volume; // Sets the volume
 			audioSource.clip = audioClip; // Sets the clip
 			audioSource.Play (); // Plays the sound
-            if (disableOnDeath) {
-                gameObject.SetActive(false);
+            if (anim) {
+                anim.SetTrigger("Death");
             }
+            if (disableOnDeath) {
+                StartCoroutine (Disable ());
+            }
+            dead = true;
 		}
 	}
 
@@ -45,4 +53,9 @@ public class Health : MonoBehaviour {
 		yield return new WaitForSeconds (tempStopHitsTime);
 		canBeHit = true;
 	}
+
+    IEnumerator Disable () {
+        yield return new WaitForSeconds(disableDelay);
+        gameObject.SetActive(false);
+    }
 }
