@@ -53,6 +53,7 @@ public class WendigoAI : MonoBehaviour {
 	public Phase3 phase3;
 	public SpawnObjectByActivate[] harpySpawnObjectByActivate;
 	public Transform[] wayPoints;
+    public Transform Harpies;
 	public float phaseChangeDelay = 2;
 
 	private Transform player;
@@ -105,7 +106,12 @@ public class WendigoAI : MonoBehaviour {
         if (health.currentHealth <= 0) {
             moveByForce.dir = Vector3.zero;
             moveByForce.force = 0;
-            anim.SetTrigger("Death");
+            Transform[] tempHarpies = Harpies.GetComponentsInChildren<Transform>();
+            foreach (Transform tempHarpy in tempHarpies) {
+                if (tempHarpy.name == "Harpy Object") {
+                    tempHarpy.GetComponent<Health>().currentHealth = 0;
+                }
+            }
             enabled = false;
         }
 	}

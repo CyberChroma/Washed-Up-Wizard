@@ -148,7 +148,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 10635331}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12, y: 20, z: -11}
+  m_LocalPosition: {x: -8, y: 20, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 566434938}
@@ -9508,7 +9508,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 635258435}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 20, z: 20}
+  m_LocalPosition: {x: -8, y: 20, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 566434938}
@@ -15276,7 +15276,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035087257}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12, y: 20, z: 12}
+  m_LocalPosition: {x: 8, y: 20, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 566434938}
@@ -16341,31 +16341,16 @@ Prefab:
       propertyPath: wayPoints.Array.data[8]
       value: 
       objectReference: {fileID: 1740497904}
+    - target: {fileID: 114836178769768280, guid: b1bcc4c62d520a34481b650ab1918785,
+        type: 2}
+      propertyPath: Harpies
+      value: 
+      objectReference: {fileID: 1043427831}
     - target: {fileID: 114377495998480298, guid: b1bcc4c62d520a34481b650ab1918785,
         type: 2}
       propertyPath: target
       value: 
       objectReference: {fileID: 508027263}
-    - target: {fileID: 114172722067793442, guid: b1bcc4c62d520a34481b650ab1918785,
-        type: 2}
-      propertyPath: startHealth
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114172722067793442, guid: b1bcc4c62d520a34481b650ab1918785,
-        type: 2}
-      propertyPath: volume
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114172722067793442, guid: b1bcc4c62d520a34481b650ab1918785,
-        type: 2}
-      propertyPath: disableOnDeath
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114172722067793442, guid: b1bcc4c62d520a34481b650ab1918785,
-        type: 2}
-      propertyPath: disableDelay
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1bcc4c62d520a34481b650ab1918785, type: 2}
   m_IsPrefabParent: 0
@@ -33648,7 +33633,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1952041774}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12, y: 20, z: -11}
+  m_LocalPosition: {x: 8, y: 20, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 566434938}

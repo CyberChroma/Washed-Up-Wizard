@@ -27,6 +27,7 @@ public class RangedEnemyAI : MonoBehaviour {
 
     private bool active = false;
 	private Animator anim; // Reference to the animator
+    private Health health;
 	private MoveByForce enemyMove; // Reference to the move script
 	private Transform player; // Reference to the player
 	private bool canMove = true; // Whether the player can move
@@ -35,7 +36,8 @@ public class RangedEnemyAI : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		enemyMove = GetComponent<MoveByForce> (); // Getting the reference
-		anim = GetComponent<Animator> (); // Getting the reference
+        anim = GetComponentInChildren<Animator> (); // Getting the reference
+        health = GetComponent<Health> ();
 		player = GameObject.Find ("Player").transform; // Getting the reference
 	}
 
@@ -83,6 +85,10 @@ public class RangedEnemyAI : MonoBehaviour {
             active = true;
             enemyMove.force = moveForce;
             enemyMove.dir = Vector3.zero;
+        }
+        if (health.currentHealth <= 0) {
+            enabled = false;
+            health.ChangeHealth();
         }
 	}
 
