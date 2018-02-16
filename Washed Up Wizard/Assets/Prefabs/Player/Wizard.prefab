@@ -3536,7 +3536,7 @@ GameObject:
   - component: {fileID: 114626884325535386}
   - component: {fileID: 114278859869558346}
   m_Layer: 0
-  m_Name: Homing Towards Mouse Emitter
+  m_Name: Up and Down Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4164,6 +4164,23 @@ GameObject:
   - component: {fileID: 23187661748802940}
   m_Layer: 0
   m_Name: WGT-Wizard_rig_thigh_fk_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1804166862773790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4989254296038470}
+  - component: {fileID: 114543002036924286}
+  - component: {fileID: 114421639154208182}
+  m_Layer: 0
+  m_Name: Homing Towards Mouse Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6574,6 +6591,7 @@ Transform:
   - {fileID: 4374478289465950}
   - {fileID: 4685565046375098}
   - {fileID: 4594585552136172}
+  - {fileID: 4989254296038470}
   - {fileID: 4918940445177918}
   - {fileID: 4892147907648842}
   m_Father: {fileID: 0}
@@ -9459,7 +9477,7 @@ Transform:
   - {fileID: 4067793574184022}
   - {fileID: 4358273682060402}
   m_Father: {fileID: 4259664070678644}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4894048214839940
 Transform:
@@ -9576,11 +9594,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1683934039748020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4259664070678644}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4919982072577156
 Transform:
@@ -9856,6 +9874,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4067793574184022}
   m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4989254296038470
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804166862773790}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4259664070678644}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4991205226633856
 Transform:
@@ -16123,6 +16154,21 @@ MonoBehaviour:
   targetString: 
   once: 0
   speed: Infinity
+--- !u!114 &114421639154208182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804166862773790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce8233c448c6cc49b9b321f482c8728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targetString: 
+  once: 0
+  speed: Infinity
 --- !u!114 &114445799682025104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16161,6 +16207,25 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
+--- !u!114 &114543002036924286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804166862773790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fda3fdc53432714e9c200646a167efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1587935743365270, guid: 8d06f97d887d54a409c4878be84acad3,
+    type: 2}
+  parent: {fileID: 0}
+  cooldown: 1
+  onRelease: 0
+  reticle: {fileID: 0}
+  emitterNum: 0
+  cooldownWheel: {fileID: 0}
 --- !u!114 &114550905417365806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16191,7 +16256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fda3fdc53432714e9c200646a167efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 1587935743365270, guid: 8d06f97d887d54a409c4878be84acad3,
+  objectToSpawn: {fileID: 1821561499274860, guid: a7815057b4e021f4e9a253f999433f5c,
     type: 2}
   parent: {fileID: 0}
   cooldown: 1

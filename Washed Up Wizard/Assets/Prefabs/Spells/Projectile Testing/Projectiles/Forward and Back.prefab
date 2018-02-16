@@ -24,6 +24,10 @@ GameObject:
   - component: {fileID: 54972761495737932}
   - component: {fileID: 23540814950356758}
   - component: {fileID: 33545240343713740}
+  - component: {fileID: 114618951864696098}
+  - component: {fileID: 114166940524163812}
+  - component: {fileID: 65440539394717048}
+  - component: {fileID: 114937118459193758}
   m_Layer: 0
   m_Name: Forward and Back
   m_TagString: Untagged
@@ -39,7 +43,7 @@ Transform:
   m_GameObject: {fileID: 1058939043300004}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -84,7 +88,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1058939043300004}
-  m_Mesh: {fileID: 4300000, guid: bf9471017ac65854aabdb2f020b76df4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 05267fb97a410784699ceb4dbb5be02a, type: 3}
 --- !u!54 &54972761495737932
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -100,6 +104,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65440539394717048
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058939043300004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.0000002, z: 2.0000005}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114038258893015718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,6 +128,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 3.4
+--- !u!114 &114166940524163812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058939043300004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e256af723abe10f41a0a24a836268fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  tagsToDestroy:
+  - Enemy
+  - Enemy Shield
+  - Environment
+  tagsToIgnore: []
 --- !u!114 &114276476059489252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,3 +162,35 @@ MonoBehaviour:
   local: 1
   minSpeed: -1000
   maxSpeed: 1000
+--- !u!114 &114618951864696098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058939043300004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214aadae9e17298458d2b2bc1099a46d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 2
+  oneTime: 1
+  tagsToDamage:
+  - Enemy
+  push: 1
+  pushForce: 5
+--- !u!114 &114937118459193758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058939043300004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e97d91ff98f2e4ab6ff305d6b92e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnParticles: {fileID: 1527179019113562, guid: 94644fba39c360e40a6141bdf1e3e8f8,
+    type: 2}
+  deathParticles: {fileID: 1527179019113562, guid: 94644fba39c360e40a6141bdf1e3e8f8,
+    type: 2}

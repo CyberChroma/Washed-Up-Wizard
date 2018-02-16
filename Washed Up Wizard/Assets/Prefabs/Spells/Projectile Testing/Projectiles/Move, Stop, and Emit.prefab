@@ -59,6 +59,10 @@ GameObject:
   - component: {fileID: 54794439483375316}
   - component: {fileID: 33475956167868338}
   - component: {fileID: 23418283823626952}
+  - component: {fileID: 114110037035038890}
+  - component: {fileID: 114196780251134774}
+  - component: {fileID: 135908093249010662}
+  - component: {fileID: 114276275959581266}
   m_Layer: 0
   m_Name: Move, Stop, and Emit
   m_TagString: Untagged
@@ -147,7 +151,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1910010680747152}
-  m_Mesh: {fileID: 4300000, guid: 86dea2821dfc74c45b62a3c31fd425e3, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 7639ed29e4dbb1846807dfaf79a90b8b, type: 3}
 --- !u!54 &54794439483375316
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -163,6 +167,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114110037035038890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1910010680747152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214aadae9e17298458d2b2bc1099a46d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 2
+  oneTime: 1
+  tagsToDamage:
+  - Enemy
+  push: 1
+  pushForce: 5
 --- !u!114 &114149987474655704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,6 +200,23 @@ MonoBehaviour:
   rotAcceleration: 0
   minRotSpeed: -1000
   maxRotSpeed: 1000
+--- !u!114 &114196780251134774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1910010680747152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e256af723abe10f41a0a24a836268fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  tagsToDestroy:
+  - Enemy
+  - Enemy Shield
+  - Environment
+  tagsToIgnore: []
 --- !u!114 &114275587557999082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,6 +234,21 @@ MonoBehaviour:
   delay: Infinity
   randDelay: 0
   spawnedObject: {fileID: 0}
+--- !u!114 &114276275959581266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1910010680747152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e97d91ff98f2e4ab6ff305d6b92e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnParticles: {fileID: 1527179019113562, guid: 94644fba39c360e40a6141bdf1e3e8f8,
+    type: 2}
+  deathParticles: {fileID: 1527179019113562, guid: 94644fba39c360e40a6141bdf1e3e8f8,
+    type: 2}
 --- !u!114 &114305629644110746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -281,3 +334,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 2
+--- !u!135 &135908093249010662
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1910010680747152}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5000001
+  m_Center: {x: 0, y: -0.0000002533198, z: 0}

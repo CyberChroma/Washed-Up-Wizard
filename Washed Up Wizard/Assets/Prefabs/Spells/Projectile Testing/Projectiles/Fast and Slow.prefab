@@ -25,6 +25,10 @@ GameObject:
   - component: {fileID: 54725246081604676}
   - component: {fileID: 33415639654582000}
   - component: {fileID: 23224013074044912}
+  - component: {fileID: 114062456137583340}
+  - component: {fileID: 114456932491642868}
+  - component: {fileID: 135582213331406906}
+  - component: {fileID: 114010449474242866}
   m_Layer: 0
   m_Name: Fast and Slow
   m_TagString: Untagged
@@ -85,7 +89,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1024860298065346}
-  m_Mesh: {fileID: 4300000, guid: 86dea2821dfc74c45b62a3c31fd425e3, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 7639ed29e4dbb1846807dfaf79a90b8b, type: 3}
 --- !u!54 &54725246081604676
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -101,6 +105,38 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114010449474242866
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1024860298065346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e97d91ff98f2e4ab6ff305d6b92e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnParticles: {fileID: 1527179019113562, guid: 94644fba39c360e40a6141bdf1e3e8f8,
+    type: 2}
+  deathParticles: {fileID: 1527179019113562, guid: 94644fba39c360e40a6141bdf1e3e8f8,
+    type: 2}
+--- !u!114 &114062456137583340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1024860298065346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214aadae9e17298458d2b2bc1099a46d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 2
+  oneTime: 1
+  tagsToDamage:
+  - Enemy
+  push: 1
+  pushForce: 5
 --- !u!114 &114272251066575868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,6 +154,23 @@ MonoBehaviour:
   local: 1
   minSpeed: -1000
   maxSpeed: 1000
+--- !u!114 &114456932491642868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1024860298065346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e256af723abe10f41a0a24a836268fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  tagsToDestroy:
+  - Enemy
+  - Enemy Shield
+  - Environment
+  tagsToIgnore: []
 --- !u!114 &114486949307702662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,3 +205,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 5
+--- !u!135 &135582213331406906
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1024860298065346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5000001
+  m_Center: {x: 0, y: -0.0000002533198, z: 0}
