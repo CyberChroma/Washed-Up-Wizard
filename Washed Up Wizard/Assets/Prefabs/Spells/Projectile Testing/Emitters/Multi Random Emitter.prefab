@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4390188444905402
 Transform:
   m_ObjectHideFlags: 1
@@ -59,6 +59,7 @@ MonoBehaviour:
   randDelay: 0
   numToSpawn: 50
   radius: 90
+  offset: 0
   spawnedObjects: []
 --- !u!114 &114892768626117866
 MonoBehaviour:

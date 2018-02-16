@@ -96,8 +96,12 @@ public class SpellCreator : MonoBehaviour {
                     if (GameObject.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name + " Emitter")) { // If the spell emitter exists
 						tempSpawnObjectByInput = GameObject.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name + " Emitter").GetComponent<SpawnObjectByInput> (); // Gets a reference to the emitter
 						tempSpawnObjectByInput.emitterNum = i + 1; // Setting up the emitter to the button
+                        cooldownWheels [i].maxValue = tempSpawnObjectByInput.cooldown; // Setting the max value of the cooldown wheel
+                        if (tempSpawnObjectByInput.cooldownWheel) {
+                            cooldownWheels[i].value = tempSpawnObjectByInput.cooldownWheel.value;
+                            tempSpawnObjectByInput.cooldownWheel.value = 0;
+                        }
 						tempSpawnObjectByInput.cooldownWheel = cooldownWheels [i]; // Assigning the cooldown wheel
-						cooldownWheels [i].maxValue = tempSpawnObjectByInput.cooldown; // Setting the max value of the cooldown wheel
 						if (activeSpellsPanel.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name)) { // If the spell image exists
 							tempSpellSprite = activeSpellsPanel.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name); // Getting the reference
 							tempSpellSprite.position = spellSlots [i].transform.position; // Setting the position of the sprite

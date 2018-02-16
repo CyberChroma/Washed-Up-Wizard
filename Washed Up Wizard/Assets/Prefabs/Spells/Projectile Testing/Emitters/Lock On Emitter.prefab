@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4510972150908602
 Transform:
   m_ObjectHideFlags: 1
@@ -57,6 +57,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   delay: 0.25
   randDelay: 0
+  spawnedObject: {fileID: 0}
 --- !u!114 &114338314592488678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,3 +71,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   once: 1
+  speed: 10

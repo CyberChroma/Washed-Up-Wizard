@@ -28,7 +28,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4181309822064398
 Transform:
   m_ObjectHideFlags: 1
@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpeed: 100
+  dir: {x: 0, y: 0, z: 0}
   rotAcceleration: 0
   minRotSpeed: -1000
   maxRotSpeed: 1000
@@ -93,5 +94,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   delay: 1
   randDelay: 0
-  NumToSpawn: 5
+  numToSpawn: 5
   radius: 90
+  offset: 0
+  spawnedObjects: []

@@ -23,6 +23,10 @@ public class SpawnObjectsByTime : MonoBehaviour {
 
 	void OnEnable () {
 		canSpawn = true;
+        if (delay == 0) {
+            Spawn();
+            gameObject.SetActive (false);
+        }
 	}
 
 	void FixedUpdate () {
