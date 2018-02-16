@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 54203163331748062}
   - component: {fileID: 65934759473295786}
   - component: {fileID: 82753189212278144}
+  - component: {fileID: 114824820004098220}
   m_Layer: 0
   m_Name: Ice Shard Constant Slow
   m_TagString: Projectile
@@ -271,6 +272,21 @@ MonoBehaviour:
   local: 1
   minSpeed: -1000
   maxSpeed: 1000
+--- !u!114 &114824820004098220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1973469965373530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e97d91ff98f2e4ab6ff305d6b92e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnParticles: {fileID: 1800233777693634, guid: aa2ec2e61b0e5f14f9c79ddbc0194b8a,
+    type: 2}
+  deathParticles: {fileID: 1800233777693634, guid: aa2ec2e61b0e5f14f9c79ddbc0194b8a,
+    type: 2}
 --- !u!114 &114894246867773562
 MonoBehaviour:
   m_ObjectHideFlags: 1

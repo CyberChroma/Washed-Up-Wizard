@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 54137385871606566}
   - component: {fileID: 135186099312614976}
   - component: {fileID: 82239038191459474}
+  - component: {fileID: 114002162393459662}
   m_Layer: 9
   m_Name: Slimeball
   m_TagString: Projectile
@@ -213,6 +214,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114002162393459662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1120512674207940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e97d91ff98f2e4ab6ff305d6b92e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnParticles: {fileID: 1527179019113562, guid: 94644fba39c360e40a6141bdf1e3e8f8,
+    type: 2}
+  deathParticles: {fileID: 1527179019113562, guid: 94644fba39c360e40a6141bdf1e3e8f8,
+    type: 2}
 --- !u!114 &114022066559861916
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 54976856770607664}
   - component: {fileID: 135754532930921382}
   - component: {fileID: 82651791260614854}
+  - component: {fileID: 114615021055683000}
   m_Layer: 0
   m_Name: Ice Shard Forward and Back
   m_TagString: Projectile
@@ -259,6 +260,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 3
+--- !u!114 &114615021055683000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1981315787946438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e97d91ff98f2e4ab6ff305d6b92e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnParticles: {fileID: 1800233777693634, guid: aa2ec2e61b0e5f14f9c79ddbc0194b8a,
+    type: 2}
+  deathParticles: {fileID: 1800233777693634, guid: aa2ec2e61b0e5f14f9c79ddbc0194b8a,
+    type: 2}
 --- !u!114 &114784634070226282
 MonoBehaviour:
   m_ObjectHideFlags: 1

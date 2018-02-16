@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 54596190549819684}
   - component: {fileID: 65792220827759022}
   - component: {fileID: 82458396755334848}
+  - component: {fileID: 114231906577679728}
   m_Layer: 0
   m_Name: Ice Shard Accelerate
   m_TagString: Projectile
@@ -237,6 +238,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 10
+--- !u!114 &114231906577679728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294623370015232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e97d91ff98f2e4ab6ff305d6b92e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnParticles: {fileID: 1800233777693634, guid: aa2ec2e61b0e5f14f9c79ddbc0194b8a,
+    type: 2}
+  deathParticles: {fileID: 1800233777693634, guid: aa2ec2e61b0e5f14f9c79ddbc0194b8a,
+    type: 2}
 --- !u!114 &114469215751441790
 MonoBehaviour:
   m_ObjectHideFlags: 1
