@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerMoveInput : MonoBehaviour {
 
-	public float moveSensitivity = 0.3f;
-	public float moveSpeed = 5f;
+	public float moveSensitivity = 0.5f;
+	public float moveSpeed = 7f;
+    public float iceSensitivity = 0.03f;
 
-	private Vector3 moveVector;
 	private float v = 0; // Vertical direction
 	private float h = 0; // Horizontal direction
+    private float currentSensitivity;
+    private Vector3 moveVector;
+
     // Getting refferences
 	private Rigidbody rb;
     private Animator anim;
@@ -23,6 +26,7 @@ public class PlayerMoveInput : MonoBehaviour {
         anim = GetComponentInChildren<Animator>();
         moveInputReceiver = GameObject.Find("Input Controller").GetComponent<MoveInputReceiver>();
         health = GetComponent<Health>();
+        currentSensitivity = moveSensitivity;
 	}
 
 	void OnDisable () {
@@ -37,23 +41,23 @@ public class PlayerMoveInput : MonoBehaviour {
         if (health.currentHealth > 0) {
             // Calculating vertical direction
             if (moveInputReceiver.inputMB) {
-                v = Mathf.MoveTowards(v, -1, moveSensitivity);
+                v = Mathf.MoveTowards(v, -1, currentSensitivity);
             }
             else if (moveInputReceiver.inputMF) {
-                v = Mathf.MoveTowards(v, 1, moveSensitivity);
+                v = Mathf.MoveTowards(v, 1, currentSensitivity);
             }
             else {
-                v = Mathf.MoveTowards(v, 0, moveSensitivity);
+                v = Mathf.MoveTowards(v, 0, currentSensitivity);
             }
             // Calculating horizontal direction
             if (moveInputReceiver.inputML) {
-                h = Mathf.MoveTowards(h, -1, moveSensitivity);
+                h = Mathf.MoveTowards(h, -1, currentSensitivity);
             }
             else if (moveInputReceiver.inputMR) {
-                h = Mathf.MoveTowards(h, 1, moveSensitivity);
+                h = Mathf.MoveTowards(h, 1, currentSensitivity);
             }
             else {
-                h = Mathf.MoveTowards(h, 0, moveSensitivity);
+                h = Mathf.MoveTowards(h, 0, currentSensitivity);
             }
             if (v != 0 || h != 0) {
                 anim.SetBool("IsWalking", true);
@@ -77,4 +81,16 @@ public class PlayerMoveInput : MonoBehaviour {
             moveVector = Vector3.zero;
         }
 	}
+
+    void OnTriggerEnter (Collider other) {
+        if (other.CompareTag("Ice")) {
+            currentSensitivity = iceSensitivity;
+        }
+    }
+
+    void OnTriggerExit (Collider other) {
+        if (other.CompareTag("Ice")) {
+            currentSensitivity = moveSensitivity;
+        }
+    }
 }

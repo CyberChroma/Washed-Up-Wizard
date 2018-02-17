@@ -99,11 +99,6 @@ public class SpellCreator : MonoBehaviour {
 						tempSpawnObjectByInput.cooldownWheel = cooldownWheels [i]; // Assigning the cooldown wheel
                         tempSpawnObjectByInput.cooldownWheel.value = tempSpawnObjectByInput.cooldownValue;
                         cooldownWheels [i].maxValue = tempSpawnObjectByInput.cooldown; // Setting the max value of the cooldown wheel
-                        if (tempSpawnObjectByInput.cooldownValue <= 0) {
-                            cooldownWheels[i].gameObject.SetActive(false);
-                        } else {
-                            cooldownWheels[i].gameObject.SetActive(true);
-                        }
 						if (activeSpellsPanel.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name)) { // If the spell image exists
 							tempSpellSprite = activeSpellsPanel.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name); // Getting the reference
 							tempSpellSprite.position = spellSlots [i].transform.position; // Setting the position of the sprite
@@ -118,11 +113,15 @@ public class SpellCreator : MonoBehaviour {
                         for (int j = 0; j < activeSpellSprites.Length; j++) {
                             if (activeSpellSprites [j] == tempSpellSprite.gameObject) {
                                 activeSpellSprites [j] = null;
-                                //cooldownWheels [i].value = cooldownWheels[j].value;
                                 cooldownWheels [i].gameObject.SetActive(true);
                                 cooldownWheels [j].value = 0;
                                 cooldownWheels [j].gameObject.SetActive(false);
                             }
+                        }
+                        if (tempSpawnObjectByInput.cooldownValue <= 0) {
+                            cooldownWheels[i].gameObject.SetActive(false);
+                        } else {
+                            cooldownWheels[i].gameObject.SetActive(true);
                         }
                         // Setting references
 						activeEmitters [i] = tempSpawnObjectByInput.gameObject;

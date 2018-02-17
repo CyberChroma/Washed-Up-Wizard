@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114102892409096780}
   - component: {fileID: 65644888580724686}
   - component: {fileID: 82537202099856160}
+  - component: {fileID: 114250742644857462}
   m_Layer: 0
   m_Name: Acid Pool
   m_TagString: Untagged
@@ -320,6 +321,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 3
+--- !u!114 &114250742644857462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1313840374646338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e97d91ff98f2e4ab6ff305d6b92e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnParticles: {fileID: 1527179019113562, guid: e772900eb7ce73043983f63619654f63,
+    type: 2}
+  deathParticles: {fileID: 1527179019113562, guid: e772900eb7ce73043983f63619654f63,
+    type: 2}
 --- !u!114 &114484577749206404
 MonoBehaviour:
   m_ObjectHideFlags: 1
