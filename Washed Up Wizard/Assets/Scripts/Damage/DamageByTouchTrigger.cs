@@ -7,8 +7,8 @@ public class DamageByTouchTrigger : MonoBehaviour {
 	public float damageAmount = 2; // Damage amount
 	public bool oneTime = false; // Whether the object can only damage once
 	public string[] tagsToDamage; // Tags of objects that can be damaged
-    public bool push = true; // Whether the object is pushed away when damaged (explosion force)
-    public float pushForce = 5; // The force to push the object away
+    //public bool push = true; // Whether the object is pushed away when damaged (explosion force)
+    //public float pushForce = 5; // The force to push the object away
 
 	private bool damaged = false; // Whether the object has damaged something at least once (For oneTime)
 
@@ -30,9 +30,9 @@ public class DamageByTouchTrigger : MonoBehaviour {
 				if (other.GetComponent<TakeDamage> ()) {
 					other.GetComponent<TakeDamage> ().Damage (damageAmount); // Sends the damage
 				}
-                if (push) { // If the object should be pushed
+                /*if (push) { // If the object should be pushed
                     other.GetComponent<Rigidbody> ().AddForce ((other.transform.position - transform.position) * pushForce, ForceMode.Impulse); // Pushes the object
-				}
+				}*/
 			}
 		}
 	}

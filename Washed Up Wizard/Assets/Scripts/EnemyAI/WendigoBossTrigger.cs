@@ -9,7 +9,8 @@ public class WendigoBossTrigger : MonoBehaviour {
     public GameObject playerCamera;
     public GameObject inputController;
     public Rigidbody player;
-    public Rigidbody cameraStartPos;
+    public Rigidbody startCameraStartPos;
+    public Rigidbody endCameraStartPos;
     public ActivateFollowTarget startIceWall;
     public ActivateFollowTarget endIceWall;
 
@@ -63,7 +64,7 @@ public class WendigoBossTrigger : MonoBehaviour {
         spellInputReceiver.enabled = false;
         componentInputReceiver.enabled = false;
         playerAbilities.enabled = false;
-        cameraMove.target = cameraStartPos;
+        cameraMove.target = startCameraStartPos;
         wendigo.SetActive(true);
         playerTakeDamage.enabled = false;
         wendigoTakeDamage.enabled = false;
@@ -98,14 +99,18 @@ public class WendigoBossTrigger : MonoBehaviour {
         cameraMove.target = wendigo.GetComponent<Rigidbody> ();
         playerTakeDamage.enabled = false;
         yield return new WaitForSeconds(3f);
+        cameraMove.target = endCameraStartPos;
+        yield return new WaitForSeconds(1f);
         startIceWall.Activate();
         endIceWall.Activate();
+        yield return new WaitForSeconds(1f);
+        cameraMove.target = player;
+        wendigoHealthBar.SetActive(false);
+        yield return new WaitForSeconds(1f);
         moveInputReceiver.enabled = true;
         spellInputReceiver.enabled = true;
         componentInputReceiver.enabled = true;
         playerAbilities.enabled = true;
-        cameraAnim.enabled = false;
-        cameraMove.target = player;
         playerTakeDamage.enabled = true;
     }
 }
