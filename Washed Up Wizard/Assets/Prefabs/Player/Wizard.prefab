@@ -1443,6 +1443,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1276424992046056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4438407286336476}
+  - component: {fileID: 114327856865475078}
+  - component: {fileID: 114172787551525836}
+  m_Layer: 0
+  m_Name: Forward and Back Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1280253183420564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,6 +1502,22 @@ GameObject:
   - component: {fileID: 4662360480217762}
   m_Layer: 0
   m_Name: DEF-f_middle_01_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1293243869925782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4142799548112410}
+  - component: {fileID: 114244057703352202}
+  m_Layer: 0
+  m_Name: Heal Instant Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1934,6 +1967,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1353450708330736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4786486064643194}
+  - component: {fileID: 114679762858337932}
+  m_Layer: 0
+  m_Name: Heal Over Time Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1358338806216838
 GameObject:
   m_ObjectHideFlags: 1
@@ -2059,6 +2108,22 @@ GameObject:
   - component: {fileID: 4538738724185070}
   m_Layer: 0
   m_Name: DEF-thigh_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1390958221153914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4353559330543582}
+  - component: {fileID: 114856416498327958}
+  m_Layer: 0
+  m_Name: Bomb Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4898,7 +4963,7 @@ GameObject:
   - component: {fileID: 114221225609000822}
   - component: {fileID: 114476907205558870}
   m_Layer: 0
-  m_Name: Forward and Back Emitter
+  m_Name: Go Through Forward and Back Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4943,8 +5008,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4382324615719108}
   - component: {fileID: 114195362453868662}
+  - component: {fileID: 114283539425424666}
   m_Layer: 0
-  m_Name: Heal Instant Emitter
+  m_Name: Forward Bomb Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6291,6 +6357,19 @@ Transform:
   m_Father: {fileID: 4697169140687820}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4142799548112410
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1293243869925782}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4259664070678644}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4155881140973968
 Transform:
   m_ObjectHideFlags: 1
@@ -6661,12 +6740,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897975555965378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -10}
+  m_LocalPosition: {x: 0, y: 2, z: -45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4072139213509710}
   - {fileID: 4192633232291692}
-  - {fileID: 4382324615719108}
+  - {fileID: 4142799548112410}
   - {fileID: 4027070848525286}
   - {fileID: 4374478289465950}
   - {fileID: 4685565046375098}
@@ -6675,8 +6754,12 @@ Transform:
   - {fileID: 4471549168480484}
   - {fileID: 4679462779607126}
   - {fileID: 4069842966187038}
-  - {fileID: 4314788049417594}
+  - {fileID: 4438407286336476}
   - {fileID: 4918940445177918}
+  - {fileID: 4786486064643194}
+  - {fileID: 4353559330543582}
+  - {fileID: 4382324615719108}
+  - {fileID: 4314788049417594}
   - {fileID: 4892147907648842}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -6919,7 +7002,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4259664070678644}
-  m_RootOrder: 11
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4315255294349850
 Transform:
@@ -7085,6 +7168,19 @@ Transform:
   m_Father: {fileID: 4067793574184022}
   m_RootOrder: 113
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4353559330543582
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1390958221153914}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4259664070678644}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4355207117039228
 Transform:
   m_ObjectHideFlags: 1
@@ -7239,12 +7335,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1907090068997406}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4259664070678644}
-  m_RootOrder: 2
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4382712499514804
 Transform:
@@ -7517,6 +7613,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4067793574184022}
   m_RootOrder: 95
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4438407286336476
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1276424992046056}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4259664070678644}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4438559130310284
 Transform:
@@ -9061,6 +9170,19 @@ Transform:
   m_Father: {fileID: 4067793574184022}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4786486064643194
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353450708330736}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4259664070678644}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4787296576173644
 Transform:
   m_ObjectHideFlags: 1
@@ -9600,7 +9722,7 @@ Transform:
   - {fileID: 4067793574184022}
   - {fileID: 4358273682060402}
   m_Father: {fileID: 4259664070678644}
-  m_RootOrder: 13
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4894048214839940
 Transform:
@@ -16201,6 +16323,21 @@ MonoBehaviour:
   healthChanged: 0
   currentHealth: 0
   canBeHit: 1
+--- !u!114 &114172787551525836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1276424992046056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce8233c448c6cc49b9b321f482c8728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targetString: Cursor Position
+  once: 0
+  speed: Infinity
 --- !u!114 &114195362453868662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16212,10 +16349,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fda3fdc53432714e9c200646a167efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 1929774165907464, guid: 56e6dfed3a1e3e840b469101e46017b6,
+  objectToSpawn: {fileID: 1695996774596224, guid: 2ae8caa3c81599c4d8651155730e99e0,
     type: 2}
-  parent: {fileID: 4259664070678644}
-  cooldown: 6
+  parent: {fileID: 0}
+  cooldown: 3
   onRelease: 0
   reticle: {fileID: 0}
   emitterNum: 0
@@ -16232,9 +16369,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fda3fdc53432714e9c200646a167efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 1206972722638112, guid: 6322ae082e5efef45a2104036049c645,
+  objectToSpawn: {fileID: 1981315787946438, guid: 6b1c9a74cb72e9547afada2e3f2e289f,
     type: 2}
-  parent: {fileID: 4259664070678644}
+  parent: {fileID: 0}
   cooldown: 1
   onRelease: 0
   reticle: {fileID: 0}
@@ -16255,6 +16392,26 @@ MonoBehaviour:
   moveSensitivity: 0.5
   moveSpeed: 7
   iceSensitivity: 0.03
+--- !u!114 &114244057703352202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1293243869925782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fda3fdc53432714e9c200646a167efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1929774165907464, guid: 56e6dfed3a1e3e840b469101e46017b6,
+    type: 2}
+  parent: {fileID: 4259664070678644}
+  cooldown: 8
+  onRelease: 0
+  reticle: {fileID: 0}
+  emitterNum: 0
+  cooldownWheel: {fileID: 0}
+  cooldownValue: 0
 --- !u!114 &114278859869558346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16267,7 +16424,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  targetString: 
+  targetString: Cursor Position
+  once: 0
+  speed: Infinity
+--- !u!114 &114283539425424666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907090068997406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce8233c448c6cc49b9b321f482c8728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  targetString: Cursor Position
   once: 0
   speed: Infinity
 --- !u!114 &114312331625291114
@@ -16282,7 +16454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  targetString: 
+  targetString: Cursor Position
   once: 0
   speed: Infinity
 --- !u!114 &114319163977663280
@@ -16297,9 +16469,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  targetString: 
+  targetString: Cursor Position
   once: 0
   speed: Infinity
+--- !u!114 &114327856865475078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1276424992046056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fda3fdc53432714e9c200646a167efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1206972722638112, guid: 6322ae082e5efef45a2104036049c645,
+    type: 2}
+  parent: {fileID: 4259664070678644}
+  cooldown: 1
+  onRelease: 0
+  reticle: {fileID: 0}
+  emitterNum: 0
+  cooldownWheel: {fileID: 0}
+  cooldownValue: 0
 --- !u!114 &114421639154208182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16312,7 +16504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  targetString: 
+  targetString: Cursor Position
   once: 0
   speed: Infinity
 --- !u!114 &114445799682025104
@@ -16347,7 +16539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  targetString: 
+  targetString: Cursor Position
   once: 0
   speed: Infinity
 --- !u!114 &114502460229029826
@@ -16384,7 +16576,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 1587935743365270, guid: 8d06f97d887d54a409c4878be84acad3,
     type: 2}
   parent: {fileID: 0}
-  cooldown: 1.25
+  cooldown: 1.4
   onRelease: 0
   reticle: {fileID: 0}
   emitterNum: 0
@@ -16462,9 +16654,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  targetString: 
+  targetString: Cursor Positon
   once: 0
   speed: Infinity
+--- !u!114 &114679762858337932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353450708330736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fda3fdc53432714e9c200646a167efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1929774165907464, guid: 4cecf6d06633e77429aab3acdbcdf379,
+    type: 2}
+  parent: {fileID: 4259664070678644}
+  cooldown: 10
+  onRelease: 0
+  reticle: {fileID: 0}
+  emitterNum: 0
+  cooldownWheel: {fileID: 0}
+  cooldownValue: 0
 --- !u!114 &114723208968194190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16477,7 +16689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  targetString: 
+  targetString: Cursor Position
   once: 0
   speed: Infinity
 --- !u!114 &114765603627076656
@@ -16500,6 +16712,26 @@ MonoBehaviour:
   emitterNum: 0
   cooldownWheel: {fileID: 0}
   cooldownValue: 0
+--- !u!114 &114856416498327958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1390958221153914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fda3fdc53432714e9c200646a167efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1695996774596224, guid: 1b15add3d0e85c941b4a429d6de62e00,
+    type: 2}
+  parent: {fileID: 0}
+  cooldown: 3
+  onRelease: 0
+  reticle: {fileID: 0}
+  emitterNum: 0
+  cooldownWheel: {fileID: 0}
+  cooldownValue: 0
 --- !u!114 &114873019418759526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16512,7 +16744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  targetString: 
+  targetString: Cursor Position
   once: 0
   speed: Infinity
 --- !u!114 &114913192597672778
@@ -16547,7 +16779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  targetString: 
+  targetString: Cursor Position
   once: 0
   speed: Infinity
 --- !u!114 &114938753100691744

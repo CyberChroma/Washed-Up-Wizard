@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 114664274429811530}
   m_Layer: 0
   m_Name: Move and Emit
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,6 +207,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 1713469478113504, guid: 1d1929248d4e8a2448d958dea71f6903,
     type: 2}
   parent: {fileID: 0}
+  parentString: 
   delay: 0.5
   randDelay: 0
   numToSpawn: 2

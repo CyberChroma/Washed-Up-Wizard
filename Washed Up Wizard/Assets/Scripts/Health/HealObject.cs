@@ -17,7 +17,7 @@ public class HealObject : MonoBehaviour {
 		Heal ();
 	}
 
-	public void Heal () {
+	void Heal () {
 		health.currentHealth += healAmount; // Increases the health
 		if (health.currentHealth > health.startHealth) { // If the health is greater than the max health
 			health.currentHealth = health.startHealth; // Sets the health to the max health

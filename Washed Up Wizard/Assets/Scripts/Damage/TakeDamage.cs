@@ -6,7 +6,7 @@ public class TakeDamage : MonoBehaviour {
 
 	private Health health; // The health script to track
 	private bool takingDamageOverTime = false; // Whether the object is currently taking damage over time
-	private float currentDamagePerSecond; // The amount of damage the object is taking per second
+    private float currentDamagePerSecond = 0; // The amount of damage the object is taking per second
 	private bool canTakeDamage = true; // Whether the object can take damage at this time
 
 	// Use this for initialization
