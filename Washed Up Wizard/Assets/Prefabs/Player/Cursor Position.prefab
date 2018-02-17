@@ -43,6 +43,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1787126934578392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4056114572825902}
+  - component: {fileID: 114820775333935642}
+  m_Layer: 0
+  m_Name: Drop and Explode Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4056114572825902
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1787126934578392}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4268554716323774}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4268554716323774
 Transform:
   m_ObjectHideFlags: 1
@@ -50,10 +79,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580007106747644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4471871036222418}
+  - {fileID: 4056114572825902}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -63,7 +93,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1658776910360176}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,14 +111,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fda3fdc53432714e9c200646a167efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 1681863653313454, guid: 04f0adc29fc989e4e910ffd87bf6d5b9,
+  objectToSpawn: {fileID: 1313840374646338, guid: 04f0adc29fc989e4e910ffd87bf6d5b9,
     type: 2}
-  parentObject: 0
   parent: {fileID: 0}
   cooldown: 5
-  OnRelease: 1
+  onRelease: 1
   reticle: {fileID: 1476823255981896, guid: eb8cfef064a071441ababff41580d959, type: 2}
   emitterNum: 0
+  cooldownWheel: {fileID: 0}
+  cooldownValue: 0
 --- !u!114 &114219827797806332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,4 +131,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e018df4ad4498d4f91139e9f61fb659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeCamera: {fileID: 0}
+--- !u!114 &114820775333935642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1787126934578392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fda3fdc53432714e9c200646a167efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1821561499274860, guid: d12cad216d28fc0498fa9708754aca06,
+    type: 2}
+  parent: {fileID: 0}
+  cooldown: 4
+  onRelease: 1
+  reticle: {fileID: 1476823255981896, guid: eb8cfef064a071441ababff41580d959, type: 2}
+  emitterNum: 0
+  cooldownWheel: {fileID: 0}
+  cooldownValue: 0

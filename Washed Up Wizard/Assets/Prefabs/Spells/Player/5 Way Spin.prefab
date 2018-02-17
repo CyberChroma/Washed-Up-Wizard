@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  targetString: Cursor Position
   once: 0
   speed: 10
 --- !u!114 &114756164303717760
@@ -82,9 +83,10 @@ MonoBehaviour:
   objectToSpawn: {fileID: 1717343498352472, guid: 00305869a8827a541a1d22d8c47ecd95,
     type: 2}
   parent: {fileID: 0}
+  parentString: 
   delay: 0
   randDelay: 0
   numToSpawn: 5
-  radius: 360
+  radius: 288
   offset: 0
   spawnedObjects: []
