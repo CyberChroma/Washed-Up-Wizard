@@ -8,18 +8,20 @@ public class PauseManager : MonoBehaviour {
 	public GameObject controlsScreen; // Reference to the control screen panel
     public GameObject inputController;
     public GameObject player;
+    public KeyCode pause = KeyCode.Escape;  // The key to pause the game
+
 
 	[HideInInspector] public bool isPaused; // Bool for if the game is paused
+    [HideInInspector] public bool inputP;
 
-	private SpecialInputReceiver specialInputReciever;
     private MoveInputReceiver moveInputReceiver;
     private SpellInputReceiver spellInputReceiver;
     private ComponentInputReceiver componentInputReceiver;
     private PlayerAbilities playerAbilities;
 
+
 	// Use this for initialization
 	void Start () {
-        specialInputReciever = inputController.GetComponent<SpecialInputReceiver> ();
         moveInputReceiver = inputController.GetComponent<MoveInputReceiver>();
         spellInputReceiver = inputController.GetComponent<SpellInputReceiver>();
         componentInputReceiver = inputController.GetComponent<ComponentInputReceiver>();
@@ -29,7 +31,8 @@ public class PauseManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (specialInputReciever.inputP && !isPaused) { // Getting input to pause the game and making sure the game is not already paused
+        inputP = Input.GetKeyDown (pause); // Getting input for pausing
+		if (inputP && !isPaused) { // Getting input to pause the game and making sure the game is not already paused
 			Pause ();
 		}
 	}

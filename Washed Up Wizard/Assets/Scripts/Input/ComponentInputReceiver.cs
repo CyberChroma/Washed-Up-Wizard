@@ -15,6 +15,12 @@ public class ComponentInputReceiver : MonoBehaviour {
 		inputC = new bool[components.Length];
 	}
 
+    void OnDisable () {
+        for (int i = 0; i < inputC.Length; i++) { // Goes through each element of the array
+            inputC [i] = false; // Getting input for component
+        }
+    }
+
 	// Update is called once per frame
 	void Update () {
 		if (components.Length != inputC.Length) { // If these arrays are different sizes
