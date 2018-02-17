@@ -6,11 +6,15 @@ public class FollowTargetLerp : MonoBehaviour {
 
 	public float smoothing = 0.5f; // Smoothing applied to following
 	public Rigidbody target; // The target to follow
+    public string targetString;
 
 	private Rigidbody rb; // This object's rigidbody
 
 	void Awake () {
 		rb = GetComponent<Rigidbody> (); // Getting the reference
+        if (!target && targetString != string.Empty) {
+            target = GameObject.Find(targetString).GetComponent<Rigidbody>();
+        }
 	}
 
 	void FixedUpdate () {

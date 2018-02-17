@@ -6,6 +6,7 @@ public class SpawnObjectsByTime : MonoBehaviour {
 
 	public GameObject objectToSpawn; // The object to spawn
     public Transform parent; // The object to parent the spawned object under
+    public string parentString;
     public float delay = 1; // The time between spawning
     public float randDelay = 0.1f; // Adds slight randomness to the delay
 	public int numToSpawn = 5; // The number of objects to spawn
@@ -19,13 +20,16 @@ public class SpawnObjectsByTime : MonoBehaviour {
 
 	void Awake () {
 		spellsParent = GameObject.Find ("Spells").transform; // Getting the reference
+        if (!parent && parentString != string.Empty) {
+            parent = GameObject.Find(parentString).transform;
+        }
 	}
 
 	void OnEnable () {
 		canSpawn = true;
         if (delay == 0) {
             Spawn();
-            gameObject.SetActive (false);
+            enabled = false;
         }
 	}
 

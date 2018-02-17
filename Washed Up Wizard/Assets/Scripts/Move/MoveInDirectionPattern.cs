@@ -33,8 +33,8 @@ public class MoveInDirectionPattern : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		moveInDirection.speed = Mathf.MoveTowards (moveInDirection.speed, states [stateNum].speed, states [stateNum].speedChangeSpeed); // Changing the speed
-		moveInDirection.dir = Vector3.MoveTowards (moveInDirection.dir, states [stateNum].dir, states [stateNum].dirChangeSpeed); // Changing the direction
+        moveInDirection.speed = Mathf.MoveTowards (moveInDirection.speed, states [stateNum].speed, states [stateNum].speedChangeSpeed * Time.deltaTime); // Changing the speed
+        moveInDirection.dir = Vector3.MoveTowards (moveInDirection.dir, states [stateNum].dir, states [stateNum].dirChangeSpeed * Time.deltaTime); // Changing the direction
 		if (timeToNextState <= Time.time) { // Seeing the time has elapsed
 			NextState ();
 		}
