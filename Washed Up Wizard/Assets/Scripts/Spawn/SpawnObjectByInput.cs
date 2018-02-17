@@ -13,6 +13,7 @@ public class SpawnObjectByInput : MonoBehaviour {
 	public int emitterNum = 0; // The emitter number
 	public Slider cooldownWheel; // The cooldown wheel 
 
+    [HideInInspector] public float cooldownValue = 0;
 	private bool canSpawn = true; // Whether the emitter can spawn objects
     // References to scripts and gameobjects
 	private SpellInputReceiver spellInputReceiver;
@@ -49,7 +50,8 @@ public class SpawnObjectByInput : MonoBehaviour {
 			}
 		}
 		if (!canSpawn) {
-			cooldownWheel.value -= Time.deltaTime;
+            cooldownValue -= Time.deltaTime;
+            cooldownWheel.value = cooldownValue;
 		}
 	}
 
@@ -78,6 +80,7 @@ public class SpawnObjectByInput : MonoBehaviour {
 	IEnumerator WaitToSpawn () { // Waits before spawning another object
 		canSpawn = false;
 		cooldownWheel.gameObject.SetActive (true);
+        cooldownValue = cooldown;
 		cooldownWheel.value = cooldown;
 		yield return new WaitForSeconds (cooldown);
 		canSpawn = true;

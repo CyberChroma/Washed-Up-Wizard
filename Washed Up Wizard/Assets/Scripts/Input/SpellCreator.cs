@@ -24,8 +24,8 @@ public class SpellCreator : MonoBehaviour {
 	private SpellInputReceiver spellInputReceiver;
 	private SpawnObjectByInput tempSpawnObjectByInput;
 	private Transform tempSpellSprite; // Temporary reference to the spell sprite
-	private GameObject[] activeEmitters = new GameObject[3]; // References to the active spell emitter
-	private GameObject[] activeSpellSprites = new GameObject[3]; // References to the spell sprites
+    private GameObject[] activeEmitters = new GameObject[3]; // References to the active spell emitter
+    private GameObject[] activeSpellSprites = new GameObject[3]; // References to the spell sprites
 
 	// Use this for initialization
 	void Start () {
@@ -96,17 +96,34 @@ public class SpellCreator : MonoBehaviour {
                     if (GameObject.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name + " Emitter")) { // If the spell emitter exists
 						tempSpawnObjectByInput = GameObject.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name + " Emitter").GetComponent<SpawnObjectByInput> (); // Gets a reference to the emitter
 						tempSpawnObjectByInput.emitterNum = i + 1; // Setting up the emitter to the button
-                        cooldownWheels [i].maxValue = tempSpawnObjectByInput.cooldown; // Setting the max value of the cooldown wheel
-                        if (tempSpawnObjectByInput.cooldownWheel) {
-                            cooldownWheels[i].value = tempSpawnObjectByInput.cooldownWheel.value;
-                            tempSpawnObjectByInput.cooldownWheel.value = 0;
-                        }
 						tempSpawnObjectByInput.cooldownWheel = cooldownWheels [i]; // Assigning the cooldown wheel
+                        tempSpawnObjectByInput.cooldownWheel.value = tempSpawnObjectByInput.cooldownValue;
+                        cooldownWheels [i].maxValue = tempSpawnObjectByInput.cooldown; // Setting the max value of the cooldown wheel
+                        if (tempSpawnObjectByInput.cooldownValue <= 0) {
+                            cooldownWheels[i].gameObject.SetActive(false);
+                        } else {
+                            cooldownWheels[i].gameObject.SetActive(true);
+                        }
 						if (activeSpellsPanel.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name)) { // If the spell image exists
 							tempSpellSprite = activeSpellsPanel.Find ((playerSpellsReference.spells [spellID [0]].componentSpells [spellID [1] * 10 + spellID [2]]).name); // Getting the reference
 							tempSpellSprite.position = spellSlots [i].transform.position; // Setting the position of the sprite
 							tempSpellSprite.gameObject.SetActive (true); // Enabling the sprite
 						}
+                        // Removing references if the spell was active in another spell slot
+                        for (int j = 0; j < activeEmitters.Length; j++) {
+                            if (activeEmitters [j] == tempSpawnObjectByInput.gameObject) {
+                                activeEmitters [j] = null;
+                            }
+                        }
+                        for (int j = 0; j < activeSpellSprites.Length; j++) {
+                            if (activeSpellSprites [j] == tempSpellSprite.gameObject) {
+                                activeSpellSprites [j] = null;
+                                //cooldownWheels [i].value = cooldownWheels[j].value;
+                                cooldownWheels [i].gameObject.SetActive(true);
+                                cooldownWheels [j].value = 0;
+                                cooldownWheels [j].gameObject.SetActive(false);
+                            }
+                        }
                         // Setting references
 						activeEmitters [i] = tempSpawnObjectByInput.gameObject;
 						activeSpellSprites [i] = tempSpellSprite.gameObject;
