@@ -8,6 +8,7 @@ public class DemoStart : MonoBehaviour {
     public GameObject inputController;
     public FollowTargetLerp cameraMove;
     public GameObject demoStartScreen;
+    public float runTime = 1.2f;
 
     private PlayerMoveInput playerMoveInput;
 
@@ -29,7 +30,7 @@ public class DemoStart : MonoBehaviour {
         playerMoveInput.overrideInput = true;
         playerMoveInput.v = 1;
         playerMoveInput.h = 0;
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(runTime);
         playerMoveInput.v = 0;
         playerMoveInput.h = 0;
         yield return new WaitForSeconds(0.5f);

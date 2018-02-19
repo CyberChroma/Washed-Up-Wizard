@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class MeleeEnemyAI : MonoBehaviour {
 
-    // This enemy's attack pattern is to move, shoot a progrctile, then move again
-
-	[System.Serializable]
-	public class Boundaries { // The box for the player to be in for the enemy to follow
-		public float minx = -20;
-		public float maxx = 20;
-		public float miny = -20;
-		public float maxy = 20;
-	}
+    // This enemy's attack pattern is to run at the player and attack them
 
 	public float moveSensitivity = 0.1f; // Used to make the enemy movement less snappy
     public bool fallStart = false;
     public float fallSpeed = 10;
     public float height = 0;
-    public Boundaries boundaries; // Reference to the boundaries (above)
+    public float radius = 20;
 
     private bool active = false;
 	private Animator anim; // Reference to the animator
@@ -51,7 +43,7 @@ public class MeleeEnemyAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (active && player && (player.position.x > boundaries.minx && player.position.x < boundaries.maxx && player.position.z > boundaries.miny && player.position.z < boundaries.maxy)) { 
+        if (active && player && (player.position.x > transform.position.x - radius && player.position.x < transform.position.x + radius && player.position.z > transform.position.z - radius && player.position.z < transform.position.z + radius)) { 
             Vector3 dir = player.position - transform.position; // Sets its direction
             dir = new Vector3(dir.x, 0, dir.z); // Elimintates y value
             enemyMove.dir = Vector3.Lerp (enemyMove.dir, dir.normalized, 0.25f); // Sets the magnitude to 1
