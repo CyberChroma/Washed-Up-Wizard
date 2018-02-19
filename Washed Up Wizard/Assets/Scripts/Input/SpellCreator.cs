@@ -12,6 +12,7 @@ public class SpellCreator : MonoBehaviour {
 	public Slider[] cooldownWheels; // The cooldown wheel slider
 	public ActivateFollowTarget componentsPanel; // The script that moves the panel
 	public Transform activeSpellsPanel; // The active spells panel
+    public GameObject inputController;
 
 	[HideInInspector] public bool creatingSpell = false; // Whether the player is creating a spell
 	private bool canCreate = true; // Whether the player can create a spell
@@ -31,8 +32,8 @@ public class SpellCreator : MonoBehaviour {
 	void Start () {
         // Getting references
 		playerSpellsReference = GetComponent<PlayerSpellsReference> ();
-		componentInputReceiver = GameObject.Find ("Input Controller").GetComponent<ComponentInputReceiver> ();
-		spellInputReceiver = GameObject.Find ("Input Controller").GetComponent<SpellInputReceiver> ();
+        componentInputReceiver = inputController.GetComponent<ComponentInputReceiver> ();
+        spellInputReceiver = inputController.GetComponent<SpellInputReceiver> ();
 	}
 	
 	// Update is called once per frame

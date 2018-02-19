@@ -12,6 +12,7 @@ public class SpawnObjectByInput : MonoBehaviour {
 	public GameObject reticle; // The reticle to use when the button is held down
 	public int emitterNum = 0; // The emitter number
 	public Slider cooldownWheel; // The cooldown wheel 
+    public GameObject inputController;
 
     [HideInInspector] public float cooldownValue = 0;
 	private bool canSpawn = true; // Whether the emitter can spawn objects
@@ -24,7 +25,7 @@ public class SpawnObjectByInput : MonoBehaviour {
 
 	void Start () {
         // Getting references
-		spellInputReceiver = GameObject.Find ("Input Controller").GetComponent<SpellInputReceiver>();
+        spellInputReceiver = inputController.GetComponent<SpellInputReceiver>();
 		cursorPosition = GameObject.Find ("Cursor Position").transform;
 		spellsParent = GameObject.Find ("Spells").transform;
 		spellCreator = GameObject.Find ("Spell Creation Controller").GetComponent<SpellCreator> ();

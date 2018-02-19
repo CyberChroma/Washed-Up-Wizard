@@ -14,18 +14,9 @@ public class PauseManager : MonoBehaviour {
 	[HideInInspector] public bool isPaused; // Bool for if the game is paused
     [HideInInspector] public bool inputP;
 
-    private MoveInputReceiver moveInputReceiver;
-    private SpellInputReceiver spellInputReceiver;
-    private ComponentInputReceiver componentInputReceiver;
-    private PlayerAbilities playerAbilities;
-
 
 	// Use this for initialization
 	void Start () {
-        moveInputReceiver = inputController.GetComponent<MoveInputReceiver>();
-        spellInputReceiver = inputController.GetComponent<SpellInputReceiver>();
-        componentInputReceiver = inputController.GetComponent<ComponentInputReceiver>();
-        playerAbilities = player.GetComponent<PlayerAbilities>();
 		Resume ();
 	}
 
@@ -44,12 +35,7 @@ public class PauseManager : MonoBehaviour {
 	void Pause () { // Pausing the game
 		pauseScreen.SetActive (true); // Activates the pause screen panel
 		Time.timeScale = 0; // Freezes time
-        if (moveInputReceiver) {
-            moveInputReceiver.enabled = false;
-            spellInputReceiver.enabled = false;
-            componentInputReceiver.enabled = false;
-            playerAbilities.enabled = false;
-        }
+        inputController.SetActive(false);
 		isPaused = true; // Setting the bool
 	}
 
@@ -57,12 +43,7 @@ public class PauseManager : MonoBehaviour {
 		controlsScreen.SetActive (false); // Deactivates the control screen panel
 		pauseScreen.SetActive (false); // Deactivates the pause screen panel
 		Time.timeScale = 1; // Unfreezes time
-        if (moveInputReceiver) {
-            moveInputReceiver.enabled = true;
-            spellInputReceiver.enabled = true;
-            componentInputReceiver.enabled = true;
-            playerAbilities.enabled = true;
-        }
+        inputController.SetActive(true);
 		isPaused = false; // Setting the bool
 
 	}

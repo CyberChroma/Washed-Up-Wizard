@@ -30,9 +30,10 @@ public class DemoEnd : MonoBehaviour {
         activated = true;
         cameraMove.enabled = false;
         inputController.SetActive(false);
+        playerMoveInput.overrideInput = true;
         playerMoveInput.v = 1;
         playerMoveInput.h = 0;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1);
         demoCompleteScreen.SetActive(true);
     }
 }

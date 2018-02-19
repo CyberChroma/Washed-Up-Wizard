@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement; // Used to change scenes
 
 public class PlayerDeathSceneReset : MonoBehaviour {
 
-	public float delay = 2; // How long after the player has died should the scene reset
+	public float reloadDelay = 2; // How long after the player has died should the scene reset
 
     private Health health;
     private bool resetting = false;
@@ -18,12 +18,15 @@ public class PlayerDeathSceneReset : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (health.currentHealth <= 0 && !resetting) {
-            StartCoroutine(ResetScene());
+            StartCoroutine(ResetScene (reloadDelay));
             resetting = true;
+        }
+        if (Input.GetKeyDown(KeyCode.R)) {
+            StartCoroutine(ResetScene (0));
         }
 	}
 
-	IEnumerator ResetScene () {
+    IEnumerator ResetScene (float delay) {
 		yield return new WaitForSeconds (delay); // Waits...
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name); // Resets the scene
 	}
