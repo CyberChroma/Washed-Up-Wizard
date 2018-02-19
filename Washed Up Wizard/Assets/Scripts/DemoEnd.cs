@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DemoEnd : MonoBehaviour {
 
@@ -15,7 +16,9 @@ public class DemoEnd : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         playerMoveInput = player.GetComponent<PlayerMoveInput>();
-        demoCompleteScreen.SetActive(false);
+        if (demoCompleteScreen) {
+            demoCompleteScreen.SetActive(false);
+        }
 	}
 
     void OnTriggerEnter (Collider other) {
@@ -34,6 +37,11 @@ public class DemoEnd : MonoBehaviour {
         playerMoveInput.v = 1;
         playerMoveInput.h = 0;
         yield return new WaitForSeconds(1);
-        demoCompleteScreen.SetActive(true);
+        if (demoCompleteScreen) {
+            demoCompleteScreen.SetActive(true);
+        }
+        else {
+            SceneManager.LoadScene("Wendigo Boss");
+        }
     }
 }
