@@ -54,7 +54,10 @@ public class RangedEnemyAI : MonoBehaviour {
 			emitter.SetActive (false); // Sets it inactive
 		}
 		targetLocation.position = new Vector3 (Random.Range (boundaries.minx, boundaries.maxx), 0, Random.Range (boundaries.miny, boundaries.maxy)); // Setting the object move location to a random location
-	}
+        if (anim) {
+            anim.speed = Random.Range(0.9f, 1.1f);
+        }
+    }
 
 	// Update is called once per frame
 	void FixedUpdate () {

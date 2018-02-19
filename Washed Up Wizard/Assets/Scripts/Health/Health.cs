@@ -37,9 +37,11 @@ public class Health : MonoBehaviour {
 			if (audioClip) { // If the audio clip is not null
 				audioSource = Instantiate (soundPlayer, transform.position, Quaternion.identity).GetComponent<AudioSource> (); // Creates the sound player and gets the reference to the audio source
 			}
-			audioSource.volume = volume; // Sets the volume
-			audioSource.clip = audioClip; // Sets the clip
-			audioSource.Play (); // Plays the sound
+            if (audioSource) {
+			    audioSource.volume = volume; // Sets the volume
+			    audioSource.clip = audioClip; // Sets the clip
+			    audioSource.Play (); // Plays the sound
+            }
             if (anim) {
                 anim.SetTrigger("Death");
             }

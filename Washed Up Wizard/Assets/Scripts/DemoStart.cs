@@ -14,7 +14,9 @@ public class DemoStart : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         playerMoveInput = player.GetComponent<PlayerMoveInput>();
-        demoStartScreen.SetActive(false);
+        if (demoStartScreen) {
+            demoStartScreen.SetActive(false);
+        }
 	}
 
     void Start () {
@@ -34,7 +36,9 @@ public class DemoStart : MonoBehaviour {
         cameraMove.enabled = true;
         inputController.SetActive(true);
         playerMoveInput.overrideInput = false;
-        demoStartScreen.SetActive(true);
-        Time.timeScale = 0;
+        if (demoStartScreen) {
+            demoStartScreen.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 }

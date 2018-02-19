@@ -19,9 +19,9 @@ public class MoveByConstantSpeed : MonoBehaviour {
 	void OnEnable () {
 		if (once) {
 			if (relative) {
-				rb.velocity = (transform.TransformDirection (dir.normalized) * speed); // Setting the velocity
+				rb.velocity = (transform.TransformDirection (dir) * speed); // Setting the velocity
 			} else {
-				rb.velocity = (dir.normalized * speed); // Setting the velocity
+				rb.velocity = (dir * speed); // Setting the velocity
 			}
 		}
 	}
@@ -30,9 +30,9 @@ public class MoveByConstantSpeed : MonoBehaviour {
 	void FixedUpdate () {
 		if (!once) {
 			if (relative) {
-				rb.velocity = (transform.TransformDirection (dir.normalized) * speed); // Setting the velocity
+				rb.velocity = (transform.TransformDirection (dir) * speed); // Setting the velocity
 			} else {
-				rb.velocity = (dir.normalized * speed); // Setting the velocity
+				rb.velocity = (dir * speed); // Setting the velocity
 			}
 		}
 	}

@@ -1,0 +1,80 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MeleeEnemyAI : MonoBehaviour {
+
+    // This enemy's attack pattern is to move, shoot a progrctile, then move again
+
+	[System.Serializable]
+	public class Boundaries { // The box for the player to be in for the enemy to follow
+		public float minx = -20;
+		public float maxx = 20;
+		public float miny = -20;
+		public float maxy = 20;
+	}
+
+	public float moveSensitivity = 0.1f; // Used to make the enemy movement less snappy
+    public bool fallStart = false;
+    public float fallSpeed = 10;
+    public float height = 0;
+    public Boundaries boundaries; // Reference to the boundaries (above)
+
+    private bool active = false;
+	private Animator anim; // Reference to the animator
+    private Health health;
+	private MoveByConstantSpeed enemyMove; // Reference to the move script
+	private Transform player; // Reference to the player
+    private float moveSpeed;
+
+	// Use this for initialization
+	void Awake () {
+        enemyMove = GetComponent<MoveByConstantSpeed> (); // Getting the reference
+        anim = GetComponentInChildren<Animator> (); // Getting the reference
+        health = GetComponent<Health> ();
+		player = GameObject.Find ("Player").transform; // Getting the reference
+	}
+
+	void OnEnable () {
+        if (fallStart) {
+            moveSpeed = enemyMove.speed;
+            enemyMove.speed = fallSpeed;
+            enemyMove.dir = Vector3.down * fallSpeed;
+            active = false;
+        } else {
+            active = true;
+        }
+        if (anim) {
+            anim.speed = Random.Range(0.9f, 1.1f);
+        }
+	}
+
+	// Update is called once per frame
+	void FixedUpdate () {
+        if (active && player && (player.position.x > boundaries.minx && player.position.x < boundaries.maxx && player.position.z > boundaries.miny && player.position.z < boundaries.maxy)) { 
+            Vector3 dir = player.position - transform.position; // Sets its direction
+            dir = new Vector3(dir.x, 0, dir.z); // Elimintates y value
+            enemyMove.dir = Vector3.Lerp (enemyMove.dir, dir.normalized, 0.25f); // Sets the magnitude to 1
+            Quaternion targetRotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), 0.5f); // Looks at the player
+            transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0); // Ignores x and z values
+        }
+        else if (fallStart && Vector3.Distance(transform.position, new Vector3(transform.position.x, height, transform.position.z)) < 1f) { 
+            active = true;
+            enemyMove.speed = moveSpeed;
+            enemyMove.dir = Vector3.zero;
+        }
+        else {
+            enemyMove.dir = Vector3.Lerp (enemyMove.dir, Vector3.zero, 0.25f);
+        }
+        if (health.currentHealth <= 0) {
+            enabled = false;
+            health.ChangeHealth();
+        }
+	}
+
+	void OnCollisionEnter (Collision other) { // If the enemy collided with something, change its move target.
+        if (other.collider.CompareTag ("Player") && anim) {
+            anim.SetTrigger("Attack");
+        }
+	}
+}

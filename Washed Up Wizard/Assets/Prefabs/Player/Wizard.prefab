@@ -6740,7 +6740,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897975555965378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -49}
+  m_LocalPosition: {x: 0, y: 1, z: -68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4072139213509710}
@@ -16395,9 +16395,9 @@ MonoBehaviour:
   moveSensitivity: 0.5
   moveSpeed: 7
   iceSensitivity: 0.03
-  inputController: {fileID: 0}
   v: 0
   h: 0
+  overrideInput: 0
 --- !u!114 &114244057703352202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16834,7 +16834,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportCooldown: 1
   reticle: {fileID: 1476823255981896, guid: eb8cfef064a071441ababff41580d959, type: 2}
-  inputController: {fileID: 0}
 --- !u!114 &114948268821554292
 MonoBehaviour:
   m_ObjectHideFlags: 1
