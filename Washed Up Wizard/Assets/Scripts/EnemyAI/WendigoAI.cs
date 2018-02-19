@@ -268,10 +268,10 @@ public class WendigoAI : MonoBehaviour {
 	}
 
 	void CalculatePhase () {
-		if ((health.currentHealth < health.startHealth / 3) && phase == 2) {
+		if ((health.currentHealth <= health.startHealth / 3) && phase == 2) {
 			StopAllCoroutines ();
 			StartCoroutine (WaitToChangePhase (3));
-		} else if ((health.currentHealth < health.startHealth / 3 * 2) && phase == 1) {
+		} else if ((health.currentHealth <= health.startHealth / 3 * 2) && phase == 1) {
 			StopAllCoroutines ();
 			StartCoroutine (WaitToChangePhase (2));
 		}
@@ -287,9 +287,9 @@ public class WendigoAI : MonoBehaviour {
 		cameraFollowTargetLerp.target = GetComponent<Rigidbody> ();
 		GetComponent<TakeDamage> ().enabled = false;
 		player.GetComponent<TakeDamage> ().enabled = false;
-		player.GetComponent<PlayerMoveInput> ().enabled = false;
-		inputController.GetComponent<SpellInputReceiver> ().enabled = false;
-		inputController.GetComponent<SpecialInputReceiver> ().enabled = false;
+        inputController.SetActive(false);
+        player.GetComponent<PlayerMoveInput>().enabled = false;
+        player.GetComponentInChildren<Animator>().SetBool("IsWalking", false);
 		moveByForce.dir = Vector3.zero;
         anim.SetTrigger("Roar");
 		yield return new WaitForSeconds (phaseChangeDelay);
@@ -298,9 +298,8 @@ public class WendigoAI : MonoBehaviour {
 		cameraFollowTargetLerp.target = player.GetComponent<Rigidbody> ();
 		GetComponent<TakeDamage> ().enabled = true;
 		player.GetComponent<TakeDamage> ().enabled = true;
-		player.GetComponent<PlayerMoveInput> ().enabled = true;
-		inputController.GetComponent<SpellInputReceiver> ().enabled = true;
-		inputController.GetComponent<SpecialInputReceiver> ().enabled = true;
+        inputController.SetActive(true);
+        player.GetComponent<PlayerMoveInput>().enabled = true;
 		SpawnHarpies ();
 		if (phase == 2) {
 			StartCoroutine (WaitToAttack (Random.Range (phase2.timeBetweenAttacks - phase2.randomDelay, phase2.timeBetweenAttacks + phase2.randomDelay)));

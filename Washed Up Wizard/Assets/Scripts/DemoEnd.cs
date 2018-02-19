@@ -17,11 +17,6 @@ public class DemoEnd : MonoBehaviour {
         playerMoveInput = player.GetComponent<PlayerMoveInput>();
         demoCompleteScreen.SetActive(false);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     void OnTriggerEnter (Collider other) {
         if (other.CompareTag("Player")) {
