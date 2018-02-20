@@ -130,8 +130,7 @@ MonoBehaviour:
   oneTime: 1
   tagsToDamage:
   - Enemy
-  push: 1
-  pushForce: 5
+  - Breakable
 --- !u!114 &114240027081188322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,6 +146,7 @@ MonoBehaviour:
   tagsToDestroy:
   - Enemy
   - Enemy Shield
+  - Breakable
   tagsToIgnore: []
 --- !u!114 &114850079163278188
 MonoBehaviour:

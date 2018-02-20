@@ -59,6 +59,7 @@ public class MeleeEnemyAI : MonoBehaviour {
             enemyMove.dir = Vector3.Lerp (enemyMove.dir, Vector3.zero, 0.25f);
         }
         if (health.currentHealth <= 0) {
+            enemyMove.dir = Vector3.zero;
             enabled = false;
             health.ChangeHealth();
         }

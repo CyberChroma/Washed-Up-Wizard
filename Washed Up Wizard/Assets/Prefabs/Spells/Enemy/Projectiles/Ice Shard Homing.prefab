@@ -242,8 +242,6 @@ MonoBehaviour:
   oneTime: 1
   tagsToDamage:
   - Player
-  push: 1
-  pushForce: 3
 --- !u!114 &114249633605372066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -283,6 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  targetString: 
   once: 0
   speed: 2
 --- !u!114 &114651089264470408
@@ -318,4 +317,5 @@ MonoBehaviour:
   - Player
   - Player Shield
   - Environment
+  - Breakable
   tagsToIgnore: []

@@ -4063,6 +4063,7 @@ GameObject:
   - component: {fileID: 114054958253158588}
   - component: {fileID: 114682407746599788}
   - component: {fileID: 114788232100603568}
+  - component: {fileID: 114293222458026598}
   m_Layer: 12
   m_Name: Zombie Doctor
   m_TagString: Enemy
@@ -15724,6 +15725,21 @@ MonoBehaviour:
   dir: {x: 0, y: 0, z: 0}
   relative: 0
   once: 0
+--- !u!114 &114293222458026598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788999975810212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e97d91ff98f2e4ab6ff305d6b92e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnParticles: {fileID: 1800233777693634, guid: aa2ec2e61b0e5f14f9c79ddbc0194b8a,
+    type: 2}
+  deathParticles: {fileID: 1800233777693634, guid: aa2ec2e61b0e5f14f9c79ddbc0194b8a,
+    type: 2}
 --- !u!114 &114682407746599788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15775,7 +15791,7 @@ MonoBehaviour:
   soundPlayer: {fileID: 0}
   volume: 0.5
   disableOnDeath: 1
-  disableDelay: 0
+  disableDelay: 1.5
   healthChanged: 0
   currentHealth: 0
   canBeHit: 1

@@ -247,6 +247,7 @@ MonoBehaviour:
   - Enemy
   - Enemy Shield
   - Environment
+  - Breakable
   tagsToIgnore: []
 --- !u!114 &114557299788561636
 MonoBehaviour:
@@ -290,8 +291,7 @@ MonoBehaviour:
   oneTime: 1
   tagsToDamage:
   - Enemy
-  push: 1
-  pushForce: 3
+  - Breakable
 --- !u!135 &135754532930921382
 SphereCollider:
   m_ObjectHideFlags: 1

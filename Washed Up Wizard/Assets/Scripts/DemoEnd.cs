@@ -37,7 +37,7 @@ public class DemoEnd : MonoBehaviour {
         playerMoveInput.overrideInput = true;
         playerMoveInput.v = 1;
         playerMoveInput.h = 0;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         if (demoCompleteScreen) {
             demoCompleteScreen.SetActive(true);
         }

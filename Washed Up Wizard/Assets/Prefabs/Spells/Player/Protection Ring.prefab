@@ -472,6 +472,7 @@ MonoBehaviour:
   - Enemy
   - Enemy Shield
   - Environment
+  - Breakable
   tagsToIgnore: []
 --- !u!114 &114145152981858766
 MonoBehaviour:
@@ -503,8 +504,7 @@ MonoBehaviour:
   oneTime: 1
   tagsToDamage:
   - Enemy
-  push: 1
-  pushForce: 5
+  - Breakable
 --- !u!114 &114273240118803290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -521,6 +521,7 @@ MonoBehaviour:
   - Enemy
   - Enemy Shield
   - Environment
+  - Breakable
   tagsToIgnore: []
 --- !u!114 &114286581010123148
 MonoBehaviour:
@@ -538,6 +539,7 @@ MonoBehaviour:
   - Enemy
   - Enemy Shield
   - Environment
+  - Breakable
   tagsToIgnore: []
 --- !u!114 &114362147298971830
 MonoBehaviour:
@@ -554,8 +556,7 @@ MonoBehaviour:
   oneTime: 1
   tagsToDamage:
   - Enemy
-  push: 1
-  pushForce: 5
+  - Breakable
 --- !u!114 &114367454379812636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -571,8 +572,7 @@ MonoBehaviour:
   oneTime: 1
   tagsToDamage:
   - Enemy
-  push: 1
-  pushForce: 5
+  - Breakable
 --- !u!114 &114448307383398024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -588,8 +588,7 @@ MonoBehaviour:
   oneTime: 1
   tagsToDamage:
   - Enemy
-  push: 1
-  pushForce: 5
+  - Breakable
 --- !u!114 &114521353583276050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -633,6 +632,7 @@ MonoBehaviour:
   - Enemy
   - Enemy Shield
   - Environment
+  - Breakable
   tagsToIgnore: []
 --- !u!114 &114892241446921310
 MonoBehaviour:
