@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1600
     height: 767
-  m_MinSize: {x: 683, y: 492}
+  m_MinSize: {x: 583, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 10194
+  controlID: 50
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1226
     height: 767
-  m_MinSize: {x: 406, y: 492}
+  m_MinSize: {x: 306, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 10170
+  controlID: 51
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +154,10 @@ MonoBehaviour:
     y: 0
     width: 1226
     height: 496
-  m_MinSize: {x: 406, y: 221}
+  m_MinSize: {x: 306, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 10171
+  controlID: 52
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -201,15 +201,15 @@ MonoBehaviour:
     y: 0
     width: 968
     height: 496
-  m_MinSize: {x: 204, y: 221}
+  m_MinSize: {x: 104, y: 121}
   m_MaxSize: {x: 4004, y: 4021}
-  m_ActualView: {fileID: 12}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
   - {fileID: 15}
   - {fileID: 12}
-  m_Selected: 2
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 2
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -311,7 +311,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoom: 0
     m_UniformScale: 1
     m_UpDirection: 1
@@ -372,7 +372,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 6}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 1a1beeff1a2ceeffd430eeffc240eeff6a52eeffec68eefff868eefffa0cf8ffec0df8ff8e1ff8ff0a36f8ff1036f8ff1e4ffbff224ffbff5267fbfff67efbff3ca5fbffd4d3fbff58e5fbff3c06fcff0607fcffac18fcff2c2ffcff362ffcff1cb2ffff9efbffff0000000058bb010096be0100aebf010070c301007eb00200cc670900
+    m_ExpandedIDs: ce36feff2e48feff5658ffff7893ffffc2d3ffff00000000365e00005e5e0000828f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -428,9 +428,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.9093065, y: -24.631798, z: 23.479828}
+    m_Target: {x: -27.61103, y: 1.8362007, z: 32.2139}
     speed: 2
-    m_Value: {x: 3.9093065, y: -24.631798, z: 23.479828}
+    m_Value: {x: -27.61103, y: 1.8362007, z: 32.2139}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -454,13 +454,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.12476086, y: -0.069887586, z: 0.008810669, w: -0.9896833}
+    m_Target: {x: 0.067740396, y: -0.6171796, z: 0.05345694, w: 0.78207606}
     speed: 2
-    m_Value: {x: -0.12476086, y: -0.069887586, z: 0.008810669, w: -0.9896833}
+    m_Value: {x: 0.067740396, y: -0.6171796, z: 0.05345694, w: 0.78207606}
   m_Size:
-    m_Target: 78.06748
+    m_Target: 100.65618
     speed: 2
-    m_Value: 78.06748
+    m_Value: 100.65618
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -707,20 +707,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Models/Enviroment
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 68
   m_LastFolders:
-  - Assets/Models/Enviroment
+  - Assets/Scenes
   m_LastFoldersGridSize: 68
   m_LastProjectPath: C:\Users\Brandon\Documents\GitHub\Washed-Up-Wizard\Washed Up
     Wizard
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f0290000
-    m_LastClickedID: 10736
-    m_ExpandedIDs: 000000000828000040280000b2290000ee2a0000a02b00000c2e0000302e0000702e00006a4900006c4900006e49000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 379}
+    m_SelectedIDs: 984a0000
+    m_LastClickedID: 19096
+    m_ExpandedIDs: 000000001a460000484600005a470000a04900001c4a0000a64a0000b84a0000f04a0000ee590000f0590000f259000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -748,7 +748,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000828000040280000b2290000ee2a0000a02b00000c2e0000302e0000702e00006a4900006c4900006e49000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000001a460000484600005a470000a04900001c4a0000a64a0000b84a0000f04a0000ee590000f0590000f2590000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
