@@ -9,6 +9,7 @@ public class DemoEnd : MonoBehaviour {
     public GameObject inputController;
     public FollowTargetLerp cameraMove;
     public GameObject demoCompleteScreen;
+    public string nextLevel;
 
     private bool activated;
     private PlayerMoveInput playerMoveInput;
@@ -41,7 +42,7 @@ public class DemoEnd : MonoBehaviour {
             demoCompleteScreen.SetActive(true);
         }
         else {
-            SceneManager.LoadScene("Wendigo Boss");
+            SceneManager.LoadScene(nextLevel);
         }
     }
 }
