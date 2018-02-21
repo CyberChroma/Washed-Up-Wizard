@@ -9,6 +9,7 @@ public class PlayerDeathSceneReset : MonoBehaviour {
 
     private Health health;
     private bool resetting = false;
+    private PauseManager pauseManager;
 
 	// Use this for initialization
 	void Awake () {
@@ -18,16 +19,13 @@ public class PlayerDeathSceneReset : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (health.currentHealth <= 0 && !resetting) {
-            StartCoroutine(ResetScene (reloadDelay));
+            StartCoroutine(ResetScene ());
             resetting = true;
-        }
-        if (Input.GetKeyDown(KeyCode.R)) {
-            StartCoroutine(ResetScene (0));
         }
 	}
 
-    IEnumerator ResetScene (float delay) {
-		yield return new WaitForSeconds (delay); // Waits...
+    IEnumerator ResetScene () {
+        yield return new WaitForSeconds (reloadDelay); // Waits...
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name); // Resets the scene
 	}
 }

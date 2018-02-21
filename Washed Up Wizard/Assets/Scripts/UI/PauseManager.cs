@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour {
 
 	public GameObject pauseScreen; // Reference to the pause screen panel
 	public GameObject controlsScreen; // Reference to the control screen panel
+    public GameObject changeControlsScreen;
     public GameObject inputController;
     public GameObject player;
     public KeyCode pause = KeyCode.Escape;  // The key to pause the game
@@ -40,6 +42,7 @@ public class PauseManager : MonoBehaviour {
 	}
 
 	public void Resume () { // Resuming the game
+        changeControlsScreen.SetActive(false);
 		controlsScreen.SetActive (false); // Deactivates the control screen panel
 		pauseScreen.SetActive (false); // Deactivates the pause screen panel
 		Time.timeScale = 1; // Unfreezes time
@@ -48,6 +51,15 @@ public class PauseManager : MonoBehaviour {
 
 	}
 
+    public void Reset () {
+        SceneManager.LoadScene("Hospital Area");
+    }
+
+    public void ChangeControls () {
+        pauseScreen.SetActive(false);
+        changeControlsScreen.SetActive(true);
+    }
+
 	public void Controls () { // Bringing up the controls screen
 		controlsScreen.SetActive (true); // Activates the control screen panel
 		pauseScreen.SetActive (false); // Deactivates the pause screen panel
@@ -55,6 +67,7 @@ public class PauseManager : MonoBehaviour {
 
 	public void Back () { // Going back to the pause screen
 		controlsScreen.SetActive (false); // Deactivates the control screen panel
+        changeControlsScreen.SetActive (false);
 		pauseScreen.SetActive (true); // Activates the pause screen panel
 	}
 

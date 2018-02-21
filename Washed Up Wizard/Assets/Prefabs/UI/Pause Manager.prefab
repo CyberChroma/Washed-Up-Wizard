@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224374332190451444}
   - component: {fileID: 114975331755861702}
+  - component: {fileID: 114801402232891066}
   m_Layer: 5
   m_Name: Pause Manager
   m_TagString: Untagged
@@ -27,6 +28,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114801402232891066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1463045143206216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7adc0714fc32274c9fa998d73ceedcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputManager: {fileID: 0}
+  keyTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114975331755861702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -40,9 +64,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 0}
   controlsScreen: {fileID: 0}
+  changeControlsScreen: {fileID: 0}
   inputController: {fileID: 0}
   player: {fileID: 0}
+  pause: 27
   isPaused: 0
+  inputP: 0
 --- !u!224 &224374332190451444
 RectTransform:
   m_ObjectHideFlags: 1

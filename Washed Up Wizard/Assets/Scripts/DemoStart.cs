@@ -10,10 +10,12 @@ public class DemoStart : MonoBehaviour {
     public GameObject demoStartScreen;
     public float runTime = 1.2f;
 
+    private PauseManager pauseManager;
     private PlayerMoveInput playerMoveInput;
 
 	// Use this for initialization
 	void Awake () {
+        pauseManager = GameObject.Find("Pause Manager").GetComponent<PauseManager>();
         playerMoveInput = player.GetComponent<PlayerMoveInput>();
         if (demoStartScreen) {
             demoStartScreen.SetActive(false);
@@ -38,7 +40,9 @@ public class DemoStart : MonoBehaviour {
         inputController.SetActive(true);
         playerMoveInput.overrideInput = false;
         if (demoStartScreen) {
+            pauseManager.isPaused = true;
             demoStartScreen.SetActive(true);
+            inputController.SetActive(false);
             Time.timeScale = 0;
         }
     }
