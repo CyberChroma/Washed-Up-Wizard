@@ -10,6 +10,7 @@ public class DamageByTouchCollision : MonoBehaviour {
     public bool push = true; // Whether the object is pushed away when damaged (explosion force)
 	public float pushForce = 5; // The force to push the object away
 
+    [HideInInspector] public bool canDamage = true;
 	private bool damaged = false; // Whether the object has damaged something at least once (For oneTime)
 
 	void OnCollisionEnter (Collision other) {
@@ -25,15 +26,17 @@ public class DamageByTouchCollision : MonoBehaviour {
 	}
 
 	void Damage (Collision other) {
-		foreach (string damageTag in tagsToDamage) { // Goes through each tag
-			if (other.collider.CompareTag (damageTag)) { // If the object is something this can damage
-				if (other.collider.GetComponent<TakeDamage> ()) {
-					other.collider.GetComponent<TakeDamage> ().Damage (damageAmount); // Sends the damage
-				}
-				if (push) { // If the object should be pushed
-					other.collider.GetComponent<Rigidbody> ().AddForce ((other.transform.position - transform.position) * pushForce, ForceMode.Impulse); // Pushes the object
-				}
-			}
-		}
+        if (canDamage) {
+            foreach (string damageTag in tagsToDamage) { // Goes through each tag
+                if (other.collider.CompareTag(damageTag)) { // If the object is something this can damage
+                    if (other.collider.GetComponent<TakeDamage>()) {
+                        other.collider.GetComponent<TakeDamage>().Damage(damageAmount); // Sends the damage
+                    }
+                    if (push) { // If the object should be pushed
+                        other.collider.GetComponent<Rigidbody>().AddForce((other.transform.position - transform.position) * pushForce, ForceMode.Impulse); // Pushes the object
+                    }
+                }
+            }
+        }
 	}
 }

@@ -6740,7 +6740,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897975555965378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -68}
+  m_LocalPosition: {x: 0, y: 1, z: -52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4072139213509710}
@@ -16834,6 +16834,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportCooldown: 1
   reticle: {fileID: 1476823255981896, guid: eb8cfef064a071441ababff41580d959, type: 2}
+  teleportExplosion: {fileID: 1527179019113562, guid: e772900eb7ce73043983f63619654f63,
+    type: 2}
 --- !u!114 &114948268821554292
 MonoBehaviour:
   m_ObjectHideFlags: 1
