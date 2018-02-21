@@ -20357,6 +20357,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114081124530012912, guid: c8d5d174ac3915a49b36b1a2e6e9adea,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 641311247}
     - target: {fileID: 114469340026519772, guid: c8d5d174ac3915a49b36b1a2e6e9adea,
         type: 2}
       propertyPath: targets.Array.data[0]
@@ -20367,11 +20372,6 @@ Prefab:
       propertyPath: targets.Array.data[1]
       value: 
       objectReference: {fileID: 484390082}
-    - target: {fileID: 114081124530012912, guid: c8d5d174ac3915a49b36b1a2e6e9adea,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 641311247}
     - target: {fileID: 1095979120582412, guid: c8d5d174ac3915a49b36b1a2e6e9adea, type: 2}
       propertyPath: m_Name
       value: Components Panel
@@ -25270,21 +25270,6 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114404111448200822, guid: c6584d18aba05e648a4b82cc97a984bd,
-        type: 2}
-      propertyPath: fullColor.a
-      value: 0.98039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 114404111448200822, guid: c6584d18aba05e648a4b82cc97a984bd,
-        type: 2}
-      propertyPath: halfColor.a
-      value: 0.98039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 114404111448200822, guid: c6584d18aba05e648a4b82cc97a984bd,
-        type: 2}
-      propertyPath: emptyColor.a
-      value: 0.98039216
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6584d18aba05e648a4b82cc97a984bd, type: 2}
@@ -50958,15 +50943,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1622455198401276, guid: e3cf389834d58694b8755898eeab0b60, type: 2}
-      propertyPath: m_Name
-      value: Combinations Panel
-      objectReference: {fileID: 0}
-    - target: {fileID: 114671220823811718, guid: e3cf389834d58694b8755898eeab0b60,
+    - target: {fileID: 114006416638455104, guid: e3cf389834d58694b8755898eeab0b60,
         type: 2}
-      propertyPath: target
+      propertyPath: playerSpellReference
       value: 
-      objectReference: {fileID: 1549116450}
+      objectReference: {fileID: 1654452515}
     - target: {fileID: 114935163497203420, guid: e3cf389834d58694b8755898eeab0b60,
         type: 2}
       propertyPath: targets.Array.data[0]
@@ -50977,20 +50958,14 @@ Prefab:
       propertyPath: targets.Array.data[1]
       value: 
       objectReference: {fileID: 25138637}
-    - target: {fileID: 114006416638455104, guid: e3cf389834d58694b8755898eeab0b60,
+    - target: {fileID: 114671220823811718, guid: e3cf389834d58694b8755898eeab0b60,
         type: 2}
-      propertyPath: playerSpellReference
+      propertyPath: target
       value: 
-      objectReference: {fileID: 1654452515}
-    - target: {fileID: 114311699741753830, guid: e3cf389834d58694b8755898eeab0b60,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.3137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 114311699741753830, guid: e3cf389834d58694b8755898eeab0b60,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.15686275
+      objectReference: {fileID: 1549116450}
+    - target: {fileID: 1622455198401276, guid: e3cf389834d58694b8755898eeab0b60, type: 2}
+      propertyPath: m_Name
+      value: Combinations Panel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3cf389834d58694b8755898eeab0b60, type: 2}
