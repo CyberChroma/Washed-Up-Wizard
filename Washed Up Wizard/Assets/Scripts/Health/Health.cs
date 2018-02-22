@@ -20,7 +20,7 @@ public class Health : MonoBehaviour {
     private bool dead = false;
     private bool healingOverTime = false; // Whether the object is currently taking damage over time
     private float currentHealPerSecond = 0; // The amount of damage the object is taking per second
-
+    private Rigidbody rb;
     private Animator anim;
 	private AudioSource audioSource; // Reference to the sound player
 
@@ -28,6 +28,7 @@ public class Health : MonoBehaviour {
 	void Start () {
 		// Setting start values
 		currentHealth = startHealth;
+        rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
 	}
 
@@ -41,6 +42,9 @@ public class Health : MonoBehaviour {
 			    audioSource.volume = volume; // Sets the volume
 			    audioSource.clip = audioClip; // Sets the clip
 			    audioSource.Play (); // Plays the sound
+            }
+            if (rb) {
+                rb.isKinematic = true;
             }
             if (anim) {
                 anim.SetTrigger("Death");
