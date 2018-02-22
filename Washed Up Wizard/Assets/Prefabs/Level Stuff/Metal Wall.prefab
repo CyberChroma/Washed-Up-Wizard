@@ -25,9 +25,9 @@ GameObject:
   - component: {fileID: 114455224979815764}
   - component: {fileID: 114553973504350642}
   - component: {fileID: 114590736796937332}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Metal Wall
-  m_TagString: Enemy
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,13 +38,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1470615988463960}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 38, y: 2.25, z: -29}
-  m_LocalScale: {x: 0.8, y: 1, z: 1.2}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 2.25, z: -53}
+  m_LocalScale: {x: 1.8000038, y: 1, z: 1.2000014}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 180}
 --- !u!23 &23893444051263820
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -145,5 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnParticles: {fileID: 1800233777693634, guid: aa2ec2e61b0e5f14f9c79ddbc0194b8a,
     type: 2}
-  deathParticles: {fileID: 1800233777693634, guid: aa2ec2e61b0e5f14f9c79ddbc0194b8a,
+  deathParticles: {fileID: 1800233777693634, guid: 4cd77ae17560f654cb5b87f1736158c1,
     type: 2}

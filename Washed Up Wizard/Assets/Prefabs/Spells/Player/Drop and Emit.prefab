@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 54293661247159746}
   - component: {fileID: 23740772168667206}
   - component: {fileID: 33907255223370714}
-  - component: {fileID: 114483903650999054}
   - component: {fileID: 114997228497090218}
   - component: {fileID: 114230709295992784}
   - component: {fileID: 135727378197231170}
@@ -161,22 +160,6 @@ MonoBehaviour:
     type: 2}
   deathParticles: {fileID: 1527179019113562, guid: 94644fba39c360e40a6141bdf1e3e8f8,
     type: 2}
---- !u!114 &114483903650999054
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1821561499274860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 214aadae9e17298458d2b2bc1099a46d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 2
-  oneTime: 1
-  tagsToDamage:
-  - Enemy
-  - Breakable
 --- !u!114 &114834700327028246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,8 +202,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   tagsToDestroy:
-  - Enemy
-  - Enemy Shield
   - Environment
   - Breakable
   tagsToIgnore: []
@@ -234,5 +215,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
