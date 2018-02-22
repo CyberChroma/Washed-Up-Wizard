@@ -4928,6 +4928,7 @@ GameObject:
   - component: {fileID: 54665653705387846}
   - component: {fileID: 65220063332326076}
   - component: {fileID: 82402163125549816}
+  - component: {fileID: 114047724534279854}
   m_Layer: 10
   m_Name: Wizard
   m_TagString: Player
@@ -16301,6 +16302,18 @@ MonoBehaviour:
   cooldownWheel: {fileID: 0}
   inputController: {fileID: 0}
   cooldownValue: 0
+--- !u!114 &114047724534279854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897975555965378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f74fa7f067868439249534963e01da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 114001303672907608}
 --- !u!114 &114127489707250282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16412,7 +16425,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 1929774165907464, guid: 56e6dfed3a1e3e840b469101e46017b6,
     type: 2}
   parent: {fileID: 4259664070678644}
-  cooldown: 8
+  cooldown: 10
   onRelease: 0
   reticle: {fileID: 0}
   emitterNum: 0
@@ -16685,7 +16698,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 1929774165907464, guid: 4cecf6d06633e77429aab3acdbcdf379,
     type: 2}
   parent: {fileID: 4259664070678644}
-  cooldown: 10
+  cooldown: 15
   onRelease: 0
   reticle: {fileID: 0}
   emitterNum: 0

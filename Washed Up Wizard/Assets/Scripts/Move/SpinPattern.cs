@@ -15,12 +15,12 @@ public class SpinPattern : MonoBehaviour {
 	public State[] states;
 
     private int stateNum = 0; // The state the object is currently in
-	private Spin spin; // Reference to the spin script
+	private SpinInDirection spin; // Reference to the spin script
     private float timeToNextState; // The time to change states
 
 	// Use this for initialization
 	void Awake () {
-        spin = GetComponent<Spin> (); // Getting the reference
+        spin = GetComponent<SpinInDirection> (); // Getting the reference
 	}
 
 	void OnEnable () {
