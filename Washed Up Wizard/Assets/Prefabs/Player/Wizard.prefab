@@ -4928,7 +4928,6 @@ GameObject:
   - component: {fileID: 54665653705387846}
   - component: {fileID: 65220063332326076}
   - component: {fileID: 82402163125549816}
-  - component: {fileID: 114047724534279854}
   m_Layer: 10
   m_Name: Wizard
   m_TagString: Player
@@ -6741,7 +6740,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897975555965378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -69}
+  m_LocalPosition: {x: 0, y: 1, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4072139213509710}
@@ -16300,20 +16299,8 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
---- !u!114 &114047724534279854
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1897975555965378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47f74fa7f067868439249534963e01da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 114127489707250282}
 --- !u!114 &114127489707250282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16371,7 +16358,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114221225609000822
 MonoBehaviour:
@@ -16392,7 +16379,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114235372352578082
 MonoBehaviour:
@@ -16430,7 +16417,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114278859869558346
 MonoBehaviour:
@@ -16511,7 +16498,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114421639154208182
 MonoBehaviour:
@@ -16547,7 +16534,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114476907205558870
 MonoBehaviour:
@@ -16583,7 +16570,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114543002036924286
 MonoBehaviour:
@@ -16604,7 +16591,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114550905417365806
 MonoBehaviour:
@@ -16625,7 +16612,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114554566295832998
 MonoBehaviour:
@@ -16646,7 +16633,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114626884325535386
 MonoBehaviour:
@@ -16667,7 +16654,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114677887696797058
 MonoBehaviour:
@@ -16703,7 +16690,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114723208968194190
 MonoBehaviour:
@@ -16739,7 +16726,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114856416498327958
 MonoBehaviour:
@@ -16760,7 +16747,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114873019418759526
 MonoBehaviour:
@@ -16796,7 +16783,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114938155450398058
 MonoBehaviour:
@@ -16832,7 +16819,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!114 &114947629130595406
 MonoBehaviour:
@@ -16868,7 +16855,7 @@ MonoBehaviour:
   reticle: {fileID: 0}
   emitterNum: 0
   cooldownWheel: {fileID: 0}
-  inputController: {fileID: 0}
+  inputController: {fileID: 1791125438957158}
   cooldownValue: 0
 --- !u!137 &137007511626518326
 SkinnedMeshRenderer:
