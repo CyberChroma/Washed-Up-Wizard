@@ -26,8 +26,8 @@ GameObject:
   - component: {fileID: 33907255223370714}
   - component: {fileID: 114997228497090218}
   - component: {fileID: 114230709295992784}
-  - component: {fileID: 135727378197231170}
   - component: {fileID: 114934425929337764}
+  - component: {fileID: 136075765501374594}
   m_Layer: 0
   m_Name: Drop and Emit Object
   m_TagString: Projectile
@@ -205,8 +205,8 @@ MonoBehaviour:
   - Environment
   - Breakable
   tagsToIgnore: []
---- !u!135 &135727378197231170
-SphereCollider:
+--- !u!136 &136075765501374594
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -214,6 +214,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.25
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.57500005
+  m_Height: 1.1500001
+  m_Direction: 1
+  m_Center: {x: -0.002705276, y: 0.036251992, z: 0.022251993}

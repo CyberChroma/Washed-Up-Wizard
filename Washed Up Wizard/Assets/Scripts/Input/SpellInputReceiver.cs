@@ -33,7 +33,7 @@ public class SpellInputReceiver : MonoBehaviour {
         }
         GameObject currentSelection = EventSystem.current.currentSelectedGameObject;
         for (int i = 0; i < inputSD.Length; i++) {
-            inputSD[i] = Input.GetKeyDown(spellSlots[i]); // Getting input for spell slots
+            inputSD[i] = Input.GetKey(spellSlots[i]); // Getting input for spell slots
             if (currentSelection && currentSelection.GetComponent<Button>() != null && spellSlots [i] == KeyCode.Mouse0) {
                 inputSD [i] = false;
             }

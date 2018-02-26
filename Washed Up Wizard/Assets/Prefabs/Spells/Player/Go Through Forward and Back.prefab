@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 135754532930921382}
   - component: {fileID: 82651791260614854}
   - component: {fileID: 114615021055683000}
+  - component: {fileID: 114459099775202564}
   m_Layer: 0
   m_Name: Go Through Forward and Back
   m_TagString: Projectile
@@ -230,6 +231,21 @@ MonoBehaviour:
   local: 1
   minSpeed: -1000
   maxSpeed: 1000
+--- !u!114 &114459099775202564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1981315787946438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e256af723abe10f41a0a24a836268fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  tagsToDestroy:
+  - Environment
+  tagsToIgnore: []
 --- !u!114 &114557299788561636
 MonoBehaviour:
   m_ObjectHideFlags: 1
