@@ -25,11 +25,14 @@ public class Health : MonoBehaviour {
 	private AudioSource audioSource; // Reference to the sound player
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		// Setting start values
-		currentHealth = startHealth;
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
+        currentHealth = startHealth;
+        if (gameObject.name == "Player") {
+            GameObject.Find("Scene Saver").GetComponent<SceneSaver>().TransferHealth ();
+        }
 	}
 
 	public void ChangeHealth () {

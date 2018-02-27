@@ -21,7 +21,7 @@ public class HealthBarUI : MonoBehaviour {
 	void Awake () {
 		slider = GetComponent<Slider> (); // Getting reference
 		fillImage = transform.Find ("Fill Area/Fill").GetComponent<Image> (); // Getting the reference
-		slider.maxValue = health.startHealth; // Setting initial value
+        slider.maxValue = health.startHealth; // Setting initial value
 		currentSliderMoveSpeed = startSliderMoveSpeed; // Setting the slider move speed
 	}
 	
