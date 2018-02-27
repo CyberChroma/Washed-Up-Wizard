@@ -140,7 +140,7 @@ public class SpellCreator : MonoBehaviour {
 
 	IEnumerator WaitToCreateSpell () { // Waits then resets spell crafting
 		canCreate = false;
-		yield return new WaitForSeconds (0.2f);
+		yield return new WaitForSeconds (0.5f);
 		glows [0].SetActive (false);
 		glows [1].SetActive (false);
 		glows [2].SetActive (false);
