@@ -32,7 +32,7 @@ public class LookAtTarget : MonoBehaviour {
 
 	void Look () {
         if (target && target.position - transform.position != Vector3.zero) { // If the target exists
-			Quaternion targetRotation = Quaternion.RotateTowards (transform.rotation, Quaternion.LookRotation (target.position - transform.position), speed); // Rotate towards the target
+            Quaternion targetRotation = Quaternion.RotateTowards (transform.rotation, Quaternion.LookRotation (target.position - transform.position), speed * 10 * Time.deltaTime); // Rotate towards the target
 			transform.rotation = Quaternion.Euler (0, targetRotation.eulerAngles.y, 0); // Ignoring the x and z rotations
 		}
 	}

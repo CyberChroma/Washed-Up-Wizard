@@ -14303,7 +14303,7 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: 5feb2395b9f3baf4ca8fb549d94f4775, type: 3}
   soundPlayer: {fileID: 1449778364141320, guid: 4b6330c22faace9439ec09516161fea4,
     type: 2}
-  volume: 0.1
+  volume: 0.05
   disableOnDeath: 1
   disableDelay: 2
   healthChanged: 0
@@ -14350,8 +14350,6 @@ MonoBehaviour:
   oneTime: 0
   tagsToDamage:
   - Player
-  push: 1
-  pushForce: 2
 --- !u!114 &114483552445028442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14379,6 +14377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  targetString: 
   once: 1
   speed: Infinity
 --- !u!114 &114770616920051542

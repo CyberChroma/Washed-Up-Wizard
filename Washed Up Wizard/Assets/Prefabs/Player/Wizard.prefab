@@ -3428,7 +3428,7 @@ GameObject:
   - component: {fileID: 114502460229029826}
   - component: {fileID: 114677887696797058}
   m_Layer: 0
-  m_Name: Slimeball Emitter
+  m_Name: Bounce Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6740,7 +6740,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897975555965378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -68.8}
+  m_LocalPosition: {x: 0, y: 1, z: -52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4072139213509710}
@@ -16586,7 +16586,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 1587935743365270, guid: 8d06f97d887d54a409c4878be84acad3,
     type: 2}
   parent: {fileID: 0}
-  cooldown: 1.4
+  cooldown: 2
   onRelease: 0
   reticle: {fileID: 0}
   emitterNum: 0
@@ -16668,7 +16668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  targetString: Cursor Positon
+  targetString: Cursor Position
   once: 0
   speed: Infinity
 --- !u!114 &114679762858337932
