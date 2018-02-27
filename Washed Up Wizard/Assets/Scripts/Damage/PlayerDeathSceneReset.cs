@@ -18,7 +18,7 @@ public class PlayerDeathSceneReset : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (health.currentHealth <= 0 && !resetting) {
+        if (health.currentHealth <= 0 && !resetting || health.transform.position.y < -50) {
             StartCoroutine(ResetScene ());
             resetting = true;
         }
