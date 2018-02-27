@@ -60491,11 +60491,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114671220823811718, guid: e3cf389834d58694b8755898eeab0b60,
+    - target: {fileID: 114006416638455104, guid: e3cf389834d58694b8755898eeab0b60,
         type: 2}
-      propertyPath: target
+      propertyPath: playerSpellReference
       value: 
-      objectReference: {fileID: 1549116450}
+      objectReference: {fileID: 1654452515}
     - target: {fileID: 114935163497203420, guid: e3cf389834d58694b8755898eeab0b60,
         type: 2}
       propertyPath: targets.Array.data[0]
@@ -60506,11 +60506,11 @@ Prefab:
       propertyPath: targets.Array.data[1]
       value: 
       objectReference: {fileID: 25138637}
-    - target: {fileID: 114006416638455104, guid: e3cf389834d58694b8755898eeab0b60,
+    - target: {fileID: 114671220823811718, guid: e3cf389834d58694b8755898eeab0b60,
         type: 2}
-      propertyPath: playerSpellReference
+      propertyPath: target
       value: 
-      objectReference: {fileID: 1654452515}
+      objectReference: {fileID: 1549116450}
     - target: {fileID: 1622455198401276, guid: e3cf389834d58694b8755898eeab0b60, type: 2}
       propertyPath: m_Name
       value: Combinations Panel
