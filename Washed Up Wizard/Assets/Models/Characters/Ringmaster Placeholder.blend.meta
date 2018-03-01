@@ -1129,6 +1129,15 @@ ModelImporter:
     4300310: Eyelashes
     7400000: Default Take
     9500000: //RootNode
+    13700000: Body
+    13700002: Eyelashes
+    13700004: Eyes
+    13700006: Hair
+    13700008: Mouth
+    13700010: Nose
+    13700012: Pants
+    13700014: Shirt
+    13700016: Shoes
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -1188,7 +1197,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -1224,7 +1233,7 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -1240,10 +1249,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
