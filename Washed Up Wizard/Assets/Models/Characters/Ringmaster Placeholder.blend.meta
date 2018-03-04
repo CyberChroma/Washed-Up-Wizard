@@ -659,6 +659,7 @@ ModelImporter:
     2100014: Mouth
     2100016: Nose
     2100018: Shoes
+    2100020: Face
     2300000: //RootNode
     2300002: Body
     2300004: Cube
@@ -1147,8 +1148,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Face
+    second: {fileID: 2100000, guid: e6646abae9872e44590fde58fbe88b47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Hair
-    second: {fileID: 2100000, guid: 1fb03da5c38123147abcd4d727e0d07f, type: 2}
+    second: {fileID: 2100000, guid: 247a5f652c733da4ab7c6d61d6ba7fc0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -1163,22 +1169,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Pants
-    second: {fileID: 2100000, guid: 2b3511e8c78080f45b5352ef8abd016c, type: 2}
+    second: {fileID: 2100000, guid: 819584b2f9c2f02428c7efce23a1545d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Shirt
-    second: {fileID: 2100000, guid: 9e43ca145e7afad46ba3289793758650, type: 2}
+    second: {fileID: 2100000, guid: c6e7633b09830fe41873e433b67ca4fd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Shoes
-    second: {fileID: 2100000, guid: adfc8e5182383fa4e94d04ee51c1170f, type: 2}
+    second: {fileID: 2100000, guid: b2bfbfb3fe5ce9f49acf3485969da75a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Skin
-    second: {fileID: 2100000, guid: b9ab97b286db9524f9c50d23b628c7a2, type: 2}
+    second: {fileID: 2100000, guid: bcc1c20b2b94a7d41970f4030912ec2f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
