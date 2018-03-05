@@ -17,6 +17,7 @@ public class RingmasterAI : MonoBehaviour {
     public float jumpForce;
     //public GameObject acrobatEmitter;
     //public GameObject rollingBallEmitter;
+    //public GameObject pedistal;
 
     private bool canSpawn = false;
     private bool isJumping = false;
@@ -60,20 +61,23 @@ public class RingmasterAI : MonoBehaviour {
         isJumping = true;
         canSpawn = false;
         movePos = jumpPoints[Random.Range(0, jumpPoints.Length - 1)];
-        rb.AddForce(Vector3.up * jumpForce * Time.deltaTime, ForceMode.Impulse);
+        rb.AddForce(Vector3.up * jumpForce * 100 * Time.deltaTime, ForceMode.Impulse);
     }
 
     void MoveToPos () {
         moveByForce.dir = (movePos.position - transform.position);
-        moveByForce.dir = new Vector3(moveByForce.dir.x, 0, moveByForce.dir.z);
-        transform.rotation = Quaternion.Slerp(transform.rotation, movePos.rotation, 0.1f);
-        if (Vector3.Distance(movePos.position, transform.position) <= 1) {
-            transform.position = movePos.position;
+        transform.rotation = Quaternion.Slerp(transform.rotation, movePos.rotation, 0.05f);
+        if (Vector3.Distance(movePos.position, transform.position) <= 0.1f) {
             transform.rotation = movePos.rotation;
+            rb.velocity = Vector3.zero;
             moveByForce.dir = Vector3.zero;
             isJumping = false;
             canSpawn = true;
             StartCoroutine(WaitToJump());
+        } else if (Vector3.Distance(new Vector3 (movePos.position.x, 0, movePos.position.z), new Vector3(transform.position.x, 0, transform.position.z)) <= 0.1f) {
+            moveByForce.dir = Vector3.zero;
+            transform.position = new Vector3 (movePos.position.x, transform.position.y, movePos.position.z);
+            rb.velocity = new Vector3 (0, rb.velocity.y, 0);
         }
     }
 }

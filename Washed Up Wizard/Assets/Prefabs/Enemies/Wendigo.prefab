@@ -13246,7 +13246,7 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: b8d1231d08123104983b63178c053cd2, type: 3}
   soundPlayer: {fileID: 1449778364141320, guid: 4b6330c22faace9439ec09516161fea4,
     type: 2}
-  volume: 0.25
+  volume: 0.4
   disableOnDeath: 1
   disableDelay: 4
   healthChanged: 0
@@ -13798,6 +13798,7 @@ MonoBehaviour:
   - Player
   push: 1
   pushForce: 5
+  canDamage: 1
 --- !u!137 &137115173882620014
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
