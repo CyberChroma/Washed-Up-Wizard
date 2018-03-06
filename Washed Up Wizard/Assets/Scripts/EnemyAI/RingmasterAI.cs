@@ -16,11 +16,12 @@ public class RingmasterAI : MonoBehaviour {
     public GameObject flamingHoopEmitter;
     public Transform[] jumpPoints;
 
-    public GameObject acrobatEmitter;
     public float timeBetweenAcrobats;
+    public GameObject acrobatEmitter;
 
     public float timeBetweenRollingBalls;
     public GameObject rollingBallEmitter;
+    public Transform pedistalJumpPoint;
     public GameObject pedistal;
 
     public AttackState attackState;
@@ -42,13 +43,16 @@ public class RingmasterAI : MonoBehaviour {
 	
     void OnEnable () {
         attackState = AttackState.RollingBall;
-        StartCoroutine(WaitToSpawn(timeBetweenFlamingHoops));
-        StartCoroutine(WaitToJump());
-        StartCoroutine(WaitToSpawnAcrobats());
+        if (attackState == AttackState.FlamingHoop) {
+            StartCoroutine(WaitToSpawn(timeBetweenFlamingHoops));
+            StartCoroutine(WaitToJump());
+        }
         if (attackState == AttackState.RollingBall) {
             rb.AddForce(Vector3.up * jumpForce * 100 * Time.deltaTime, ForceMode.Impulse);
-            movePos = jumpPoints[0];
+            movePos = pedistalJumpPoint;
+            isJumping = true;
         }
+        StartCoroutine(WaitToSpawnAcrobats());
     }
 
 	// Update is called once per frame
@@ -75,7 +79,7 @@ public class RingmasterAI : MonoBehaviour {
             }
         }
         if (canSpawnAcrobats) {
-            acrobatEmitter.transform.position = new Vector3(Random.Range(-20,20), 0, Random.Range(-20,20));
+            acrobatEmitter.transform.position = new Vector3 (Random.insideUnitCircle.x * 19, 0, Random.insideUnitCircle.y * 19);
             acrobatEmitter.SetActive(true);
             canSpawnAcrobats = false;
             StartCoroutine(WaitToSpawnAcrobats());
@@ -113,7 +117,10 @@ public class RingmasterAI : MonoBehaviour {
             moveByForce.dir = Vector3.zero;
             isJumping = false;
             canSpawn = true;
-            StartCoroutine(WaitToJump());
+            if (attackState == AttackState.FlamingHoop)
+            {
+                StartCoroutine(WaitToJump());
+            }
         } else if (Vector3.Distance(new Vector3 (movePos.position.x, 0, movePos.position.z), new Vector3(transform.position.x, 0, transform.position.z)) <= 0.1f) {
             moveByForce.dir = Vector3.zero;
             transform.position = new Vector3 (movePos.position.x, transform.position.y, movePos.position.z);

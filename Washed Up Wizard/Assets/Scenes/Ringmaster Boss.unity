@@ -463,6 +463,7 @@ Transform:
   - {fileID: 346111838}
   - {fileID: 1820320615}
   - {fileID: 2034134431}
+  - {fileID: 640684926}
   m_Father: {fileID: 566434938}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -555,7 +556,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4419876993552294, guid: 1eb6cfd2ad2e92647b08ef4db2637afa, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 4419876993552294, guid: 1eb6cfd2ad2e92647b08ef4db2637afa, type: 2}
       propertyPath: m_LocalRotation.x
@@ -634,6 +635,11 @@ Prefab:
       objectReference: {fileID: 1871898675}
     - target: {fileID: 114986894883698438, guid: 1eb6cfd2ad2e92647b08ef4db2637afa,
         type: 2}
+      propertyPath: pedistalJumpPoint
+      value: 
+      objectReference: {fileID: 640684926}
+    - target: {fileID: 114986894883698438, guid: 1eb6cfd2ad2e92647b08ef4db2637afa,
+        type: 2}
       propertyPath: pedistal
       value: 
       objectReference: {fileID: 1189072175}
@@ -672,6 +678,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &640684925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 640684926}
+  m_Layer: 0
+  m_Name: Pedistal Jump Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &640684926
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640684925}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 389998256}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &641311245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,7 +1596,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccb7e38a1a27e4e40af8ffa75e6711ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccb7e38a1a27e4e40af8ffa75e6711ae, type: 3}
       propertyPath: m_LocalPosition.z
