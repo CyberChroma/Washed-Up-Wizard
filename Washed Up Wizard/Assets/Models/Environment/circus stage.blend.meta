@@ -1,34 +1,26 @@
 fileFormatVersion: 2
 guid: 24072baacb03f4144891756e2945ac94
-timeCreated: 1519928856
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Circus_Arena
-    100004: Star
-    400000: //RootNode
-    400002: Circus_Arena
-    400004: Star
-    2100000: unnamed
-    2100002: Material_004
-    2100004: Material_001
+    100000: arena
+    100002: //RootNode
+    100004: star
+    400000: arena
+    400002: //RootNode
+    400004: star
+    2100000: circus_yellow
+    2100002: circus_whte
+    2100004: light_blue
     2100006: circus_red
-    2300000: //RootNode
-    2300002: Circus_Arena
-    2300004: Star
-    3300000: //RootNode
-    3300002: Circus_Arena
-    3300004: Star
-    4300000: Circle
-    4300002: Circus_Arena
-    4300004: Star
-<<<<<<< HEAD
-=======
-    6400000: Circus_Arena
-    6400002: Star
->>>>>>> e1d8d056b02d31432dbed6427ab628e3ec0e4040
+    2300000: arena
+    2300002: star
+    3300000: arena
+    3300002: star
+    4300000: star
+    4300002: arena
+    6400000: arena
+    6400002: star
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
@@ -61,10 +53,10 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 3
     meshCompression: 0
     addColliders: 1
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
@@ -102,7 +94,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

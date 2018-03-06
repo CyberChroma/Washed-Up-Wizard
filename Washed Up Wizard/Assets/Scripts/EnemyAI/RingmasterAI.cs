@@ -23,6 +23,7 @@ public class RingmasterAI : MonoBehaviour {
     public GameObject rollingBallEmitter;
     public Transform pedistalJumpPoint;
     public GameObject pedistal;
+    public Animator[] curtains;
 
     public AttackState attackState;
     private bool canSpawn = false;
@@ -69,7 +70,10 @@ public class RingmasterAI : MonoBehaviour {
             }
         } else if (attackState == AttackState.RollingBall) {
             if (canSpawn && !isJumping) {
-                rollingBallEmitter.transform.rotation = Quaternion.Euler(new Vector3 (0, 45 * Random.Range (0, 10), 0));
+                int curtainNum = Random.Range(0, curtains.Length);
+                rollingBallEmitter.transform.rotation = Quaternion.Euler(new Vector3 (0, curtainNum * 45, 0));
+                curtains[curtainNum].SetTrigger("Open and Close");
+                StartCoroutine(WaitToClose(curtainNum));
                 rollingBallEmitter.SetActive(true);
                 canSpawn = false;
                 StartCoroutine(WaitToSpawn(timeBetweenRollingBalls));
@@ -94,6 +98,16 @@ public class RingmasterAI : MonoBehaviour {
     IEnumerator WaitToSpawnAcrobats () {
         yield return new WaitForSeconds(timeBetweenAcrobats);
         canSpawnAcrobats = true;
+    }
+
+    IEnumerator WaitToClose (int curtainNum) {
+        yield return new WaitForSeconds(3.4f);
+        if (curtainNum + 4 >= curtains.Length) {
+            curtainNum -= 4;
+        } else {
+            curtainNum += 4;
+        }
+        curtains[curtainNum].SetTrigger("Open and Close");
     }
 
     IEnumerator WaitToJump () {
