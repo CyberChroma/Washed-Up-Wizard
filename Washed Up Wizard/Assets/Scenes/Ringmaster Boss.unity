@@ -404,7 +404,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 377896681}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -604,6 +604,16 @@ Prefab:
       propertyPath: jumpPoints.Array.data[8]
       value: 
       objectReference: {fileID: 2034134431}
+    - target: {fileID: 114986894883698438, guid: 1eb6cfd2ad2e92647b08ef4db2637afa,
+        type: 2}
+      propertyPath: rollingBallEmitter
+      value: 
+      objectReference: {fileID: 1871898675}
+    - target: {fileID: 114986894883698438, guid: 1eb6cfd2ad2e92647b08ef4db2637afa,
+        type: 2}
+      propertyPath: pedistal
+      value: 
+      objectReference: {fileID: 1189072175}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1eb6cfd2ad2e92647b08ef4db2637afa, type: 2}
   m_IsPrefabParent: 0
@@ -1575,6 +1585,10 @@ Prefab:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ccb7e38a1a27e4e40af8ffa75e6711ae, type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccb7e38a1a27e4e40af8ffa75e6711ae, type: 3}
   m_IsPrefabParent: 0
@@ -1874,6 +1888,10 @@ Prefab:
     - target: {fileID: 100000, guid: 24072baacb03f4144891756e2945ac94, type: 3}
       propertyPath: m_Layer
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 24072baacb03f4144891756e2945ac94, type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24072baacb03f4144891756e2945ac94, type: 3}
@@ -2282,26 +2300,44 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1871898676}
+  - component: {fileID: 1871898677}
   m_Layer: 0
   m_Name: Rolling Ball Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1871898676
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1871898675}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 566434938}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1871898677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1871898675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc8aefb54de5f84c991c0a74fba95a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1858750016356348, guid: 759d44abfbbe79f4b83dc882d5582366,
+    type: 2}
+  parent: {fileID: 0}
+  delay: 0
+  randDelay: 0
+  spawnedObject: {fileID: 0}
 --- !u!4 &1903648865 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4419876993552294, guid: 1eb6cfd2ad2e92647b08ef4db2637afa,
