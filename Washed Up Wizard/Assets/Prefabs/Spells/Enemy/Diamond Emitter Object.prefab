@@ -186,10 +186,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0
   tagsToDestroy:
-  - Enemy
-  - Enemy Shield
+  - Player
+  - Player Shield
   - Environment
-  - Breakable
   tagsToIgnore: []
 --- !u!114 &114615904994590898
 MonoBehaviour:
@@ -233,5 +232,4 @@ MonoBehaviour:
   damageAmount: 3
   oneTime: 1
   tagsToDamage:
-  - Enemy
-  - Breakable
+  - Player

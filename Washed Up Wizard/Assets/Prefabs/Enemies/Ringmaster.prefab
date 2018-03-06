@@ -15743,7 +15743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102b374c557785c41bda172c1e1a18bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackState: 0
+  jumpForce: 60
   timeBetweenFlamingHoops: 0.15
   timeBetweenJumps: 2
   flamingHoopEmitter: {fileID: 1751530010574110}
@@ -15757,10 +15757,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  jumpForce: 60
+  acrobatEmitter: {fileID: 0}
+  timeBetweenAcrobats: 1
   timeBetweenRollingBalls: 1
   rollingBallEmitter: {fileID: 0}
   pedistal: {fileID: 0}
+  attackState: 0
 --- !u!137 &137021666050970932
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
