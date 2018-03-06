@@ -7743,13 +7743,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1751530010574110}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4419876993552294}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4535641117350766
 Transform:
   m_ObjectHideFlags: 1
@@ -15743,6 +15743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102b374c557785c41bda172c1e1a18bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackState: 0
   timeBetweenFlamingHoops: 0.15
   timeBetweenJumps: 2
   flamingHoopEmitter: {fileID: 1751530010574110}
@@ -15757,6 +15758,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   jumpForce: 60
+  timeBetweenRollingBalls: 1
+  rollingBallEmitter: {fileID: 0}
+  pedistal: {fileID: 0}
 --- !u!137 &137021666050970932
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

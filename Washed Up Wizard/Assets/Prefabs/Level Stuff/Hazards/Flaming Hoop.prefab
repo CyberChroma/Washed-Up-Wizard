@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114788476292055864}
   m_Layer: 0
   m_Name: Flaming Hoop
-  m_TagString: Projectile
+  m_TagString: Enemy Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   delay: 0
   tagsToDestroy:
   - Player
-  - Environment
+  - Projectile
   tagsToIgnore: []
 --- !u!114 &114690337967209806
 MonoBehaviour:
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62181ba71f5fd42449c8b52201af81bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 20
   acceleration: 0
   dir: {x: 0, y: 0, z: 1}
   local: 1
