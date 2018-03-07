@@ -27,7 +27,7 @@ public class SceneSaver : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (health.currentHealth != currentHealth) {
+        if (health && health.currentHealth != currentHealth) {
             currentHealth = health.currentHealth;
         }
 	}
