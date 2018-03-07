@@ -1,28 +1,49 @@
 fileFormatVersion: 2
-guid: ccb7e38a1a27e4e40af8ffa75e6711ae
+guid: 28af0bd81d54ffd45a0666f6a36e4bfe
+timeCreated: 1520451683
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Bottom_Star
+    100000: ball
     100002: //RootNode
-    100004: Pedistals
-    100006: Top_Star
-    400000: Bottom_Star
+    100004: Star_001
+    100006: Star_002
+    100008: Star_003
+    100010: Star_004
+    100012: Star_005
+    100014: Star_006
+    400000: ball
     400002: //RootNode
-    400004: Pedistals
-    400006: Top_Star
-    2100000: Yellow
-    2100002: Blue
-    2100004: Grey
-    2300000: Bottom_Star
-    2300002: Pedistals
-    2300004: Top_Star
-    3300000: Bottom_Star
-    3300002: Pedistals
-    3300004: Top_Star
-    4300000: Bottom_Star
-    4300002: Top_Star
-    4300004: Pedistals
+    400004: Star_001
+    400006: Star_002
+    400008: Star_003
+    400010: Star_004
+    400012: Star_005
+    400014: Star_006
+    2100000: Curtain
+    2100002: Yellow
+    2300000: ball
+    2300002: Star_001
+    2300004: Star_002
+    2300006: Star_003
+    2300008: Star_004
+    2300010: Star_005
+    2300012: Star_006
+    3300000: ball
+    3300002: Star_001
+    3300004: Star_002
+    3300006: Star_003
+    3300008: Star_004
+    3300010: Star_005
+    3300012: Star_006
+    4300000: Star_006
+    4300002: Star_005
+    4300004: Star_004
+    4300006: Star_003
+    4300008: Star_002
+    4300010: Star_001
+    4300012: ball
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
@@ -58,10 +79,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -76,11 +97,11 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -96,10 +117,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

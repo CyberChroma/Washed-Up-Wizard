@@ -35,7 +35,7 @@ public class LaunchToTarget : MonoBehaviour {
         float angleBetweenObjects = Vector3.Angle(Vector3.forward, planarTarget - planarPostion) * (target.position.x > transform.position.x ? 1 : -1);
         Vector3 finalVelocity = Quaternion.AngleAxis(angleBetweenObjects, Vector3.up) * velocity;
         // Fire!
-        rb.AddForce(finalVelocity * rb.mass * (rb.drag + 1), ForceMode.Impulse);
+        rb.AddForce(finalVelocity * rb.mass, ForceMode.Impulse);
         enabled = false;
     }
 }

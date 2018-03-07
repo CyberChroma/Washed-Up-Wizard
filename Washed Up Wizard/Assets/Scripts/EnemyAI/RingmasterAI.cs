@@ -8,8 +8,8 @@ public class RingmasterAI : MonoBehaviour {
         FlamingHoop,
         RollingBall,
         HatBomb,
-        UnicycleCharge,
         Stomp,
+        UnicycleCharge,
         BalloonGun
     }
 
@@ -37,14 +37,20 @@ public class RingmasterAI : MonoBehaviour {
     public float timeBetweenStompJumps;
     public Transform playerOldPos;
 
+    public float chargeSpeed;
+    public float timeBetweenCharges;
+
     public AttackState attackState;
     private bool canSpawn = false;
     private bool isJumping = false;
+    private bool canCharge = true;
+    private bool charging = false;
     private bool canSpawnAcrobats = false;
     private Transform movePos;
     private Rigidbody rb;
     private MoveByForce moveByForce;
     private LaunchToTarget launchToTarget;
+    private Vector3 moveDir;
 
 	// Use this for initialization
 	void Awake () {
@@ -78,6 +84,11 @@ public class RingmasterAI : MonoBehaviour {
         if (attackState == AttackState.Stomp)
         {
             StartCoroutine(WaitToJump(timeBetweenStompJumps));
+            moveByForce.enabled = false;
+        }
+        if (attackState == AttackState.UnicycleCharge)
+        {
+            StartCoroutine(WaitToCharge());
             moveByForce.enabled = false;
         }
         StartCoroutine(WaitToSpawnAcrobats());
@@ -124,12 +135,21 @@ public class RingmasterAI : MonoBehaviour {
                 StartCoroutine(WaitToSpawn(timeBetweenHatBombs));
             }
             MoveToPos();
-        } else if (attackState == AttackState.Stomp) {
-            if (isJumping)
+        }
+        else if (attackState == AttackState.UnicycleCharge)
+        {
+            if (charging)
             {
+                if (transform.position.magnitude > 19 && canCharge)
+                {
+                    charging = false; 
+                    canCharge = false;
+                    StartCoroutine(WaitToCharge());
+                }
                 MoveToPos();
             }
         }
+
         if (canSpawnAcrobats) {
             acrobatEmitter.transform.position = new Vector3 (Random.insideUnitCircle.x * 19, 0, Random.insideUnitCircle.y * 19);
             acrobatEmitter.SetActive(true);
@@ -144,7 +164,30 @@ public class RingmasterAI : MonoBehaviour {
     }
 
     void MoveToPos () {
-        moveByForce.dir = (movePos.position - transform.position);
+        if (attackState != AttackState.UnicycleCharge)
+        {
+            moveByForce.dir = (movePos.position - transform.position);
+            if (Vector3.Distance(movePos.position, transform.position) <= 0.1f && rb.velocity.y <= 0)
+            {
+                moveByForce.dir = Vector3.zero;
+                isJumping = false;
+                canSpawn = true;
+                if (attackState == AttackState.FlamingHoop)
+                {
+                    StartCoroutine(WaitToJump(timeBetweenHoopJumps));
+                }
+                else if (attackState == AttackState.Stomp)
+                {
+                    StartCoroutine(WaitToJump(timeBetweenStompJumps));
+                }
+            }
+            else if (Vector3.Distance(new Vector3(movePos.position.x, 0, movePos.position.z), new Vector3(transform.position.x, 0, transform.position.z)) <= 0.1f)
+            {
+                moveByForce.dir = Vector3.zero;
+                transform.position = new Vector3(movePos.position.x, transform.position.y, movePos.position.z);
+                rb.velocity = new Vector3(0, rb.velocity.y, 0);
+            }
+        }
         if (attackState == AttackState.FlamingHoop || attackState == AttackState.RollingBall)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, movePos.rotation, 0.05f);
@@ -160,24 +203,12 @@ public class RingmasterAI : MonoBehaviour {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movePos.position - transform.position), 0.1f);
             }
         }
-        transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
-        if (Vector3.Distance(movePos.position, transform.position) <= 0.1f && rb.velocity.y <= 0) {
-            moveByForce.dir = Vector3.zero;
-            isJumping = false;
-            canSpawn = true;
-            if (attackState == AttackState.FlamingHoop)
-            {
-                StartCoroutine(WaitToJump(timeBetweenHoopJumps));
-            }
-            else if (attackState == AttackState.Stomp)
-            {
-                StartCoroutine(WaitToJump(timeBetweenStompJumps));
-            }
-        } else if (Vector3.Distance(new Vector3 (movePos.position.x, 0, movePos.position.z), new Vector3(transform.position.x, 0, transform.position.z)) <= 0.1f) {
-            moveByForce.dir = Vector3.zero;
-            transform.position = new Vector3 (movePos.position.x, transform.position.y, movePos.position.z);
-            rb.velocity = new Vector3 (0, rb.velocity.y, 0);
+        else if (attackState == AttackState.UnicycleCharge)
+        {
+            rb.velocity = moveDir;
         }
+        transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
+
     }
 
     IEnumerator WaitToJump (float delay) {
@@ -213,6 +244,16 @@ public class RingmasterAI : MonoBehaviour {
                 StartCoroutine(WaitToJump(timeBetweenStompJumps));
             }
         }
+    }
+
+    IEnumerator WaitToCharge () {
+        yield return new WaitForSeconds(timeBetweenCharges);
+        moveDir = (player.position - transform.position).normalized * chargeSpeed;
+        moveDir = new Vector3(moveDir.x, 0, moveDir.z);
+        rb.velocity = moveDir;
+        charging = true;
+        yield return new WaitForSeconds(timeBetweenCharges + 3f);
+        canCharge = true;
     }
 
     IEnumerator WaitToOpenCurtain (int curtainNum) {
