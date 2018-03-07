@@ -3606,6 +3606,7 @@ GameObject:
   - component: {fileID: 300342232}
   - component: {fileID: 300342233}
   - component: {fileID: 300342234}
+  - component: {fileID: 300342235}
   m_Layer: 12
   m_Name: lion
   m_TagString: Enemy
@@ -3624,7 +3625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4920da2cd6451640bd8ca66524f6260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 15
   dir: {x: 0, y: 0, z: 0}
   relative: 0
   once: 0
@@ -3640,7 +3641,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.75, y: 1.7, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!54 &300342229
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3664,7 +3665,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 300342226}
   m_LocalRotation: {x: -0, y: 0.9665759, z: -0, w: -0.2563807}
-  m_LocalPosition: {x: 0.15, y: 1, z: 26.6}
+  m_LocalPosition: {x: 0.15, y: 0.33, z: 26.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 494108256}
@@ -3736,6 +3737,24 @@ MonoBehaviour:
     type: 2}
   deathParticles: {fileID: 1800233777693634, guid: 4cd77ae17560f654cb5b87f1736158c1,
     type: 2}
+--- !u!114 &300342235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 300342226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6423265acf6d21e469c60f54b6da75d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 5
+  oneTime: 0
+  tagsToDamage:
+  - Player
+  push: 1
+  pushForce: 10
+  canDamage: 1
 --- !u!1001 &307605790
 Prefab:
   m_ObjectHideFlags: 0
@@ -5820,7 +5839,7 @@ GameObject:
   - component: {fileID: 494108256}
   - component: {fileID: 494108258}
   - component: {fileID: 494108257}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8747,7 +8766,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4228139712251430, guid: 6deff291382e33b42b41196b839f1f2d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -35
+      value: 13.18
       objectReference: {fileID: 0}
     - target: {fileID: 4228139712251430, guid: 6deff291382e33b42b41196b839f1f2d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -21042,7 +21061,7 @@ GameObject:
   - component: {fileID: 2084006334}
   - component: {fileID: 2084006333}
   - component: {fileID: 2084006335}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
