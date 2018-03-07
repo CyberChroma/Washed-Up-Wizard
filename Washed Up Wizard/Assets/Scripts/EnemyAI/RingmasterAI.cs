@@ -126,7 +126,15 @@ public class RingmasterAI : MonoBehaviour {
 
     void MoveToPos () {
         moveByForce.dir = (movePos.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, movePos.rotation, 0.05f);
+        if (attackState == AttackState.FlamingHoop && attackState == AttackState.RollingBall)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, movePos.rotation, 0.05f);
+        }
+        else if (attackState == AttackState.HatBomb)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), 0.1f);
+        }
+        transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
         if (Vector3.Distance(movePos.position, transform.position) <= 0.1f && rb.velocity.y <= 0) {
             transform.rotation = movePos.rotation;
             rb.velocity = Vector3.zero;
