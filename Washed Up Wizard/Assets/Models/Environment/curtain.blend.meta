@@ -8,18 +8,34 @@ ModelImporter:
     100000: //RootNode
     100002: curtain_left
     100004: curtain_right
+    100006: Curtain_L
+    100008: Curtain_R
     400000: //RootNode
     400002: curtain_left
     400004: curtain_right
+    400006: Curtain_L
+    400008: Curtain_R
     2100000: circus_red
     2100002: Material_005
+    2100004: unnamed
+    2100006: Curtain
     2300000: curtain_left
     2300002: curtain_right
+    2300004: //RootNode
+    2300006: Curtain_L
+    2300008: Curtain_R
     3300000: curtain_left
     3300002: curtain_right
+    3300004: //RootNode
+    3300006: Curtain_L
+    3300008: Curtain_R
     4300000: curtain_right
     4300002: curtain_left
-    7400000: Default Take
+    4300004: Vert
+    4300006: Curtain_R
+    4300008: Curtain_L
+    7400000: Open and Close
+    7400002: Close
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -47,11 +63,39 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Open and Close
+      takeName: Default Take
+      firstFrame: 10
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
