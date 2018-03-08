@@ -36,5 +36,6 @@ public class LaunchToTarget : MonoBehaviour {
         Vector3 finalVelocity = Quaternion.AngleAxis(angleBetweenObjects, Vector3.up) * velocity;
         // Fire!
         rb.AddForce(finalVelocity * rb.mass, ForceMode.Impulse);
+        enabled = false;
     }
 }

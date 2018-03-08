@@ -3559,6 +3559,8 @@ GameObject:
   - component: {fileID: 114512943748261218}
   - component: {fileID: 114157816419940538}
   - component: {fileID: 114148100260654192}
+  - component: {fileID: 114033683061539512}
+  - component: {fileID: 114115275134383736}
   m_Layer: 12
   m_Name: Ringmaster
   m_TagString: Enemy
@@ -4611,7 +4613,7 @@ GameObject:
   - component: {fileID: 4699752158344816}
   - component: {fileID: 114015316363410678}
   m_Layer: 12
-  m_Name: Flaming Hoop Emitter
+  m_Name: Balloon Gun Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4888,6 +4890,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1917474437293664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4764644042807428}
+  - component: {fileID: 114942591125895740}
+  m_Layer: 12
+  m_Name: Flaming Hoop Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1918231506659094
 GameObject:
   m_ObjectHideFlags: 1
@@ -7271,12 +7289,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638357806504596}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4900707333828186}
-  - {fileID: 4699752158344816}
+  - {fileID: 4764644042807428}
   - {fileID: 4535257405980624}
+  - {fileID: 4699752158344816}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8552,13 +8571,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1826799310400062}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 4419876993552294}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4699949322063200
 Transform:
   m_ObjectHideFlags: 1
@@ -8830,6 +8849,19 @@ Transform:
   m_Father: {fileID: 4202306267072582}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4764644042807428
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1917474437293664}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4419876993552294}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4769553490934696
 Transform:
   m_ObjectHideFlags: 1
@@ -15661,7 +15693,7 @@ Rigidbody:
   m_GameObject: {fileID: 1638357806504596}
   serializedVersion: 2
   m_Mass: 2
-  m_Drag: 1
+  m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -15708,12 +15740,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cc8aefb54de5f84c991c0a74fba95a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 1302129398447554, guid: ffc6e228fe2d7ed4baef4e552522d283,
+  objectToSpawn: {fileID: 1194764386652958, guid: 931d4dad51411eb42b883dfc6a269665,
     type: 2}
   parent: {fileID: 0}
   delay: 0
   randDelay: 0
   spawnedObject: {fileID: 0}
+--- !u!114 &114033683061539512
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1638357806504596}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026095fed31ab97428f595c5ac96a2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchAngle: 70
+  target: {fileID: 0}
+  targetString: Player
+--- !u!114 &114115275134383736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1638357806504596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6423265acf6d21e469c60f54b6da75d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 3
+  oneTime: 1
+  tagsToDamage:
+  - Player
+  push: 1
+  pushForce: 1
+  canDamage: 1
 --- !u!114 &114148100260654192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15725,7 +15789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9eb7a3386060046bbb99414df0fea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 50
+  force: 25
   dir: {x: 0, y: 0, z: 0}
   relative: 0
   once: 0
@@ -15779,6 +15843,23 @@ MonoBehaviour:
   healthChanged: 0
   currentHealth: 0
   canBeHit: 1
+--- !u!114 &114942591125895740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1917474437293664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc8aefb54de5f84c991c0a74fba95a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 1302129398447554, guid: ffc6e228fe2d7ed4baef4e552522d283,
+    type: 2}
+  parent: {fileID: 0}
+  delay: 0
+  randDelay: 0
+  spawnedObject: {fileID: 0}
 --- !u!114 &114986894883698438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15790,11 +15871,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102b374c557785c41bda172c1e1a18bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 60
+  stateChangeTime: 10
+  airSpeed: 30
   player: {fileID: 0}
   timeBetweenFlamingHoops: 0.15
-  timeBetweenJumps: 2
-  flamingHoopEmitter: {fileID: 1826799310400062}
+  timeBetweenHoopJumps: 2
+  flamingHoopEmitter: {fileID: 1917474437293664}
   jumpPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -15819,11 +15901,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   timeBetweenHatBombs: 0.8
+  hatBombFollowSpeed: 25
   bombEmitter: {fileID: 1751530010574110}
   timeBetweenAcrobats: 0.5
   acrobatEmitter: {fileID: 0}
-  followSpeed: 25
-  attackState: 2
+  timeBetweenStompJumps: 0.5
+  playerOldPos: {fileID: 0}
+  timeBetweenCharges: 1
+  chargeSpeed: 25
+  timeBetweenShots: 0.1
+  gunFollowSpeed: 25
+  balloonGunEmitter: {fileID: 1826799310400062}
+  attackState: 0
+  phase: 1
 --- !u!137 &137021666050970932
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
