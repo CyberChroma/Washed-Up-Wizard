@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 65423815697139676}
   m_Layer: 0
   m_Name: Diamond Emitter Object
-  m_TagString: Projectile
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,6 +189,7 @@ MonoBehaviour:
   - Player
   - Player Shield
   - Environment
+  - Breakable
   tagsToIgnore: []
 --- !u!114 &114615904994590898
 MonoBehaviour:

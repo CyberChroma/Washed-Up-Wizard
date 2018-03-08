@@ -15871,6 +15871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102b374c557785c41bda172c1e1a18bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateChangeTime: 10
   airSpeed: 30
   player: {fileID: 0}
   timeBetweenFlamingHoops: 0.15
@@ -15911,7 +15912,8 @@ MonoBehaviour:
   timeBetweenShots: 0.1
   gunFollowSpeed: 25
   balloonGunEmitter: {fileID: 1826799310400062}
-  attackState: 5
+  attackState: 0
+  phase: 1
 --- !u!137 &137021666050970932
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
