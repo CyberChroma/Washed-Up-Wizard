@@ -15874,7 +15874,7 @@ MonoBehaviour:
   stateChangeTime: 10
   airSpeed: 30
   player: {fileID: 0}
-  timeBetweenFlamingHoops: 0.15
+  timeBetweenFlamingHoops: 0.2
   timeBetweenHoopJumps: 2
   flamingHoopEmitter: {fileID: 1917474437293664}
   jumpPoints:
@@ -15903,17 +15903,17 @@ MonoBehaviour:
   timeBetweenHatBombs: 0.8
   hatBombFollowSpeed: 25
   bombEmitter: {fileID: 1751530010574110}
-  timeBetweenAcrobats: 0.5
-  acrobatEmitter: {fileID: 0}
   timeBetweenStompJumps: 0.5
   playerOldPos: {fileID: 0}
   timeBetweenCharges: 1
-  chargeSpeed: 25
+  chargeSpeed: 20
   timeBetweenShots: 0.1
   gunFollowSpeed: 25
   balloonGunEmitter: {fileID: 1826799310400062}
-  attackState: 0
-  phase: 1
+  timeBetweenAcrobatsPhase1: 0.5
+  timeBetweenAcrobatsPhase2: 0.25
+  timeBetweenAcrobatsPhase3: 0.1
+  acrobatEmitter: {fileID: 0}
 --- !u!137 &137021666050970932
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -9,7 +9,7 @@ public class SpawnAndDestroyEffects : MonoBehaviour {
 
     private Transform parent;
 
-    void Awake () {
+    void Start () {
         parent = GameObject.Find("Spells").transform;
     }
 
@@ -19,7 +19,7 @@ public class SpawnAndDestroyEffects : MonoBehaviour {
         }
     }
 
-    void OnDisable () {
+    void OnDestroy () {
         if (deathParticles) {
             Instantiate(deathParticles, transform.position, Quaternion.identity, parent);
         }

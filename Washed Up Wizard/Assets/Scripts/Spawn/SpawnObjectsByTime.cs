@@ -18,7 +18,7 @@ public class SpawnObjectsByTime : MonoBehaviour {
     private Transform spellsParent; // The default parent
     private float timeUntilNextSpawn; // The delay before starting to spawn again
 
-	void Awake () {
+	void Start () {
 		spellsParent = GameObject.Find ("Spells").transform; // Getting the reference
         if (!parent && parentString != string.Empty) {
             parent = GameObject.Find(parentString).transform;

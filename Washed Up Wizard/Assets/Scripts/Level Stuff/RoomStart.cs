@@ -23,7 +23,7 @@ public class RoomStart : MonoBehaviour {
 	}
 
     void Start () {
-        StartCoroutine (StartDemo());
+        StartCoroutine(StartDemo());
     }
 
     IEnumerator StartDemo () {
