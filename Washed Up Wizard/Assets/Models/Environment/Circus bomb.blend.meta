@@ -8,17 +8,28 @@ ModelImporter:
     100000: ball_001
     100002: //RootNode
     100004: Circus_Ball-Striped
+    100006: Bomb
+    100008: Fuse
     400000: ball_001
     400002: //RootNode
     400004: Circus_Ball-Striped
+    400006: Bomb
+    400008: Fuse
     2100000: Curtain
     2100002: Yellow
+    2100004: Light_Blue
     2300000: ball_001
     2300002: Circus_Ball-Striped
+    2300004: Bomb
+    2300006: Fuse
     3300000: ball_001
     3300002: Circus_Ball-Striped
+    3300004: Bomb
+    3300006: Fuse
     4300000: ball_001
     4300002: Circus_Ball-Striped
+    4300004: Fuse
+    4300006: Bomb
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
@@ -54,10 +65,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -72,11 +83,11 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 80
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -92,10 +103,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -7273,7 +7273,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638357806504596}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4900707333828186}
@@ -15754,12 +15754,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638357806504596}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f9eb7a3386060046bbb99414df0fea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 50
+  force: 25
   dir: {x: 0, y: 0, z: 0}
   relative: 0
   once: 0
@@ -15824,9 +15824,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102b374c557785c41bda172c1e1a18bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airSpeed: 50
+  airSpeed: 30
   player: {fileID: 0}
-  flamingHoopJumpForce: 60
   timeBetweenFlamingHoops: 0.15
   timeBetweenHoopJumps: 2
   flamingHoopEmitter: {fileID: 1826799310400062}
@@ -15860,7 +15859,7 @@ MonoBehaviour:
   followSpeed: 25
   timeBetweenStompJumps: 0.5
   playerOldPos: {fileID: 0}
-  chargeSpeed: 20
+  chargeSpeed: 25
   timeBetweenCharges: 1
   attackState: 4
 --- !u!137 &137021666050970932

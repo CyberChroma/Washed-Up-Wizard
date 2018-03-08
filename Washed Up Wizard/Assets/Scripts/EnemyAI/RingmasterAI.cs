@@ -16,7 +16,6 @@ public class RingmasterAI : MonoBehaviour {
     public float airSpeed;
     public Transform player;
 
-    public float flamingHoopJumpForce;
     public float timeBetweenFlamingHoops;
     public float timeBetweenHoopJumps;
     public GameObject flamingHoopEmitter;
@@ -68,11 +67,10 @@ public class RingmasterAI : MonoBehaviour {
             StartCoroutine(WaitToSpawn(timeBetweenFlamingHoops));
             StartCoroutine(WaitToJump(timeBetweenHoopJumps));
             moveByForce.force = airSpeed;
+            moveByForce.enabled = false;
         }
         if (attackState == AttackState.RollingBall) {
-            rb.AddForce(Vector3.up * flamingHoopJumpForce * 100 * Time.deltaTime, ForceMode.Impulse);
-            movePos = pedistalJumpPoint;
-            isJumping = true;
+            StartCoroutine(WaitToJump(1));
             moveByForce.force = airSpeed;
         }
         if (attackState == AttackState.HatBomb)
@@ -148,6 +146,11 @@ public class RingmasterAI : MonoBehaviour {
                 }
                 MoveToPos();
             }
+            else
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), 0.1f);
+                transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
+            }
         }
 
         if (canSpawnAcrobats) {
@@ -190,7 +193,7 @@ public class RingmasterAI : MonoBehaviour {
         }
         if (attackState == AttackState.FlamingHoop || attackState == AttackState.RollingBall)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, movePos.rotation, 0.05f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, movePos.rotation, 0.02f);
         }
         else if (attackState == AttackState.HatBomb)
         {
@@ -206,6 +209,7 @@ public class RingmasterAI : MonoBehaviour {
         else if (attackState == AttackState.UnicycleCharge)
         {
             rb.velocity = moveDir;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDir), 0.1f);
         }
         transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
 
@@ -217,13 +221,26 @@ public class RingmasterAI : MonoBehaviour {
         if (attackState == AttackState.FlamingHoop)
         {
             movePos = jumpPoints[Random.Range(0, jumpPoints.Length - 1)];
-            rb.AddForce(Vector3.up * flamingHoopJumpForce * 100 * Time.deltaTime, ForceMode.Impulse);
+            launchToTarget.target = movePos;
+            if (Vector3.Distance(transform.position, movePos.position) > 1)
+            {
+                launchToTarget.enabled = true;
+            }
+            else
+            {
+                rb.AddForce(Vector3.up * 2000 * Time.deltaTime, ForceMode.Impulse);
+            }
         }
         else if (attackState == AttackState.Stomp)
         {
-            playerOldPos.position = new Vector3 (player.position.x, 0, player.position.z);
+            playerOldPos.position = new Vector3(player.position.x, 0, player.position.z);
             movePos = playerOldPos;
             launchToTarget.enabled = true;
+        }
+        else if (attackState == AttackState.RollingBall)
+        {
+            rb.AddForce(Vector3.up * 2000 * Time.deltaTime, ForceMode.Impulse);
+            movePos = pedistalJumpPoint;
         }
         yield return new WaitForSeconds(2 * Time.deltaTime);
         isJumping = true;
