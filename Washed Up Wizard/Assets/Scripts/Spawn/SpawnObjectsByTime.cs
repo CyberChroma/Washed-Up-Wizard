@@ -18,7 +18,7 @@ public class SpawnObjectsByTime : MonoBehaviour {
     private Transform spellsParent; // The default parent
     private float timeUntilNextSpawn; // The delay before starting to spawn again
 
-	void Start () {
+	void Awake () {
 		spellsParent = GameObject.Find ("Spells").transform; // Getting the reference
         if (!parent && parentString != string.Empty) {
             parent = GameObject.Find(parentString).transform;
@@ -49,7 +49,7 @@ public class SpawnObjectsByTime : MonoBehaviour {
 				for (int i = 0; i < numToSpawn; i++) {
 					spawnedObjects [i] = Instantiate (objectToSpawn, parent.position, Quaternion.Euler (parent.rotation.eulerAngles.x, parent.rotation.eulerAngles.y + (-(radius / 2) + (radius / (numToSpawn - 1)) * i) + offset, parent.rotation.eulerAngles.z), parent); // Spawns the object as a parent of a transform
 				}
-			} else {
+            } else if (spellsParent.gameObject.activeSelf) {
 				for (int i = 0; i < numToSpawn; i++) {
 					spawnedObjects [i] = Instantiate (objectToSpawn, transform.position, Quaternion.Euler (transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + (-(radius / 2) + (radius / (numToSpawn - 1)) * i) + offset, transform.rotation.eulerAngles.z), spellsParent); // Spawns the object as a parent of a transform
 				}

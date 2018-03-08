@@ -9,18 +9,18 @@ public class SpawnAndDestroyEffects : MonoBehaviour {
 
     private Transform parent;
 
-    void Start () {
+    void Awake () {
         parent = GameObject.Find("Spells").transform;
     }
 
     void OnEnable () {
-        if (spawnParticles) {
+        if (parent.gameObject.activeSelf && spawnParticles) {
             Instantiate(spawnParticles, transform.position, Quaternion.identity, parent);
         }
     }
 
     void OnDestroy () {
-        if (deathParticles) {
+        if (parent.gameObject.activeSelf && deathParticles) {
             Instantiate(deathParticles, transform.position, Quaternion.identity, parent);
         }
     }

@@ -41,7 +41,7 @@ public class SpawnObjectByTime : MonoBehaviour {
 	void Spawn () {
 		if (parent != null) { // If there is a parent
 			spawnedObject = Instantiate (objectToSpawn, parent); // Spawns the object as a parent of a transform
-		} else {
+        } else if (spellsParent.gameObject.activeSelf) {
 			spawnedObject = Instantiate (objectToSpawn, transform.position, transform.rotation, spellsParent); // Spawns the object as a parent of a transform
 		}
 		canSpawn = false;
