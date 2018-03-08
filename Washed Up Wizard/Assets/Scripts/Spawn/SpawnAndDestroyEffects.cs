@@ -14,13 +14,13 @@ public class SpawnAndDestroyEffects : MonoBehaviour {
     }
 
     void OnEnable () {
-        if (parent.gameObject.activeSelf && spawnParticles) {
+        if (parent && parent.gameObject.activeSelf && spawnParticles) {
             Instantiate(spawnParticles, transform.position, Quaternion.identity, parent);
         }
     }
 
-    void OnDestroy () {
-        if (parent.gameObject.activeSelf && deathParticles) {
+    void OnDisable () {
+        if (parent && parent.gameObject.activeSelf && deathParticles) {
             Instantiate(deathParticles, transform.position, Quaternion.identity, parent);
         }
     }

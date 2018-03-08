@@ -49,7 +49,7 @@ public class SpawnObjectsByTime : MonoBehaviour {
 				for (int i = 0; i < numToSpawn; i++) {
 					spawnedObjects [i] = Instantiate (objectToSpawn, parent.position, Quaternion.Euler (parent.rotation.eulerAngles.x, parent.rotation.eulerAngles.y + (-(radius / 2) + (radius / (numToSpawn - 1)) * i) + offset, parent.rotation.eulerAngles.z), parent); // Spawns the object as a parent of a transform
 				}
-            } else if (spellsParent.gameObject.activeSelf) {
+            } else if (spellsParent && spellsParent.gameObject.activeSelf) {
 				for (int i = 0; i < numToSpawn; i++) {
 					spawnedObjects [i] = Instantiate (objectToSpawn, transform.position, Quaternion.Euler (transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + (-(radius / 2) + (radius / (numToSpawn - 1)) * i) + offset, transform.rotation.eulerAngles.z), spellsParent); // Spawns the object as a parent of a transform
 				}

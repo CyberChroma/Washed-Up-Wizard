@@ -304,7 +304,6 @@ public class RingmasterAI : MonoBehaviour {
         {
             if (Vector3.Distance(new Vector3(playerOldPos.position.x, 0, playerOldPos.position.z), new Vector3(transform.position.x, 0, transform.position.z)) > 1)
             {
-                print("sdfghjytfrdf");
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerOldPos.position - transform.position), 0.1f);
             }
         }
@@ -370,6 +369,9 @@ public class RingmasterAI : MonoBehaviour {
     }
 
     IEnumerator WaitToCharge () {
+        while (isJumping) {
+            yield return null;
+        }
         yield return new WaitForSeconds(timeBetweenCharges);
         moveDir = (player.position - transform.position).normalized * chargeSpeed;
         moveDir = new Vector3(moveDir.x, 0, moveDir.z);

@@ -17,6 +17,7 @@ public class PlayerMoveInput : MonoBehaviour {
     // Getting refferences
 	private Rigidbody rb;
     private Animator anim;
+    private GameObject inputController;
 	private MoveInputReceiver moveInputReceiver; // Reference to input manager
     private Health health;
 
@@ -25,7 +26,8 @@ public class PlayerMoveInput : MonoBehaviour {
         // Getting references
 		rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
-        moveInputReceiver = GameObject.Find("Input Controller").GetComponent<MoveInputReceiver>();
+        inputController = GameObject.Find("Input Controller");
+        moveInputReceiver = inputController.GetComponent<MoveInputReceiver>();
         health = GetComponent<Health>();
         currentSensitivity = moveSensitivity;
 	}
@@ -82,6 +84,7 @@ public class PlayerMoveInput : MonoBehaviour {
             v = 0;
             h = 0;
             moveVector = Vector3.zero;
+            inputController.SetActive(false);
         }
 	}
 

@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4073649817890752}
-  - component: {fileID: 114834700327028246}
   - component: {fileID: 114145705585778496}
   - component: {fileID: 54293661247159746}
   - component: {fileID: 23740772168667206}
@@ -28,8 +27,7 @@ GameObject:
   - component: {fileID: 114997228497090218}
   - component: {fileID: 114230709295992784}
   - component: {fileID: 135727378197231170}
-  - component: {fileID: 114658701832203640}
-  - component: {fileID: 114502863728815892}
+  - component: {fileID: 114027525787067970}
   m_Layer: 0
   m_Name: Up and Down
   m_TagString: Projectile
@@ -106,6 +104,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114027525787067970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821561499274860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026095fed31ab97428f595c5ac96a2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchAngle: 60
+  target: {fileID: 0}
+  targetString: Cursor Position
 --- !u!114 &114145705585778496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,51 +161,6 @@ MonoBehaviour:
   tagsToDamage:
   - Enemy
   - Breakable
---- !u!114 &114502863728815892
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1821561499274860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f9eb7a3386060046bbb99414df0fea6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 8
-  dir: {x: 0, y: -1, z: 0}
-  relative: 1
-  once: 0
---- !u!114 &114658701832203640
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1821561499274860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4920da2cd6451640bd8ca66524f6260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  dir: {x: 0, y: 0, z: 1}
-  relative: 1
-  once: 1
---- !u!114 &114834700327028246
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1821561499274860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f9eb7a3386060046bbb99414df0fea6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 700
-  dir: {x: 0, y: 1, z: 0}
-  relative: 1
-  once: 1
 --- !u!114 &114997228497090218
 MonoBehaviour:
   m_ObjectHideFlags: 1

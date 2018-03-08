@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54018773198107216}
   - component: {fileID: 114656752803616858}
   - component: {fileID: 114369636853050564}
+  - component: {fileID: 114776915055415578}
   m_Layer: 0
   m_Name: Circus Ball-Diamond
   m_TagString: Hazard
@@ -144,7 +145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0
-  tagsToDestroy: []
+  tagsToDestroy:
+  - Environment
+  - Player
   tagsToIgnore: []
 --- !u!114 &114587212943183706
 MonoBehaviour:
@@ -172,6 +175,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 3
+--- !u!114 &114776915055415578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213681041684342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6423265acf6d21e469c60f54b6da75d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 2
+  oneTime: 1
+  tagsToDamage:
+  - Player
+  push: 0
+  pushForce: 0
+  canDamage: 1
 --- !u!135 &135647943464315874
 SphereCollider:
   m_ObjectHideFlags: 1

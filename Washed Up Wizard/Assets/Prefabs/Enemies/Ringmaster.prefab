@@ -15789,7 +15789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f9eb7a3386060046bbb99414df0fea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 25
+  force: 60
   dir: {x: 0, y: 0, z: 0}
   relative: 0
   once: 0
@@ -15833,7 +15833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1638357806504596}
-  startHealth: 150
+  startHealth: 100
   tempStopHitsTime: 0.5
   audioClip: {fileID: 0}
   soundPlayer: {fileID: 0}
@@ -15872,7 +15872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateChangeTime: 15
-  airSpeed: 30
+  airSpeed: 60
   player: {fileID: 0}
   timeBetweenFlamingHoops: 0.2
   timeBetweenHoopJumps: 2
@@ -15901,14 +15901,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   timeBetweenHatBombs: 0.8
-  hatBombFollowSpeed: 25
+  hatBombFollowSpeed: 35
   bombEmitter: {fileID: 1751530010574110}
   timeBetweenStompJumps: 0.5
   playerOldPos: {fileID: 0}
   timeBetweenCharges: 1
   chargeSpeed: 20
   timeBetweenShots: 0.1
-  gunFollowSpeed: 25
+  gunFollowSpeed: 35
   balloonGunEmitter: {fileID: 1826799310400062}
   timeBetweenAcrobatsPhase1: 0.5
   timeBetweenAcrobatsPhase2: 0.25
