@@ -28,16 +28,21 @@ public class RingmasterAI : MonoBehaviour {
     public Animator[] curtains;
 
     public float timeBetweenHatBombs;
+    public float hatBombFollowSpeed;
     public GameObject bombEmitter;
+
     public float timeBetweenAcrobats;
     public GameObject acrobatEmitter;
-    public float followSpeed;
-
+   
     public float timeBetweenStompJumps;
     public Transform playerOldPos;
 
-    public float chargeSpeed;
     public float timeBetweenCharges;
+    public float chargeSpeed;
+
+    public float timeBetweenShots;
+    public float gunFollowSpeed;
+    public GameObject balloonGunEmitter;
 
     public AttackState attackState;
     private bool canSpawn = false;
@@ -63,31 +68,39 @@ public class RingmasterAI : MonoBehaviour {
 	}
 	
     void OnEnable () {
-        if (attackState == AttackState.FlamingHoop) {
+        if (attackState == AttackState.FlamingHoop)
+        {
             StartCoroutine(WaitToSpawn(timeBetweenFlamingHoops));
             StartCoroutine(WaitToJump(timeBetweenHoopJumps));
             moveByForce.force = airSpeed;
             moveByForce.enabled = false;
         }
-        if (attackState == AttackState.RollingBall) {
+        else if (attackState == AttackState.RollingBall)
+        {
             StartCoroutine(WaitToJump(1));
             moveByForce.force = airSpeed;
         }
-        if (attackState == AttackState.HatBomb)
+        else if (attackState == AttackState.HatBomb)
         {
-            StartCoroutine(WaitToSpawn(timeBetweenFlamingHoops));
+            StartCoroutine(WaitToSpawn(timeBetweenHatBombs));
             movePos = player;
-            moveByForce.force = followSpeed;
+            moveByForce.force = hatBombFollowSpeed;
         }
-        if (attackState == AttackState.Stomp)
+        else if (attackState == AttackState.Stomp)
         {
             StartCoroutine(WaitToJump(timeBetweenStompJumps));
             moveByForce.enabled = false;
         }
-        if (attackState == AttackState.UnicycleCharge)
+        else if (attackState == AttackState.UnicycleCharge)
         {
             StartCoroutine(WaitToCharge());
             moveByForce.enabled = false;
+        }
+        else if (attackState == AttackState.BalloonGun)
+        {
+            StartCoroutine(WaitToSpawn(timeBetweenHatBombs));
+            movePos = player;
+            moveByForce.force = gunFollowSpeed;
         }
         StartCoroutine(WaitToSpawnAcrobats());
     }
@@ -152,6 +165,16 @@ public class RingmasterAI : MonoBehaviour {
                 transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
             }
         }
+        else if (attackState == AttackState.BalloonGun)
+        {
+            if (canSpawn && !isJumping)
+            {
+                balloonGunEmitter.SetActive(true);
+                canSpawn = false;
+                StartCoroutine(WaitToSpawn(timeBetweenShots));
+            }
+            MoveToPos();
+        }
 
         if (canSpawnAcrobats) {
             acrobatEmitter.transform.position = new Vector3 (Random.insideUnitCircle.x * 19, 0, Random.insideUnitCircle.y * 19);
@@ -195,7 +218,7 @@ public class RingmasterAI : MonoBehaviour {
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, movePos.rotation, 0.02f);
         }
-        else if (attackState == AttackState.HatBomb)
+        else if (attackState == AttackState.HatBomb || attackState == AttackState.BalloonGun)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), 0.1f);
         }
