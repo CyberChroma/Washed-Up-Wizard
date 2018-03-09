@@ -71,7 +71,6 @@ public class MeleeEnemyAI : MonoBehaviour {
 	void OnCollisionEnter (Collision other) { // If the enemy collided with something, change its move target.
         if (other.collider.CompareTag ("Player") && anim) {
             anim.SetTrigger("Attack");
-            print("uhduuvndusnunvufsn");
         }
 	}
 }

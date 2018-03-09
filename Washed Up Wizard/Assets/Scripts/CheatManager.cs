@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CheatManager : MonoBehaviour {
 
@@ -13,23 +12,11 @@ public class CheatManager : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.U)) {
             if (player.enabled) {
-                stopDamage = true;
-            }
-            else {
-                stopDamage = false;
+                stopDamage != stopDamage;
             }
         }
         if (stopDamage && player.currentHealth < player.startHealth) {
             player.currentHealth = player.startHealth;
-        }
-        if (Input.GetKeyDown(KeyCode.I)) {
-            SceneManager.LoadScene("Hospital Area");
-        }
-        if (Input.GetKeyDown(KeyCode.O)) {
-            SceneManager.LoadScene("Wendigo Boss");
-        }
-        if (Input.GetKeyDown(KeyCode.P)) {
-            SceneManager.LoadScene("Ice Cave");
         }
 	}
 }
