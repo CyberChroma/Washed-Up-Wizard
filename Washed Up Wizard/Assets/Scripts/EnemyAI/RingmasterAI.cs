@@ -352,7 +352,7 @@ public class RingmasterAI : MonoBehaviour {
     }
 
     void OnCollisionEnter (Collision other) {
-        if (other.collider.CompareTag("Environment") && isJumping)
+        if (other.collider.CompareTag("Environment") && isJumping && attackState != AttackState.UnicycleCharge)
         {
             moveByForce.dir = Vector3.zero;
             isJumping = false;
