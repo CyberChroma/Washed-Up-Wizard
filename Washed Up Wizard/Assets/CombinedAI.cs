@@ -25,7 +25,7 @@ public class CombinedAI : MonoBehaviour {
         if (player.position.x > transform.position.x - meleeRadius && player.position.x < transform.position.x + meleeRadius && player.position.z > transform.position.z - meleeRadius && player.position.z < transform.position.z + meleeRadius)
         {
             meleeEnemyAI.enabled = true;
-            constantSpeed = true;
+            constantSpeed.enabled = true;
             rangedEnemyAI.enabled = false;
         }
         else{

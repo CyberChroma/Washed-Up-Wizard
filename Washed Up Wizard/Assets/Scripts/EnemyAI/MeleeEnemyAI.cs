@@ -15,14 +15,16 @@ public class MeleeEnemyAI : MonoBehaviour {
     private bool active = false;
 	private Animator anim; // Reference to the animator
     private Health health;
-	private MoveByConstantSpeed enemyMove; // Reference to the move script
+    private MoveByConstantSpeed moveByConstantSpeed; // Reference to the move script
+    private MoveByForce moveByForce;
 	private Transform player; // Reference to the player
     private float moveSpeed;
     private DamageByTouchCollision damageByTouchCollision;
 
 	// Use this for initialization
 	void Awake () {
-        enemyMove = GetComponent<MoveByConstantSpeed> (); // Getting the reference
+        moveByConstantSpeed = GetComponent<MoveByConstantSpeed> (); // Getting the reference
+        moveByForce = GetComponent<MoveByForce> (); // Getting the reference
         anim = GetComponentInChildren<Animator> (); // Getting the reference
         health = GetComponent<Health> ();
         damageByTouchCollision = GetComponent<DamageByTouchCollision>();
@@ -31,9 +33,18 @@ public class MeleeEnemyAI : MonoBehaviour {
 
 	void OnEnable () {
         if (fallStart) {
-            moveSpeed = enemyMove.speed;
-            enemyMove.speed = fallSpeed;
-            enemyMove.dir = Vector3.down * fallSpeed;
+            if (moveByConstantSpeed)
+            {
+                moveSpeed = moveByConstantSpeed.speed;
+                moveByConstantSpeed.speed = fallSpeed;
+                moveByConstantSpeed.dir = Vector3.down * fallSpeed;
+            }
+            else if (moveByForce)
+            {
+                moveSpeed = moveByForce.force;
+                moveByForce.force = fallSpeed;
+                moveByForce.dir = Vector3.down * fallSpeed;
+            }
             active = false;
         } else {
             active = true;
@@ -48,20 +59,50 @@ public class MeleeEnemyAI : MonoBehaviour {
         if (active && player && (player.position.x > transform.position.x - radius && player.position.x < transform.position.x + radius && player.position.z > transform.position.z - radius && player.position.z < transform.position.z + radius)) { 
             Vector3 dir = player.position - transform.position; // Sets its direction
             dir = new Vector3(dir.x, 0, dir.z); // Elimintates y value
-            enemyMove.dir = Vector3.Lerp (enemyMove.dir, dir.normalized, 0.25f); // Sets the magnitude to 1
+            if (moveByConstantSpeed)
+            {
+                moveByConstantSpeed.dir = Vector3.Lerp (moveByConstantSpeed.dir, dir.normalized, 0.25f); // Sets the magnitude to 1
+
+            }
+            else if (moveByForce)
+            {
+                moveByForce.dir = Vector3.Lerp (moveByForce.dir, dir.normalized, 0.25f); // Sets the magnitude to 1
+            }
             Quaternion targetRotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), 0.5f); // Looks at the player
             transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0); // Ignores x and z values
         }
         else if (fallStart && Vector3.Distance(transform.position, new Vector3(transform.position.x, height, transform.position.z)) < 1f) { 
             active = true;
-            enemyMove.speed = moveSpeed;
-            enemyMove.dir = Vector3.zero;
+            if (moveByConstantSpeed)
+            {
+                moveByConstantSpeed.speed = moveSpeed;
+                moveByConstantSpeed.dir = Vector3.zero;
+            }
+            else if (moveByForce)
+            {
+                moveByForce.force = moveSpeed;
+                moveByForce.dir = Vector3.zero;
+            }
         }
         else {
-            enemyMove.dir = Vector3.Lerp (enemyMove.dir, Vector3.zero, 0.25f);
+            if (moveByConstantSpeed)
+            {
+                moveByConstantSpeed.dir = Vector3.Lerp(moveByConstantSpeed.dir, Vector3.zero, 0.25f);
+            }
+            else if (moveByForce)
+            {
+                moveByForce.dir = Vector3.Lerp(moveByForce.dir, Vector3.zero, 0.25f);
+            }
         }
         if (health.currentHealth <= 0) {
-            enemyMove.dir = Vector3.zero;
+            if (moveByConstantSpeed)
+            {
+                moveByConstantSpeed.dir = Vector3.zero;
+            }
+            else if (moveByForce)
+            {
+                moveByForce.dir = Vector3.zero;
+            }
             damageByTouchCollision.canDamage = false;
             enabled = false;
             health.ChangeHealth();

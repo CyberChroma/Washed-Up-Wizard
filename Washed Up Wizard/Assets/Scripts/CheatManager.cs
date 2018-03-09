@@ -12,7 +12,7 @@ public class CheatManager : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.U)) {
             if (player.enabled) {
-                stopDamage != stopDamage;
+                stopDamage = !stopDamage;
             }
         }
         if (stopDamage && player.currentHealth < player.startHealth) {

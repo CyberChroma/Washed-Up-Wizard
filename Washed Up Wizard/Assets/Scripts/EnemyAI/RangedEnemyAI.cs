@@ -6,36 +6,30 @@ public class RangedEnemyAI : MonoBehaviour {
 
     // This enemy's attack pattern is to move, shoot a progrctile, then move again
 
-	[System.Serializable]
-	public class Boundaries { // The box the enemy can move in
-		public float minx = -20;
-		public float maxx = 20;
-		public float miny = -20;
-		public float maxy = 20;
-	}
-
 	public float moveDelay = 2; // The delay between moves
 	public float moveSensitivity = 0.1f; // Used to make the enemy movement less snappy
 	public float attackDelay = 1; // The delay between attacking
 	public float attackTime = 0.5f; // How long the enemy will be attacking
+    public float radius = 30;
     public bool fallStart = false;
     public float fallForce = 10;
     public float height = 0;
-    public Boundaries boundaries; // Reference to the boundaries (above)
 	public GameObject[] emitters; // Reference to the enemy's projectile emitters
 	public Transform targetLocation; // The location the enemy is moving towards
 
     private bool active = false;
 	private Animator anim; // Reference to the animator
     private Health health;
-	private MoveByForce enemyMove; // Reference to the move script
+    private MoveByConstantSpeed moveByConstantSpeed;
+    private MoveByForce moveByForce; // Reference to the move script
 	private Transform player; // Reference to the player
 	private bool canMove = true; // Whether the player can move
-    private float moveForce;
+    private float moveSpeed;
 
 	// Use this for initialization
 	void Awake () {
-		enemyMove = GetComponent<MoveByForce> (); // Getting the reference
+        moveByConstantSpeed = GetComponent<MoveByConstantSpeed> (); // Getting the reference
+        moveByForce = GetComponent<MoveByForce>();
         anim = GetComponentInChildren<Animator> (); // Getting the reference
         health = GetComponent<Health> ();
 		player = GameObject.Find ("Player").transform; // Getting the reference
@@ -43,9 +37,18 @@ public class RangedEnemyAI : MonoBehaviour {
 
 	void OnEnable () {
         if (fallStart) {
-            moveForce = enemyMove.force;
-            enemyMove.force = fallForce;
-            enemyMove.dir = Vector3.down * fallForce;
+            if (moveByConstantSpeed)
+            {
+                moveSpeed = moveByConstantSpeed.speed;
+                moveByConstantSpeed.speed = fallForce;
+                moveByConstantSpeed.dir = Vector3.down * fallForce;
+            }
+            else if (moveByForce)
+            {
+                moveSpeed = moveByForce.force;
+                moveByForce.force = fallForce;
+                moveByForce.dir = Vector3.down * fallForce;
+            }
             active = false;
         } else {
             active = true;
@@ -53,7 +56,7 @@ public class RangedEnemyAI : MonoBehaviour {
 		foreach (GameObject emitter in emitters) { // Cycles through each emitter
 			emitter.SetActive (false); // Sets it inactive
 		}
-		targetLocation.position = new Vector3 (Random.Range (boundaries.minx, boundaries.maxx), 0, Random.Range (boundaries.miny, boundaries.maxy)); // Setting the object move location to a random location
+        targetLocation.position = new Vector3 (Random.Range (player.position.x - radius, player.position.x + radius), 0, Random.Range (player.position.y - radius, player.position.y + radius)); // Setting the object move location to a random location
         if (anim) {
             anim.speed = Random.Range(0.9f, 1.1f);
         }
@@ -64,7 +67,14 @@ public class RangedEnemyAI : MonoBehaviour {
         if (active) { 
             if (canMove) { // If the enemy can move
                 if (Vector3.Distance(transform.position, new Vector3(targetLocation.position.x, transform.position.y, targetLocation.position.z)) <= 1f) { // If the enemy has reached its target location
-                    enemyMove.dir = Vector3.zero; // Sets the speed to 0
+                    if (moveByConstantSpeed)
+                    {
+                        moveByConstantSpeed.dir = Vector3.zero; // Sets the speed to 0
+                    }
+                    else if (moveByForce)
+                    {
+                        moveByForce.dir = Vector3.zero; // Sets the speed to 0
+                    }
                     StartCoroutine(Attack());
                     StartCoroutine(ChangeTarget());
                 }
@@ -72,10 +82,24 @@ public class RangedEnemyAI : MonoBehaviour {
                     Vector3 dir = targetLocation.position - transform.position; // Sets its direction
                     dir = new Vector3(dir.x, targetLocation.position.y, dir.z); // Elimintates y value
                     if (dir.magnitude < 1) { // if the magniude is less than 1 (For better smoothing)
-                        enemyMove.dir = dir;
+                        if (moveByConstantSpeed)
+                        {
+                            moveByConstantSpeed.dir = dir;
+                        }
+                        else if (moveByForce)
+                        {
+                            moveByForce.dir = dir;
+                        }
                     }
                     else { // If the magnitude is greater than 1
-                        enemyMove.dir = dir.normalized; // Sets the magnitude to 1
+                        if (moveByConstantSpeed)
+                        {
+                            moveByConstantSpeed.dir = dir.normalized;
+                        }
+                        else if (moveByForce)
+                        {
+                            moveByForce.dir = dir.normalized;
+                        }
                     }
                 }
             }
@@ -86,8 +110,16 @@ public class RangedEnemyAI : MonoBehaviour {
         }
         else if (fallStart && Vector3.Distance (transform.position, new Vector3 (transform.position.x, height, transform.position.z)) < 1f) { 
             active = true;
-            enemyMove.force = moveForce;
-            enemyMove.dir = Vector3.zero;
+            if (moveByConstantSpeed)
+            {
+                moveByConstantSpeed.speed = moveSpeed;
+                moveByConstantSpeed.dir = Vector3.zero;
+            }
+            else if (moveByForce)
+            {
+                moveByForce.force = moveSpeed;
+                moveByForce.dir = Vector3.zero;
+            }
         }
         if (health.currentHealth <= 0) {
             enabled = false;
@@ -97,7 +129,14 @@ public class RangedEnemyAI : MonoBehaviour {
 
 	void OnCollisionEnter (Collision other) { // If the enemy collided with something, change its move target.
         if (active) {
-            enemyMove.dir = Vector3.zero;
+            if (moveByConstantSpeed)
+            {
+                moveByConstantSpeed.dir = Vector3.zero;
+            }
+            else if (moveByForce)
+            {
+                moveByForce.dir = Vector3.zero;
+            }
             StartCoroutine(Attack());
             StartCoroutine(ChangeTarget());
         }
@@ -120,7 +159,7 @@ public class RangedEnemyAI : MonoBehaviour {
 	IEnumerator ChangeTarget () {
 		canMove = false; 
 		yield return new WaitForSeconds (moveDelay); // Waits...
-		targetLocation.position = new Vector3 (Random.Range (boundaries.minx, boundaries.maxx), 0, Random.Range (boundaries.miny, boundaries.maxy)); // Sets the location to a random point
+        targetLocation.position = new Vector3 (Random.Range (player.position.x - radius, player.position.x + radius), 0, Random.Range (player.position.y - radius, player.position.y + radius)); // Setting the move location to a random location
         canMove = true;
 	}
 }
