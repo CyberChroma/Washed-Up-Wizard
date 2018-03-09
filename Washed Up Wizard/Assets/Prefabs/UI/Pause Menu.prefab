@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 224260556974757880}
   - component: {fileID: 114173359370779226}
   - component: {fileID: 114665891527578126}
+  - component: {fileID: 114922914072657400}
   m_Layer: 5
   m_Name: Pause Manager
   m_TagString: Untagged
@@ -352,7 +353,6 @@ GameObject:
   - component: {fileID: 114313725913909294}
   - component: {fileID: 114580012312034874}
   - component: {fileID: 114952546004344370}
-  - component: {fileID: 114693316338374366}
   m_Layer: 0
   m_Name: Input Controller
   m_TagString: Untagged
@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 114020171760174546}
   - component: {fileID: 114859253471010782}
   m_Layer: 5
-  m_Name: Reset Button
+  m_Name: Level Select Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -947,7 +947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9724138, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1443,7 +1443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9724138, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.95862055, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1550,7 +1550,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Reset
+  m_Text: Level Select
 --- !u!114 &114262608802006826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2673,18 +2673,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114693316338374366
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1393929339748100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07b2ca391a2d084e8ae73c55c034f4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reloadDelay: 3
 --- !u!114 &114714850138809428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3135,7 +3123,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114173359370779226}
-        m_MethodName: Reset
+        m_MethodName: LevelSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3265,6 +3253,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Escape
+--- !u!114 &114922914072657400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1050510858436494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07b2ca391a2d084e8ae73c55c034f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reloadDelay: 3
 --- !u!114 &114948058151949890
 MonoBehaviour:
   m_ObjectHideFlags: 1

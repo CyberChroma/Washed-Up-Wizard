@@ -51,8 +51,8 @@ public class PauseManager : MonoBehaviour {
 
 	}
 
-    public void Reset () {
-        SceneManager.LoadScene("Hospital Area");
+    public void LevelSelect () {
+        SceneManager.LoadScene("Level Select");
     }
 
     public void ChangeControls () {

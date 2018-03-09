@@ -31,9 +31,6 @@ public class RingmasterAI : MonoBehaviour {
     public float timeBetweenHatBombs;
     public float hatBombFollowSpeed;
     public GameObject bombEmitter;
-
-    public float timeBetweenAcrobats;
-    public GameObject acrobatEmitter;
    
     public float timeBetweenStompJumps;
     public Transform playerOldPos;
@@ -45,9 +42,13 @@ public class RingmasterAI : MonoBehaviour {
     public float gunFollowSpeed;
     public GameObject balloonGunEmitter;
 
-    public AttackState attackState;
-    public int phase = 1;
+    public float timeBetweenAcrobatsPhase1;
+    public float timeBetweenAcrobatsPhase2;
+    public float timeBetweenAcrobatsPhase3;
+    public GameObject acrobatEmitter;
 
+    private int phase = 1;
+    private AttackState attackState;
     private bool canSpawn = false;
     private bool isJumping = false;
     private bool canCharge = true;
@@ -58,6 +59,7 @@ public class RingmasterAI : MonoBehaviour {
     private MoveByForce moveByForce;
     private LaunchToTarget launchToTarget;
     private Vector3 moveDir;
+    private Health health;
 
 	// Use this for initialization
 	void Awake () {
@@ -69,6 +71,7 @@ public class RingmasterAI : MonoBehaviour {
         moveByForce.enabled = true;
         launchToTarget = GetComponent<LaunchToTarget>();
         launchToTarget.enabled = false;
+        health = GetComponent<Health>();
         attackState = AttackState.FlamingHoop;
 	}
 	
@@ -136,6 +139,10 @@ public class RingmasterAI : MonoBehaviour {
                 transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
             }
         }
+        else if (attackState == AttackState.Stomp)
+        {
+            MoveToPos();
+        }
         else if (attackState == AttackState.BalloonGun)
         {
             if (canSpawn && !isJumping)
@@ -153,7 +160,20 @@ public class RingmasterAI : MonoBehaviour {
             canSpawnAcrobats = false;
             StartCoroutine(WaitToSpawnAcrobats());
         }
+
+        CalculatePhase();
 	}
+
+    void CalculatePhase () {
+        if ((health.currentHealth <= health.startHealth / 3) && phase == 2) {
+            StopAllCoroutines ();
+            phase = 3;
+            StartCoroutine (WaitToChangeAttackState(1));
+        } else if ((health.currentHealth <= health.startHealth / 3 * 2) && phase == 1) {
+            phase = 2;
+            StartCoroutine (WaitToChangeAttackState(1));
+        }
+    }
 
     void ChangeAttackState () {
         StopAllCoroutines();
@@ -181,7 +201,7 @@ public class RingmasterAI : MonoBehaviour {
         }
         else if (attackState == AttackState.Stomp)
         {
-            StartCoroutine(WaitToJump(timeBetweenStompJumps));
+            StartCoroutine(WaitToJump(1));
             moveByForce.enabled = false;
         }
         else if (attackState == AttackState.UnicycleCharge)
@@ -196,11 +216,15 @@ public class RingmasterAI : MonoBehaviour {
             moveByForce.force = gunFollowSpeed;
         }
         StartCoroutine(WaitToSpawnAcrobats());
-        StartCoroutine(WaitToChangeAttackState());
+        StartCoroutine(WaitToChangeAttackState(stateChangeTime));
     }
 
-    IEnumerator WaitToChangeAttackState () {
-        yield return new WaitForSeconds(stateChangeTime);
+    IEnumerator WaitToChangeAttackState (float time) {
+        yield return new WaitForSeconds(time);
+        while (isJumping)
+        {
+            yield return null;
+        }
         if (phase == 1)
         {
             if (attackState == AttackState.FlamingHoop)
@@ -270,7 +294,7 @@ public class RingmasterAI : MonoBehaviour {
         }
         if (attackState == AttackState.FlamingHoop || attackState == AttackState.RollingBall)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, movePos.rotation, 0.02f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, movePos.rotation, 0.05f);
         }
         else if (attackState == AttackState.HatBomb || attackState == AttackState.BalloonGun)
         {
@@ -278,9 +302,9 @@ public class RingmasterAI : MonoBehaviour {
         }
         else if (attackState == AttackState.Stomp)
         {
-            if (Vector3.Distance(new Vector3(movePos.position.x, 0, movePos.position.z), new Vector3(transform.position.x, 0, transform.position.z)) >= 1)
+            if (Vector3.Distance(new Vector3(playerOldPos.position.x, 0, playerOldPos.position.z), new Vector3(transform.position.x, 0, transform.position.z)) > 1)
             {
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movePos.position - transform.position), 0.1f);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerOldPos.position - transform.position), 0.1f);
             }
         }
         else if (attackState == AttackState.UnicycleCharge)
@@ -310,8 +334,9 @@ public class RingmasterAI : MonoBehaviour {
         }
         else if (attackState == AttackState.Stomp)
         {
+            rb.velocity = Vector3.zero;
             playerOldPos.position = new Vector3(player.position.x, 0, player.position.z);
-            movePos = playerOldPos;
+            launchToTarget.target = playerOldPos;
             launchToTarget.enabled = true;
         }
         else if (attackState == AttackState.RollingBall)
@@ -344,6 +369,9 @@ public class RingmasterAI : MonoBehaviour {
     }
 
     IEnumerator WaitToCharge () {
+        while (isJumping) {
+            yield return null;
+        }
         yield return new WaitForSeconds(timeBetweenCharges);
         moveDir = (player.position - transform.position).normalized * chargeSpeed;
         moveDir = new Vector3(moveDir.x, 0, moveDir.z);
@@ -364,7 +392,13 @@ public class RingmasterAI : MonoBehaviour {
     }
 
     IEnumerator WaitToSpawnAcrobats () {
-        yield return new WaitForSeconds(timeBetweenAcrobats);
+        if (phase == 1) {
+            yield return new WaitForSeconds(timeBetweenAcrobatsPhase1);
+        } else if (phase == 2) {
+            yield return new WaitForSeconds(timeBetweenAcrobatsPhase2);
+        } else if (phase == 3) {
+            yield return new WaitForSeconds(timeBetweenAcrobatsPhase3);
+        } 
         canSpawnAcrobats = true;
     }
 }

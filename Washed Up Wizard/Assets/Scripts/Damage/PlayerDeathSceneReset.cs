@@ -9,7 +9,6 @@ public class PlayerDeathSceneReset : MonoBehaviour {
 
     private Health health;
     private bool resetting = false;
-    private PauseManager pauseManager;
 
 	// Use this for initialization
 	void Awake () {
