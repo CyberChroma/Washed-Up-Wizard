@@ -78,7 +78,14 @@ public class RingmasterAI : MonoBehaviour {
     void OnEnable () {
         ChangeAttackState ();
     }
-        
+
+    void OnDisable () {
+        if (attackState == AttackState.RollingBall)
+        {
+            pedistal.Activate();
+        }
+        curtains[0].GetComponent<ActivateFollowTarget>().Activate();
+    }
 	// Update is called once per frame
     void FixedUpdate () {
         if (attackState == AttackState.FlamingHoop)
@@ -190,6 +197,7 @@ public class RingmasterAI : MonoBehaviour {
         }
         else if (attackState == AttackState.RollingBall)
         {
+            rb.velocity = Vector3.zero;
             StartCoroutine(WaitToJump(1));
             moveByForce.force = airSpeed;
         }
