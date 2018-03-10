@@ -10,7 +10,7 @@ public class CheatManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.U)) {
+        if (Input.GetKeyDown(KeyCode.P)) {
             if (player.enabled) {
                 stopDamage = !stopDamage;
             }

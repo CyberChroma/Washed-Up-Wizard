@@ -8,7 +8,6 @@ public class RoomEnd : MonoBehaviour {
     public GameObject player;
     public GameObject inputController;
     public FollowTargetLerp cameraMove;
-    public GameObject demoCompleteScreen;
     public string nextLevel;
 
     private bool activated;
@@ -17,9 +16,6 @@ public class RoomEnd : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         playerMoveInput = player.GetComponent<PlayerMoveInput>();
-        if (demoCompleteScreen) {
-            demoCompleteScreen.SetActive(false);
-        }
 	}
 
     void OnTriggerEnter (Collider other) {
@@ -38,10 +34,8 @@ public class RoomEnd : MonoBehaviour {
         playerMoveInput.v = 1;
         playerMoveInput.h = 0;
         yield return new WaitForSeconds(2.5f);
-        if (demoCompleteScreen) {
-            demoCompleteScreen.SetActive(true);
-        }
-        else {
+        if (nextLevel != string.Empty)
+        {
             SceneManager.LoadScene(nextLevel);
         }
     }

@@ -23,9 +23,12 @@ GameObject:
   - component: {fileID: 135003246290538684}
   - component: {fileID: 33072022980376056}
   - component: {fileID: 23562772810633390}
+  - component: {fileID: 114266534037251488}
+  - component: {fileID: 114860671003463142}
+  - component: {fileID: 114783400616568920}
   m_Layer: 0
   m_Name: Protection Field
-  m_TagString: Player Shield
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +87,54 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1539674379174454}
   m_Mesh: {fileID: 4300000, guid: 798b64d3039d12a4db1d9bbff41cca66, type: 3}
+--- !u!114 &114266534037251488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1539674379174454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047e23d1fd6bbb247af3666474b6c446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 1539674379174454}
+  startHealth: 5
+  tempStopHitsTime: 0.1
+  audioClip: {fileID: 0}
+  soundPlayer: {fileID: 0}
+  volume: 0
+  disableOnDeath: 1
+  disableDelay: 0
+  healthChanged: 0
+  currentHealth: 0
+  canBeHit: 1
+--- !u!114 &114783400616568920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1539674379174454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e97d91ff98f2e4ab6ff305d6b92e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnParticles: {fileID: 1527179019113562, guid: e772900eb7ce73043983f63619654f63,
+    type: 2}
+  deathParticles: {fileID: 1527179019113562, guid: e772900eb7ce73043983f63619654f63,
+    type: 2}
+--- !u!114 &114860671003463142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1539674379174454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991310c490662e844bffe31e08979ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114882339289580362
 MonoBehaviour:
   m_ObjectHideFlags: 1

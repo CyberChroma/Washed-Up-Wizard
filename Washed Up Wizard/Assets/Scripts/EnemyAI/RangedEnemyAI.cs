@@ -10,6 +10,8 @@ public class RangedEnemyAI : MonoBehaviour {
 	public float moveSensitivity = 0.1f; // Used to make the enemy movement less snappy
 	public float attackDelay = 1; // The delay between attacking
 	public float attackTime = 0.5f; // How long the enemy will be attacking
+    public float maxDistance = 20;
+    public float minDistance = 5;
     public float radius = 30;
     public bool fallStart = false;
     public float fallForce = 10;
@@ -56,7 +58,7 @@ public class RangedEnemyAI : MonoBehaviour {
 		foreach (GameObject emitter in emitters) { // Cycles through each emitter
 			emitter.SetActive (false); // Sets it inactive
 		}
-        targetLocation.position = new Vector3 (Random.Range (player.position.x - radius, player.position.x + radius), 0, Random.Range (player.position.y - radius, player.position.y + radius)); // Setting the object move location to a random location
+        targetLocation.position = transform.position; // Setting the object move location to a random location
         if (anim) {
             anim.speed = Random.Range(0.9f, 1.1f);
         }
@@ -64,7 +66,7 @@ public class RangedEnemyAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (active) { 
+        if (active && player && (player.position.x > transform.position.x - radius && player.position.x < transform.position.x + radius && player.position.z > transform.position.z - radius && player.position.z < transform.position.z + radius)) { 
             if (canMove) { // If the enemy can move
                 if (Vector3.Distance(transform.position, new Vector3(targetLocation.position.x, transform.position.y, targetLocation.position.z)) <= 1f) { // If the enemy has reached its target location
                     if (moveByConstantSpeed)
@@ -159,7 +161,20 @@ public class RangedEnemyAI : MonoBehaviour {
 	IEnumerator ChangeTarget () {
 		canMove = false; 
 		yield return new WaitForSeconds (moveDelay); // Waits...
-        targetLocation.position = new Vector3 (Random.Range (player.position.x - radius, player.position.x + radius), 0, Random.Range (player.position.y - radius, player.position.y + radius)); // Setting the move location to a random location
-        canMove = true;
+        float xpos = Random.Range (player.position.x + minDistance, player.position.x + maxDistance);
+        float ypos = Random.Range (player.position.y + minDistance, player.position.y + maxDistance);
+        switch (Random.Range(0, 4)) {
+            case 1:
+                xpos *= -1;
+                break;
+            case 2:
+                ypos *= -1;
+                break;
+            case 3:
+                xpos *= -1;
+                ypos *= -1;
+                break;
+        }
+        targetLocation.position = new Vector3 (xpos, 0, ypos); // Setting the object move location to a random location        canMove = true;
 	}
 }
