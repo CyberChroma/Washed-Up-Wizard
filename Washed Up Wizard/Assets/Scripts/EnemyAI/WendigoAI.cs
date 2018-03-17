@@ -1,326 +1,138 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WendigoAI : MonoBehaviour {
 
-	[System.Serializable]
-	public class MoveSpeeds	{
-		public float toPlayer;
-		public float toWaypoint;
-		public float changeStatesTime;
-		public float randomDelay;
-	}
+    public enum AttackState {
+        IceSpread,
+        SnowballBowl,
+        IceBreath,
+        LungeClaw,
+        BullCharge,
+        StompShockwave
+    }
 
-	[System.Serializable]
-	public class ProjectileAttack {
-		public GameObject emitter;
-		public float activateTime;
-		public float aTRandomDelay;
-		public int numActivates;
-		public float timeBetweenActivates;
-		public float tBARandomDelay;
-	}
+    public float normalSpeed;
+    public Transform player;
 
-	[System.Serializable]
-	public class Phase1	{
-		public MoveSpeeds moveSpeeds;
-		public ProjectileAttack[] projectileAttacks;
-		public float timeBetweenAttacks;
-		public float randomDelay;
-	}
+    public float chaseSpeed;
+    public float timeBetweenIceSpread;
+    public GameObject iceShotsEmitter;
 
-	[System.Serializable]
-	public class Phase2	{
-		public MoveSpeeds moveSpeeds;
-		public ProjectileAttack[] projectileAttacks;
-		public float timeBetweenAttacks;
-		public float randomDelay;
-		public int harpiesToSpawn;
-	}
-		
-	[System.Serializable]
-	public class Phase3	{
-		public MoveSpeeds moveSpeeds;
-		public ProjectileAttack[] projectileAttacks;
-		public float timeBetweenAttacks;
-		public float randomDelay;
-		public int harpiesToSpawn;
-	}
+    public float timeBetweenSnowballs;
+    public GameObject snowBallEmitter;
+    public Transform center;
 
-	public Phase1 phase1;
-	public Phase2 phase2;
-	public Phase3 phase3;
-	public SpawnObjectByActivate[] harpySpawnObjectByActivate;
-	public Transform[] wayPoints;
-    public Transform Harpies;
-	public float phaseChangeDelay = 2;
+    public float timeBetweenHarpiesPhase1;
+    public float timeBetweenHarpiesPhase2;
+    public float timeBetweenHarpiesPhase3;
+    public GameObject[] harpiesEmitters;
 
-	private Transform player;
-	private MoveByForce moveByForce;
-	private Health health;
-	private int phase = 1;
-	private bool canAttack = false;
-	private bool isAttacking = false;
-	private int moveState = 1; // 0 = stop, 1 = move towards player, 2 = move to random waypoint
-	private int attackNum;
-	private int oldAttackNum = -1;
-	private int timesActivated;
-	private bool changingPhase = false;
-	private FollowTargetLerp cameraFollowTargetLerp;
-	private Transform currentWaypoint;
-	private GameObject inputController;
-    private Animator anim;
+    private int phase = 1;
+    private AttackState attackState;
+    private bool canSpawn = false;
+    private bool centerReached = false;
+    private bool canSpawnHarpies = false;
+    private Transform movePos;
+    private MoveByForce moveByForce;
+    private Vector3 moveDir;
+    private Health health;
 
-	// Use this for initialization
-	void Awake () {
-		player = GameObject.Find ("Player").transform;
-		cameraFollowTargetLerp = Camera.main.GetComponentInParent<FollowTargetLerp>();
-		moveByForce = GetComponent<MoveByForce>();
-		health = GetComponent<Health>();
-		inputController = GameObject.Find ("Input Controller");
-        anim = GetComponentInChildren<Animator>();
-	}
+    // Use this for initialization
+    void Awake () {
+        iceShotsEmitter.SetActive(false);
+        moveByForce = GetComponent<MoveByForce>();
+        moveByForce.enabled = true;
+        health = GetComponent<Health>();
+        attackState = AttackState.SnowballBowl;
+    }
 
-	void OnEnable () {
-		StartCoroutine (WaitToChangeMoveState (Random.Range (phase1.moveSpeeds.changeStatesTime - phase1.moveSpeeds.randomDelay, phase1.moveSpeeds.changeStatesTime + phase1.moveSpeeds.randomDelay)));
-		foreach (ProjectileAttack projectileAttack in phase1.projectileAttacks) {
-			projectileAttack.emitter.SetActive (false);
-		}
-		StartCoroutine (WaitToAttack (Random.Range (phase1.timeBetweenAttacks - phase1.randomDelay, phase1.timeBetweenAttacks + phase1.randomDelay)));
-	}
+    void OnEnable () {
+        if (attackState == AttackState.IceSpread)
+        {
+            moveByForce.force = chaseSpeed;
+            movePos = player;
+            StartCoroutine(WaitToSpawn(timeBetweenIceSpread));
+        }
+        else if (attackState == AttackState.SnowballBowl)
+        {
+            moveByForce.force = normalSpeed;
+            movePos = center;
+            centerReached = false;
+        }
+    }
 
-	// Update is called once per frame
-	void FixedUpdate () {
-		if (player && !changingPhase) {
-			Move ();
-			if (canAttack) {
-				Attack ();
-			}
-			CalculatePhase ();
-		}
-		if (moveByForce.dir != Vector3.zero) {
-			transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (moveByForce.dir), 3f * Time.deltaTime); // Rotates after object
-			transform.rotation = Quaternion.Euler (new Vector3 (0, transform.rotation.eulerAngles.y, 0));
-		}
-        if (health.currentHealth <= 0) {
-            moveByForce.dir = Vector3.zero;
-            moveByForce.force = 0;
-            Transform[] tempHarpies = Harpies.GetComponentsInChildren<Transform>();
-            foreach (Transform tempHarpy in tempHarpies) {
-                if (tempHarpy.name == "Harpy Object") {
-                    tempHarpy.GetComponent<Health>().currentHealth = 0;
+    void OnDisable () {
+        if (health.currentHealth <= 0)
+        {
+            SceneManager.LoadScene("Wendigo Death");
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
+        if (attackState == AttackState.IceSpread)
+        {
+            if (canSpawn)
+            {
+                iceShotsEmitter.SetActive(true);
+                canSpawn = false;
+                StartCoroutine(WaitToSpawn(timeBetweenIceSpread));
+            }
+            Vector3 dir = (movePos.position - transform.position);
+            dir = new Vector3(dir.x, 0, dir.z).normalized;
+            moveByForce.dir = dir;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 0.1f);
+        } else if (attackState == AttackState.SnowballBowl) {
+            if (!centerReached)
+            {
+                Vector3 dir = (movePos.position - transform.position);
+                dir = new Vector3(dir.x, 0, dir.z).normalized;
+                moveByForce.dir = dir;
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 0.1f);
+                if (Vector3.Distance(new Vector3 (movePos.position.x, 0, movePos.position.z), new Vector3 (transform.position.x, 0, transform.position.z)) <= 0.1f)
+                {
+                    moveByForce.dir = Vector3.zero;
+                    centerReached = true;
+                    StartCoroutine(WaitToSpawn(timeBetweenSnowballs));
                 }
             }
-            enabled = false;
+            else if (canSpawn)
+            {
+                snowBallEmitter.SetActive(true);
+                canSpawn = false;
+                StartCoroutine(WaitToSpawn(timeBetweenSnowballs));
+            }
+            else
+            {
+                Vector3 dir = (player.position - transform.position);
+                dir = new Vector3(dir.x, 0, dir.z).normalized;
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 0.1f);
+            }
         }
-	}
-
-	void Move () {
-		if (moveState == 0) {
-			moveByForce.dir = Vector3.zero;
-		} else if (moveState == 1) {
-			moveByForce.dir = (player.position - transform.position).normalized;
-		} else {
-			if (Vector3.Distance (transform.position, currentWaypoint.position) <= 0.1f) {
-				moveByForce.force = 0;
-				moveByForce.dir = Vector3.zero;
-			} else {
-				moveByForce.dir = (currentWaypoint.position - transform.position).normalized;
-			}
-		}
-        if (moveByForce.dir == Vector3.zero) {
-            anim.SetBool("IsWalking", false);
-        } else {
-            anim.SetBool("IsWalking", true);
+        if (canSpawnHarpies) {
+            harpiesEmitters [Random.Range(0, harpiesEmitters.Length)].SetActive(true);
+            canSpawnHarpies = false;
+            StartCoroutine(WaitToSpawnHarpies());
         }
-	}
+        transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
+    }
 
-	IEnumerator WaitToChangeMoveState (float delay) {
-		yield return new WaitForSeconds (delay);
-		while (isAttacking) {
-			yield return null;
-		}
-		ChangeMoveState ();
-	}
+    IEnumerator WaitToSpawn (float delay) {
+        yield return new WaitForSeconds(delay);
+        canSpawn = true;
+    }
 
-	void ChangeMoveState () {
-		moveState = Random.Range (0, 3);
-		if (moveState == 0) {
-			moveByForce.force = 0;
-		} else if (moveState == 1) {
-			if (phase == 1) {
-				moveByForce.force = phase1.moveSpeeds.toPlayer;
-			} else if (phase == 2) {
-				moveByForce.force = phase2.moveSpeeds.toPlayer;
-			} else {
-				moveByForce.force = phase3.moveSpeeds.toPlayer;
-			}
-		} else {
-			currentWaypoint = wayPoints [Random.Range (0, wayPoints.Length)];
-			if (phase == 1) {
-				moveByForce.force = phase1.moveSpeeds.toWaypoint;
-			} else if (phase == 2) {
-				moveByForce.force = phase2.moveSpeeds.toWaypoint;
-			} else {
-				moveByForce.force = phase3.moveSpeeds.toWaypoint;
-			}
-		}
-		if (phase == 1) {
-			StartCoroutine (WaitToChangeMoveState (Random.Range (phase1.moveSpeeds.changeStatesTime - phase1.moveSpeeds.randomDelay, phase1.moveSpeeds.changeStatesTime + phase1.moveSpeeds.randomDelay)));
-		} else if (phase == 2) {
-			StartCoroutine (WaitToChangeMoveState (Random.Range (phase2.moveSpeeds.changeStatesTime - phase2.moveSpeeds.randomDelay, phase2.moveSpeeds.changeStatesTime + phase2.moveSpeeds.randomDelay)));
-		} else {
-			StartCoroutine (WaitToChangeMoveState (Random.Range (phase3.moveSpeeds.changeStatesTime - phase3.moveSpeeds.randomDelay, phase3.moveSpeeds.changeStatesTime + phase3.moveSpeeds.randomDelay)));
-		}
-	}
-
-	void Attack () {
-		timesActivated = 1;
-		oldAttackNum = attackNum;
-		if (phase == 1) {
-			attackNum = Random.Range (0, phase1.projectileAttacks.Length);
-			for (int i = 0; i < 2; i++) {
-				if (oldAttackNum == attackNum) { // Lowers chances of throwing same attack twice, but doesn't get rid of possibility
-					attackNum = Random.Range (0, phase1.projectileAttacks.Length);
-				}
-			}
-			phase1.projectileAttacks [attackNum].emitter.SetActive (true);
-			canAttack = false;
-			isAttacking = true;
-			StartCoroutine (WaitToStopAttacking (Random.Range (phase1.projectileAttacks [attackNum].activateTime - phase1.projectileAttacks [attackNum].aTRandomDelay, phase1.projectileAttacks [attackNum].activateTime + phase1.projectileAttacks [attackNum].aTRandomDelay)));
-		} else if (phase == 2) {
-			attackNum = Random.Range (0, phase2.projectileAttacks.Length + 1);
-			if (attackNum == phase2.projectileAttacks.Length) {
-				SpawnHarpies ();
-			} else {
-				if (oldAttackNum == attackNum) { // Lowers chances of throwing same attack twice, but doesn't get rid of possibility
-					attackNum = Random.Range (0, phase2.projectileAttacks.Length);
-				}
-				phase2.projectileAttacks [attackNum].emitter.SetActive (true);
-				canAttack = false;
-				isAttacking = true;
-				StartCoroutine (WaitToStopAttacking (Random.Range (phase2.projectileAttacks [attackNum].activateTime - phase2.projectileAttacks [attackNum].aTRandomDelay, phase2.projectileAttacks [attackNum].activateTime + phase2.projectileAttacks [attackNum].aTRandomDelay)));
-			}
-		} else {			
-			attackNum = Random.Range (0, phase3.projectileAttacks.Length + 1);
-			if (attackNum == phase3.projectileAttacks.Length) {
-				SpawnHarpies ();
-			} else {
-				if (oldAttackNum == attackNum) { // Lowers chances of throwing same attack twice, but doesn't get rid of possibility
-					attackNum = Random.Range (0, phase3.projectileAttacks.Length);
-				}
-				phase3.projectileAttacks [attackNum].emitter.SetActive (true);
-				canAttack = false;
-				isAttacking = true;
-				StartCoroutine (WaitToStopAttacking (Random.Range (phase3.projectileAttacks [attackNum].activateTime - phase3.projectileAttacks [attackNum].aTRandomDelay, phase3.projectileAttacks [attackNum].activateTime + phase3.projectileAttacks [attackNum].aTRandomDelay)));
-			}
-		}
-	}
-
-	IEnumerator WaitToStopAttacking (float delay) {
-		yield return new WaitForSeconds (delay);
-		if (phase == 1) {
-			phase1.projectileAttacks [attackNum].emitter.SetActive (false);
-			if (phase1.projectileAttacks [attackNum].numActivates != 1) {
-				while (timesActivated < phase1.projectileAttacks [attackNum].numActivates) {
-					yield return new WaitForSeconds (Random.Range (phase1.projectileAttacks [attackNum].timeBetweenActivates - phase1.projectileAttacks [attackNum].tBARandomDelay, phase1.projectileAttacks [attackNum].timeBetweenActivates + phase1.projectileAttacks [attackNum].tBARandomDelay));
-					timesActivated++;
-					phase1.projectileAttacks [attackNum].emitter.SetActive (true);
-					yield return new WaitForSeconds (delay);
-					phase1.projectileAttacks [attackNum].emitter.SetActive (false);
-				}
-			}
-			isAttacking = false;
-			StartCoroutine (WaitToAttack (Random.Range (phase1.timeBetweenAttacks - phase1.randomDelay, phase1.timeBetweenAttacks + phase1.randomDelay)));
-		} else if (phase == 2) {
-			phase2.projectileAttacks [attackNum].emitter.SetActive (false);
-			if (phase2.projectileAttacks [attackNum].numActivates != 1) {
-				while (timesActivated < phase2.projectileAttacks [attackNum].numActivates) {
-					yield return new WaitForSeconds (Random.Range (phase2.projectileAttacks [attackNum].timeBetweenActivates - phase2.projectileAttacks [attackNum].tBARandomDelay, phase2.projectileAttacks [attackNum].timeBetweenActivates + phase2.projectileAttacks [attackNum].tBARandomDelay));
-					timesActivated++;
-					phase2.projectileAttacks [attackNum].emitter.SetActive (true);
-					yield return new WaitForSeconds (delay);
-					phase2.projectileAttacks [attackNum].emitter.SetActive (false);
-				}
-			}
-			isAttacking = false;
-			StartCoroutine (WaitToAttack (Random.Range (phase2.timeBetweenAttacks - phase2.randomDelay, phase2.timeBetweenAttacks + phase2.randomDelay)));
-		} else {
-			phase3.projectileAttacks [attackNum].emitter.SetActive (false);
-			if (phase3.projectileAttacks [attackNum].numActivates != 1) {
-				while (timesActivated < phase3.projectileAttacks [attackNum].numActivates) {
-					yield return new WaitForSeconds (Random.Range (phase3.projectileAttacks [attackNum].timeBetweenActivates - phase3.projectileAttacks [attackNum].tBARandomDelay, phase3.projectileAttacks [attackNum].timeBetweenActivates + phase3.projectileAttacks [attackNum].tBARandomDelay));
-					timesActivated++;
-					phase3.projectileAttacks [attackNum].emitter.SetActive (true);
-					yield return new WaitForSeconds (delay);
-					phase3.projectileAttacks [attackNum].emitter.SetActive (false);
-				}
-			}
-			isAttacking = false;
-			StartCoroutine (WaitToAttack (Random.Range (phase3.timeBetweenAttacks - phase3.randomDelay, phase3.timeBetweenAttacks + phase3.randomDelay)));
-		}
-	}
-
-	IEnumerator WaitToAttack (float delay) {
-		yield return new WaitForSeconds (delay);
-		canAttack = true;
-	}
-
-	void CalculatePhase () {
-		if ((health.currentHealth <= health.startHealth / 3) && phase == 2) {
-			StopAllCoroutines ();
-			StartCoroutine (WaitToChangePhase (3));
-		} else if ((health.currentHealth <= health.startHealth / 3 * 2) && phase == 1) {
-			StopAllCoroutines ();
-			StartCoroutine (WaitToChangePhase (2));
-		}
-	}
-
-	IEnumerator WaitToChangePhase (int newPhase) {
-		changingPhase = true;
-		if (phase == 1) {
-			phase1.projectileAttacks [attackNum].emitter.SetActive (false);
-		} else if (phase == 2) {
-			phase2.projectileAttacks [attackNum].emitter.SetActive (false);
-		}
-		cameraFollowTargetLerp.target = GetComponent<Rigidbody> ();
-		GetComponent<TakeDamage> ().enabled = false;
-		player.GetComponent<TakeDamage> ().enabled = false;
-        inputController.SetActive(false);
-        player.GetComponent<PlayerMoveInput>().enabled = false;
-        player.GetComponentInChildren<Animator>().SetBool("IsWalking", false);
-		moveByForce.dir = Vector3.zero;
-        anim.SetTrigger("Roar");
-		yield return new WaitForSeconds (phaseChangeDelay);
-		phase = newPhase;
-		changingPhase = false;
-		cameraFollowTargetLerp.target = player.GetComponent<Rigidbody> ();
-		GetComponent<TakeDamage> ().enabled = true;
-		player.GetComponent<TakeDamage> ().enabled = true;
-        inputController.SetActive(true);
-        player.GetComponent<PlayerMoveInput>().enabled = true;
-		SpawnHarpies ();
-		if (phase == 2) {
-			StartCoroutine (WaitToAttack (Random.Range (phase2.timeBetweenAttacks - phase2.randomDelay, phase2.timeBetweenAttacks + phase2.randomDelay)));
-			StartCoroutine (WaitToChangeMoveState (Random.Range (phase2.moveSpeeds.changeStatesTime - phase2.moveSpeeds.randomDelay, phase2.moveSpeeds.changeStatesTime + phase2.moveSpeeds.randomDelay)));
-		} else {
-			StartCoroutine (WaitToAttack (Random.Range (phase3.timeBetweenAttacks - phase3.randomDelay, phase3.timeBetweenAttacks + phase3.randomDelay)));
-			StartCoroutine (WaitToChangeMoveState (Random.Range (phase3.moveSpeeds.changeStatesTime - phase3.moveSpeeds.randomDelay, phase3.moveSpeeds.changeStatesTime + phase3.moveSpeeds.randomDelay)));
-		}
-	}
-		
-	void SpawnHarpies () {
-		if (phase == 2 && GameObject.FindGameObjectsWithTag ("Enemy").Length < phase2.harpiesToSpawn + 1) {
-			for (int i = 0; i < phase2.harpiesToSpawn; i++) {
-				int j = Random.Range (0, harpySpawnObjectByActivate.Length);
-				harpySpawnObjectByActivate [j].Spawn ();
-			}
-		} else if (phase == 3 && GameObject.FindGameObjectsWithTag ("Enemy").Length < phase3.harpiesToSpawn + 1) {
-			for (int i = 0; i < phase3.harpiesToSpawn; i++) {
-				int j = Random.Range (0, harpySpawnObjectByActivate.Length);
-				harpySpawnObjectByActivate [j].Spawn ();
-			}
-		}
-	}
+    IEnumerator WaitToSpawnHarpies () {
+        if (phase == 1) {
+            yield return new WaitForSeconds(timeBetweenHarpiesPhase1);
+        } else if (phase == 2) {
+            yield return new WaitForSeconds(timeBetweenHarpiesPhase2);
+        } else if (phase == 3) {
+            yield return new WaitForSeconds(timeBetweenHarpiesPhase2);
+        } 
+        canSpawnHarpies = true;
+    }
 }

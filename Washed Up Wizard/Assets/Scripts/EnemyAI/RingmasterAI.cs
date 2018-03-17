@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RingmasterAI : MonoBehaviour {
 
@@ -80,11 +81,9 @@ public class RingmasterAI : MonoBehaviour {
     }
 
     void OnDisable () {
-        if (attackState == AttackState.RollingBall)
-        {
-            pedistal.Activate();
+        if (health.currentHealth <= 0) {
+            SceneManager.LoadScene("Ringmaster Death");
         }
-        curtains[0].GetComponent<ActivateFollowTarget>().Activate();
     }
 	// Update is called once per frame
     void FixedUpdate () {
@@ -198,8 +197,9 @@ public class RingmasterAI : MonoBehaviour {
         else if (attackState == AttackState.RollingBall)
         {
             rb.velocity = Vector3.zero;
-            StartCoroutine(WaitToJump(1));
+            moveByForce.dir = Vector3.zero;
             moveByForce.force = airSpeed;
+            StartCoroutine(WaitToJump(1));
         }
         else if (attackState == AttackState.HatBomb)
         {

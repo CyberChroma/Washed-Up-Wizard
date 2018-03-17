@@ -40,7 +40,7 @@ public class RigifyToUnityImportPreferencesWindow : EditorWindow {
 	}
 	
 	private void OnGUI () {
-		this.title = c_WindowTitle;
+        this.titleContent.text = c_WindowTitle;
 		GUILayout.Label ("Model Name Filter", EditorStyles.boldLabel);
 		RigifyToUnityPrefs.NameFilter = EditorGUILayout.TextField (m_NameFilterLabel, RigifyToUnityPrefs.NameFilter);
 		

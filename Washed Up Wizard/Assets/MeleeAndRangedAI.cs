@@ -30,10 +30,10 @@ public class MeleeAndRangedAI : MonoBehaviour {
     private MoveByConstantSpeed enemyMove; // Reference to the move script
     private MoveByForce rEnemyMove; // Reference to the move script
     private Transform player; // Reference to the player
-    private float moveSpeed;
+    //private float moveSpeed;
     private bool canMove = true; // Whether the player can move
     private DamageByTouchCollision damageByTouchCollision;
-    private float moveForce;
+    //private float moveForce;
 
 
 	void Awake () {
@@ -47,7 +47,7 @@ public class MeleeAndRangedAI : MonoBehaviour {
 
     void OnEnable () {
         if (fallStart) {
-            moveForce = rEnemyMove.force;
+            //moveForce = rEnemyMove.force;
             rEnemyMove.force = fallForce;
             rEnemyMove.dir = Vector3.down * fallForce;
             active = false;
@@ -97,7 +97,7 @@ public class MeleeAndRangedAI : MonoBehaviour {
         }
         else if (fallStart && Vector3.Distance(transform.position, new Vector3(transform.position.x, height, transform.position.z)) < 1f) { 
             active = true;
-            enemyMove.speed = moveSpeed;
+            //enemyMove.speed = moveSpeed;
             enemyMove.dir = Vector3.zero;
         }
         else {

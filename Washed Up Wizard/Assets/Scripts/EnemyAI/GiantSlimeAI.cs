@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GiantSlimeAI : MonoBehaviour {
 
@@ -89,6 +90,10 @@ public class GiantSlimeAI : MonoBehaviour {
 		}
 		StartCoroutine (WaitToAttack (Random.Range (phase1.timeBetweenAttacks - phase1.randomDelay, phase1.timeBetweenAttacks + phase1.randomDelay)));
 	}
+
+    void OnDisable () {
+        SceneManager.LoadScene("Level Select");
+    }
 
 	// Update is called once per frame
 	void FixedUpdate () {

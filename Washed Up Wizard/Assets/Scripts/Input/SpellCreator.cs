@@ -27,6 +27,7 @@ public class SpellCreator : MonoBehaviour {
 	private ComponentInputReceiver componentInputReceiver;
 	private SpellInputReceiver spellInputReceiver;
 	private SpawnObjectByInput tempSpawnObjectByInput;
+    private int componentsPanelTimesActivated = 0;
 
 	// Use this for initialization
 	void Awake () {
@@ -42,23 +43,25 @@ public class SpellCreator : MonoBehaviour {
 		if (canCreate) { // If the player can create a spell
 			if (spellSetUp) { // If the player has set up a spell
                 for (int i = 0; i < spellInputReceiver.inputSD.Length; i++) { // Goes through each active spell button
-                    if (spellInputReceiver.inputSD[i]) { // If the button was pressed
+                    if (spellInputReceiver.inputSD[i] && componentsPanelTimesActivated % 2 != 0) { // If the button was pressed
                         CreateSpell(spellID, i);
                         componentsPanel.Activate ();
+                        componentsPanelTimesActivated++;
                     }
                 }
 			} else { // If the player has not set up a spell
 				SetUpSpell ();
 			}
-			if (currentArrayNum == 1 || currentArrayNum == 2) { // If the player has inputted components 1 or 2
-				for (int i = 0; i < spellInputReceiver.inputSD.Length; i++) { // Goes through the active spell buttons
-					if (spellInputReceiver.inputSD [i] && !EventSystem.current.IsPointerOverGameObject ()) { // If the player has pressed a button and this button press was not clicking a UI button
+			if (currentArrayNum == 1 || currentArrayNum == 2) { // If the player has input components 1 or 2
+				for (int i = 0; i < spellInputReceiver.inputSD.Length; i++) { // Goes through the active spell buttons 
+                    if (spellInputReceiver.inputSD [i] && componentsPanelTimesActivated % 2 != 0) { // If the player has pressed a button and this button press was not clicking a UI button
 						// Resetting the spell creation
                         glows [0].SetActive (false);
 						if (currentArrayNum == 2) {
 							glows [1].SetActive (false);
 						}
 						componentsPanel.Activate ();
+                        componentsPanelTimesActivated++;
 						currentArrayNum = 0;
 						spellSetUp = false;
 						creatingSpell = false;
@@ -70,14 +73,17 @@ public class SpellCreator : MonoBehaviour {
 
 	void SetUpSpell () {
 		for (int i = 0; i < componentInputReceiver.inputC.Length; i++) { // Goes through each component button 
-			if (componentInputReceiver.inputC [i]) { // If the button was pressed
+            if (componentInputReceiver.inputC [i]) { // If the button was pressed
 				creatingSpell = true; // The player is creating the a spell
 				spellID [currentArrayNum] = i;
 				currentArrayNum++;
 				if (currentArrayNum == 1) { // If this is the first component
 					glows [0].transform.position = craftingComponents [i].transform.position;
 					glows [0].SetActive (true);
-					componentsPanel.Activate ();
+                    if (componentsPanelTimesActivated % 2 == 0) {
+					    componentsPanel.Activate ();
+                        componentsPanelTimesActivated++;
+                    }
 				} else if (currentArrayNum == 2) { // If this is the second component
 					glows [1].transform.position = craftingComponents [i].transform.position;
 					glows [1].SetActive (true);

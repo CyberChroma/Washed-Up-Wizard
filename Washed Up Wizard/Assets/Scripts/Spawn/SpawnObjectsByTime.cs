@@ -29,7 +29,7 @@ public class SpawnObjectsByTime : MonoBehaviour {
 		canSpawn = true;
         if (delay == 0) {
             Spawn();
-            enabled = false;
+            gameObject.SetActive(false);
         }
 	}
 
