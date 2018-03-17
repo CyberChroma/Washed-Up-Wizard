@@ -8,9 +8,6 @@ public class Health : MonoBehaviour {
     public GameObject parent; // The object parent (to destroy)
 	public float startHealth = 10; // The health the object starts with
 	public float tempStopHitsTime = 2; // Time between hits
-	public AudioClip audioClip; // The death sound
-	public GameObject soundPlayer; // The object that plays the sound
-	public float volume = 0.5f; // The volume of the sound
     public bool disableOnDeath = false;
     public float disableDelay = 1;
 
@@ -38,14 +35,6 @@ public class Health : MonoBehaviour {
 	public void ChangeHealth () {
 		healthChanged = true; // Updates the UI
         if (currentHealth <= 0 && !dead) { // If the object has no health left
-			if (audioClip) { // If the audio clip is not null
-				audioSource = Instantiate (soundPlayer, transform.position, Quaternion.identity).GetComponent<AudioSource> (); // Creates the sound player and gets the reference to the audio source
-			}
-            if (audioSource) {
-			    audioSource.volume = volume; // Sets the volume
-			    audioSource.clip = audioClip; // Sets the clip
-			    audioSource.Play (); // Plays the sound
-            }
             if (rb) {
                 rb.isKinematic = true;
             }

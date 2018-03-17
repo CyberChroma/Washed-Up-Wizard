@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RangedEnemyAI : MonoBehaviour {
 
-    // This enemy's attack pattern is to move, shoot a progrctile, then move again
+    // This enemy's attack pattern is to move, shoot a projectile, then move again
 
 	public float moveDelay = 2; // The delay between moves
 	public float moveSensitivity = 0.1f; // Used to make the enemy movement less snappy
@@ -77,12 +77,12 @@ public class RangedEnemyAI : MonoBehaviour {
                     {
                         moveByForce.dir = Vector3.zero; // Sets the speed to 0
                     }
-                    StartCoroutine(Attack());
-                    StartCoroutine(ChangeTarget());
+                    StartCoroutine(WaitToAttack());
+                    StartCoroutine(WaitToChangeTarget());
                 }
                 else {
                     Vector3 dir = targetLocation.position - transform.position; // Sets its direction
-                    dir = new Vector3(dir.x, targetLocation.position.y, dir.z); // Elimintates y value
+                    dir = new Vector3(dir.x, height, dir.z); // Elimintates y value
                     if (dir.magnitude < 1) { // if the magniude is less than 1 (For better smoothing)
                         if (moveByConstantSpeed)
                         {
@@ -105,13 +105,11 @@ public class RangedEnemyAI : MonoBehaviour {
                     }
                 }
             }
-            if (player) { // If the player is in the scene (Not destroyed)
-                Quaternion targetRotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), 0.5f); // Looks at the player
-                transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0); // Ignores x and z values
-            }
         }
-        else if (fallStart && Vector3.Distance (transform.position, new Vector3 (transform.position.x, height, transform.position.z)) < 1f) { 
+        else if (fallStart && Vector3.Distance (transform.position, new Vector3 (transform.position.x, height, transform.position.z)) < 0.1f) {
+            transform.position = new Vector3(transform.position.x, height, transform.position.z);
             active = true;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
             if (moveByConstantSpeed)
             {
                 moveByConstantSpeed.speed = moveSpeed;
@@ -122,6 +120,11 @@ public class RangedEnemyAI : MonoBehaviour {
                 moveByForce.force = moveSpeed;
                 moveByForce.dir = Vector3.zero;
             }
+            ChangeTarget();
+        }
+        if (player) { // If the player is in the scene (Not destroyed)
+            Quaternion targetRotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), 0.5f); // Looks at the player
+            transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0); // Ignores x and z values
         }
         if (health.currentHealth <= 0) {
             enabled = false;
@@ -130,7 +133,7 @@ public class RangedEnemyAI : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision other) { // If the enemy collided with something, change its move target.
-        if (active) {
+        if (active && canMove) {
             if (moveByConstantSpeed)
             {
                 moveByConstantSpeed.dir = Vector3.zero;
@@ -139,14 +142,14 @@ public class RangedEnemyAI : MonoBehaviour {
             {
                 moveByForce.dir = Vector3.zero;
             }
-            StartCoroutine(Attack());
-            StartCoroutine(ChangeTarget());
+            StartCoroutine(WaitToAttack());
+            StartCoroutine(WaitToChangeTarget());
         }
 	}
 
-	IEnumerator Attack () {
-		anim.SetTrigger ("Attack"); // Plays the attack animation
-		yield return new WaitForSeconds (attackDelay); // Waits...
+	IEnumerator WaitToAttack () {
+        anim.SetTrigger("Attack"); // Plays the attack animation
+        yield return new WaitForSeconds(attackDelay); // Waits...
 		foreach (GameObject emitter in emitters) { // Goes through each emitter
 			emitter.SetActive (true); // Sets the emitter active
 		}
@@ -158,9 +161,13 @@ public class RangedEnemyAI : MonoBehaviour {
         }
 	}
 
-	IEnumerator ChangeTarget () {
-		canMove = false; 
-		yield return new WaitForSeconds (moveDelay); // Waits...
+	IEnumerator WaitToChangeTarget () {
+        canMove = false; 
+        yield return new WaitForSeconds(moveDelay); // Waits...
+        ChangeTarget ();
+    }
+
+    void ChangeTarget () {
         float xpos = Random.Range (player.position.x + minDistance, player.position.x + maxDistance);
         float ypos = Random.Range (player.position.y + minDistance, player.position.y + maxDistance);
         switch (Random.Range(0, 4)) {
@@ -175,6 +182,7 @@ public class RangedEnemyAI : MonoBehaviour {
                 ypos *= -1;
                 break;
         }
-        targetLocation.position = new Vector3 (xpos, 0, ypos); // Setting the object move location to a random location        canMove = true;
+        targetLocation.position = new Vector3 (xpos, height, ypos); // Setting the object move location to a random location        
+        canMove = true;
 	}
 }

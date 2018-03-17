@@ -1707,6 +1707,7 @@ GameObject:
   - component: {fileID: 54665653705387846}
   - component: {fileID: 65220063332326076}
   - component: {fileID: 82402163125549816}
+  - component: {fileID: 114546242897454974}
   m_Layer: 10
   m_Name: Wizard
   m_TagString: Player
@@ -2348,7 +2349,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897975555965378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -11}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4072139213509710}
@@ -3899,10 +3900,6 @@ MonoBehaviour:
   parent: {fileID: 1897975555965378}
   startHealth: 10
   tempStopHitsTime: 0.5
-  audioClip: {fileID: 8300000, guid: 9e89cd4a3dfb75d4ba50f9b054da77f0, type: 3}
-  soundPlayer: {fileID: 1449778364141320, guid: 4b6330c22faace9439ec09516161fea4,
-    type: 2}
-  volume: 1
   disableOnDeath: 0
   disableDelay: 0
   healthChanged: 0
@@ -4170,6 +4167,21 @@ MonoBehaviour:
   emitterNum: 0
   cooldownWheel: {fileID: 0}
   cooldownValue: 0
+--- !u!114 &114546242897454974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897975555965378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916032e81bf15d943a803f08f3263064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 9e89cd4a3dfb75d4ba50f9b054da77f0, type: 3}
+  soundPlayer: {fileID: 1449778364141320, guid: 4b6330c22faace9439ec09516161fea4,
+    type: 2}
+  volume: 0.2
 --- !u!114 &114550905417365806
 MonoBehaviour:
   m_ObjectHideFlags: 1

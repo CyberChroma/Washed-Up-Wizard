@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 114043427144450276}
   - component: {fileID: 114689852302401400}
   m_Layer: 12
-  m_Name: Lock On Emitter
+  m_Name: Frostball Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3923,6 +3923,7 @@ GameObject:
   - component: {fileID: 114483552445028442}
   - component: {fileID: 54564021901974964}
   - component: {fileID: 65277513935970554}
+  - component: {fileID: 114018384475968744}
   m_Layer: 12
   m_Name: Harpy Object
   m_TagString: Enemy
@@ -14246,7 +14247,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1862474232024652}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e4f37259edc91b3489b5c7364f35cf87, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -14269,6 +14270,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114018384475968744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1862474232024652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916032e81bf15d943a803f08f3263064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 5feb2395b9f3baf4ca8fb549d94f4775, type: 3}
+  soundPlayer: {fileID: 1449778364141320, guid: 4b6330c22faace9439ec09516161fea4,
+    type: 2}
+  volume: 0.1
 --- !u!114 &114043427144450276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14300,10 +14316,6 @@ MonoBehaviour:
   parent: {fileID: 1172672012317196}
   startHealth: 4
   tempStopHitsTime: 0.1
-  audioClip: {fileID: 8300000, guid: 5feb2395b9f3baf4ca8fb549d94f4775, type: 3}
-  soundPlayer: {fileID: 1449778364141320, guid: 4b6330c22faace9439ec09516161fea4,
-    type: 2}
-  volume: 0.05
   disableOnDeath: 1
   disableDelay: 2
   healthChanged: 0
@@ -14322,16 +14334,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDelay: 2
   moveSensitivity: 0.1
-  attackDelay: 0.6
+  attackDelay: 1
   attackTime: 0
+  maxDistance: 10
+  minDistance: 1
+  radius: 40
   fallStart: 1
-  fallForce: 20
+  fallForce: 50
   height: 0
-  boundaries:
-    minx: -10
-    maxx: 10
-    miny: -10
-    maxy: 10
   emitters:
   - {fileID: 1198831560372808}
   targetLocation: {fileID: 4689065102672518}
@@ -14350,6 +14360,8 @@ MonoBehaviour:
   oneTime: 0
   tagsToDamage:
   - Player
+  push: 1
+  pushForce: 4
 --- !u!114 &114483552445028442
 MonoBehaviour:
   m_ObjectHideFlags: 1
