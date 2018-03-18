@@ -16,6 +16,7 @@ public class LoadScene : MonoBehaviour {
     }
 
     IEnumerator WaitToLoadScene () {
+        Time.timeScale = 1;
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(sceneToLoad);
     }
