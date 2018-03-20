@@ -166,9 +166,13 @@ public class RingmasterAI : MonoBehaviour {
             canSpawnAcrobats = false;
             StartCoroutine(WaitToSpawnAcrobats());
         }
-
         CalculatePhase();
-	}
+        if (transform.position.y <= -10)
+        {
+            rb.velocity = Vector3.zero;
+            transform.position = Vector3.up * 20;
+        }
+    }
 
     void CalculatePhase () {
         if ((health.currentHealth <= health.startHealth / 3) && phase == 2) {
