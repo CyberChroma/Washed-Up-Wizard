@@ -119,6 +119,11 @@ public class GiantSlimeAI : MonoBehaviour {
             }
             enabled = false;
         }
+        if (transform.position.y <= -10)
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            transform.position = Vector3.up * 20;
+        }
 	}
 
 	void Move () {

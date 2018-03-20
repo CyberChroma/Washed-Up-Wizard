@@ -72,7 +72,6 @@ public class WendigoAI : MonoBehaviour {
         ChangeAttackState();
     }
 
-
     void OnDisable () {
         if (health.currentHealth <= 0)
         {
@@ -232,6 +231,11 @@ public class WendigoAI : MonoBehaviour {
                 dir = (player.position - transform.position);
                 dir = new Vector3(dir.x, 0, dir.z).normalized;
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 0.1f);
+            }
+            if (transform.position.y <= -10)
+            {
+                rb.velocity = Vector3.zero;
+                transform.position = Vector3.up * 20;
             }
         }
 
