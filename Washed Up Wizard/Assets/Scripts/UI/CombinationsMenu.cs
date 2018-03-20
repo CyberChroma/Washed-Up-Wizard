@@ -14,11 +14,29 @@ public class CombinationsMenu : MonoBehaviour {
 	private int maxPage;
 	private Transform tempCombo;
 	private List<Transform> combos = new List<Transform> (); // Different than an array because the length can be changed
+    private ActivateFollowTarget activateFollowTarget;
+
+    void Awake () {
+        activateFollowTarget = GetComponent<ActivateFollowTarget>();
+    }
 
 	// Use this for initialization
 	void Start () {
 		SetUpCombinations ();
 	}
+
+    void Update () {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            activateFollowTarget.Activate();
+        }
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            PreviousPage();
+        }
+        if (Input.GetKeyDown(KeyCode.E)) {
+            NextPage();
+        }
+    }
 
 	void SetUpCombinations () {
 		spellNum = 0;

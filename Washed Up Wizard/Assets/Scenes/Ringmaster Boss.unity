@@ -466,7 +466,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1577,11 +1577,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114671220823811718, guid: e3cf389834d58694b8755898eeab0b60,
+    - target: {fileID: 114006416638455104, guid: e3cf389834d58694b8755898eeab0b60,
         type: 2}
-      propertyPath: target
+      propertyPath: playerSpellReference
       value: 
-      objectReference: {fileID: 1549116450}
+      objectReference: {fileID: 1654452515}
     - target: {fileID: 114935163497203420, guid: e3cf389834d58694b8755898eeab0b60,
         type: 2}
       propertyPath: targets.Array.data[0]
@@ -1592,11 +1592,11 @@ Prefab:
       propertyPath: targets.Array.data[1]
       value: 
       objectReference: {fileID: 25138637}
-    - target: {fileID: 114006416638455104, guid: e3cf389834d58694b8755898eeab0b60,
+    - target: {fileID: 114671220823811718, guid: e3cf389834d58694b8755898eeab0b60,
         type: 2}
-      propertyPath: playerSpellReference
+      propertyPath: target
       value: 
-      objectReference: {fileID: 1654452515}
+      objectReference: {fileID: 1549116450}
     - target: {fileID: 1622455198401276, guid: e3cf389834d58694b8755898eeab0b60, type: 2}
       propertyPath: m_Name
       value: Combinations Panel
@@ -2889,7 +2889,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3870,7 +3870,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -4421,6 +4421,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114033683061539512, guid: 1eb6cfd2ad2e92647b08ef4db2637afa,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1538365112}
     - target: {fileID: 114986894883698438, guid: 1eb6cfd2ad2e92647b08ef4db2637afa,
         type: 2}
       propertyPath: player
@@ -4536,11 +4541,6 @@ Prefab:
       propertyPath: acrobatEmitter
       value: 
       objectReference: {fileID: 377896681}
-    - target: {fileID: 114033683061539512, guid: 1eb6cfd2ad2e92647b08ef4db2637afa,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1538365112}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1eb6cfd2ad2e92647b08ef4db2637afa, type: 2}
   m_IsPrefabParent: 0
