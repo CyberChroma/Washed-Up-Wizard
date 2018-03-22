@@ -14,7 +14,17 @@ ModelImporter:
     4300000: Metal_Wall
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Wall
+    second: {fileID: 2100000, guid: 8060ae170dea891438f6bcb761b1c83d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Wall_001
+    second: {fileID: 2100000, guid: 5c4e5d9388c22a941844f6c59a9ac7ae, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -65,7 +75,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 80
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4

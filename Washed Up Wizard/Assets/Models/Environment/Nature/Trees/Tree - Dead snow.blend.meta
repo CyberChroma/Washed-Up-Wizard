@@ -14,7 +14,17 @@ ModelImporter:
     4300000: tree_dead
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dead_tree_trunk
+    second: {fileID: 2100000, guid: 7b70524202ce4244c88b293189a4cc66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: snow
+    second: {fileID: 2100000, guid: 6f8214132f354ad4d9bb9a6f4cb504dd, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -65,7 +75,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
+    normalSmoothAngle: 80
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4

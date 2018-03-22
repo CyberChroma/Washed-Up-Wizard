@@ -13,7 +13,12 @@ ModelImporter:
     4300000: Ice_Wall
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ice_Wall
+    second: {fileID: 2100000, guid: 1812c382040b70c40988820e7a6fa689, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -64,7 +69,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 80
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
