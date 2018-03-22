@@ -13,7 +13,12 @@ ModelImporter:
     4300000: Plane
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ice2
+    second: {fileID: 2100000, guid: a1ff6a86bf70b50459fd82fa576ad710, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -64,7 +69,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 180
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4

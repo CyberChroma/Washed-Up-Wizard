@@ -23,7 +23,27 @@ ModelImporter:
     6400002: star
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: circus_red
+    second: {fileID: 2100000, guid: ee19f73ab8ecff44e86095c65efd1404, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: circus_whte
+    second: {fileID: 2100000, guid: a88b8cffea9a8924ab9d3e3779d4e2b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: circus_yellow
+    second: {fileID: 2100000, guid: b4d5ce4ac0b77ba4187039872ccf7e07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light_blue
+    second: {fileID: 2100000, guid: d50e01c99c127c3448e5048232988988, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -74,7 +94,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 180
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4

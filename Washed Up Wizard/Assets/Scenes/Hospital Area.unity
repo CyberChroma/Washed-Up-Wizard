@@ -7410,6 +7410,16 @@ Prefab:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 23893444051263820, guid: b33cdc59f7e96c74698e0cda74016729,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8060ae170dea891438f6bcb761b1c83d, type: 2}
+    - target: {fileID: 23893444051263820, guid: b33cdc59f7e96c74698e0cda74016729,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c4e5d9388c22a941844f6c59a9ac7ae, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b33cdc59f7e96c74698e0cda74016729, type: 2}
   m_IsPrefabParent: 0
@@ -21325,11 +21335,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114006416638455104, guid: e3cf389834d58694b8755898eeab0b60,
+    - target: {fileID: 114671220823811718, guid: e3cf389834d58694b8755898eeab0b60,
         type: 2}
-      propertyPath: playerSpellReference
+      propertyPath: target
       value: 
-      objectReference: {fileID: 1654452515}
+      objectReference: {fileID: 1549116450}
     - target: {fileID: 114935163497203420, guid: e3cf389834d58694b8755898eeab0b60,
         type: 2}
       propertyPath: targets.Array.data[0]
@@ -21340,11 +21350,11 @@ Prefab:
       propertyPath: targets.Array.data[1]
       value: 
       objectReference: {fileID: 25138637}
-    - target: {fileID: 114671220823811718, guid: e3cf389834d58694b8755898eeab0b60,
+    - target: {fileID: 114006416638455104, guid: e3cf389834d58694b8755898eeab0b60,
         type: 2}
-      propertyPath: target
+      propertyPath: playerSpellReference
       value: 
-      objectReference: {fileID: 1549116450}
+      objectReference: {fileID: 1654452515}
     - target: {fileID: 1622455198401276, guid: e3cf389834d58694b8755898eeab0b60, type: 2}
       propertyPath: m_Name
       value: Combinations Panel
@@ -21390,31 +21400,6 @@ Prefab:
     - target: {fileID: 4416338845976462, guid: b33cdc59f7e96c74698e0cda74016729, type: 2}
       propertyPath: m_RootOrder
       value: 579
-      objectReference: {fileID: 0}
-    - target: {fileID: 4416338845976462, guid: b33cdc59f7e96c74698e0cda74016729, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4416338845976462, guid: b33cdc59f7e96c74698e0cda74016729, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.2000015
-      objectReference: {fileID: 0}
-    - target: {fileID: 114455224979815764, guid: b33cdc59f7e96c74698e0cda74016729,
-        type: 2}
-      propertyPath: startHealth
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1470615988463960, guid: b33cdc59f7e96c74698e0cda74016729, type: 2}
-      propertyPath: m_TagString
-      value: Breakable
-      objectReference: {fileID: 0}
-    - target: {fileID: 1470615988463960, guid: b33cdc59f7e96c74698e0cda74016729, type: 2}
-      propertyPath: m_Layer
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4416338845976462, guid: b33cdc59f7e96c74698e0cda74016729, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b33cdc59f7e96c74698e0cda74016729, type: 2}
@@ -25712,6 +25697,16 @@ Prefab:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 23893444051263820, guid: b33cdc59f7e96c74698e0cda74016729,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8060ae170dea891438f6bcb761b1c83d, type: 2}
+    - target: {fileID: 23893444051263820, guid: b33cdc59f7e96c74698e0cda74016729,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c4e5d9388c22a941844f6c59a9ac7ae, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b33cdc59f7e96c74698e0cda74016729, type: 2}
   m_IsPrefabParent: 0
@@ -27039,6 +27034,20 @@ Prefab:
     - target: {fileID: 1470615988463960, guid: b33cdc59f7e96c74698e0cda74016729, type: 2}
       propertyPath: m_Name
       value: Metal Wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 23893444051263820, guid: b33cdc59f7e96c74698e0cda74016729,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8060ae170dea891438f6bcb761b1c83d, type: 2}
+    - target: {fileID: 23893444051263820, guid: b33cdc59f7e96c74698e0cda74016729,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c4e5d9388c22a941844f6c59a9ac7ae, type: 2}
+    - target: {fileID: 4416338845976462, guid: b33cdc59f7e96c74698e0cda74016729, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b33cdc59f7e96c74698e0cda74016729, type: 2}
