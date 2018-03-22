@@ -38,9 +38,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1470615988463960}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 2.25, z: -53}
-  m_LocalScale: {x: 1.8000038, y: 1, z: 1.2000014}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 38, y: 2.25, z: -29}
+  m_LocalScale: {x: 0.8, y: 1, z: 1.2000015}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,8 +59,8 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ce4309c7a70034c45953c68014e75be5, type: 3}
-  - {fileID: 2100002, guid: ce4309c7a70034c45953c68014e75be5, type: 3}
+  - {fileID: 2100000, guid: 8060ae170dea891438f6bcb761b1c83d, type: 2}
+  - {fileID: 2100000, guid: 5c4e5d9388c22a941844f6c59a9ac7ae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,11 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1470615988463960}
-  startHealth: 2
+  startHealth: 4
   tempStopHitsTime: 0.2
-  audioClip: {fileID: 0}
-  soundPlayer: {fileID: 0}
-  volume: 0.5
   disableOnDeath: 1
   disableDelay: 0.1
   healthChanged: 0
