@@ -5,7 +5,6 @@ using UnityEngine;
 public class MeleeEnemyAI : MonoBehaviour {
 
     // This enemy's attack pattern is to run at the player and attack them
-
 	public float moveSensitivity = 0.1f; // Used to make the enemy movement less snappy
     public bool fallStart = false;
     public float fallSpeed = 10;
