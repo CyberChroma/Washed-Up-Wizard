@@ -4064,6 +4064,7 @@ GameObject:
   - component: {fileID: 114682407746599788}
   - component: {fileID: 114788232100603568}
   - component: {fileID: 114293222458026598}
+  - component: {fileID: 195242022228368110}
   m_Layer: 12
   m_Name: Zombie Doctor
   m_TagString: Enemy
@@ -6333,7 +6334,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1788999975810212}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 21.27, y: 0, z: -135.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4038889337614098}
@@ -15716,7 +15717,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1788999975810212}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4920da2cd6451640bd8ca66524f6260, type: 3}
   m_Name: 
@@ -15788,9 +15789,6 @@ MonoBehaviour:
   parent: {fileID: 1788999975810212}
   startHealth: 3
   tempStopHitsTime: 0.2
-  audioClip: {fileID: 0}
-  soundPlayer: {fileID: 0}
-  volume: 0.5
   disableOnDeath: 1
   disableDelay: 1.5
   healthChanged: 0
@@ -16986,3 +16984,24 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.19508709, y: 0.9320693, z: -0.102490075}
     m_Extent: {x: 0.44528496, y: 0.6350609, z: 0.3131466}
   m_DirtyAABB: 0
+--- !u!195 &195242022228368110
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788999975810212}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
