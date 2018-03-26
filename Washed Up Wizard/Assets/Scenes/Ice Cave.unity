@@ -2519,6 +2519,21 @@ Prefab:
       propertyPath: m_Size.x
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 23727717143951288, guid: 2b2e1c258a7148c4a8b14215bf21eefb,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b06dd23c6c73c045b05b5683c8a0e77, type: 2}
+    - target: {fileID: 23035546754674842, guid: 2b2e1c258a7148c4a8b14215bf21eefb,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b06dd23c6c73c045b05b5683c8a0e77, type: 2}
+    - target: {fileID: 23012234506751862, guid: 2b2e1c258a7148c4a8b14215bf21eefb,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b06dd23c6c73c045b05b5683c8a0e77, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b2e1c258a7148c4a8b14215bf21eefb, type: 2}
   m_IsPrefabParent: 0
@@ -10656,7 +10671,6 @@ MonoBehaviour:
   player: {fileID: 1538365106}
   inputController: {fileID: 685088413}
   cameraMove: {fileID: 1643933424}
-  demoCompleteScreen: {fileID: 0}
   nextLevel: Ringmaster Boss
 --- !u!114 &2032333121
 MonoBehaviour:
@@ -10672,7 +10686,6 @@ MonoBehaviour:
   player: {fileID: 1538365106}
   inputController: {fileID: 685088413}
   cameraMove: {fileID: 1643933424}
-  demoStartScreen: {fileID: 0}
   runTime: 0.6
 --- !u!1 &2051269051
 GameObject:
