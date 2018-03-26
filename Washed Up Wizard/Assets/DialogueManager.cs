@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
 
+
     public Text nameText;
     public Text dialogueText;
 
     public Animator animator;
+    private int sentenceNum;
 
     private Queue<string> sentences;
 
@@ -32,6 +34,13 @@ public class DialogueManager : MonoBehaviour {
         }
 
         DisplayNextSentence();
+        if (dialogue.pickup.taskComplete == true && dialogue.thankYou == false)
+        {
+            dialogue.thankYou = true;
+        } else if (dialogue.killEnemies.taskComplete == true && dialogue.thankYou == false)
+        {
+            dialogue.thankYou = true;
+        }
     }
 
     public void DisplayNextSentence (){
@@ -42,6 +51,7 @@ public class DialogueManager : MonoBehaviour {
 
         string sentence = sentences.Dequeue();
         dialogueText.text = sentence;
+
 
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));

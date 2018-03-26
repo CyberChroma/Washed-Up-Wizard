@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class MeleeEnemyAI : MonoBehaviour {
-    
+
     // This enemy's attack pattern is to run at the player and attack them
 	public float moveSensitivity = 0.1f; // Used to make the enemy movement less snappy
     public bool fallStart = false;
@@ -71,8 +71,10 @@ public class MeleeEnemyAI : MonoBehaviour {
             {
                 moveByForce.dir = Vector3.Lerp (moveByForce.dir, dir.normalized, 0.25f); // Sets the magnitude to 1
             }
-            Quaternion targetRotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(nav.velocity), 0.5f); // Looks at the player
-            transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0); // Ignores x and z values
+            if (nav.velocity != Vector3.zero) {
+                Quaternion targetRotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(nav.velocity), 0.5f); // Looks at the player
+                transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0); // Ignores x and z values
+            }
         }
         else if (fallStart && Vector3.Distance(transform.position, new Vector3(transform.position.x, height, transform.position.z)) < 1f) { 
             active = true;
@@ -107,6 +109,7 @@ public class MeleeEnemyAI : MonoBehaviour {
                 moveByForce.dir = Vector3.zero;
             }
             damageByTouchCollision.canDamage = false;
+            nav.destination = transform.position;
             enabled = false;
             health.ChangeHealth();
         }

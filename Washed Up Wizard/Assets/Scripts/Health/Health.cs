@@ -14,7 +14,7 @@ public class Health : MonoBehaviour {
 	[HideInInspector] public bool healthChanged; // UI updates when true
 	[HideInInspector] public float currentHealth; // The current health
 	[HideInInspector] public bool canBeHit = true; // Whether the object can be hit
-    private bool dead = false;
+    [HideInInspector] public bool dead = false;
     private bool healingOverTime = false; // Whether the object is currently taking damage over time
     private float currentHealPerSecond = 0; // The amount of damage the object is taking per second
     private Rigidbody rb;

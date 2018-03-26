@@ -19,4 +19,9 @@ public class DialogueTrigger : MonoBehaviour {
             FindObjectOfType<DialogueManager>().EndDialogue();
         }
     }
+
+    public void Update (){
+        dialogue.getSentences();
+    }
+ 
 }
