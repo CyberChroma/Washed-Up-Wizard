@@ -4058,7 +4058,6 @@ GameObject:
   - component: {fileID: 4228139712251430}
   - component: {fileID: 54428301194007636}
   - component: {fileID: 65118862054284150}
-  - component: {fileID: 114175866758423686}
   - component: {fileID: 114954936233898766}
   - component: {fileID: 114054958253158588}
   - component: {fileID: 114682407746599788}
@@ -6334,7 +6333,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1788999975810212}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 21.27, y: 0, z: -135.29}
+  m_LocalPosition: {x: -3.78, y: 0, z: -133.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4038889337614098}
@@ -15711,21 +15710,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991310c490662e844bffe31e08979ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114175866758423686
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1788999975810212}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4920da2cd6451640bd8ca66524f6260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  dir: {x: 0, y: 0, z: 0}
-  relative: 0
-  once: 0
 --- !u!114 &114293222458026598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15774,7 +15758,7 @@ MonoBehaviour:
   fallStart: 0
   fallSpeed: 10
   height: 0
-  radius: 20
+  radius: 15
 --- !u!114 &114954936233898766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15794,6 +15778,7 @@ MonoBehaviour:
   healthChanged: 0
   currentHealth: 0
   canBeHit: 1
+  dead: 0
 --- !u!137 &137114911505167116
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
