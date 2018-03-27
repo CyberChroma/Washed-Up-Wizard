@@ -1,64 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class RangedEnemyAI : MonoBehaviour {
 
-    // This enemy's attack pattern is to move, shoot a projectile, then move again
+    // This enemy's attack pattern is to move towards the player shooting a projectile, but stay a certain distance,=
 
 	public float moveDelay = 2; // The delay between moves
-	public float moveSensitivity = 0.1f; // Used to make the enemy movement less snappy
-	public float attackDelay = 1; // The delay between attacking
-	public float attackTime = 0.5f; // How long the enemy will be attacking
-    public float maxDistance = 20;
+    public float timeBeforeAttack = 0.5f; // The delay before attacking
+    public float timeBetweenAttacks = 2; // The delay between attacking
+    public float maxDistance = 10;
     public float minDistance = 5;
     public float radius = 30;
-    public bool fallStart = false;
-    public float fallForce = 10;
-    public float height = 0;
 	public GameObject[] emitters; // Reference to the enemy's projectile emitters
-	public Transform targetLocation; // The location the enemy is moving towards
 
-    private bool active = false;
-	private Animator anim; // Reference to the animator
+    private NavMeshAgent nav;
+    private Animator anim; // Reference to the animator
     private Health health;
-    private MoveByConstantSpeed moveByConstantSpeed;
-    private MoveByForce moveByForce; // Reference to the move script
 	private Transform player; // Reference to the player
 	private bool canMove = true; // Whether the player can move
-    private float moveSpeed;
+    private bool canAttack = true;
 
 	// Use this for initialization
 	void Awake () {
-        moveByConstantSpeed = GetComponent<MoveByConstantSpeed> (); // Getting the reference
-        moveByForce = GetComponent<MoveByForce>();
+        nav = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator> (); // Getting the reference
         health = GetComponent<Health> ();
 		player = GameObject.Find ("Player").transform; // Getting the reference
 	}
 
 	void OnEnable () {
-        if (fallStart) {
-            if (moveByConstantSpeed)
-            {
-                moveSpeed = moveByConstantSpeed.speed;
-                moveByConstantSpeed.speed = fallForce;
-                moveByConstantSpeed.dir = Vector3.down * fallForce;
-            }
-            else if (moveByForce)
-            {
-                moveSpeed = moveByForce.force;
-                moveByForce.force = fallForce;
-                moveByForce.dir = Vector3.down * fallForce;
-            }
-            active = false;
-        } else {
-            active = true;
-        }
 		foreach (GameObject emitter in emitters) { // Cycles through each emitter
 			emitter.SetActive (false); // Sets it inactive
 		}
-        targetLocation.position = transform.position; // Setting the object move location to a random location
         if (anim) {
             anim.speed = Random.Range(0.9f, 1.1f);
         }
@@ -66,61 +41,34 @@ public class RangedEnemyAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (active && player && (player.position.x > transform.position.x - radius && player.position.x < transform.position.x + radius && player.position.z > transform.position.z - radius && player.position.z < transform.position.z + radius)) { 
-            if (canMove) { // If the enemy can move
-                if (Vector3.Distance(transform.position, new Vector3(targetLocation.position.x, transform.position.y, targetLocation.position.z)) <= 1f) { // If the enemy has reached its target location
-                    if (moveByConstantSpeed)
-                    {
-                        moveByConstantSpeed.dir = Vector3.zero; // Sets the speed to 0
-                    }
-                    else if (moveByForce)
-                    {
-                        moveByForce.dir = Vector3.zero; // Sets the speed to 0
-                    }
-                    StartCoroutine(WaitToAttack());
-                    StartCoroutine(WaitToChangeTarget());
+        if (player && (player.position.x > transform.position.x - radius && player.position.x < transform.position.x + radius && player.position.z > transform.position.z - radius && player.position.z < transform.position.z + radius))
+        { 
+            if (canMove)
+            { // If the enemy can move
+                if (Vector3.Distance(transform.position, new Vector3(player.position.x, transform.position.y, player.position.z)) <= minDistance)
+                {
+                    Debug.DrawRay (transform.position, (transform.position - player.position).normalized, Color.blue); 
+                    print((transform.position - player.position).normalized);
+                    nav.destination = (transform.position + (transform.position - player.position).normalized) ; 
                 }
-                else {
-                    Vector3 dir = targetLocation.position - transform.position; // Sets its direction
-                    dir = new Vector3(dir.x, height, dir.z); // Elimintates y value
-                    if (dir.magnitude < 1) { // if the magniude is less than 1 (For better smoothing)
-                        if (moveByConstantSpeed)
-                        {
-                            moveByConstantSpeed.dir = dir;
-                        }
-                        else if (moveByForce)
-                        {
-                            moveByForce.dir = dir;
-                        }
-                    }
-                    else { // If the magnitude is greater than 1
-                        if (moveByConstantSpeed)
-                        {
-                            moveByConstantSpeed.dir = dir.normalized;
-                        }
-                        else if (moveByForce)
-                        {
-                            moveByForce.dir = dir.normalized;
-                        }
-                    }
+                else if (Vector3.Distance(transform.position, new Vector3(player.position.x, transform.position.y, player.position.z)) <= maxDistance)
+                {
+                    nav.destination = Vector3.Lerp (nav.destination, new Vector3 (transform.position.x + (Random.Range (-1, 2) * 5), transform.position.y, transform.position.z + (Random.Range (-1, 2) * 5)), 0.1f);
                 }
+                else
+                {
+                    nav.destination = player.position;
+                }
+            }
+            if (canAttack)
+            {
+                StartCoroutine (WaitToAttack ());
+                canAttack = false;
             }
         }
-        else if (fallStart && Vector3.Distance (transform.position, new Vector3 (transform.position.x, height, transform.position.z)) < 0.1f) {
-            transform.position = new Vector3(transform.position.x, height, transform.position.z);
-            active = true;
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            if (moveByConstantSpeed)
-            {
-                moveByConstantSpeed.speed = moveSpeed;
-                moveByConstantSpeed.dir = Vector3.zero;
-            }
-            else if (moveByForce)
-            {
-                moveByForce.force = moveSpeed;
-                moveByForce.dir = Vector3.zero;
-            }
-            ChangeTarget();
+        else
+        {
+            nav.destination = transform.position;
         }
         if (player) { // If the player is in the scene (Not destroyed)
             Quaternion targetRotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), 0.5f); // Looks at the player
@@ -129,60 +77,17 @@ public class RangedEnemyAI : MonoBehaviour {
         if (health.currentHealth <= 0) {
             enabled = false;
             health.ChangeHealth();
+            nav.destination = transform.position;
         }
 	}
 
-	void OnCollisionEnter (Collision other) { // If the enemy collided with something, change its move target.
-        if (active && canMove) {
-            if (moveByConstantSpeed)
-            {
-                moveByConstantSpeed.dir = Vector3.zero;
-            }
-            else if (moveByForce)
-            {
-                moveByForce.dir = Vector3.zero;
-            }
-            StartCoroutine(WaitToAttack());
-            StartCoroutine(WaitToChangeTarget());
-        }
-	}
-
-	IEnumerator WaitToAttack () {
+    IEnumerator WaitToAttack () {
         anim.SetTrigger("Attack"); // Plays the attack animation
-        yield return new WaitForSeconds(attackDelay); // Waits...
+        yield return new WaitForSeconds(timeBeforeAttack); // Waits...
 		foreach (GameObject emitter in emitters) { // Goes through each emitter
 			emitter.SetActive (true); // Sets the emitter active
 		}
-        if (attackTime != 0) {
-            yield return new WaitForSeconds(attackTime); // Waits...
-            foreach (GameObject emitter in emitters) { // Goes through each emitter
-                emitter.SetActive(false); // Sets the emitter inactive
-            }
-        }
-	}
-
-	IEnumerator WaitToChangeTarget () {
-        canMove = false; 
-        yield return new WaitForSeconds(moveDelay); // Waits...
-        ChangeTarget ();
-    }
-
-    void ChangeTarget () {
-        float xpos = Random.Range (player.position.x + minDistance, player.position.x + maxDistance);
-        float ypos = Random.Range (player.position.y + minDistance, player.position.y + maxDistance);
-        switch (Random.Range(0, 4)) {
-            case 1:
-                xpos *= -1;
-                break;
-            case 2:
-                ypos *= -1;
-                break;
-            case 3:
-                xpos *= -1;
-                ypos *= -1;
-                break;
-        }
-        targetLocation.position = new Vector3 (xpos, height, ypos); // Setting the object move location to a random location        
-        canMove = true;
+        yield return new WaitForSeconds(timeBetweenAttacks); // Waits...
+        canAttack = true;
 	}
 }
