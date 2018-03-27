@@ -5,17 +5,18 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
 
-
-    public Text nameText;
-    public Text dialogueText;
-
-    public Animator animator;
+    private Text nameText;
+    private Text dialogueText;
+    private Animator animator;
     private int sentenceNum;
 
     private Queue<string> sentences;
 
 	// Use this for initialization
 	void Start () {
+        nameText = transform.Find("Name Text").GetComponent<Text>();
+        dialogueText = transform.Find("Dialogue Text").GetComponent<Text>(); 
+        animator = GetComponent<Animator>();
         sentences = new Queue <string>();
 	}
         
