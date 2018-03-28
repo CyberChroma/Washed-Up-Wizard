@@ -14,12 +14,12 @@ public class Dialogue {
 
     System.Random rand = new System.Random(); 
 
+    public TaskType tasktype;
     public Pickup pickup;
     public killEnemies killEnemies;
     public string name;//name of character
     public TextAsset[] textReferences;//references to text files
 
-    public TaskType tasktype;
     private int numOfLines;
     private int whichSentence;
 
