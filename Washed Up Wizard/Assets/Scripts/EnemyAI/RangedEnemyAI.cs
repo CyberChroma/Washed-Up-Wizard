@@ -48,7 +48,6 @@ public class RangedEnemyAI : MonoBehaviour {
                 if (Vector3.Distance(transform.position, new Vector3(player.position.x, transform.position.y, player.position.z)) <= minDistance)
                 {
                     Debug.DrawRay (transform.position, (transform.position - player.position).normalized, Color.blue); 
-                    print((transform.position - player.position).normalized);
                     nav.destination = (transform.position + (transform.position - player.position).normalized) ; 
                 }
                 else if (Vector3.Distance(transform.position, new Vector3(player.position.x, transform.position.y, player.position.z)) <= maxDistance)
