@@ -11,7 +11,7 @@ public class SpawnObjectByInput : MonoBehaviour {
 	public bool onRelease = false; // Whether the object should be spawned when a button is released
 	public GameObject reticle; // The reticle to use when the button is held down
 	public int emitterNum = 0; // The emitter number
-	public Slider cooldownWheel; // The cooldown wheel 
+	public Slider cooldownWheel; // The cooldown wheel
 
     [HideInInspector] public float cooldownValue = 0;
 	private bool canSpawn = true; // Whether the emitter can spawn objects
