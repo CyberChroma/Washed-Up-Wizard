@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4931133938112952}
   - component: {fileID: 33105928363625894}
   - component: {fileID: 23384950362218304}
+  - component: {fileID: 95875169330003322}
   m_Layer: 0
   m_Name: Electric bomb_ trial_Twin
   m_TagString: Untagged
@@ -161,6 +162,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &95875169330003322
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1569458048113018}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: c3585b968f0155c438ee7a4899bfaabd, type: 3}
+  m_Controller: {fileID: 9100000, guid: ea571993caedc1f4a8943850de5235fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114145705585778496
 MonoBehaviour:
   m_ObjectHideFlags: 1

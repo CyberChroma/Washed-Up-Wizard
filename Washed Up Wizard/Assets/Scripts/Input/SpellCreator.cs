@@ -140,7 +140,6 @@ public class SpellCreator : MonoBehaviour {
 			}
 		}
 		StartCoroutine (WaitToCreateSpell ());
-
         GameObject.Find("Scene Saver").GetComponent<SceneSaver>().UpdateSpells (currentSpellID, slotNum);
 	}
 

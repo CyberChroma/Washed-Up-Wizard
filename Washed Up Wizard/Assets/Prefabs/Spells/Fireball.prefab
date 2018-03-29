@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4052022655103600}
   - component: {fileID: 33663364168474436}
   - component: {fileID: 23803861342984258}
-  - component: {fileID: 114615904994590898}
+  - component: {fileID: 95072566369172752}
   m_Layer: 0
   m_Name: Fireball Object
   m_TagString: Projectile
@@ -93,7 +93,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4c5dd27dd8f4232469c9f271d250049e, type: 2}
+  - {fileID: 2100000, guid: 06cebadefa068084bb367b1b6da044b2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -215,6 +215,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95072566369172752
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1399542279224294}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ea70c16c53be17a4ca6b38c1e1dc858a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 72b7498f40f0e5842b451cdc85fad6ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114022066559861916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,19 +277,6 @@ MonoBehaviour:
   - Environment
   - Breakable
   tagsToIgnore: []
---- !u!114 &114615904994590898
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399542279224294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d98f4208f3123a47957e9145a707a3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotSpeed: 100
-  dir: {x: 0, y: 0, z: 1}
 --- !u!114 &114825237138792286
 MonoBehaviour:
   m_ObjectHideFlags: 1
