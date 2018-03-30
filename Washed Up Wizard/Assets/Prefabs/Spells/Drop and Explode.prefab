@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 114997228497090218}
   - component: {fileID: 114230709295992784}
   - component: {fileID: 135727378197231170}
+  - component: {fileID: 114791949278327958}
   m_Layer: 0
   m_Name: Drop and Explode Object
   m_TagString: Projectile
@@ -206,6 +207,25 @@ MonoBehaviour:
     type: 2}
   deathParticles: {fileID: 1431692131465788, guid: 59fd37a436a44a34c949f7464ec549cf,
     type: 2}
+--- !u!114 &114791949278327958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1821561499274860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214aadae9e17298458d2b2bc1099a46d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  damageAmount: 1
+  oneTime: 0
+  tagsToDamage:
+  - Enemy
+  - Breakable
+  push: 1
+  pushForce: 4
 --- !u!114 &114834700327028246
 MonoBehaviour:
   m_ObjectHideFlags: 1

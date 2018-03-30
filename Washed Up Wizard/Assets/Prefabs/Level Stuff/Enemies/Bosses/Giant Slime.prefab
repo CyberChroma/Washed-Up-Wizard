@@ -1125,6 +1125,7 @@ MonoBehaviour:
   healthChanged: 0
   currentHealth: 0
   canBeHit: 1
+  dead: 0
 --- !u!114 &114166528125106304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1357,6 +1358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991310c490662e844bffe31e08979ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
 --- !u!114 &114633799859278834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1368,6 +1370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6423265acf6d21e469c60f54b6da75d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
   damageAmount: 4
   oneTime: 0
   tagsToDamage:
