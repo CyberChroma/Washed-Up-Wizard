@@ -54,7 +54,7 @@ public class SpellCreator : MonoBehaviour {
 			}
 			if (currentArrayNum == 1 || currentArrayNum == 2) { // If the player has input components 1 or 2
 				for (int i = 0; i < spellInputReceiver.inputSD.Length; i++) { // Goes through the active spell buttons 
-                    if (spellInputReceiver.inputSD [i] && componentsPanelTimesActivated % 2 != 0) { // If the player has pressed a button and this button press was not clicking a UI button
+                    if (spellInputReceiver.inputSD [i] && componentsPanelTimesActivated % 2 != 0) { // If the player has pressed a button
 						// Resetting the spell creation
                         glows [0].SetActive (false);
 						if (currentArrayNum == 2) {

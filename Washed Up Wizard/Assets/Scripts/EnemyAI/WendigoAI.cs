@@ -240,7 +240,7 @@ public class WendigoAI : MonoBehaviour {
         }
 
         if (canSpawnHarpies) {
-            harpyEmitter.transform.position = new Vector3(Random.Range (-19, 19), 20, Random.Range (-19, 19));
+            harpyEmitter.transform.position = new Vector3(Random.Range (-19, 19), 1, Random.Range (-19, 19));
             harpyEmitter.SetActive(true);
             canSpawnHarpies = false;
             StartCoroutine(WaitToSpawnHarpies());

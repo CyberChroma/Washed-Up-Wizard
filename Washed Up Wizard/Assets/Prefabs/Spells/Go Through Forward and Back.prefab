@@ -264,6 +264,7 @@ MonoBehaviour:
   delay: 0
   tagsToDestroy:
   - Environment
+  - Enemy
   tagsToIgnore: []
 --- !u!114 &114557299788561636
 MonoBehaviour:
@@ -303,14 +304,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214aadae9e17298458d2b2bc1099a46d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  type: 1
   damageAmount: 1.5
   oneTime: 0
   tagsToDamage:
   - Enemy
   - Breakable
   push: 1
-  pushForce: 4
+  pushForce: 2
 --- !u!135 &135754532930921382
 SphereCollider:
   m_ObjectHideFlags: 1
