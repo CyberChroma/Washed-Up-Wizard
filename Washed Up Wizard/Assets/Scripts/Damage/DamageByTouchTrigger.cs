@@ -9,7 +9,7 @@ public class DamageByTouchTrigger : MonoBehaviour {
 	public bool oneTime = false; // Whether the object can only damage once
 	public string[] tagsToDamage; // Tags of objects that can be damaged
     public bool push = true; // Whether the object is pushed away when damaged (explosion force)
-    public float pushForce = 4; // The force to push the object away
+    public float pushForce = 1; // The force to push the object away
 
 	private bool damaged = false; // Whether the object has damaged something at least once (For oneTime)
     private TakeDamage takeDamage;
