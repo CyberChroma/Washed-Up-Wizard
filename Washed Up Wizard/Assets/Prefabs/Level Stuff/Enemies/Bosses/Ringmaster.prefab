@@ -3356,6 +3356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6423265acf6d21e469c60f54b6da75d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   damageAmount: 3
   oneTime: 1
   tagsToDamage:
@@ -3389,6 +3390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991310c490662e844bffe31e08979ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
 --- !u!114 &114415725786055326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3425,6 +3427,7 @@ MonoBehaviour:
   healthChanged: 0
   currentHealth: 0
   canBeHit: 1
+  dead: 0
 --- !u!114 &114942591125895740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3453,7 +3456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102b374c557785c41bda172c1e1a18bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateChangeTime: 15
+  stateChangeTime: 10
   airSpeed: 60
   player: {fileID: 0}
   timeBetweenFlamingHoops: 0.3
@@ -3483,14 +3486,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   timeBetweenHatBombs: 0.8
-  hatBombFollowSpeed: 30
+  hatBombFollowSpeed: 35
   bombEmitter: {fileID: 1751530010574110}
   timeBetweenStompJumps: 0.5
   playerOldPos: {fileID: 0}
   timeBetweenCharges: 1
   chargeSpeed: 20
   timeBetweenShots: 0.2
-  gunFollowSpeed: 30
+  gunFollowSpeed: 35
   balloonGunEmitter: {fileID: 1826799310400062}
   timeBetweenAcrobatsPhase1: 0.55
   timeBetweenAcrobatsPhase2: 0.3

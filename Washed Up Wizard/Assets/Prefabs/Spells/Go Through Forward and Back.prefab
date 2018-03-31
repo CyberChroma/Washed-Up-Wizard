@@ -11,19 +11,20 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1981315787946438}
   m_IsPrefabParent: 1
---- !u!1 &1045180249807828
+--- !u!1 &1157206298963362
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4861288147913928}
-  - component: {fileID: 33200807189360788}
-  - component: {fileID: 23703979812347182}
+  - component: {fileID: 4255253763048246}
+  - component: {fileID: 33028433179945952}
+  - component: {fileID: 23578512769024020}
+  - component: {fileID: 95200159784213894}
   m_Layer: 0
-  m_Name: Ice Shard Object
-  m_TagString: Projectile
+  m_Name: boomeraang
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,6 +52,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4255253763048246
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157206298963362}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4859984985052838}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4859984985052838
 Transform:
   m_ObjectHideFlags: 1
@@ -61,29 +75,16 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
-  - {fileID: 4861288147913928}
+  - {fileID: 4255253763048246}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4861288147913928
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1045180249807828}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4859984985052838}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!23 &23703979812347182
+--- !u!23 &23578512769024020
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1045180249807828}
+  m_GameObject: {fileID: 1157206298963362}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -92,7 +93,8 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: da44463c4a662f4438173b74237e9d86, type: 2}
+  - {fileID: 2100000, guid: fb90843f606769e47bbe3a722c11280d, type: 2}
+  - {fileID: 2100000, guid: 2ccaa7bf490e79d4391084d6f85dd553, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,13 +114,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33200807189360788
+--- !u!33 &33028433179945952
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1045180249807828}
-  m_Mesh: {fileID: 4300002, guid: 7639ed29e4dbb1846807dfaf79a90b8b, type: 3}
+  m_GameObject: {fileID: 1157206298963362}
+  m_Mesh: {fileID: 4300002, guid: 1b945ca31b94c464599c19370d42f8eb, type: 3}
 --- !u!54 &54976856770607664
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -214,6 +216,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95200159784213894
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157206298963362}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 1b945ca31b94c464599c19370d42f8eb, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7e140cbe64ca89249b39fad5f1de15f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114192612445126396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,6 +264,7 @@ MonoBehaviour:
   delay: 0
   tagsToDestroy:
   - Environment
+  - Enemy
   tagsToIgnore: []
 --- !u!114 &114557299788561636
 MonoBehaviour:
@@ -284,13 +304,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214aadae9e17298458d2b2bc1099a46d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 3
   damageAmount: 1.5
   oneTime: 0
   tagsToDamage:
   - Enemy
   - Breakable
   push: 1
-  pushForce: 4
+  pushForce: 2
 --- !u!135 &135754532930921382
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -301,5 +322,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}

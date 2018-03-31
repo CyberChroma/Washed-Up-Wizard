@@ -254,9 +254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSensitivity: 0.1
-  fallStart: 0
-  fallSpeed: 10
-  height: 0
   radius: 20
 --- !u!114 &114373880166532228
 MonoBehaviour:
@@ -272,14 +269,12 @@ MonoBehaviour:
   parent: {fileID: 1017207830565894}
   startHealth: 1
   tempStopHitsTime: 2
-  audioClip: {fileID: 0}
-  soundPlayer: {fileID: 0}
-  volume: 0.5
   disableOnDeath: 1
   disableDelay: 1
   healthChanged: 0
   currentHealth: 0
   canBeHit: 1
+  dead: 0
 --- !u!114 &114642209269979672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6423265acf6d21e469c60f54b6da75d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   damageAmount: 3
   oneTime: 0
   tagsToDamage:
@@ -309,6 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991310c490662e844bffe31e08979ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 3
 --- !u!114 &114892317559688184
 MonoBehaviour:
   m_ObjectHideFlags: 1

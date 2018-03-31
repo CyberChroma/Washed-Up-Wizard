@@ -2,7 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Type
+{
+    Fire,
+    Mechanical,
+    Toxic,
+    Earth,
+    Electrical,
+    Water,
+    Null
+}
+
 public class TakeDamage : MonoBehaviour {
+
+    public Type type;
 
 	private Health health; // The health script to track
 	private bool takingDamageOverTime = false; // Whether the object is currently taking damage over time

@@ -14,7 +14,17 @@ ModelImporter:
     4300000: Plunger
     7400000: Spin
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plunger-Red
+    second: {fileID: 2100000, guid: 1d7afe7383061864d91c83b7ae617435, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plunger-Wood
+    second: {fileID: 2100000, guid: d564edd162ff4454b85d4a4b1f14ce6e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -75,7 +85,7 @@ ModelImporter:
     globalScale: 0.5
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
     importCameras: 0
     importLights: 0

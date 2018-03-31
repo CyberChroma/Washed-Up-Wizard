@@ -503,6 +503,7 @@ MonoBehaviour:
   healthChanged: 0
   currentHealth: 0
   canBeHit: 1
+  dead: 0
 --- !u!114 &114372642614770390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -530,9 +531,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSensitivity: 0.1
-  fallStart: 0
-  fallSpeed: 10
-  height: 0
   radius: 20
 --- !u!114 &114567957706038586
 MonoBehaviour:
@@ -545,6 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991310c490662e844bffe31e08979ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
 --- !u!114 &114840118753516932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -588,6 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6423265acf6d21e469c60f54b6da75d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
   damageAmount: 2
   oneTime: 0
   tagsToDamage:

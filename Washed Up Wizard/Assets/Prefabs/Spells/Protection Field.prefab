@@ -101,14 +101,12 @@ MonoBehaviour:
   parent: {fileID: 1539674379174454}
   startHealth: 5
   tempStopHitsTime: 0.1
-  audioClip: {fileID: 0}
-  soundPlayer: {fileID: 0}
-  volume: 0
   disableOnDeath: 1
   disableDelay: 0
   healthChanged: 0
   currentHealth: 0
   canBeHit: 1
+  dead: 0
 --- !u!114 &114783400616568920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991310c490662e844bffe31e08979ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 5
 --- !u!114 &114882339289580362
 MonoBehaviour:
   m_ObjectHideFlags: 1

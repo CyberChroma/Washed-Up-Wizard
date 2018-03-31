@@ -92,7 +92,10 @@ public class GiantSlimeAI : MonoBehaviour {
 	}
 
     void OnDisable () {
-        SceneManager.LoadScene("Level Select");
+        if (health.currentHealth <= 0)
+        {
+            SceneManager.LoadScene("Level Select");
+        }
     }
 
 	// Update is called once per frame

@@ -1,12 +1,24 @@
 WindowsStandalone
+PlayerPath?
+C:/Users/Brandon/Documents/GitHub/Washed-Up-Wizard-Demo/Washed Up Wizard Demo/Washed Up Wizard.exe
 SceneListBegin?
-Assets/Scenes/Ringmaster Boss.unity
-Assets/Scenes/Hospital Area.unity
+Assets/Scenes/Level Select.unity
+Assets/Scenes/Hospital.unity
+Assets/Scenes/Slime Cube Boss.unity
+Assets/Scenes/Frozen Tundra.unity
 Assets/Scenes/Wendigo Boss.unity
 Assets/Scenes/Ice Cave.unity
+Assets/Scenes/Ringmaster Boss.unity
+Assets/Scenes/Cutscene Scenes/Slime Cube Intro.unity
+Assets/Scenes/Cutscene Scenes/Slime Cube Death.unity
+Assets/Scenes/Cutscene Scenes/Ringmaster Intro.unity
+Assets/Scenes/Cutscene Scenes/Ringmaster Death.unity
+Assets/Scenes/Cutscene Scenes/Wendigo Intro.unity
+Assets/Scenes/Cutscene Scenes/Wendigo Death.unity
 SceneListEnd?
 10d014f157cc821f48359c58348b8ba8 Assembly-CSharp.dll:.SpinTransform
 153a710a83e53b3f7b013258a7d4f500 Assembly-CSharp.dll:.MoveInputReceiver
+c720834dd569172f6755d7d5a92888f5 Assembly-CSharp.dll:.MeleeAndRangedAI
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -19,10 +31,12 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DialogueManager
 2ef522bf3730373c123b3be0ccc5dcd4 Assembly-CSharp.dll:.InputChange
 3b28070f2551977e159e7f6a29f91be4 Assembly-CSharp.dll:.SpawnAndDestroyEffects
 80969a9ddc72ce5785dd6beba8899cf3 Assembly-CSharp.dll:.SpawnObjectByActivate
-b6a03e8e044e8cce5e9767a8b7e28b12 Assembly-CSharp.dll:.Health
+04f004b3c2c7cd814f9e9e020079fb34 Assembly-CSharp.dll:.killEnemies
+785bed302105a370ce022f9a1e6a3c8d Assembly-CSharp.dll:.Health
 f4ac7031ea1eae2b7e03b3182be88069 Assembly-CSharp.dll:.HealOverTime
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -93,7 +107,6 @@ a6cf1c74b5c02d572de521591852c4c1 Assembly-CSharp.dll:.MoveByConstantSpeed
 d65e08e3916f1622f9ad60d0995b403b Assembly-CSharp.dll:.FollowTargetConstant
 b59b2c7d20c63cbc0080134663404bf2 Assembly-CSharp.dll:.PlayerMoveInput
 c55f73f8f1562b6824faf4063dd4b0fd Assembly-CSharp.dll:.DestroyByTime
-ae7504d4f67b1966b7f52faad3f6aecd Assembly-CSharp.dll:.ActivateTextBubble
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -111,6 +124,7 @@ a364ae1dc9b7891687082d1f6efbaab5 Assembly-CSharp.dll:.ElevatorController
 f834f141662a14e506ba83df84e009c6 Assembly-CSharp.dll:.RotateCopyTargetLerp
 0bfaf5654a474292a511729d347de85a Assembly-CSharp.dll:.MoveByForce
 a6dc6bc8474bad273721e65400222594 Assembly-CSharp.dll:.PlayerDeathSceneReset
+a8f5a846b99d1caea83084e3222e61ff Assembly-CSharp.dll:.WendigoAI
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -126,15 +140,15 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-a291733d436e986f1730426d55a6d335 Assembly-CSharp.dll:.RangedEnemyAI
+15cfcfe1f61d86ac17ac9ed5403c8a2c Assembly-CSharp.dll:.RangedEnemyAI
 bca647ffb39d00d36ff52123c590ea5f Assembly-CSharp.dll:.LightFlicker
-413ea0f7c61ede431df8357a3ae66d68 Assembly-CSharp.dll:.WendigoAI
-d5057e547a045fa9a29b2455bf95cf43 Assembly-CSharp.dll:.RoomEnd
+413ea0f7c61ede431df8357a3ae66d68 Assembly-CSharp.dll:.GiantSlimeAI
+67d8f72f92220033f9034368dab8fae4 Assembly-CSharp.dll:.RoomEnd
 3c660d9efc43df6b421226d108adcad9 Assembly-CSharp.dll:.HealthBarUI
 6907216cc7571055d36c1beeac42db24 Assembly-CSharp.dll:.FollowTargetLerp
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TakeDamage
+7a75edc83a9f267c790ac1425865847a Assembly-CSharp.dll:.TakeDamage
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.FollowCursor
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -146,7 +160,8 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 c58ccfa229c87e40537326cfb3a3f14c Assembly-CSharp.dll:.SpinInDirection
 178942b3c693e9cfe4214333d0ee402a Assembly-CSharp.dll:.ActivateRotateCopyTarget
 b4100c04d9eaab209bd50d2f4d2529ac Assembly-CSharp.dll:.CombinationsMenu
-c037676b0c3d18861bd902236eff3b68 Assembly-CSharp.dll:.MeleeEnemyAI
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SpellUnlock
+145b4feaeab58e5669f5ee187615f868 Assembly-CSharp.dll:.MeleeEnemyAI
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 e291966036be598f80b67739568263c4 Assembly-CSharp.dll:.MoveInDirection
@@ -155,7 +170,9 @@ e291966036be598f80b67739568263c4 Assembly-CSharp.dll:.MoveInDirection
 172fae6d6aeedf10d815f96543b01f57 Assembly-CSharp.dll:.SpecialInputReceiver
 178942b3c693e9cfe4214333d0ee402a Assembly-CSharp.dll:.ActivateFollowTarget
 708322461daa93bcf2caec87a43c47db Assembly-CSharp.dll:.RotateCopyTargetChangeOnReach
-e7000fdb0c9d367829a6bf1e3cab5777 Assembly-CSharp.dll:.DamageOverTimeTrigger
+39c21c454222bd1519964def483d50ec Assembly-CSharp.dll:.DamageOverTimeTrigger
+38443bf16e0aa5a052befe89023c3800 Assembly-CSharp.dll:.SoundOnDeath
+60a7cb95fe19ab7f463abc8cb9d87cd1 Assembly-CSharp.dll:.Pickup
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -171,16 +188,25 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 ca348b16bfde558c5758f13519d25dba Assembly-CSharp.dll:.SpawnObjectsByTime
+e4db49d1958b2a77326eb04fbe9c7215 Assembly-CSharp.dll:.DialogueTrigger
 e62861c117e3b7fd6e4e53ab4e8b0b6d Assembly-CSharp.dll:.FollowTargetChangeOnActivate
 f9bb36c90ed6663ff56d6710edf26841 Assembly-CSharp.dll:.SpellInputReceiver
-9c684538be45f2c56cc6f0ceb70b1a1e Assembly-CSharp.dll:.DamageByTouchCollision
+ee803d59682d21e6281b0e8a165cf658 Assembly-CSharp.dll:.DamageByTouchCollision
 04f709300df05a52dd0ecc2748041bfe Assembly-CSharp.dll:.ComponentInputReceiver
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 96d0fbde9fd209878a0a291f82c9bcdd UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
+9e0ef5bf862444b5dc48b5a99554ce7c UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
-e7000fdb0c9d367829a6bf1e3cab5777 Assembly-CSharp.dll:.DamageOverTimeCollision
+67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
+67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+c7457dab05d424d7599a6894301e2796 Assembly-CSharp.dll:.CombinedAI
+39c21c454222bd1519964def483d50ec Assembly-CSharp.dll:.DamageOverTimeCollision
+9e0ef5bf862444b5dc48b5a99554ce7c UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
+67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
+67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+8e42469ab0515dffbae60b66e890c48c Assembly-CSharp.dll:.GetText
 98b88488828fb855255a61ee6e11a102 Assembly-CSharp.dll:.SpellCreator
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -189,20 +215,22 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 8fd7f5c1842f0995f5490661be25df31 Assembly-CSharp.dll:.PauseManager
 e79d4f612ef4c896cd85cbe48bcf4562 Assembly-CSharp.dll:.SpawnObjectByTime
-f62ec2a5932807e327f852ffbf83e1f3 Assembly-CSharp.dll:.RoomStart
+6ce80e20afa26a1bed18ac1a2e5b13eb Assembly-CSharp.dll:.RoomStart
 12a37f1c7c3d5e1c7037b7a1096c5ecb Assembly-CSharp.dll:.SpawnObjectRandomizeSpeed
 d3b4dfde4c6961cd021c4e08f875a481 Assembly-CSharp.dll:.LookAtTarget
 c2bb61b16115b2de7a0efb454f1a7ede Assembly-CSharp.dll:.RingmasterAI
 da4c052da282643e10b5d8bf9dd2e531 Assembly-CSharp.dll:.RandomSpin
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SceneSaver
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+9b93df0e1070b8b456b783bf8b29c9fe Assembly-CSharp.dll:.ChangePath
 d65e08e3916f1622f9ad60d0995b403b Assembly-CSharp.dll:.RotateCopyTargetConstant
+3b594df127f4fd59de78c907b72020ee Assembly-CSharp.dll:.LoadScene
 fe4329dbb286e1ec20d3f6073da6be37 Assembly-CSharp.dll:.PlayerSpellsReference
 caf4de464ee2e448935bd43c92c261e4 Assembly-CSharp.dll:.SpawnObjectByInput
 696093e85c4a3cd2c842aea9d9b676c2 Assembly-CSharp.dll:.SpinPattern
 fba139ba046bee2cdc34af670f5e8ebc Assembly-CSharp.dll:.PlayerAbilities
 91f144b022aadff8a33d76797d4756cf Assembly-CSharp.dll:.HealObject
-b68c5995e4812e3e5862b67d73a30bc0 Assembly-CSharp.dll:.DamageByTouchTrigger
+9e9393c11c6acf63cc3ddbb26afe4166 Assembly-CSharp.dll:.DamageByTouchTrigger
 45c1e9cfe8dc1deccdfce227d34ae66a Assembly-CSharp.dll:.LaunchToTarget
 ccb5001a690522a340d624dd627ab8c3 Assembly-CSharp.dll:.ActivateSpawnByTime
 83e2192ff221302d0750b406ad45b654 Assembly-CSharp.dll:.SpawnObjectChangeSpeed

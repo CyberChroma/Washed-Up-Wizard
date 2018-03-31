@@ -50,7 +50,7 @@ public class CombinationsMenu : MonoBehaviour {
 					}
 					tempCombo = transform.Find (playerSpellReference.spells [i].componentSpells [j].name); // Reference to the spell combo sprites
                     if (tempCombo) {
-                        tempCombo.localPosition = new Vector3(600, highestCombo - spaceBetweenCombos * (spellNum - combosPerPage * currentPage), 0); // Moving the spell combo sprites
+                        tempCombo.localPosition = new Vector3(575, highestCombo - spaceBetweenCombos * (spellNum - combosPerPage * currentPage), 0); // Moving the spell combo sprites
                         combos.Add(tempCombo); // Adding it to the list
                         spellNum++;
                     }

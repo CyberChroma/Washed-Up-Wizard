@@ -12,6 +12,7 @@ ModelImporter:
     400004: Left
     400006: Right
     2100000: Material_003
+<<<<<<< HEAD
     2300000: Center
     2300002: Left
     2300004: Right
@@ -22,8 +23,35 @@ ModelImporter:
     4300002: Left
     4300004: Right
     7400000: Default Take
+=======
+    2100002: Green
+    2300000: Mball
+    2300002: Mball_006
+    2300004: Mball_016
+    2300006: Center
+    2300008: Left
+    2300010: Right
+    3300000: Mball
+    3300002: Mball_006
+    3300004: Mball_016
+    3300006: Center
+    3300008: Left
+    3300010: Right
+    4300000: Mball_006
+    4300002: Mball
+    4300004: Mball_016
+    4300006: Center
+    4300008: Left
+    4300010: Right
+    7400000: Spin
+>>>>>>> 7148d1e2710e6f4beda31207fe843f4d27b9539e
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Green
+    second: {fileID: 2100000, guid: dbd6317c3abb4a34789ad6c1444bbde3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -49,17 +77,45 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Spin
+      takeName: Default Take
+      firstFrame: 10
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.5
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -74,8 +130,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 180
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour {
-
+    
     public GameObject parent; // The object parent (to destroy)
 	public float startHealth = 10; // The health the object starts with
 	public float tempStopHitsTime = 2; // Time between hits

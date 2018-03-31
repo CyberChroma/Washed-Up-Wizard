@@ -824,7 +824,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!54 &54408196198700756
 Rigidbody:
@@ -839,7 +839,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!54 &54643034426299538
 Rigidbody:
@@ -854,7 +854,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!54 &54688027703497930
 Rigidbody:
@@ -884,7 +884,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!65 &65943349574767396
 BoxCollider:
@@ -1125,6 +1125,7 @@ MonoBehaviour:
   healthChanged: 0
   currentHealth: 0
   canBeHit: 1
+  dead: 0
 --- !u!114 &114166528125106304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1206,7 +1207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: Infinity
-  target: {fileID: 0}
+  target: {fileID: 54688027703497930}
 --- !u!114 &114354866614807198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1250,7 +1251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: Infinity
-  target: {fileID: 0}
+  target: {fileID: 54688027703497930}
 --- !u!114 &114469169371991270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1357,6 +1358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991310c490662e844bffe31e08979ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
 --- !u!114 &114633799859278834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1368,6 +1370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6423265acf6d21e469c60f54b6da75d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
   damageAmount: 4
   oneTime: 0
   tagsToDamage:
@@ -1436,7 +1439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: Infinity
-  target: {fileID: 0}
+  target: {fileID: 54688027703497930}
 --- !u!114 &114896049592089856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1465,4 +1468,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: Infinity
-  target: {fileID: 0}
+  target: {fileID: 54688027703497930}

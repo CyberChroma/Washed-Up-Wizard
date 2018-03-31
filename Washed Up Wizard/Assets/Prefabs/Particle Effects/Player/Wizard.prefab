@@ -2349,7 +2349,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897975555965378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -68.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4072139213509710}
@@ -2367,8 +2367,8 @@ Transform:
   - {fileID: 4918940445177918}
   - {fileID: 4786486064643194}
   - {fileID: 4353559330543582}
-  - {fileID: 4382324615719108}
   - {fileID: 4314788049417594}
+  - {fileID: 4382324615719108}
   - {fileID: 4124131410927194}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2427,7 +2427,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4259664070678644}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4315282344737590
 Transform:
@@ -2643,7 +2643,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4259664070678644}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4408048283464652
 Transform:
@@ -3866,6 +3866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991310c490662e844bffe31e08979ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 6
 --- !u!114 &114035747933626650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3905,6 +3906,7 @@ MonoBehaviour:
   healthChanged: 0
   currentHealth: 0
   canBeHit: 1
+  dead: 0
 --- !u!114 &114172787551525836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3954,7 +3956,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 1981315787946438, guid: 6b1c9a74cb72e9547afada2e3f2e289f,
     type: 2}
   parent: {fileID: 0}
-  cooldown: 1
+  cooldown: 1.5
   onRelease: 0
   reticle: {fileID: 0}
   emitterNum: 0
@@ -4361,7 +4363,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 1206972722638112, guid: cf41a06cd07a84b4a937064312a6cf36,
     type: 2}
   parent: {fileID: 0}
-  cooldown: 0.3
+  cooldown: 0.5
   onRelease: 0
   reticle: {fileID: 0}
   emitterNum: 0

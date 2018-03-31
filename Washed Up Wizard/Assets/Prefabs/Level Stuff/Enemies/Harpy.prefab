@@ -14222,12 +14222,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214aadae9e17298458d2b2bc1099a46d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 3
   damageAmount: 2
   oneTime: 0
   tagsToDamage:
   - Player
   push: 1
-  pushForce: 4
+  pushForce: 3
 --- !u!114 &114512095158877550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14260,8 +14261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDelay: 2
-  timeBeforeAttack: 0.2
-  timeBetweenAttacks: 2
+  timeBeforeAttack: 1
+  timeBetweenAttacks: 3
   maxDistance: 9
   minDistance: 6
   radius: 30
@@ -14310,6 +14311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991310c490662e844bffe31e08979ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 3
 --- !u!137 &137113318425634496
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
