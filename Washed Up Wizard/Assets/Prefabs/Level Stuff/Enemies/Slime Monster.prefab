@@ -497,7 +497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 1216778629145440}
   startHealth: 5
-  tempStopHitsTime: 0.2
+  tempStopHitsTime: 0.25
   disableOnDeath: 1
   disableDelay: 0.8
   healthChanged: 0
@@ -592,8 +592,8 @@ MonoBehaviour:
   oneTime: 0
   tagsToDamage:
   - Player
-  push: 0
-  pushForce: 0
+  push: 1
+  pushForce: 1
   canDamage: 1
 --- !u!195 &195200208793945736
 NavMeshAgent:

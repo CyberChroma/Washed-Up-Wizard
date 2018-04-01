@@ -487,7 +487,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1198034890391360}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.78, y: 0, z: -133.29}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4237477165619030}
@@ -543,7 +543,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1139488807825182}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -3.78, y: 0, z: -133.29}
+  m_LocalPosition: {x: -51.8, y: 0, z: -2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4305252138140476}
@@ -761,8 +761,8 @@ MonoBehaviour:
   oneTime: 0
   tagsToDamage:
   - Player
-  push: 0
-  pushForce: 0
+  push: 1
+  pushForce: 1
   canDamage: 1
 --- !u!114 &114251242542762012
 MonoBehaviour:
@@ -789,8 +789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnParticles: {fileID: 1800233777693634, guid: aa2ec2e61b0e5f14f9c79ddbc0194b8a,
     type: 2}
-  deathParticles: {fileID: 1800233777693634, guid: aa2ec2e61b0e5f14f9c79ddbc0194b8a,
-    type: 2}
+  deathParticles: {fileID: 0}
 --- !u!114 &114767083569830208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -804,7 +803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 1139488807825182}
   startHealth: 2.5
-  tempStopHitsTime: 0.2
+  tempStopHitsTime: 0.25
   disableOnDeath: 1
   disableDelay: 1.5
   healthChanged: 0

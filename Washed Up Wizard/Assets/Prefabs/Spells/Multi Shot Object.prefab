@@ -119,7 +119,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1224539734293890}
-  m_Mesh: {fileID: 4300002, guid: 2c438055b25f7344bae747263f21aa2f, type: 3}
+  m_Mesh: {fileID: 4300002, guid: d177c306d223d534aa7416cee8d818b2, type: 3}
 --- !u!54 &54079967704297424
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -188,13 +188,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 4
-  damageAmount: 1
+  damageAmount: 1.5
   oneTime: 1
   tagsToDamage:
   - Enemy
   - Breakable
   push: 1
-  pushForce: 4
+  pushForce: 1
 --- !u!114 &114173610406202168
 MonoBehaviour:
   m_ObjectHideFlags: 1

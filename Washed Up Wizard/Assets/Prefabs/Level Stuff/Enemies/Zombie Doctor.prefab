@@ -15742,8 +15742,8 @@ MonoBehaviour:
   oneTime: 0
   tagsToDamage:
   - Player
-  push: 0
-  pushForce: 0
+  push: 1
+  pushForce: 1
   canDamage: 1
 --- !u!114 &114788232100603568
 MonoBehaviour:
@@ -15771,7 +15771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 1788999975810212}
   startHealth: 3
-  tempStopHitsTime: 0.2
+  tempStopHitsTime: 0.25
   disableOnDeath: 1
   disableDelay: 1.5
   healthChanged: 0

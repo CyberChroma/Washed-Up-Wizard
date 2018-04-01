@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneSaver : MonoBehaviour {
 
@@ -30,6 +31,10 @@ public class SceneSaver : MonoBehaviour {
         if (health && health.currentHealth != currentHealth) {
             currentHealth = health.currentHealth;
         }
+        if (SceneManager.GetActiveScene().name == "Level Select")
+        {
+            Destroy(gameObject);
+        }
 	}
 
     public void TransferHealth () {
@@ -53,7 +58,7 @@ public class SceneSaver : MonoBehaviour {
     }
 
     public void TransferSpells () {
-        spellCreator = GameObject.Find("Spell Creation Controller").GetComponent<SpellCreator>();
+        spellCreator = GameObject.Find("Spell UI").GetComponent<SpellCreator>();
         spellCreator.CreateSpell(spellID1, 0);
         spellCreator.CreateSpell(spellID2, 1);
         spellCreator.CreateSpell(spellID3, 2);

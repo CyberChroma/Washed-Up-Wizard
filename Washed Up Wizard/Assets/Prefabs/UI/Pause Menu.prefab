@@ -390,12 +390,12 @@ GameObject:
   - component: {fileID: 114672196381807144}
   - component: {fileID: 114742661712265230}
   m_Layer: 5
-  m_Name: Interact Button
+  m_Name: Spell Book Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1453444516174264
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,12 +492,12 @@ GameObject:
   - component: {fileID: 222196122570111488}
   - component: {fileID: 114776860293925780}
   m_Layer: 5
-  m_Name: Interact Text
+  m_Name: Spell Bool Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1524937895761514
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 222379770915647148}
   - component: {fileID: 114058407227217250}
   m_Layer: 5
-  m_Name: Interact
+  m_Name: Spell Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1021,7 +1021,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: E
+  m_Text: Tab
 --- !u!114 &114075903026165756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2931,7 +2931,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Interact
+  m_Text: Spell Book
 --- !u!114 &114787008409470346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4139,7 +4139,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -250}
-  m_SizeDelta: {x: 100, y: 50}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224591375461100900
 RectTransform:

@@ -8,22 +8,99 @@ ModelImporter:
     100000: //RootNode
     100002: Plane
     100004: Slime_Cube
+    100006: Eye
+    100008: Eye_001
+    100010: Eye_002
+    100012: Eye_003
+    100014: Eyebrow
+    100016: Eyebrow_001
+    100018: Eyebrow_002
+    100020: Eyebrow_003
+    100022: Mouth
+    100024: Mouth_001
+    100026: Side
+    100028: Side_001
+    100030: Top
     400000: //RootNode
     400002: Plane
     400004: Slime_Cube
+    400006: Eye
+    400008: Eye_001
+    400010: Eye_002
+    400012: Eye_003
+    400014: Eyebrow
+    400016: Eyebrow_001
+    400018: Eyebrow_002
+    400020: Eyebrow_003
+    400022: Mouth
+    400024: Mouth_001
+    400026: Side
+    400028: Side_001
+    400030: Top
     2100000: Material
     2100002: Green
+    2100004: Light_Green
     2300000: //RootNode
     2300002: Plane
     2300004: Slime_Cube
+    2300006: Eye
+    2300008: Eye_001
+    2300010: Eye_002
+    2300012: Eye_003
+    2300014: Eyebrow
+    2300016: Eyebrow_001
+    2300018: Eyebrow_002
+    2300020: Eyebrow_003
+    2300022: Mouth
+    2300024: Mouth_001
+    2300026: Side
+    2300028: Side_001
+    2300030: Top
     3300000: //RootNode
     3300002: Plane
     3300004: Slime_Cube
+    3300006: Eye
+    3300008: Eye_001
+    3300010: Eye_002
+    3300012: Eye_003
+    3300014: Eyebrow
+    3300016: Eyebrow_001
+    3300018: Eyebrow_002
+    3300020: Eyebrow_003
+    3300022: Mouth
+    3300024: Mouth_001
+    3300026: Side
+    3300028: Side_001
+    3300030: Top
     4300000: Slime_Cube
     4300002: Plane
-    7400000: Default Take
+    4300004: Center
+    4300006: Eyebrow
+    4300008: Eyebrow_003
+    4300010: Side
+    4300012: Mouth
+    4300014: Eye
+    4300016: Eye_003
+    4300018: Side_001
+    4300020: Eyebrow_002
+    4300022: Eyebrow_001
+    4300024: Eye_002
+    4300026: Eye_001
+    4300028: Mouth_001
+    4300030: Top
+    7400000: Walk
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Green
+    second: {fileID: 2100000, guid: 35ea18e8f9e8cc04ebccf1e5dd630a27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light_Green
+    second: {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -49,7 +126,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Default Take
+      firstFrame: 10
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

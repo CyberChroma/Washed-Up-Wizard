@@ -242,14 +242,14 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1532086419521352}
-  m_Mesh: {fileID: 4300006, guid: 13e7c9ced86beb4418cfe027d7fe76cc, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 3e4c27dfc482cb1429f98bd2a35c7a0e, type: 3}
 --- !u!33 &33875862001998004
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1098570994681982}
-  m_Mesh: {fileID: 4300004, guid: 13e7c9ced86beb4418cfe027d7fe76cc, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 3e4c27dfc482cb1429f98bd2a35c7a0e, type: 3}
 --- !u!54 &54293661247159746
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -355,6 +355,7 @@ MonoBehaviour:
   tagsToDestroy:
   - Environment
   - Breakable
+  - Enemy
   tagsToIgnore: []
 --- !u!136 &136075765501374594
 CapsuleCollider:

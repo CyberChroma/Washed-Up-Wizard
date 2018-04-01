@@ -358,6 +358,9 @@ public class RingmasterAI : MonoBehaviour {
             launchToTarget.target = pedistalJumpPoint;
             launchToTarget.enabled = true;
             movePos = pedistalJumpPoint;
+            pedistal.GetComponent<BoxCollider>().enabled = false;
+            yield return new WaitForSeconds(1);
+            pedistal.GetComponent<BoxCollider>().enabled = true;
         }
         yield return new WaitForSeconds(2 * Time.deltaTime);
         isJumping = true;

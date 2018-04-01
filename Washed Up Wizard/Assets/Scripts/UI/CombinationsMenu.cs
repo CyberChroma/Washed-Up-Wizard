@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CombinationsMenu : MonoBehaviour {
 
-	public PlayerSpellsReference playerSpellReference; // Script reference
 	public float highestCombo = 120; // How high the highest combo is placed
 	public float spaceBetweenCombos = 60;
 	public float combosPerPage = 2;
@@ -15,8 +14,11 @@ public class CombinationsMenu : MonoBehaviour {
 	private Transform tempCombo;
 	private List<Transform> combos = new List<Transform> (); // Different than an array because the length can be changed
     private ActivateFollowTarget activateFollowTarget;
+    private PlayerSpellsReference playerSpellReference; // Script reference
+
 
     void Awake () {
+        playerSpellReference = GameObject.Find("Spell UI").GetComponent<PlayerSpellsReference>();
         activateFollowTarget = GetComponent<ActivateFollowTarget>();
     }
 
