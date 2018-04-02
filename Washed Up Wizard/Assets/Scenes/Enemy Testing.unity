@@ -4461,7 +4461,7 @@ Prefab:
     - target: {fileID: 224381040098216696, guid: b41600a39966dc748a65fff7159a9015,
         type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224381040098216696, guid: b41600a39966dc748a65fff7159a9015,
         type: 2}
@@ -10241,18 +10241,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    tasktype: 0
+    tasktype: 1
     pickup: {fileID: 2141042500}
     killEnemies: {fileID: 1721229453}
     name: Dwayne Johnson
     textReferences:
-    - {fileID: 4900000, guid: 73c6a1f156d701f46ab91fe6683d8c86, type: 3}
-    - {fileID: 4900000, guid: 511429f71f5335549b5919396eef6fea, type: 3}
     - {fileID: 4900000, guid: 678f3baba1332be4fbdf8c14c08d813f, type: 3}
-    sentences:
-    - help
-    - they ded
-    - kill
+    - {fileID: 4900000, guid: 511429f71f5335549b5919396eef6fea, type: 3}
+    - {fileID: 4900000, guid: 73c6a1f156d701f46ab91fe6683d8c86, type: 3}
+    sentences: []
     thankYou: 0
 --- !u!1001 &959884405
 Prefab:
@@ -10299,7 +10296,7 @@ Prefab:
     - target: {fileID: 224843760193087418, guid: 4338c4800093dab419a54f923806b594,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224843760193087418, guid: 4338c4800093dab419a54f923806b594,
         type: 2}
@@ -14875,8 +14872,8 @@ RectTransform:
   m_Children:
   - {fileID: 901388197}
   - {fileID: 144362908}
-  - {fileID: 2073997391}
   - {fileID: 519913854}
+  - {fileID: 2073997391}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

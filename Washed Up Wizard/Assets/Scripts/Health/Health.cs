@@ -82,6 +82,10 @@ public class Health : MonoBehaviour {
 	}
 
     IEnumerator Disable () {
+        if (GetComponent<BoxCollider>())
+        {
+            GetComponent<BoxCollider>().enabled = false;
+        }
         yield return new WaitForSeconds(disableDelay);
         gameObject.SetActive(false);
     }

@@ -72,13 +72,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  damageAmount: 3
-  oneTime: 1
+  damageAmount: 2
+  oneTime: 0
   tagsToDamage:
   - Enemy
   - Breakable
   push: 1
-  pushForce: 4
+  pushForce: 1.5
 --- !u!114 &114338975863348510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20250633c2bdd1e499beb932f9ffa0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 2
+  lifetime: 1
 --- !u!135 &135914975487430882
 SphereCollider:
   m_ObjectHideFlags: 1
