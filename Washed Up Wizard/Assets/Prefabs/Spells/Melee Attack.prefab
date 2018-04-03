@@ -60,8 +60,8 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 148197a142890354884788dabb9a022c, type: 3}
-  - {fileID: 2100002, guid: 148197a142890354884788dabb9a022c, type: 3}
+  - {fileID: 2100000, guid: d564edd162ff4454b85d4a4b1f14ce6e, type: 2}
+  - {fileID: 2100000, guid: 1d7afe7383061864d91c83b7ae617435, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -196,13 +196,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214aadae9e17298458d2b2bc1099a46d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 2
+  type: 1
+  damageAmount: 1.5
   oneTime: 0
   tagsToDamage:
   - Enemy
   - Breakable
   push: 1
-  pushForce: 4
+  pushForce: 2
 --- !u!114 &114814022924407658
 MonoBehaviour:
   m_ObjectHideFlags: 1

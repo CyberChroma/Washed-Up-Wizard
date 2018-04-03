@@ -17,7 +17,17 @@ ModelImporter:
     4300002: Bomb
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bomb
+    second: {fileID: 2100000, guid: e9b69d0f75901e14cb3a6d7868f23f7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fuse
+    second: {fileID: 2100000, guid: db7dc950aad6d26459e2816a808804ce, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -50,7 +60,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
     importCameras: 0
     importLights: 0

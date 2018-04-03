@@ -25,7 +25,22 @@ ModelImporter:
     4300002: bottom
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottom
+    second: {fileID: 2100000, guid: 43d2d9f3d39cb944a978144bc1b87545, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Center
+    second: {fileID: 2100000, guid: 06f08c1da7af6d44abdcc1219effaee7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Top
+    second: {fileID: 2100000, guid: 5243b20ddba049947b5ec16085d1418f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

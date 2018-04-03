@@ -89,9 +89,15 @@ public class InputChange : MonoBehaviour {
                 specialInputReceiver.teleport = newKey;
                 return;
             case 8:
-                specialInputReceiver.interact = newKey;
+                specialInputReceiver.toggleSpellBook = newKey;
                 return;
             case 9:
+                specialInputReceiver.nextPage = newKey;
+                return;
+            case 10:
+                specialInputReceiver.previous = newKey;
+                return;
+            case 11:
                 pauseManager.pause = newKey;
                 return;
             default:

@@ -146,7 +146,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3e12b12f8b353c5419b08901aec6db0b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -347,12 +347,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214aadae9e17298458d2b2bc1099a46d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 5
   damageAmount: 1
   oneTime: 1
   tagsToDamage:
   - Player
   push: 1
-  pushForce: 4
+  pushForce: 1
 --- !u!135 &135156754384097308
 SphereCollider:
   m_ObjectHideFlags: 1

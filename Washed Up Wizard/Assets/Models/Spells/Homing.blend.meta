@@ -6,20 +6,42 @@ ModelImporter:
     100000: BACK
     100002: //RootNode
     100004: MIDDLE
+    100006: Back
+    100008: Middle
     400000: BACK
     400002: //RootNode
     400004: MIDDLE
+    400006: Back
+    400008: Middle
     2100000: Material_001
     2100002: Material_002
+    2100004: Light_Blue
+    2100006: Purple
     2300000: BACK
     2300002: MIDDLE
+    2300004: Back
+    2300006: Middle
     3300000: BACK
     3300002: MIDDLE
+    3300004: Back
+    3300006: Middle
     4300000: BACK
     4300002: MIDDLE
-    7400000: Default Take
+    4300004: Back
+    4300006: Middle
+    7400000: Spin
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light_Blue
+    second: {fileID: 2100000, guid: f78718987b7bfbb41bb1a6f457cd5235, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Purple
+    second: {fileID: 2100000, guid: 6d84f857d0f1b0d4995dd9f45403093a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,17 +67,45 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Spin
+      takeName: Default Take
+      firstFrame: 10
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.5
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -70,8 +120,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 180
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1

@@ -13,7 +13,12 @@ ModelImporter:
     4300000: Protection_Field
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Protection_Field
+    second: {fileID: 2100000, guid: 2e0751149c6ea5b40bd9e5e7cafbb41c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -46,7 +51,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
     importCameras: 0
     importLights: 0

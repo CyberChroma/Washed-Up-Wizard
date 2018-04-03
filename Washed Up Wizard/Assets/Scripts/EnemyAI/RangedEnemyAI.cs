@@ -7,9 +7,8 @@ public class RangedEnemyAI : MonoBehaviour {
 
     // This enemy's attack pattern is to move towards the player shooting a projectile, but stay a certain distance,=
 
-	public float moveDelay = 2; // The delay between moves
-    public float timeBeforeAttack = 0.5f; // The delay before attacking
-    public float timeBetweenAttacks = 2; // The delay between attacking
+    public float timeBeforeAttack = 1f; // The delay before attacking
+    public float timeBetweenAttacks = 3; // The delay between attacking
     public float maxDistance = 10;
     public float minDistance = 5;
     public float radius = 30;

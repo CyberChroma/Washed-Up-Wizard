@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems; // Used to access events
 using UnityEngine.UI; // Used to access UI
 
 public class SpellCreator : MonoBehaviour {
@@ -49,22 +48,15 @@ public class SpellCreator : MonoBehaviour {
                         componentsPanelTimesActivated++;
                     }
                 }
-			} else { // If the player has not set up a spell
+            } else if (!spellInputReceiver.inputSD [0] && !spellInputReceiver.inputSD [1] && !spellInputReceiver.inputSD [2]) { // If the player has not set up a spell and hasn't pressed a cast button
 				SetUpSpell ();
 			}
 			if (currentArrayNum == 1 || currentArrayNum == 2) { // If the player has input components 1 or 2
 				for (int i = 0; i < spellInputReceiver.inputSD.Length; i++) { // Goes through the active spell buttons 
-                    if (spellInputReceiver.inputSD [i] && componentsPanelTimesActivated % 2 != 0) { // If the player has pressed a button and this button press was not clicking a UI button
-						// Resetting the spell creation
-                        glows [0].SetActive (false);
-						if (currentArrayNum == 2) {
-							glows [1].SetActive (false);
-						}
-						componentsPanel.Activate ();
+                    if (spellInputReceiver.inputSD [i] && componentsPanelTimesActivated % 2 != 0) { // If the player has pressed a button
+                        StartCoroutine (WaitToCreateSpell ());
+                        componentsPanel.Activate ();
                         componentsPanelTimesActivated++;
-						currentArrayNum = 0;
-						spellSetUp = false;
-						creatingSpell = false;
 					}
 				}
 			}
@@ -140,13 +132,12 @@ public class SpellCreator : MonoBehaviour {
 			}
 		}
 		StartCoroutine (WaitToCreateSpell ());
-
         GameObject.Find("Scene Saver").GetComponent<SceneSaver>().UpdateSpells (currentSpellID, slotNum);
 	}
 
 	IEnumerator WaitToCreateSpell () { // Waits then resets spell crafting
 		canCreate = false;
-		yield return new WaitForSeconds (0.5f);
+		yield return new WaitForSeconds (0.25f);
 		glows [0].SetActive (false);
 		glows [1].SetActive (false);
 		glows [2].SetActive (false);
