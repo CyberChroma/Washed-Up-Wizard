@@ -10,13 +10,10 @@ public class DialogueTrigger : MonoBehaviour {
         if (other.CompareTag ("Player"))
         {
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-        }
-    }
-
-    public void OnTriggerExit(Collider other) {
-        if (other.CompareTag ("Player"))
-        {
-            //FindObjectOfType<DialogueManager>().EndDialogue();
+            if (dialogue.tasktype == Dialogue.TaskType.None)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 

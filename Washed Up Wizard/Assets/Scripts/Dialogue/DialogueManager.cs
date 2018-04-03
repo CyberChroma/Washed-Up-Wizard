@@ -57,7 +57,7 @@ public class DialogueManager : MonoBehaviour {
         dialogueText.text = "";
         for (int i = 0; i < sentence.Length; i+=2)
         {
-            if (i + 2 < sentence.Length)
+            if (i + 2 < sentence.Length + 1)
             {
                 dialogueText.text += sentence.Substring(i, 2);
             }

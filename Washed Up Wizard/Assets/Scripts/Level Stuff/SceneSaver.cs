@@ -24,6 +24,13 @@ public class SceneSaver : MonoBehaviour {
             Destroy(gameObject);  
         }
         DontDestroyOnLoad(this.gameObject);
+        if (SceneManager.GetActiveScene().name == "Hospital")
+        {
+            spellID1 = new int[] {2, 0, 6};
+            spellID2 = new int[] {3, 7, 9};
+            spellID3 = new int[] {2, 5, 8};
+            TransferSpells();
+        }
 	}
 	
 	// Update is called once per frame
