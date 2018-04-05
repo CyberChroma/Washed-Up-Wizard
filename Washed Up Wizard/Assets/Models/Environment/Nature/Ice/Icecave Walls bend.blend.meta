@@ -14,7 +14,17 @@ ModelImporter:
     4300000: Cube
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grey_cave
+    second: {fileID: 2100000, guid: 764efb48532110e4cbaa9432c61fcc39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ice70
+    second: {fileID: 2100000, guid: 93391e4b7b6dbcb4893c88ecbd3c5a94, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

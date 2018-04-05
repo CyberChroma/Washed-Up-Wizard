@@ -13,7 +13,12 @@ ModelImporter:
     4300000: Ice_Cave_Corner
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ice
+    second: {fileID: 2100000, guid: efe116a6c15f00b49a5ce45755330e54, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
