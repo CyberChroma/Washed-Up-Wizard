@@ -16,7 +16,12 @@ ModelImporter:
     4300002: Icecave_Walls
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ice
+    second: {fileID: 2100000, guid: a0a595a6d99fc734cbb61d0864053101, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
