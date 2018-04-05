@@ -12,9 +12,9 @@ public class ChangePath : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        anim = GetComponentInChildren<Animator>();
-        mr = GetComponentInChildren<MeshRenderer>();
-        bcs = GetComponents<BoxCollider>();
+        anim = transform.parent.GetComponentInChildren<Animator>();
+        mr = transform.parent.GetComponentInChildren<MeshRenderer>();
+        bcs = GetComponentsInParent<BoxCollider>();
         if (block)
         {
             mr.enabled = false;
