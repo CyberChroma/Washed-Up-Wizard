@@ -543,7 +543,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1139488807825182}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -51.8, y: 0, z: -2.3}
+  m_LocalPosition: {x: -21.8, y: 0, z: 13.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4305252138140476}
@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6423265acf6d21e469c60f54b6da75d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 5
+  type: 1
   damageAmount: 2
   oneTime: 0
   tagsToDamage:
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991310c490662e844bffe31e08979ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 5
+  type: 1
 --- !u!114 &114560740314615034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -805,7 +805,7 @@ MonoBehaviour:
   startHealth: 2.5
   tempStopHitsTime: 0.25
   disableOnDeath: 1
-  disableDelay: 1.5
+  disableDelay: 2
   healthChanged: 0
   currentHealth: 0
   canBeHit: 1

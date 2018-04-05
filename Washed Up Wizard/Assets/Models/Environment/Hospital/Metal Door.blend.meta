@@ -9,6 +9,11 @@ ModelImporter:
     400000: //RootNode
     2100000: Material
     2100002: Metal_Door
+    2100004: Material_001
+    2100006: Material_002
+    2100008: Metal_Door_Yellow
+    2100010: Metal_Door_Black
+    2100012: Metal_Door_Grey
     2300000: //RootNode
     3300000: //RootNode
     4300000: Metal_Door
@@ -16,7 +21,22 @@ ModelImporter:
     7400002: Down
     7400004: Up
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Door_Black
+    second: {fileID: 2100000, guid: b6efb4448aa4cb64cb3148927ac03829, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Door_Grey
+    second: {fileID: 2100000, guid: e327dd93600e89946858bb453b704aee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Door_Yellow
+    second: {fileID: 2100000, guid: 5e47b2506ad909b4e9f6dc4e9230b9f6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
