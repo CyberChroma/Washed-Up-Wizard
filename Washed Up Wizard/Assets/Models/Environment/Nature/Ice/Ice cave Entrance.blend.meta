@@ -1,17 +1,36 @@
 fileFormatVersion: 2
-guid: f11c1a2e96a7fae45a01b46bd30a7fa3
-timeCreated: 1522775725
+guid: adaecdc01d5f44d45b920e4a0d29a6e0
+timeCreated: 1522943305
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: grey_cave
-    2100002: ice70
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cube
+    100000: Cave
+    100002: //RootNode
+    100004: ice_lump_outside
+    100006: ice_lump_top
+    100008: snow_lump_2
+    400000: Cave
+    400002: //RootNode
+    400004: ice_lump_outside
+    400006: ice_lump_top
+    400008: snow_lump_2
+    2100000: ice
+    2100002: snow
+    2100004: grey_cave
+    2100006: grey_inside_cave
+    2300000: Cave
+    2300002: ice_lump_outside
+    2300004: ice_lump_top
+    2300006: snow_lump_2
+    3300000: Cave
+    3300002: ice_lump_outside
+    3300004: ice_lump_top
+    3300006: snow_lump_2
+    4300000: ice_lump_outside
+    4300002: ice_lump_top
+    4300004: snow_lump_2
+    4300006: Cave
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -19,12 +38,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: grey_cave
-    second: {fileID: 2100000, guid: 764efb48532110e4cbaa9432c61fcc39, type: 2}
+    second: {fileID: 2100000, guid: 26c880b4841e1bb47a17aab1b128e069, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ice70
-    second: {fileID: 2100000, guid: 93391e4b7b6dbcb4893c88ecbd3c5a94, type: 2}
+      name: ice
+    second: {fileID: 2100000, guid: d1b1ae820a35aac45af4cba78f4ebb67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: snow
+    second: {fileID: 2100000, guid: 21dba872303df444a880008beeacfc43, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -54,13 +78,13 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
     importCameras: 1
-    importLights: 1
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -75,8 +99,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 80
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 0
@@ -95,7 +119,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

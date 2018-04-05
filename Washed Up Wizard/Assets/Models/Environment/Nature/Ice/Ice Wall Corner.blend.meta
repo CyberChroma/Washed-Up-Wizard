@@ -11,6 +11,8 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Ice_Cave_Corner
+    4300002: Ice_Wall_Corner
+    4300004: Ice_Wall
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -18,7 +20,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Ice
-    second: {fileID: 2100000, guid: efe116a6c15f00b49a5ce45755330e54, type: 2}
+    second: {fileID: 2100000, guid: 67d5491556859484584ff37bdd870a64, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -51,10 +53,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
     importCameras: 1
-    importLights: 1
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -69,8 +71,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 80
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 0
