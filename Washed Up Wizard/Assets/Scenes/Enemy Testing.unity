@@ -2009,7 +2009,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114991730119787566, guid: c3ba12a38f5a89346a8936c40d3b5ac8,
+=======
+    - target: {fileID: 114880526433070260, guid: c3ba12a38f5a89346a8936c40d3b5ac8,
+>>>>>>> a55fd45665f79cad7f0e94f2b3dede615a3d9111
         type: 2}
       propertyPath: inputController
       value: 
@@ -9902,6 +9906,11 @@ Prefab:
     - target: {fileID: 224620306454240024, guid: c6584d18aba05e648a4b82cc97a984bd,
         type: 2}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224620306454240024, guid: c6584d18aba05e648a4b82cc97a984bd,
+        type: 2}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -18091,9 +18100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c3ccb1a2a6d69489cb814c944403e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesToKill:
-  - {fileID: 1721229442}
-  taskComplete: 0
 --- !u!1001 &1722740396
 Prefab:
   m_ObjectHideFlags: 0
@@ -22540,8 +22546,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42282f8b3295da4cbf20935b2c41803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   activate: 0
   objectToActivate: {fileID: 0}
+=======
+>>>>>>> a55fd45665f79cad7f0e94f2b3dede615a3d9111
 --- !u!23 &2141042501
 MeshRenderer:
   m_ObjectHideFlags: 0
