@@ -81,6 +81,7 @@ public class GiantSlimeAI : MonoBehaviour {
 		health = GetComponent<Health>();
 		inputController = GameObject.Find ("Input Controller");
         anim = GetComponentInChildren<Animator>();
+        anim.logWarnings = false;
 	}
 
 	void OnEnable () {

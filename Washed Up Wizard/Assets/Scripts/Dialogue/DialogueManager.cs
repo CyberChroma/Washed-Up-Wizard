@@ -42,6 +42,13 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
+    void Update () {
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            DisplayNextSentence();
+        }
+    }
+
     public void DisplayNextSentence () {
         if (sentences.Count == 0) {
             EndDialogue();

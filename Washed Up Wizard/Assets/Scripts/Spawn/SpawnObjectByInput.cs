@@ -29,7 +29,7 @@ public class SpawnObjectByInput : MonoBehaviour {
         spellInputReceiver = inputController.GetComponent<SpellInputReceiver>();
 		cursorPosition = GameObject.Find ("Cursor Position").transform;
 		spellsParent = GameObject.Find ("Spells").transform;
-		spellCreator = GameObject.Find ("Spell Crafting System").GetComponent<SpellCreator> ();
+        spellCreator = GameObject.Find ("Spell UI").transform.Find("Spell Crafting System").GetComponent<SpellCreator> ();
 	}
 
 	void Update () {

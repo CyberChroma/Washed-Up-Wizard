@@ -8,13 +8,16 @@ public class ActivateOnEnter : MonoBehaviour {
     public GameObject objectToActivate;
 
     void OnTriggerEnter (Collider other) {
-        if (activate)
+        if (other.CompareTag("Player"))
         {
-            objectToActivate.SetActive(true);
-        }
-        else
-        {
-            objectToActivate.SetActive(false);
+            if (activate)
+            {
+                objectToActivate.SetActive(true);
+            }
+            else
+            {
+                objectToActivate.SetActive(false);
+            }
         }
     }
 }

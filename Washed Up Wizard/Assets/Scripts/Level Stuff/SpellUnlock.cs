@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class SpellUnlock : MonoBehaviour {
 
-    public GameObject spellToUnlock;
+    public SpellUnlockState spellToUnlock;
 
     void OnTriggerEnter (Collider other) {
         if (other.CompareTag("Player"))
         {
-            //spellToUnlock.SetActive(true);
-            //GameObject.Find("Combinations Panel").GetComponent<CombinationsMenu>().SetUpCombinations ();
+            spellToUnlock.unlocked = true;
+            GameObject.Find("Combinations Panel").GetComponent<CombinationsMenu>().SetUpCombinations ();
+            gameObject.SetActive(false);
         }
     }
 }

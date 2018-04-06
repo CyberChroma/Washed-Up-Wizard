@@ -92,7 +92,7 @@ public class SpellCreator : MonoBehaviour {
 	}
 
     public void CreateSpell (int[] currentSpellID, int slotNum) {
-        if (playerSpellsReference.spells [currentSpellID [0]].componentSpells [currentSpellID [1] * 10 + currentSpellID [2]] != null) { // If the requested spell exists 
+        if (playerSpellsReference && playerSpellsReference.spells [currentSpellID [0]].componentSpells [currentSpellID [1] * 10 + currentSpellID [2]] != null && GameObject.Find ("Spell UI").transform.Find ("Combinations Panel").transform.Find ((playerSpellsReference.spells [currentSpellID [0]].componentSpells [currentSpellID [1] * 10 + currentSpellID [2]]).name).GetComponent<SpellUnlockState>().unlocked) { // If the requested spell exists 
 			if (activeEmitters [slotNum] != null) { // If there is a spell in this slot
 				activeEmitters [slotNum].GetComponent<SpawnObjectByInput> ().emitterNum = 0; // Unlinking the emitter to the key
 			}
