@@ -31,9 +31,12 @@ public class SpellCreator : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         // Getting references
-		playerSpellsReference = GetComponent<PlayerSpellsReference> ();
-        componentInputReceiver = inputController.GetComponent<ComponentInputReceiver> ();
-        spellInputReceiver = inputController.GetComponent<SpellInputReceiver> ();
+        playerSpellsReference = GetComponent<PlayerSpellsReference>();
+        componentInputReceiver = inputController.GetComponent<ComponentInputReceiver>();
+        spellInputReceiver = inputController.GetComponent<SpellInputReceiver>();
+    }
+
+    void Start () {
         GameObject.Find("Scene Saver").GetComponent<SceneSaver>().TransferSpells ();
 	}
 	

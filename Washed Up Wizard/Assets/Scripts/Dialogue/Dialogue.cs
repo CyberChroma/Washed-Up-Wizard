@@ -13,7 +13,7 @@ public class Dialogue {
     }
 
     public TaskType tasktype;
-    public Pickup[] pickups;
+    public GameObject[] pickups;
     public KillEnemies killEnemies;
     public string name; // Name of character
     public TextAsset[] textReferences; // References to text files
