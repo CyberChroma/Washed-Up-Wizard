@@ -13,30 +13,31 @@ public class Dialogue {
     }
 
     public TaskType tasktype;
-    public Pickup pickup;
-    public killEnemies killEnemies;
-    public string name; //name of character
-    public TextAsset[] textReferences; //references to text files
+    public Pickup[] pickups;
+    public KillEnemies killEnemies;
+    public string name; // Name of character
+    public TextAsset[] textReferences; // References to text files
 
     private int numOfLines;
     private int whichSentence;
 
+    [HideInInspector] public bool taskComplete = false;
     [HideInInspector] public string[] sentences;
     [HideInInspector] public bool thankYou = false;
 
-    public void getSentences (){
+    public void getSentences () {
         numOfLines = textReferences.Length;
         if (tasktype == TaskType.Pickup)
         {
-            if (pickup.taskComplete == false)
+            if (taskComplete == false)
             {
                 sentences = textReferences[0].text.Split('\n');
             }
-            else if (pickup.taskComplete == true && thankYou == false)
+            else if (taskComplete == true && thankYou == false)
             {
                 sentences = textReferences[1].text.Split('\n');
             }
-            else if (pickup.taskComplete == true && thankYou == true)
+            else if (taskComplete == true && thankYou == true)
             {
                 sentences = textReferences[Random.Range(2, numOfLines)].text.Split('\n');
             }

@@ -6,6 +6,8 @@ public class DialogueTrigger : MonoBehaviour {
 
     public Dialogue dialogue;
 
+    private Animator anim;
+
     public void OnTriggerEnter(Collider other) {
         if (other.CompareTag ("Player"))
         {
@@ -13,11 +15,21 @@ public class DialogueTrigger : MonoBehaviour {
             if (dialogue.tasktype == Dialogue.TaskType.None)
             {
                 gameObject.SetActive(false);
+            } else if (dialogue.taskComplete) {
+                GetComponentInChildren<Animator>().SetTrigger("Activate");
             }
         }
     }
 
     public void Update () {
+        dialogue.taskComplete = true;
+        for (int i = 0; i < dialogue.pickups.Length; i++)
+        {
+            if (dialogue.pickups[i].gameObject.activeSelf)
+            {
+                dialogue.taskComplete = false;
+            }
+        }
         dialogue.getSentences();
     }
 }

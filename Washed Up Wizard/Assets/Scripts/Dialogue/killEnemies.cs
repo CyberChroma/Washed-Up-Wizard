@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class killEnemies : MonoBehaviour {
+public class KillEnemies : MonoBehaviour {
 
     public GameObject[] enemiesToKill;
     [HideInInspector] public bool taskComplete = false;

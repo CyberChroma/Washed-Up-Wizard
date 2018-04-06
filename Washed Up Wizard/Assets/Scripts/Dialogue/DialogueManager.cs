@@ -31,7 +31,7 @@ public class DialogueManager : MonoBehaviour {
         DisplayNextSentence();
         if (!dialogue.thankYou)
         {
-            if (dialogue.tasktype == Dialogue.TaskType.Pickup && dialogue.pickup.taskComplete)
+            if (dialogue.tasktype == Dialogue.TaskType.Pickup && dialogue.taskComplete)
             {
                 dialogue.thankYou = true;
             }
