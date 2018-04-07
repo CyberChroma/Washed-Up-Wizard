@@ -19,7 +19,6 @@ public class DialogueManager : MonoBehaviour {
         animator = GetComponent<Animator>();
         sentences = new Queue <string>();
 	}
-        
 	
     public void StartDialogue (Dialogue dialogue) {
         animator.SetBool("Is Open", true);
@@ -72,7 +71,7 @@ public class DialogueManager : MonoBehaviour {
             {
                 dialogueText.text += sentence.Substring(i, 1);
             }
-            yield return null;
+            yield return new WaitForSeconds (0.02f) ;
         }
     }
 

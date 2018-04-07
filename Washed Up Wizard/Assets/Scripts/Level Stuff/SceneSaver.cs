@@ -17,13 +17,18 @@ public class SceneSaver : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         health = GameObject.Find("Player").GetComponent<Health>();
-        if (instance == null) {
+        if (instance == null)
+        {
             instance = this;
         }
-        else if (instance != this) {
+        else if (instance != this)
+        {
             Destroy(gameObject);  
         }
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    void Start () {
         if (SceneManager.GetActiveScene().name == "Hospital")
         {
             spellID1 = new int[] {2, 0, 6};

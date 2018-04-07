@@ -17,6 +17,7 @@ public class CheatManager : MonoBehaviour {
         }
         if (stopDamage && player.currentHealth < player.startHealth) {
             player.currentHealth = player.startHealth;
+            player.ChangeHealth();
         }
 	}
 }
