@@ -36,8 +36,9 @@ public class SpellCreator : MonoBehaviour {
         spellInputReceiver = inputController.GetComponent<SpellInputReceiver>();
     }
 
-    void Start () {
+    void OnEnable () {
         GameObject.Find("Scene Saver").GetComponent<SceneSaver>().TransferSpells ();
+        canCreate = true;
 	}
 	
 	// Update is called once per frame
