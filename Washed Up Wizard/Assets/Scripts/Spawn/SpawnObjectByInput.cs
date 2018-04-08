@@ -23,13 +23,13 @@ public class SpawnObjectByInput : MonoBehaviour {
 	private GameObject tempReticle;
 	private Transform spellsParent;
 
-	void Start () {
+	void Awake () {
         // Getting references
         inputController = GameObject.Find("Pause Menu").transform.Find("Input Controller").gameObject;
         spellInputReceiver = inputController.GetComponent<SpellInputReceiver>();
 		cursorPosition = GameObject.Find ("Cursor Position").transform;
 		spellsParent = GameObject.Find ("Spells").transform;
-		spellCreator = GameObject.Find ("Spell UI").GetComponent<SpellCreator> ();
+        spellCreator = GameObject.Find ("Spell UI").transform.Find("Spell Crafting System").GetComponent<SpellCreator> ();
 	}
 
 	void Update () {

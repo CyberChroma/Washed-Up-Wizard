@@ -22,6 +22,7 @@ public class MeleeEnemyAI : MonoBehaviour {
         damageByTouchCollision = GetComponent<DamageByTouchCollision>();
 		player = GameObject.Find ("Player").transform; // Getting the reference
         nav = GetComponent<NavMeshAgent>();
+        anim.logWarnings = false;
 	}
 
 	void OnEnable () {
@@ -50,7 +51,7 @@ public class MeleeEnemyAI : MonoBehaviour {
         }
 	}
 
-	void OnCollisionEnter (Collision other) { // If the enemy collided with something, change its move target.
+	void OnCollisionEnter (Collision other) { // If the enemy collided with something, change its move target
         if (other.collider.CompareTag ("Player") && anim) {
             anim.SetTrigger("Attack");
         }

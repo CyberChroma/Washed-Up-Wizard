@@ -22,12 +22,15 @@ public class DialogueTrigger : MonoBehaviour {
     }
 
     public void Update () {
-        dialogue.taskComplete = true;
-        for (int i = 0; i < dialogue.pickups.Length; i++)
+        if (dialogue.tasktype == Dialogue.TaskType.Pickup)
         {
-            if (dialogue.pickups[i].gameObject.activeSelf)
+            dialogue.taskComplete = true;
+            for (int i = 0; i < dialogue.pickups.Length; i++)
             {
-                dialogue.taskComplete = false;
+                if (dialogue.pickups[i] && dialogue.pickups[i].activeSelf)
+                {
+                    dialogue.taskComplete = false;
+                }
             }
         }
         dialogue.getSentences();

@@ -81,6 +81,7 @@ public class GiantSlimeAI : MonoBehaviour {
 		health = GetComponent<Health>();
 		inputController = GameObject.Find ("Input Controller");
         anim = GetComponentInChildren<Animator>();
+        anim.logWarnings = false;
 	}
 
 	void OnEnable () {
@@ -94,7 +95,7 @@ public class GiantSlimeAI : MonoBehaviour {
     void OnDisable () {
         if (health.currentHealth <= 0)
         {
-            SceneManager.LoadScene("Level Select");
+            SceneManager.LoadScene("Slime Cube Death");
         }
     }
 

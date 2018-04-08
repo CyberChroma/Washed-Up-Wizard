@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class SpellUnlock : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public SpellUnlockState spellToUnlock;
+
+    void OnTriggerEnter (Collider other) {
+        if (other.CompareTag("Player"))
+        {
+            spellToUnlock.unlocked = true;
+            GameObject.Find("Combinations Panel").GetComponent<CombinationsMenu>().SetUpCombinations ();
+            gameObject.SetActive(false);
+        }
+    }
 }
