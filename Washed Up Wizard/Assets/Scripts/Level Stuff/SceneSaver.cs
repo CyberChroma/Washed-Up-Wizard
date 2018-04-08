@@ -23,7 +23,14 @@ public class SceneSaver : MonoBehaviour {
         }
         else if (instance != this)
         {
-            Destroy(gameObject);  
+            if (SceneManager.GetActiveScene().name == "Hospital")
+            {
+                Destroy(instance.gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
         DontDestroyOnLoad(this.gameObject);
     }
