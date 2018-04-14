@@ -28,7 +28,7 @@ public class Health : MonoBehaviour {
         anim = GetComponentInChildren<Animator>();
         currentHealth = startHealth;
         if (gameObject.name == "Player") {
-            GameObject.Find("Scene Saver").GetComponent<SceneSaver>().TransferHealth ();
+            GameObject.Find("Temp Saver").GetComponent<TempSaver>().TransferHealth ();
         }
 	}
 

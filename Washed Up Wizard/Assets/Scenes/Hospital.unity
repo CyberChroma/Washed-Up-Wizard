@@ -7423,9 +7423,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    tasktype: 0
-    pickups: []
-    killEnemies: {fileID: 0}
+    hasTask: 0
+    items: []
     name: Wizard
     textReferences:
     - {fileID: 4900000, guid: 6f91f6dc31cf7664f94e37395c9e00d7, type: 3}
@@ -7541,6 +7540,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.199999, y: 1.1000003, z: 5.000001}
   m_Center: {x: 0.00000047683716, y: 0, z: 0}
+--- !u!1001 &396816297
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4380688149140976, guid: f63739010cac6e146a1fab4c11fd1277, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380688149140976, guid: f63739010cac6e146a1fab4c11fd1277, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380688149140976, guid: f63739010cac6e146a1fab4c11fd1277, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380688149140976, guid: f63739010cac6e146a1fab4c11fd1277, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380688149140976, guid: f63739010cac6e146a1fab4c11fd1277, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380688149140976, guid: f63739010cac6e146a1fab4c11fd1277, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380688149140976, guid: f63739010cac6e146a1fab4c11fd1277, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380688149140976, guid: f63739010cac6e146a1fab4c11fd1277, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f63739010cac6e146a1fab4c11fd1277, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &413788865
 Prefab:
   m_ObjectHideFlags: 0
@@ -11439,9 +11480,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    tasktype: 0
-    pickups: []
-    killEnemies: {fileID: 0}
+    hasTask: 0
+    items: []
     name: Wizard
     textReferences:
     - {fileID: 4900000, guid: 7387d2c44b029794e880f5da5e05d372, type: 3}
@@ -17178,9 +17218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    tasktype: 0
-    pickups: []
-    killEnemies: {fileID: 0}
+    hasTask: 0
+    items: []
     name: Wizard
     textReferences:
     - {fileID: 4900000, guid: eb0f6629fa9a71b468d723203f75a8c6, type: 3}
@@ -28487,9 +28526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    tasktype: 0
-    pickups: []
-    killEnemies: {fileID: 0}
+    hasTask: 0
+    items: []
     name: Wizard
     textReferences:
     - {fileID: 4900000, guid: 1a7417a6de47bad4a99ecc76320f13e4, type: 3}
@@ -30699,9 +30737,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    tasktype: 0
-    pickups: []
-    killEnemies: {fileID: 0}
+    hasTask: 0
+    items: []
     name: Wizard
     textReferences:
     - {fileID: 4900000, guid: 8778e874e56a79547825074c6a74566f, type: 3}
