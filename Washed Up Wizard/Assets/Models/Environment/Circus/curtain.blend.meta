@@ -37,7 +37,17 @@ ModelImporter:
     7400000: Open and Close
     7400002: Close
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Curtain
+    second: {fileID: 2100000, guid: 95a8039f65c3d7c43ac36c322602f403, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: circus_red
+    second: {fileID: 2100000, guid: 7ab525347ff5ce14aaa67296849c4489, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

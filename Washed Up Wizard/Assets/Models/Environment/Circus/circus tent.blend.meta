@@ -27,7 +27,22 @@ ModelImporter:
     4300004: walls
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: ceb1375b433230a479f41491a8165790, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_002
+    second: {fileID: 2100000, guid: e0925b91ee68a13418a42e6a34cecbfa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_004
+    second: {fileID: 2100000, guid: 6344cbf31b7585547a3dd0d3e5c69024, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
