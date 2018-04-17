@@ -10,7 +10,7 @@ public class GameSaver : MonoBehaviour {
 
     private int unlockedLevel = 1;
     private Button[] levelButtons;
-    public bool[] spellsUnlocked;
+    private bool[] spellsUnlocked;
     private SpellUnlockState[] spellUnlockStates;
 
     // Use this for initialization
@@ -55,7 +55,7 @@ public class GameSaver : MonoBehaviour {
             spellUnlockStates[6] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("Forward and Back").GetComponent<SpellUnlockState>();
             spellUnlockStates[7] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("Homing Towards Mouse").GetComponent<SpellUnlockState>();
             spellUnlockStates[8] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("Multi Shot").GetComponent<SpellUnlockState>();
-            spellUnlockStates[9] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("5 Way Spin").GetComponent<SpellUnlockState>();
+            spellUnlockStates[9] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("Bounce").GetComponent<SpellUnlockState>();
             spellUnlockStates[10] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("Up and Down").GetComponent<SpellUnlockState>();
             spellUnlockStates[11] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("Drop and Emit").GetComponent<SpellUnlockState>();
             spellUnlockStates[12] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("Heal Over Time").GetComponent<SpellUnlockState>();
@@ -65,7 +65,7 @@ public class GameSaver : MonoBehaviour {
             spellUnlockStates[16] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("Protection Field").GetComponent<SpellUnlockState>();
             spellUnlockStates[17] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("Move and Emit").GetComponent<SpellUnlockState>();
             spellUnlockStates[18] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("Drop and Explode").GetComponent<SpellUnlockState>();
-            spellUnlockStates[19] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("Bounce").GetComponent<SpellUnlockState>();
+            spellUnlockStates[19] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("5 Way Spin").GetComponent<SpellUnlockState>();
         }
         if (!spellsUnlocked[0])
         {

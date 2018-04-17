@@ -85,7 +85,12 @@ ModelImporter:
     4300028: Cylinder
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Curtain
+    second: {fileID: 2100000, guid: 320ff88976682bb4bb4a73db1b0a7223, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

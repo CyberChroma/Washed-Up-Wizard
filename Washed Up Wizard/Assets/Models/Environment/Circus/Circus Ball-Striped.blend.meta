@@ -14,7 +14,17 @@ ModelImporter:
     4300000: Circus_Ball-Striped
     7400000: Roll
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: 4faa1c8c149225c46ac27014a9213500, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow
+    second: {fileID: 2100000, guid: e8b1134fcacf8a44faa5abfcb5bab7fd, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

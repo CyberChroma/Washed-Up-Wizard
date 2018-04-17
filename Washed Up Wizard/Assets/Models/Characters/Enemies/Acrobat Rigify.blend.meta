@@ -329,6 +329,7 @@ ModelImporter:
     100642: Eyelashes
     100644: Circus_Ball-Diamond_proxy
     100646: Circus_Swing_proxy
+    100648: Suit
     400000: //RootNode
     400002: Body
     400004: breast_L
@@ -653,6 +654,7 @@ ModelImporter:
     400642: Eyelashes
     400644: Circus_Ball-Diamond_proxy
     400646: Circus_Swing_proxy
+    400648: Suit
     2100000: unnamed
     2100002: Skin
     2100004: Shoe
@@ -668,6 +670,8 @@ ModelImporter:
     2100024: Red
     2100026: Yellow_0
     2100028: Red_0
+    2100030: Stripes
+    2100032: Suit
     2300000: //RootNode
     2300002: Body
     2300004: Cube
@@ -1142,6 +1146,7 @@ ModelImporter:
     4300310: Eyelashes
     4300312: Circus_Ball-Diamond_proxy
     4300314: Circus_Swing_proxy
+    4300316: Suit
     7400000: Drop
     7400002: Wizard_rigAction
     7400004: In Air
@@ -1155,6 +1160,7 @@ ModelImporter:
     13700012: Pants
     13700014: Shirt
     13700016: Shoes
+    13700018: Suit
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -1189,6 +1195,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Red_0
+    second: {fileID: 2100000, guid: 41cb34e9b3543714591764db55668439, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Shirt
     second: {fileID: 2100000, guid: 8dfec0135f737e349b040f047a9ffead, type: 2}
   - first:
@@ -1201,6 +1212,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Skin
     second: {fileID: 2100000, guid: 61f102772723cc248b26fa1454b14046, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stripes
+    second: {fileID: 2100000, guid: 44ceebdbf030eed4aaba175190835909, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Suit
+    second: {fileID: 2100000, guid: d731be2b274121e48b9e159cf12670d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow_0
+    second: {fileID: 2100000, guid: 529787e19c68be44989155b0b9506772, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

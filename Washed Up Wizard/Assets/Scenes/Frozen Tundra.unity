@@ -8131,15 +8131,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: e454ee91e9be72243a9117acf398b0b6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: e454ee91e9be72243a9117acf398b0b6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: e454ee91e9be72243a9117acf398b0b6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: e454ee91e9be72243a9117acf398b0b6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8204,6 +8204,10 @@ Prefab:
     - target: {fileID: 100000, guid: e454ee91e9be72243a9117acf398b0b6, type: 3}
       propertyPath: m_TagString
       value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e454ee91e9be72243a9117acf398b0b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e454ee91e9be72243a9117acf398b0b6, type: 3}
@@ -22808,7 +22812,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 75466642173c41e4f8130441dbd6b1d0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ba2ed76a82175e047a7c0ba5b0467136, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.7
   m_Pitch: 1
