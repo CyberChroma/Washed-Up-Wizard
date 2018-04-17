@@ -12,7 +12,7 @@ public class DialogueTrigger : MonoBehaviour {
         if (other.CompareTag ("Player"))
         {
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-            if (dialogue.tasktype == Dialogue.TaskType.None)
+            if (!dialogue.hasTask)
             {
                 gameObject.SetActive(false);
             } else if (dialogue.taskComplete) {
@@ -22,12 +22,12 @@ public class DialogueTrigger : MonoBehaviour {
     }
 
     public void Update () {
-        if (dialogue.tasktype == Dialogue.TaskType.Pickup)
+        if (dialogue.hasTask)
         {
             dialogue.taskComplete = true;
-            for (int i = 0; i < dialogue.pickups.Length; i++)
+            for (int i = 0; i < dialogue.items.Length; i++)
             {
-                if (dialogue.pickups[i] && dialogue.pickups[i].activeSelf)
+                if (dialogue.items[i] && dialogue.items[i].activeSelf)
                 {
                     dialogue.taskComplete = false;
                 }

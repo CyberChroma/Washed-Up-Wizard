@@ -11,6 +11,7 @@ public class SpellUnlock : MonoBehaviour {
         {
             spellToUnlock.unlocked = true;
             GameObject.Find("Combinations Panel").GetComponent<CombinationsMenu>().SetUpCombinations ();
+            GameObject.Find("Game Saver").GetComponent<GameSaver>().UpdateSpells();
             gameObject.SetActive(false);
         }
     }

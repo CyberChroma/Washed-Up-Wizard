@@ -33,7 +33,17 @@ ModelImporter:
     4300006: Circus_Ball-Diamond
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: ba6c535f55867d84ea9b40d53b53689b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow
+    second: {fileID: 2100000, guid: c9e6341d81a9c904ca6579a54c6bdb3b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

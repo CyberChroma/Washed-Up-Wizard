@@ -37,7 +37,7 @@ public class SpellCreator : MonoBehaviour {
     }
 
     void OnEnable () {
-        GameObject.Find("Scene Saver").GetComponent<SceneSaver>().TransferSpells ();
+        GameObject.Find("Temp Saver").GetComponent<TempSaver>().TransferSpells ();
         canCreate = true;
 	}
 	
@@ -136,7 +136,7 @@ public class SpellCreator : MonoBehaviour {
 			}
 		}
 		StartCoroutine (WaitToCreateSpell ());
-        GameObject.Find("Scene Saver").GetComponent<SceneSaver>().UpdateSpells (currentSpellID, slotNum);
+        GameObject.Find("Temp Saver").GetComponent<TempSaver>().UpdateSpells (currentSpellID, slotNum);
 	}
 
 	IEnumerator WaitToCreateSpell () { // Waits then resets spell crafting

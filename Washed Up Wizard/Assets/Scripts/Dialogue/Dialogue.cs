@@ -4,17 +4,9 @@ using UnityEngine;
 
 [System.Serializable]
 public class Dialogue {
-
-    public enum TaskType
-    {
-        None,
-        Pickup,
-        KillEnemies
-    }
-
-    public TaskType tasktype;
-    public GameObject[] pickups;
-    public KillEnemies killEnemies;
+    
+    public bool hasTask;
+    public GameObject[] items;
     public string name; // Name of character
     public TextAsset[] textReferences; // References to text files
 
@@ -27,7 +19,7 @@ public class Dialogue {
 
     public void getSentences () {
         numOfLines = textReferences.Length;
-        if (tasktype == TaskType.Pickup)
+        if (hasTask)
         {
             if (taskComplete == false)
             {
@@ -38,21 +30,6 @@ public class Dialogue {
                 sentences = textReferences[1].text.Split('\n');
             }
             else if (taskComplete == true && thankYou == true)
-            {
-                sentences = textReferences[Random.Range(2, numOfLines)].text.Split('\n');
-            }
-        }
-        else if (tasktype == TaskType.KillEnemies)
-        {
-            if (killEnemies.taskComplete == false)
-            {
-                sentences = textReferences[0].text.Split('\n');
-            }
-            else if (killEnemies.taskComplete == true && thankYou == false)
-            {
-                sentences = textReferences[1].text.Split('\n');
-            }
-            else if (killEnemies.taskComplete == true && thankYou == true)
             {
                 sentences = textReferences[Random.Range(2, numOfLines)].text.Split('\n');
             }

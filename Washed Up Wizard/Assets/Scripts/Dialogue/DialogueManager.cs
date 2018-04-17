@@ -7,8 +7,9 @@ public class DialogueManager : MonoBehaviour {
 
     private Text nameText;
     private Text dialogueText;
-    private Animator animator;
     private int sentenceNum;
+
+    [HideInInspector] public Animator animator;
 
     private Queue<string> sentences;
 
@@ -30,11 +31,7 @@ public class DialogueManager : MonoBehaviour {
         DisplayNextSentence();
         if (!dialogue.thankYou)
         {
-            if (dialogue.tasktype == Dialogue.TaskType.Pickup && dialogue.taskComplete)
-            {
-                dialogue.thankYou = true;
-            }
-            else if (dialogue.tasktype == Dialogue.TaskType.KillEnemies && dialogue.killEnemies.taskComplete)
+            if (dialogue.hasTask && dialogue.taskComplete)
             {
                 dialogue.thankYou = true;
             }

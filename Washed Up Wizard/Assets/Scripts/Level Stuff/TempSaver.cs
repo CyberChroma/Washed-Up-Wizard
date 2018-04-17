@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneSaver : MonoBehaviour {
+public class TempSaver : MonoBehaviour {
 
-    public static SceneSaver instance = null;
+    public static TempSaver instance = null;
 
     private float currentHealth = 10;
     private static Health health;
