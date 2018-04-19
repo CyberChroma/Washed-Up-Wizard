@@ -386,6 +386,13 @@ ModelImporter:
     100756: ORG-palm_04_L_001
     100758: ORG-palm_04_R_001
     100760: Ringmaster_rig
+    100762: Circle_001
+    100764: Circle_002
+    100766: Suit
+    100768: Button
+    100770: Button_001
+    100772: Button_002
+    100774: Tie
     400000: //RootNode
     400002: Body
     400004: breast_L
@@ -767,6 +774,13 @@ ModelImporter:
     400756: ORG-palm_04_L_001
     400758: ORG-palm_04_R_001
     400760: Ringmaster_rig
+    400762: Circle_001
+    400764: Circle_002
+    400766: Suit
+    400768: Button
+    400770: Button_001
+    400772: Button_002
+    400774: Tie
     2100000: unnamed
     2100002: Skin
     2100004: Shoe
@@ -780,6 +794,9 @@ ModelImporter:
     2100020: Face
     2100022: Hat
     2100024: Stripes
+    2100026: Suit
+    2100028: Button
+    2100030: Tie
     2300000: //RootNode
     2300002: Body
     2300004: Cube
@@ -937,6 +954,12 @@ ModelImporter:
     2300308: WGTS_Wizard_rig
     2300310: Eyelashes
     2300312: Circle
+    2300314: Circle_001
+    2300316: Circle_002
+    2300318: Button
+    2300320: Button_001
+    2300322: Button_002
+    2300324: Tie
     3300000: //RootNode
     3300002: Body
     3300004: Cube
@@ -1094,6 +1117,12 @@ ModelImporter:
     3300308: WGTS_Wizard_rig
     3300310: Eyelashes
     3300312: Circle
+    3300314: Circle_001
+    3300316: Circle_002
+    3300318: Button
+    3300320: Button_001
+    3300322: Button_002
+    3300324: Tie
     4300000: Wizard
     4300002: Cube
     4300004: WGTS_Wizard_rig
@@ -1495,6 +1524,13 @@ ModelImporter:
     4300796: WGT-Ringmaster_rig_hips
     4300798: WGT-Ringmaster_rig_chest
     4300800: WGT-Ringmaster_rig_torso
+    4300802: Circle_002
+    4300804: Circle_001
+    4300806: Suit
+    4300808: Tie
+    4300810: Button
+    4300812: Button_002
+    4300814: Button_001
     7400000: Walk
     7400002: Wizard_rigAction
     9500000: //RootNode
@@ -1508,7 +1544,17 @@ ModelImporter:
     13700014: Shirt
     13700016: Shoes
     13700018: Hat
+    13700020: Suit
+    13700022: Button
+    13700024: Button_001
+    13700026: Button_002
+    13700028: Tie
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Button
+    second: {fileID: 2100000, guid: 46a733bb1b1b29c49aa66a06b3350665, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -1564,6 +1610,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Stripes
     second: {fileID: 2100000, guid: 3dd1c6cea4b87004981507d5b4f77164, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Suit
+    second: {fileID: 2100000, guid: 794cb76cd020b9943b05868b2415bf36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tie
+    second: {fileID: 2100000, guid: 659f41ab0f986d749af0e6d4d1732f4e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

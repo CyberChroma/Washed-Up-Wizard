@@ -32,7 +32,17 @@ ModelImporter:
     4300006: Bomb
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light_Blue
+    second: {fileID: 2100000, guid: af89063eb91ba9448b622ae1e80e4e43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow
+    second: {fileID: 2100000, guid: 3c6942ad8f5f72b418f830463163ca76, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
