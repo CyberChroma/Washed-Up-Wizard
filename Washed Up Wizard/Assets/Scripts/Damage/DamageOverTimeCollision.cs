@@ -34,7 +34,7 @@ public class DamageOverTimeCollision : MonoBehaviour {
                     takeDamage = other.collider.GetComponent<TakeDamage>();
                     if ((type == Type.Fire && takeDamage.type == Type.Fire) || (type == Type.Mechanical && takeDamage.type == Type.Mechanical) || (type == Type.Toxic && takeDamage.type == Type.Toxic) || (type == Type.Earth && takeDamage.type == Type.Earth) || (type == Type.Electrical && takeDamage.type == Type.Electrical) || (type == Type.Water && takeDamage.type == Type.Water))
                     {
-                        takeDamage.Damage(0); // Sends the damage
+                        takeDamage.DamageOverTimeStart(totalDamage * 0.1f / duration, duration); // Sends the damage
                     }
                     else if ((type == Type.Fire && takeDamage.type == Type.Mechanical) || (type == Type.Mechanical && takeDamage.type == Type.Toxic) || (type == Type.Toxic && takeDamage.type == Type.Earth) || (type == Type.Earth && takeDamage.type == Type.Electrical) || (type == Type.Electrical && takeDamage.type == Type.Water) || (type == Type.Water && takeDamage.type == Type.Fire))
                     {
