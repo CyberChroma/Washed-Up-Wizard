@@ -33,6 +33,11 @@ public class CombinationsMenu : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E)) {
             NextPage();
         }
+        if (Input.GetKeyDown(KeyCode.RightBracket))
+        {            
+            SetUpCombinations();
+            GameObject.Find("Game Saver").GetComponent<GameSaver>().UpdateSpells();
+        }
     }
 
 	public void SetUpCombinations () {
