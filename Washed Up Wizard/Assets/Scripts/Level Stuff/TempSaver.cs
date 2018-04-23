@@ -56,6 +56,10 @@ public class TempSaver : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        print("1 " + spellID1[0] + "," + spellID1[1] + "," + spellID1[2]);
+        print("2 " + spellID2[0] + "," + spellID2[1] + "," + spellID2[2]);
+        print("3 " + spellID3[0] + "," + spellID3[1] + "," + spellID3[2]);
+
 	}
 
     public void TransferHealth () {
@@ -64,8 +68,8 @@ public class TempSaver : MonoBehaviour {
         }
     }
 
-    public void UpdateSpells (int[] currentID, int spellNum) {
-        switch (spellNum) {
+    public void UpdateSpells (int[] currentID, int slotNum) {
+        switch (slotNum) {
             case 0:
                 spellID1 = currentID;
                 break;

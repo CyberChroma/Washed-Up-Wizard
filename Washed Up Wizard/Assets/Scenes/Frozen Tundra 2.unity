@@ -2574,6 +2574,18 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0.000000054637592
       objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5d6580cb59ebbac4e85a4c366ca084e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -85.739975
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5d6580cb59ebbac4e85a4c366ca084e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 61.24241
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5d6580cb59ebbac4e85a4c366ca084e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -62.924316
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d6580cb59ebbac4e85a4c366ca084e2, type: 3}
   m_IsPrefabParent: 0
@@ -3189,7 +3201,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1099264102}
   m_Father: {fileID: 1693441612}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -14944,6 +14957,49 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.5, y: 0.75, z: 3}
   m_Center: {x: 0, y: -0.0041449964, z: 0}
+--- !u!1 &1099264101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1099264102}
+  - component: {fileID: 1099264103}
+  m_Layer: 0
+  m_Name: Mine cart explosion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1099264102
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1099264101}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 0, z: -19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 219842783}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1099264103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1099264101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e97d91ff98f2e4ab6ff305d6b92e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnParticles: {fileID: 0}
+  deathParticles: {fileID: 1431692131465788, guid: 59fd37a436a44a34c949f7464ec549cf,
+    type: 2}
 --- !u!1001 &1109919856
 Prefab:
   m_ObjectHideFlags: 0
@@ -24722,7 +24778,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 9b167fd8b2b318d48b9b740bd8ac8770, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.1
+      value: -40.1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9b167fd8b2b318d48b9b740bd8ac8770, type: 3}
       propertyPath: m_LocalPosition.y
