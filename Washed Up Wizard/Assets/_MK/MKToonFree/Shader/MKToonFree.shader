@@ -10,28 +10,28 @@
 		_BumpMap ("Normalmap", 2D) = "bump" {}
 
 		//Light
-		_LightThreshold("LightThreshold", Range (0.01, 1)) = 0.3
+		_LightThreshold("LightThreshold", Range (0.01, 1)) = 0.2
 
 		//Render
-		_LightSmoothness ("Light Smoothness", Range(0,1)) = 0
-		_RimSmoothness ("Rim Smoothness", Range(0,1)) = 0.5
+		_LightSmoothness ("Light Smoothness", Range(0,1)) = 1
+		_RimSmoothness ("Rim Smoothness", Range(0,1)) = 0
 
 		//Custom shadow
-		_ShadowColor ("Shadow Color", Color) = (0.25,0.25,0.25,0.5)
+		_ShadowColor ("Shadow Color", Color) = (0,0,0,0.5)
 		_HighlightColor ("Highlight Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_ShadowIntensity("Shadow Intensity", Range (0.0, 2.0)) = 1.0
 
 		//Outline
 		_OutlineColor ("Outline Color", Color) = (0,0,0,1.0)
-		_OutlineSize ("Outline Size", Float) = 0.02
+		_OutlineSize ("Outline Size", Float) = 0.03
 
 		//Rim
 		_RimColor ("Rim Color", Color) = (1,1,1,1)
-		_RimSize ("Rim Size", Range(0.0,3.0)) = 1.5
-		_RimIntensity("Intensity", Range (0, 1)) = 0.5
+		_RimSize ("Rim Size", Range(0.0,3.0)) = 0
+		_RimIntensity("Intensity", Range (0, 1)) = 0.1
 
 		//Specular
-		_Shininess ("Shininess",  Range (0.01, 1)) = 0.275
+		_Shininess ("Shininess",  Range (0.01, 1)) = 0.1
 		_SpecColor ("Specular Color", Color) = (1,1,1,0.5)
 		_SpecularIntensity("Intensity", Range (0, 1)) = 0.5
 

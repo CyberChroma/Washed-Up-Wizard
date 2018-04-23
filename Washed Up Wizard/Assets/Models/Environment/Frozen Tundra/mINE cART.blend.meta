@@ -20,6 +20,9 @@ ModelImporter:
     2100008: Black
     2100010: Dark_Grey
     2100012: Grey
+    2100014: red
+    2100016: black
+    2100018: Ice_Clump
     2300000: cart_itself
     2300002: mettal_thinggies
     2300004: wheels
@@ -54,8 +57,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Ice_Clump
+    second: {fileID: 2100000, guid: 4930b7bc62ac06249b6c8ed00b17dde3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Material
     second: {fileID: 2100000, guid: ad323fa286761fb4f9693e68d9b8269b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black
+    second: {fileID: 2100000, guid: 85cd7a76eecdf68418a425b5aefce8a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red
+    second: {fileID: 2100000, guid: 20ae3bfd97d613046b18fa526611fbd2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

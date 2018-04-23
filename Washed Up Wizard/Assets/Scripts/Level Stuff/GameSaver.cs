@@ -8,10 +8,11 @@ public class GameSaver : MonoBehaviour {
     
     public static GameSaver instance = null;
 
+    [HideInInspector] public SpellUnlockState[] spellUnlockStates;
+
     private int unlockedLevel = 1;
     private Button[] levelButtons;
     private bool[] spellsUnlocked;
-    private SpellUnlockState[] spellUnlockStates;
 
     // Use this for initialization
     void Awake()
@@ -32,11 +33,12 @@ public class GameSaver : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Level Select" && Input.GetKeyDown(KeyCode.O))
+        if (SceneManager.GetActiveScene().name == "Level Select" && Input.GetKeyDown(KeyCode.P))
         {
             for (int i = 0; i < levelButtons.Length; i++)
             {
                 levelButtons[i].interactable = true;
+                unlockedLevel = 11;
             }
         }
     }
