@@ -545,6 +545,9 @@ ModelImporter:
     101074: Body
     101076: Robe
     101078: Mouth
+    101080: Nose
+    101082: Outline
+    101084: Outline_001
     400000: //RootNode
     400002: foot_L
     400004: forearm_L
@@ -1085,6 +1088,9 @@ ModelImporter:
     401074: Body
     401076: Robe
     401078: Mouth
+    401080: Nose
+    401082: Outline
+    401084: Outline_001
     2100000: Skin
     2100002: Shoe
     2100004: Pants
@@ -1098,6 +1104,8 @@ ModelImporter:
     2100020: Eyes
     2100022: Shoes
     2100024: Mouth
+    2100026: Nose
+    2100028: Outline
     2300000: //RootNode
     2300002: Wizard
     2300004: Wizard_001
@@ -1258,6 +1266,8 @@ ModelImporter:
     2300314: Body
     2300316: Robe
     2300318: Mouth
+    2300320: Nose
+    2300322: Outline
     3300000: //RootNode
     3300002: Wizard
     3300004: Wizard_001
@@ -1418,6 +1428,8 @@ ModelImporter:
     3300314: Body
     3300316: Robe
     3300318: Mouth
+    3300320: Nose
+    3300322: Outline
     4300000: Wizard
     4300002: Wizard_001
     4300004: OldWizard
@@ -1577,6 +1589,9 @@ ModelImporter:
     4300312: Robe
     4300314: Body
     4300316: Mouth
+    4300318: Nose
+    4300320: Outline
+    4300322: Outline_001
     7400000: Idle
     7400002: Wizard_rigAction
     7400004: Walk
@@ -1592,6 +1607,10 @@ ModelImporter:
     13700012: Robe
     13700014: Shirt
     13700016: Shoes
+    13700018: Mouth
+    13700020: Nose
+    13700022: Outline
+    13700024: Outline_001
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -1618,6 +1637,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Hat_Stripes
     second: {fileID: 2100000, guid: fd3ec1c7b8bdc0643bb58bacf1a7b297, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mouth
+    second: {fileID: 2100000, guid: c02bef121d19d06468124696b32a0ee2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nose
+    second: {fileID: 2100000, guid: 03795ad86678b69468f957fbbfd3a900, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Outline
+    second: {fileID: 2100000, guid: ee9898a217fcbc64a9f9e72e2475803c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
