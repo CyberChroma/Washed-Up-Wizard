@@ -56,10 +56,6 @@ public class TempSaver : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        print("1 " + spellID1[0] + "," + spellID1[1] + "," + spellID1[2]);
-        print("2 " + spellID2[0] + "," + spellID2[1] + "," + spellID2[2]);
-        print("3 " + spellID3[0] + "," + spellID3[1] + "," + spellID3[2]);
-
 	}
 
     public void TransferHealth () {
