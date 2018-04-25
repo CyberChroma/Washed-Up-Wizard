@@ -17,13 +17,13 @@
 		_RimSmoothness ("Rim Smoothness", Range(0,1)) = 0
 
 		//Custom shadow
-		_ShadowColor ("Shadow Color", Color) = (0,0,0,0.5)
+		_ShadowColor ("Shadow Color", Color) = (64,64,64,0.5)
 		_HighlightColor ("Highlight Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_ShadowIntensity("Shadow Intensity", Range (0.0, 2.0)) = 1.0
 
 		//Outline
 		_OutlineColor ("Outline Color", Color) = (0,0,0,1.0)
-		_OutlineSize ("Outline Size", Float) = 0.03
+		_OutlineSize ("Outline Size", Float) = 0.02
 
 		//Rim
 		_RimColor ("Rim Color", Color) = (1,1,1,1)
