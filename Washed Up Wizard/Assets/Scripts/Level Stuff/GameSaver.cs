@@ -93,7 +93,7 @@ public class GameSaver : MonoBehaviour {
             levelButtons[4] = GameObject.Find("Circus").GetComponent<Button>();
             levelButtons[5] = GameObject.Find("Ringmaster").GetComponent<Button>();
             levelButtons[6] = GameObject.Find("Nursery").GetComponent<Button>();
-            levelButtons[7] = GameObject.Find("Big Limbed Babies").GetComponent<Button>();
+            levelButtons[7] = GameObject.Find("The Twins").GetComponent<Button>();
             levelButtons[8] = GameObject.Find("Glitch Realm").GetComponent<Button>();
             levelButtons[9] = GameObject.Find("Owl Man").GetComponent<Button>();
             levelButtons[10] = GameObject.Find("Evil Witch").GetComponent<Button>();
@@ -126,7 +126,7 @@ public class GameSaver : MonoBehaviour {
         {
             unlockedLevel = 7;
         }
-        else if (SceneManager.GetActiveScene().name == ("Big Limbed Babies Boss") && unlockedLevel < 8)
+        else if (SceneManager.GetActiveScene().name == ("The Twins Boss") && unlockedLevel < 8)
         {
             unlockedLevel = 8;
         }

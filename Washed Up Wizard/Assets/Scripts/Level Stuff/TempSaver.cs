@@ -64,8 +64,8 @@ public class TempSaver : MonoBehaviour {
         }
     }
 
-    public void UpdateSpells (int[] currentID, int spellNum) {
-        switch (spellNum) {
+    public void UpdateSpells (int[] currentID, int slotNum) {
+        switch (slotNum) {
             case 0:
                 spellID1 = currentID;
                 break;
