@@ -26,9 +26,9 @@ public class TheTwinsAI : MonoBehaviour {
     public float dashTurnSpeed;
     public GameObject dashEmitter;
 
-    public float spin;
+    public GameObject spinEmitter;
 
-    public float debrisEmitter;
+    public GameObject blockEmitter;
  
     public GameObject windmillEmitter;
 
@@ -49,24 +49,22 @@ public class TheTwinsAI : MonoBehaviour {
     private Transform movePos;
     private Rigidbody rb;
     private MoveByForce moveByForce;
-    private LaunchToTarget launchToTarget;
     private Vector3 moveDir;
     private Health health;
-/*
+
 	// Use this for initialization
 	void Awake () {
-        flamingHoopEmitter.SetActive(false);
-        acrobatEmitter.SetActive(false);
-        rollingBallEmitter.SetActive(false);
+        stompEmitter.SetActive(false);
+        dashEmitter.SetActive(false);
+        windmillEmitter.SetActive(false);
+        blockEmitter.SetActive(false);
         rb = GetComponent<Rigidbody>();
         moveByForce = GetComponent<MoveByForce>();
         moveByForce.enabled = true;
-        launchToTarget = GetComponent<LaunchToTarget>();
-        launchToTarget.enabled = false;
         health = GetComponent<Health>();
-        attackState = AttackState.FlamingHoop;
+        attackState = AttackState.StrideStomp;
 	}
-	
+	/*
     void OnEnable () {
         ChangeAttackState ();
     }
@@ -76,22 +74,23 @@ public class TheTwinsAI : MonoBehaviour {
             SceneManager.LoadScene("Ringmaster Death");
         }
     }
+    */
 	// Update is called once per frame
     void FixedUpdate () {
-        if (attackState == AttackState.FlamingHoop)
+        if (attackState == AttackState.StrideStomp)
         {
             if (canSpawn && !isJumping)
             {
-                flamingHoopEmitter.SetActive(true);
+                //flamingHoopEmitter.SetActive(true);
                 canSpawn = false;
-                StartCoroutine(WaitToSpawn(timeBetweenFlamingHoops));
+                //StartCoroutine(WaitToSpawn(timeBetweenFlamingHoops));
             }
             if (isJumping)
             {
                 MoveToPos();
             }
         }
-        else if (attackState == AttackState.RollingBall)
+        /*else if (attackState == AttackState.DashShoot)
         {
             if (canSpawn && !isJumping)
             {
@@ -108,7 +107,7 @@ public class TheTwinsAI : MonoBehaviour {
                 MoveToPos();
             }
         }
-        else if (attackState == AttackState.HatBomb)
+        else if (attackState == AttackState.HeliSpin)
         {
             if (canSpawn && !isJumping)
             {
@@ -118,7 +117,7 @@ public class TheTwinsAI : MonoBehaviour {
             }
             MoveToPos();
         }
-        else if (attackState == AttackState.UnicycleCharge)
+        else if (attackState == AttackState.GroundSmash)
         {
             if (charging)
             {
@@ -136,11 +135,11 @@ public class TheTwinsAI : MonoBehaviour {
                 transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
             }
         }
-        else if (attackState == AttackState.Stomp)
+        else if (attackState == AttackState.Windmill)
         {
             MoveToPos();
         }
-        else if (attackState == AttackState.BalloonGun)
+        else if (attackState == AttackState.SlamShockwave)
         {
             if (canSpawn && !isJumping)
             {
@@ -162,10 +161,10 @@ public class TheTwinsAI : MonoBehaviour {
         {
             rb.velocity = Vector3.zero;
             transform.position = Vector3.up * 20;
-        }
+        }*/
     }
 
-    void CalculatePhase () {
+    /*void CalculatePhase () {
         if ((health.currentHealth <= health.startHealth / 3) && phase == 2) {
             StopAllCoroutines ();
             phase = 3;
@@ -263,7 +262,7 @@ public class TheTwinsAI : MonoBehaviour {
             }
         }
         ChangeAttackState();
-    }
+    }*/
 
     IEnumerator WaitToSpawn (float delay) {
         yield return new WaitForSeconds(delay);
@@ -271,7 +270,7 @@ public class TheTwinsAI : MonoBehaviour {
     }
 
     void MoveToPos () {
-        if (attackState != AttackState.UnicycleCharge)
+        /*if (attackState != AttackState.UnicycleCharge)
         {
             moveByForce.dir = (movePos.position - transform.position);
             if (Vector3.Distance(movePos.position, transform.position) <= 0.1f && rb.velocity.y <= 0)
@@ -316,9 +315,9 @@ public class TheTwinsAI : MonoBehaviour {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDir), 0.1f);
         }
         transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
-
+        */
     }
-
+    /*
     IEnumerator WaitToJump (float delay) {
         yield return new WaitForSeconds(delay);
         canSpawn = false;
@@ -385,16 +384,6 @@ public class TheTwinsAI : MonoBehaviour {
         charging = true;
         yield return new WaitForSeconds(timeBetweenCharges + 3f);
         canCharge = true;
-    }
-
-    IEnumerator WaitToOpenCurtain (int curtainNum) {
-        yield return new WaitForSeconds(3.4f);
-        if (curtainNum + 4 >= curtains.Length) {
-            curtainNum -= 4;
-        } else {
-            curtainNum += 4;
-        }
-        curtains[curtainNum].SetTrigger("Open and Close");
     }
 
     IEnumerator WaitToSpawnAcrobats () {
