@@ -7,46 +7,52 @@ public class TheTwinsAI : MonoBehaviour {
 
     public enum AttackState {
         StrideStomp,
-        DashShoot,
-        HeliSpin,
-        GroundSmash,
+        BlockFall,
+        ClapShockwave,
+        SlamSpread,
         Windmill,
         SlamShockwave
     }
 
     public float stateChangeTime;
-    public float normalSpeed;
     public Transform player;
 
-    public float strideJumpForce;
     public float strideSpeed;
     public float timeBetweenStomps;
     public GameObject stompEmitter;
 
-    public float dashTurnSpeed;
-    public GameObject dashEmitter;
-
-    public GameObject spinEmitter;
-
+    public float stompSpeed;
+    public float timeBetweenBlocks;
     public GameObject blockEmitter;
- 
+
+    public float clapSpeed;
+    public float timeBetweenClaps;
+    public GameObject clapEmitter;
+
+    public float timeBetweenSlams;
+    public GameObject slamSpreadEmitter;
+
+    public float windmillSpeed;
+    public float timeBetweenWindmills;
     public GameObject windmillEmitter;
 
-    public GameObject SlamEmitter;
+    public float slamMultiSpeed;
+    public float timeBetweenSlamsMulti;
+    public GameObject slamMultEmitter;
 
     public float timeBetweenToysPhase1;
     public float timeBetweenToysPhase2;
     public float timeBetweenToysPhase3;
     public GameObject toysEmitter;
 
+    public GameObject leg;
+    public GameObject arm;
+    public GameObject both;
+
     private int phase = 1;
     private AttackState attackState;
     private bool canSpawn = false;
-    private bool isJumping = false;
-    private bool canCharge = true;
-    private bool charging = false;
     private bool canSpawnToys = false;
-    private Transform movePos;
     private Rigidbody rb;
     private MoveByForce moveByForce;
     private Vector3 moveDir;
@@ -55,17 +61,24 @@ public class TheTwinsAI : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         stompEmitter.SetActive(false);
-        dashEmitter.SetActive(false);
-        windmillEmitter.SetActive(false);
         blockEmitter.SetActive(false);
+        slamSpreadEmitter.SetActive(false);
+        windmillEmitter.SetActive(false);
+        slamMultEmitter.SetActive(false);
         rb = GetComponent<Rigidbody>();
         moveByForce = GetComponent<MoveByForce>();
         moveByForce.enabled = true;
         health = GetComponent<Health>();
         attackState = AttackState.StrideStomp;
 	}
-	/*
+	
     void OnEnable () {
+        leg.transform.localPosition = Vector3.up * 0.3f;
+        arm.transform.localPosition = Vector3.up * -5;
+        both.transform.localPosition = Vector3.up * -5;
+        leg.SetActive(true);
+        arm.SetActive(false);
+        both.SetActive(false);
         ChangeAttackState ();
     }
 
@@ -74,103 +87,103 @@ public class TheTwinsAI : MonoBehaviour {
             SceneManager.LoadScene("Ringmaster Death");
         }
     }
-    */
+
 	// Update is called once per frame
     void FixedUpdate () {
         if (attackState == AttackState.StrideStomp)
         {
-            if (canSpawn && !isJumping)
+            if (canSpawn)
             {
-                //flamingHoopEmitter.SetActive(true);
+                stompEmitter.SetActive(true);
                 canSpawn = false;
-                //StartCoroutine(WaitToSpawn(timeBetweenFlamingHoops));
-            }
-            if (isJumping)
-            {
-                MoveToPos();
-            }
-        }
-        /*else if (attackState == AttackState.DashShoot)
-        {
-            if (canSpawn && !isJumping)
-            {
-                int curtainNum = Random.Range(0, curtains.Length);
-                rollingBallEmitter.transform.rotation = Quaternion.Euler(new Vector3(0, curtainNum * 45, 0));
-                curtains[curtainNum].SetTrigger("Open and Close");
-                StartCoroutine(WaitToOpenCurtain(curtainNum));
-                rollingBallEmitter.SetActive(true);
-                canSpawn = false;
-                StartCoroutine(WaitToSpawn(timeBetweenRollingBalls));
-            }
-            if (isJumping)
-            {
-                MoveToPos();
-            }
-        }
-        else if (attackState == AttackState.HeliSpin)
-        {
-            if (canSpawn && !isJumping)
-            {
-                bombEmitter.SetActive(true);
-                canSpawn = false;
-                StartCoroutine(WaitToSpawn(timeBetweenHatBombs));
+                StartCoroutine(WaitToSpawn(timeBetweenStomps));
             }
             MoveToPos();
         }
-        else if (attackState == AttackState.GroundSmash)
+        else if (attackState == AttackState.BlockFall)
         {
-            if (charging)
+            if (canSpawn)
             {
-                if (transform.position.magnitude > 19 && canCharge)
-                {
-                    charging = false; 
-                    canCharge = false;
-                    StartCoroutine(WaitToCharge());
-                }
-                MoveToPos();
+                blockEmitter.transform.position = new Vector3 (Random.Range(-14, 14), 10, Random.Range (-25, 25));
+                blockEmitter.SetActive(true);
+                canSpawn = false;
+                StartCoroutine(WaitToSpawn(timeBetweenStomps));
             }
-            else
+            MoveToPos();
+        }
+        else if (attackState == AttackState.ClapShockwave)
+        {
+            if (canSpawn)
             {
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), 0.1f);
-                transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
+                clapEmitter.SetActive(true);
+                canSpawn = false;
+                StartCoroutine(WaitToSpawn(timeBetweenClaps));
             }
+            MoveToPos();
+        }
+        else if (attackState == AttackState.SlamSpread)
+        {
+            if (canSpawn)
+            {
+                slamSpreadEmitter.SetActive(true);
+                canSpawn = false;
+                StartCoroutine(WaitToSpawn(timeBetweenSlams));
+            }
+            MoveToPos();
         }
         else if (attackState == AttackState.Windmill)
         {
+            if (canSpawn)
+            {
+                windmillEmitter.SetActive(true);
+                canSpawn = false;
+                StartCoroutine(WaitToSpawn(timeBetweenWindmills));
+            }
             MoveToPos();
         }
         else if (attackState == AttackState.SlamShockwave)
         {
-            if (canSpawn && !isJumping)
+            if (canSpawn)
             {
-                balloonGunEmitter.SetActive(true);
+                slamMultEmitter.SetActive(true);
                 canSpawn = false;
-                StartCoroutine(WaitToSpawn(timeBetweenShots));
+                StartCoroutine(WaitToSpawn(timeBetweenSlamsMulti));
             }
             MoveToPos();
         }
-
-        if (canSpawnAcrobats) {
-            acrobatEmitter.transform.position = new Vector3 (Random.insideUnitCircle.x * 19, 0, Random.insideUnitCircle.y * 19);
-            acrobatEmitter.SetActive(true);
-            canSpawnAcrobats = false;
-            StartCoroutine(WaitToSpawnAcrobats());
+        if (canSpawnToys) {
+            toysEmitter.transform.position = new Vector3 (Random.Range (-14, 14), 0, Random.Range (-25, 25));
+            toysEmitter.SetActive(true);
+            canSpawnToys = false;
+            StartCoroutine(WaitToSpawnToys());
         }
         CalculatePhase();
         if (transform.position.y <= -10)
         {
             rb.velocity = Vector3.zero;
             transform.position = Vector3.up * 20;
-        }*/
+        }
     }
 
-    /*void CalculatePhase () {
+    void CalculatePhase () {
         if ((health.currentHealth <= health.startHealth / 3) && phase == 2) {
             StopAllCoroutines ();
             phase = 3;
+            leg.transform.localPosition = Vector3.up * -5;
+            arm.transform.localPosition = Vector3.up * -5;
+            both.transform.localPosition = Vector3.up * 0.3f;
+            leg.SetActive(false);
+            arm.SetActive(false);
+            both.SetActive(true);
             StartCoroutine (WaitToChangeAttackState(1));
         } else if ((health.currentHealth <= health.startHealth / 3 * 2) && phase == 1) {
             phase = 2;
+            leg.transform.localPosition = Vector3.up * -5;
+            arm.transform.localPosition = Vector3.up * 0.3f;
+            both.transform.localPosition = Vector3.up * -5;
+            leg.SetActive(false);
+            arm.SetActive(true);
+            both.SetActive(false);
             StartCoroutine (WaitToChangeAttackState(1));
         }
     }
@@ -178,91 +191,80 @@ public class TheTwinsAI : MonoBehaviour {
     void ChangeAttackState () {
         StopAllCoroutines();
         canSpawn = false;
-        canCharge = true;
-        charging = false;
-        canSpawnAcrobats = false;
+        canSpawnToys = false;
         moveByForce.enabled = true;
-        if (attackState == AttackState.FlamingHoop)
+        if (attackState == AttackState.StrideStomp)
         {
-            StartCoroutine(WaitToJump(1));
-            moveByForce.force = airSpeed;
-            moveByForce.enabled = false;
+            moveByForce.force = strideSpeed;
+            StartCoroutine(WaitToSpawn(timeBetweenStomps));
         }
-        else if (attackState == AttackState.RollingBall)
+        else if (attackState == AttackState.BlockFall)
         {
-            rb.velocity = Vector3.zero;
+            moveByForce.force = stompSpeed;
+            StartCoroutine(WaitToSpawn(timeBetweenBlocks));
+        }
+        else if (attackState == AttackState.ClapShockwave)
+        {
+            moveByForce.force = clapSpeed;
+            StartCoroutine(WaitToSpawn(timeBetweenClaps));
+        }
+        else if (attackState == AttackState.SlamSpread)
+        {
             moveByForce.dir = Vector3.zero;
-            moveByForce.force = airSpeed;
-            StartCoroutine(WaitToJump(1));
+            moveByForce.force = 0;
+            StartCoroutine(WaitToSpawn(timeBetweenSlams));
         }
-        else if (attackState == AttackState.HatBomb)
+        else if (attackState == AttackState.Windmill)
         {
-            StartCoroutine(WaitToSpawn(timeBetweenHatBombs));
-            movePos = player;
-            moveByForce.force = hatBombFollowSpeed;
+            moveByForce.force = windmillSpeed;
+            StartCoroutine(WaitToSpawn(timeBetweenWindmills));
         }
-        else if (attackState == AttackState.Stomp)
+        else if (attackState == AttackState.SlamShockwave)
         {
-            StartCoroutine(WaitToJump(1));
-            moveByForce.enabled = false;
+            moveByForce.force = slamMultiSpeed;
+            StartCoroutine(WaitToSpawn(timeBetweenSlamsMulti));
         }
-        else if (attackState == AttackState.UnicycleCharge)
-        {
-            StartCoroutine(WaitToCharge());
-            moveByForce.enabled = false;
-        }
-        else if (attackState == AttackState.BalloonGun)
-        {
-            StartCoroutine(WaitToSpawn(timeBetweenHatBombs));
-            movePos = player;
-            moveByForce.force = gunFollowSpeed;
-        }
-        StartCoroutine(WaitToSpawnAcrobats());
+        StartCoroutine(WaitToSpawnToys());
         StartCoroutine(WaitToChangeAttackState(stateChangeTime));
     }
 
     IEnumerator WaitToChangeAttackState (float time) {
         yield return new WaitForSeconds(time);
-        while (isJumping)
-        {
-            yield return null;
-        }
         if (phase == 1)
         {
-            if (attackState == AttackState.FlamingHoop)
+            if (attackState == AttackState.StrideStomp)
             {
-                attackState = AttackState.HatBomb;
+                attackState = AttackState.BlockFall;
             }
             else
             {
-                attackState = AttackState.FlamingHoop;
+                attackState = AttackState.StrideStomp;
             }
         }
         else if (phase == 2)
         {
-            if (attackState == AttackState.UnicycleCharge)
+            if (attackState == AttackState.ClapShockwave)
             {
-                attackState = AttackState.Stomp;
+                attackState = AttackState.SlamSpread;
             }
             else
             {
-                attackState = AttackState.UnicycleCharge;
+                attackState = AttackState.ClapShockwave;
             }
         }
         else if (phase == 3)
         {
-            pedistal.Activate();
-            if (attackState == AttackState.RollingBall)
+            if (attackState == AttackState.Windmill)
             {
-                attackState = AttackState.BalloonGun;
+                attackState = AttackState.SlamShockwave;
             }
             else
             {
-                attackState = AttackState.RollingBall;
+                attackState = AttackState.Windmill;
             }
         }
         ChangeAttackState();
-    }*/
+    }
 
     IEnumerator WaitToSpawn (float delay) {
         yield return new WaitForSeconds(delay);
@@ -270,130 +272,19 @@ public class TheTwinsAI : MonoBehaviour {
     }
 
     void MoveToPos () {
-        /*if (attackState != AttackState.UnicycleCharge)
-        {
-            moveByForce.dir = (movePos.position - transform.position);
-            if (Vector3.Distance(movePos.position, transform.position) <= 0.1f && rb.velocity.y <= 0)
-            {
-                moveByForce.dir = Vector3.zero;
-                isJumping = false;
-                canSpawn = true;
-                if (attackState == AttackState.FlamingHoop)
-                {
-                    StartCoroutine(WaitToJump(timeBetweenHoopJumps));
-                }
-                else if (attackState == AttackState.Stomp)
-                {
-                    StartCoroutine(WaitToJump(timeBetweenStompJumps));
-                }
-            }
-            else if (Vector3.Distance(new Vector3(movePos.position.x, 0, movePos.position.z), new Vector3(transform.position.x, 0, transform.position.z)) <= 0.1f)
-            {
-                moveByForce.dir = Vector3.zero;
-                transform.position = new Vector3(movePos.position.x, transform.position.y, movePos.position.z);
-                rb.velocity = new Vector3(0, rb.velocity.y, 0);
-            }
-        }
-        if (attackState == AttackState.FlamingHoop || attackState == AttackState.RollingBall)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, movePos.rotation, 0.05f);
-        }
-        else if (attackState == AttackState.HatBomb || attackState == AttackState.BalloonGun)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), 0.1f);
-        }
-        else if (attackState == AttackState.Stomp)
-        {
-            if (Vector3.Distance(new Vector3(playerOldPos.position.x, 0, playerOldPos.position.z), new Vector3(transform.position.x, 0, transform.position.z)) > 1)
-            {
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerOldPos.position - transform.position), 0.1f);
-            }
-        }
-        else if (attackState == AttackState.UnicycleCharge)
-        {
-            rb.velocity = moveDir;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDir), 0.1f);
-        }
+        moveByForce.dir = (player.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), 0.1f);
         transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
-        */
-    }
-    /*
-    IEnumerator WaitToJump (float delay) {
-        yield return new WaitForSeconds(delay);
-        canSpawn = false;
-        if (attackState == AttackState.FlamingHoop)
-        {
-            movePos = jumpPoints[Random.Range(0, jumpPoints.Length - 1)];
-            launchToTarget.target = movePos;
-            if (Vector3.Distance(transform.position, movePos.position) > 1)
-            {
-                launchToTarget.enabled = true;
-            }
-            else
-            {
-                rb.AddForce(Vector3.up * 2000 * Time.deltaTime, ForceMode.Impulse);
-            }
-        }
-        else if (attackState == AttackState.Stomp)
-        {
-            rb.velocity = Vector3.zero;
-            playerOldPos.position = new Vector3(player.position.x, 0, player.position.z);
-            launchToTarget.target = playerOldPos;
-            launchToTarget.enabled = true;
-        }
-        else if (attackState == AttackState.RollingBall)
-        {
-            rb.velocity = Vector3.zero;
-            moveByForce.enabled = false;
-            launchToTarget.target = pedistalJumpPoint;
-            launchToTarget.enabled = true;
-            movePos = pedistalJumpPoint;
-            pedistal.GetComponent<BoxCollider>().enabled = false;
-            yield return new WaitForSeconds(1);
-            pedistal.GetComponent<BoxCollider>().enabled = true;
-        }
-        yield return new WaitForSeconds(2 * Time.deltaTime);
-        isJumping = true;
     }
 
-    void OnCollisionEnter (Collision other) {
-        if (other.collider.CompareTag("Environment") && isJumping && attackState != AttackState.UnicycleCharge)
-        {
-            moveByForce.dir = Vector3.zero;
-            isJumping = false;
-            canSpawn = true;
-            if (attackState == AttackState.FlamingHoop)
-            {
-                StartCoroutine(WaitToJump(timeBetweenHoopJumps));
-            }
-            else if (attackState == AttackState.Stomp)
-            {
-                StartCoroutine(WaitToJump(timeBetweenStompJumps));
-            }
-        }
-    }
-
-    IEnumerator WaitToCharge () {
-        while (isJumping) {
-            yield return null;
-        }
-        yield return new WaitForSeconds(timeBetweenCharges);
-        moveDir = (player.position - transform.position).normalized * chargeSpeed;
-        moveDir = new Vector3(moveDir.x, 0, moveDir.z);
-        rb.velocity = moveDir;
-        charging = true;
-        yield return new WaitForSeconds(timeBetweenCharges + 3f);
-        canCharge = true;
-    }
-
-    IEnumerator WaitToSpawnAcrobats () {
+    IEnumerator WaitToSpawnToys () {
         if (phase == 1) {
-            yield return new WaitForSeconds(timeBetweenAcrobatsPhase1);
+            yield return new WaitForSeconds(timeBetweenToysPhase1);
         } else if (phase == 2) {
-            yield return new WaitForSeconds(timeBetweenAcrobatsPhase2);
+            yield return new WaitForSeconds(timeBetweenToysPhase2);
         } else if (phase == 3) {
-            yield return new WaitForSeconds(timeBetweenAcrobatsPhase3);
+            yield return new WaitForSeconds(timeBetweenToysPhase3);
         } 
-        canSpawnAcrobats = true;
-    }*/
+        canSpawnToys = true;
+    }
 }
