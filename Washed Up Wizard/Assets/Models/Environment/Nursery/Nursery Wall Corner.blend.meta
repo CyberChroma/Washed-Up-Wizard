@@ -11,6 +11,9 @@ ModelImporter:
     2100002: Nursery_Wall-Pink
     2100004: Nursery_Wall-Yellow
     2100006: Nursery_Wall-Green
+    2100008: Nursery_Wall-Blue
+    2100010: Nursery_Wall_Corner-Blue
+    2100012: Nursery_Wall_Corner-White
     2300000: //RootNode
     3300000: //RootNode
     4300000: Nursery_Wall_Corner
@@ -27,6 +30,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Nursery_Wall-Yellow
     second: {fileID: 2100000, guid: 9900dd0faf5059545a087ac14173a13b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nursery_Wall_Corner-Blue
+    second: {fileID: 2100000, guid: 9900dd0faf5059545a087ac14173a13b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nursery_Wall_Corner-White
+    second: {fileID: 2100000, guid: e9c3177d64a7a8c408d961b55ee71a4b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
