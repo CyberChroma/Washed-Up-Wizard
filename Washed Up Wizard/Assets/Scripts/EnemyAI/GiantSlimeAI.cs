@@ -68,18 +68,14 @@ public class GiantSlimeAI : MonoBehaviour {
 	private int oldAttackNum = -1;
 	private int timesActivated;
 	private bool changingPhase = false;
-	private FollowTargetLerp cameraFollowTargetLerp;
 	private Transform currentWaypoint;
-	private GameObject inputController;
     private Animator anim;
 
 	// Use this for initialization
 	void Awake () {
 		player = GameObject.Find ("Player").transform;
-		cameraFollowTargetLerp = Camera.main.GetComponentInParent<FollowTargetLerp>();
 		moveByForce = GetComponent<MoveByForce>();
 		health = GetComponent<Health>();
-		inputController = GameObject.Find ("Input Controller");
         anim = GetComponentInChildren<Animator>();
         anim.logWarnings = false;
 	}
@@ -298,22 +294,11 @@ public class GiantSlimeAI : MonoBehaviour {
 		} else if (phase == 2) {
 			phase2.projectileAttacks [attackNum].emitter.SetActive (false);
 		}
-		cameraFollowTargetLerp.target = GetComponent<Rigidbody> ();
-		GetComponent<TakeDamage> ().enabled = false;
-		player.GetComponent<TakeDamage> ().enabled = false;
-        inputController.SetActive(false);
-        player.GetComponent<PlayerMoveInput>().enabled = false;
-        player.GetComponentInChildren<Animator>().SetBool("IsWalking", false);
 		moveByForce.dir = Vector3.zero;
         anim.SetTrigger("Roar");
 		yield return new WaitForSeconds (phaseChangeDelay);
 		phase = newPhase;
 		changingPhase = false;
-		cameraFollowTargetLerp.target = player.GetComponent<Rigidbody> ();
-		GetComponent<TakeDamage> ().enabled = true;
-		player.GetComponent<TakeDamage> ().enabled = true;
-        inputController.SetActive(true);
-        player.GetComponent<PlayerMoveInput>().enabled = true;
 		SpawnHarpies ();
 		if (phase == 2) {
 			StartCoroutine (WaitToAttack (Random.Range (phase2.timeBetweenAttacks - phase2.randomDelay, phase2.timeBetweenAttacks + phase2.randomDelay)));

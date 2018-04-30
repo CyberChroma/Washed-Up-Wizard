@@ -155,7 +155,7 @@
 			Blend One Zero
 			ZWrite On
 			ZTest LEqual
-
+			Offset 10, 10
 			CGPROGRAM 
 			#pragma target 3.0
 			#pragma vertex outlinevert 

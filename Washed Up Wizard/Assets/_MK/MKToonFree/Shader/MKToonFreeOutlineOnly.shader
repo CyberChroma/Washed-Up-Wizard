@@ -23,7 +23,7 @@ Shader "Hidden/MK/Toon/FreeOutlineOnly"
 			ZWrite On
 			ZTest LEqual
 
-			CGPROGRAM 
+						CGPROGRAM 
 			#pragma target 3.0
 			#pragma vertex outlinevert 
 			#pragma fragment outlinefrag

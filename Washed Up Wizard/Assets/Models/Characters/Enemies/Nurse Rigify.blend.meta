@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 8c17df7c12d1d404da1b22dcab60ed30
 timeCreated: 1524756590
+=======
+guid: e343cf0c8c66cac4380228897cf79dfc
+timeCreated: 1524695492
+>>>>>>> 547d682f0792b6bae9bd1a8d65e86c5b7b3da727
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -115,6 +120,11 @@ ModelImporter:
     100214: tweak_spine
     100216: tweak_spine_003
     100218: Wizard_rig
+<<<<<<< HEAD
+=======
+    100220: Dress
+    100222: Hat
+>>>>>>> 547d682f0792b6bae9bd1a8d65e86c5b7b3da727
     400000: Body
     400002: DEF-breast_L
     400004: DEF-breast_R
@@ -225,6 +235,11 @@ ModelImporter:
     400214: tweak_spine
     400216: tweak_spine_003
     400218: Wizard_rig
+<<<<<<< HEAD
+=======
+    400220: Dress
+    400222: Hat
+>>>>>>> 547d682f0792b6bae9bd1a8d65e86c5b7b3da727
     2100000: Material_002
     2100002: Material_001
     2100004: Material
@@ -235,6 +250,12 @@ ModelImporter:
     2100014: Nose
     2100016: Mouth
     2100018: Eyes
+<<<<<<< HEAD
+=======
+    2100020: White
+    2100022: Dress_Blue
+    2100024: Dress_White
+>>>>>>> 547d682f0792b6bae9bd1a8d65e86c5b7b3da727
     2300000: hat
     3300000: hat
     4300000: hat
@@ -393,6 +414,11 @@ ModelImporter:
     4300306: Mouth
     4300308: Eyes
     4300310: Eyelashes
+<<<<<<< HEAD
+=======
+    4300312: Hat
+    4300314: Dress
+>>>>>>> 547d682f0792b6bae9bd1a8d65e86c5b7b3da727
     7400000: Default Take
     7400002: Wizard_rigAction
     9500000: //RootNode
@@ -406,7 +432,53 @@ ModelImporter:
     13700014: Robe
     13700016: Shirt
     13700018: Shoes
+<<<<<<< HEAD
   externalObjects: {}
+=======
+    13700020: Dress
+    13700022: Hat
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dress_Blue
+    second: {fileID: 2100000, guid: 7882626da3858f947a72fcab4301c6fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dress_White
+    second: {fileID: 2100000, guid: 9ec6612d583f58c4eb6951aedf9c0c5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyes
+    second: {fileID: 2100000, guid: 3ebd499edc2e5974ca44f4dae055de5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair
+    second: {fileID: 2100000, guid: 87b54ce095266aa4fa4110ff2e404287, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mouth
+    second: {fileID: 2100000, guid: f0a618c607686b84889df090f601e607, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nose
+    second: {fileID: 2100000, guid: 247a8c8d5a3b47c44936674e04a4acc4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: dc9fc1fcac4d90e4b8011666702817de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: ce19797e9c8008f4e99a8ca2663ef37d, type: 2}
+>>>>>>> 547d682f0792b6bae9bd1a8d65e86c5b7b3da727
   materials:
     importMaterials: 1
     materialName: 0
@@ -439,10 +511,17 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+<<<<<<< HEAD
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+=======
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+>>>>>>> 547d682f0792b6bae9bd1a8d65e86c5b7b3da727
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -457,8 +536,13 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
+<<<<<<< HEAD
     normalSmoothAngle: 60
     normalImportMode: 0
+=======
+    normalSmoothAngle: 80
+    normalImportMode: 1
+>>>>>>> 547d682f0792b6bae9bd1a8d65e86c5b7b3da727
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
