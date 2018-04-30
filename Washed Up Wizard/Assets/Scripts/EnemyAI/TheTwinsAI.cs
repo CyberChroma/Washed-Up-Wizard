@@ -74,8 +74,8 @@ public class TheTwinsAI : MonoBehaviour {
 	
     void OnEnable () {
         leg.transform.localPosition = Vector3.up * 0.3f;
-        arm.transform.localPosition = Vector3.up * -5;
-        both.transform.localPosition = Vector3.up * -5;
+        arm.transform.localPosition = Vector3.up * -10;
+        both.transform.localPosition = Vector3.up * -10;
         leg.SetActive(true);
         arm.SetActive(false);
         both.SetActive(false);
@@ -84,7 +84,7 @@ public class TheTwinsAI : MonoBehaviour {
 
     void OnDisable () {
         if (health.currentHealth <= 0) {
-            SceneManager.LoadScene("Ringmaster Death");
+            SceneManager.LoadScene("The Twins Death");
         }
     }
 
@@ -169,8 +169,8 @@ public class TheTwinsAI : MonoBehaviour {
         if ((health.currentHealth <= health.startHealth / 3) && phase == 2) {
             StopAllCoroutines ();
             phase = 3;
-            leg.transform.localPosition = Vector3.up * -5;
-            arm.transform.localPosition = Vector3.up * -5;
+            leg.transform.localPosition = Vector3.up * -10;
+            arm.transform.localPosition = Vector3.up * -10;
             both.transform.localPosition = Vector3.up * 0.3f;
             leg.SetActive(false);
             arm.SetActive(false);
@@ -178,9 +178,9 @@ public class TheTwinsAI : MonoBehaviour {
             StartCoroutine (WaitToChangeAttackState(1));
         } else if ((health.currentHealth <= health.startHealth / 3 * 2) && phase == 1) {
             phase = 2;
-            leg.transform.localPosition = Vector3.up * -5;
+            leg.transform.localPosition = Vector3.up * -10;
             arm.transform.localPosition = Vector3.up * 0.3f;
-            both.transform.localPosition = Vector3.up * -5;
+            both.transform.localPosition = Vector3.up * -10;
             leg.SetActive(false);
             arm.SetActive(true);
             both.SetActive(false);
