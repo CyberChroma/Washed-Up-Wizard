@@ -7,6 +7,7 @@ public class PlayerMoveInput : MonoBehaviour {
 	public float moveSensitivity = 0.5f;
 	public float moveSpeed = 7f;
     public float iceSensitivity = 0.03f;
+    public float stickySpeed = 5.5f;
 
     [HideInInspector] public float v = 0; // Vertical direction
     [HideInInspector] public float h = 0; // Horizontal direction
@@ -89,14 +90,24 @@ public class PlayerMoveInput : MonoBehaviour {
 	}
 
     void OnTriggerEnter (Collider other) {
-        if (other.CompareTag("Ice")) {
+        if (other.CompareTag("Ice"))
+        {
             currentSensitivity = iceSensitivity;
+        }
+        else if (other.CompareTag("Sticky"))
+        {
+            moveSpeed = stickySpeed;
         }
     }
 
     void OnTriggerExit (Collider other) {
-        if (other.CompareTag("Ice")) {
+        if (other.CompareTag("Ice"))
+        {
             currentSensitivity = moveSensitivity;
+        }
+        else if (other.CompareTag("Sticky"))
+        {
+            moveSpeed = 7f;
         }
     }
 }
