@@ -17,7 +17,7 @@
 		_RimSmoothness ("Rim Smoothness", Range(0,1)) = 0
 
 		//Custom shadow
-		_ShadowColor ("Shadow Color", Color) = (64,64,64,0.5)
+		_ShadowColor ("Shadow Color", Color) = (0.25,0.25,0.25,0.5)
 		_HighlightColor ("Highlight Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_ShadowIntensity("Shadow Intensity", Range (0.0, 2.0)) = 1.0
 

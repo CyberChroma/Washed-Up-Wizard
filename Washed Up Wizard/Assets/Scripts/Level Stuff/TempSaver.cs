@@ -58,8 +58,18 @@ public class TempSaver : MonoBehaviour {
         }
 	}
 
+    public void NewScene () {
+        TransferHealth();
+        TransferSpells();
+    }
+
     public void TransferHealth () {
-        if (currentHealth > 0) {
+        if (currentHealth > 0 && GameObject.Find("Player"))
+        {
+            if (!health)
+            {
+                health = GameObject.Find("Player").GetComponent<Health>();
+            }
             health.currentHealth = currentHealth;
         }
     }
@@ -79,12 +89,15 @@ public class TempSaver : MonoBehaviour {
     }
 
     public void TransferSpells () {
-        if (!spellCreator)
+        if (GameObject.Find("Player"))
         {
-            spellCreator = GameObject.Find("Spell Crafting System").GetComponent<SpellCreator>();
+            if (!spellCreator)
+            {
+                spellCreator = GameObject.Find("Spell Crafting System").GetComponent<SpellCreator>();
+            }
+            spellCreator.CreateSpell(spellID1, 0);
+            spellCreator.CreateSpell(spellID2, 1);
+            spellCreator.CreateSpell(spellID3, 2);
         }
-        spellCreator.CreateSpell(spellID1, 0);
-        spellCreator.CreateSpell(spellID2, 1);
-        spellCreator.CreateSpell(spellID3, 2);
     }
 }
