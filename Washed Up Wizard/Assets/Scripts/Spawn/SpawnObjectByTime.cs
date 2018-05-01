@@ -8,6 +8,7 @@ public class SpawnObjectByTime : MonoBehaviour {
     public Transform parent; // The object to parent the spawned object under
     public float delay = 1; // The time between spawning
 	public float randDelay = 0.1f; // Adds slight randomness to the delay
+    public float firstDelay = 0; //adds a delay before the first projectile
 
 	[HideInInspector] public GameObject spawnedObject; // Reference to the spawned object
 	private bool canSpawn = true; // Whether a object can be spawned
@@ -19,7 +20,13 @@ public class SpawnObjectByTime : MonoBehaviour {
 	}
 
 	void OnEnable () {
-		canSpawn = true;
+        if (firstDelay > 0){
+            canSpawn = false;
+            timeUntilNextSpawn = Time.time + firstDelay;
+        }
+        else{
+            canSpawn = true;
+        }
         if (delay == 0) {
             Spawn();
             gameObject.SetActive (false);
