@@ -799,7 +799,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4372825117625146}
   - component: {fileID: 114341744171178594}
-  - component: {fileID: 114950582399022222}
   m_Layer: 12
   m_Name: Slam Spread Emitter
   m_TagString: Untagged
@@ -1345,7 +1344,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4184075299368630}
   - component: {fileID: 114734100128631988}
-  - component: {fileID: 114371698504386614}
   m_Layer: 12
   m_Name: Clap Emitter
   m_TagString: Untagged
@@ -1858,7 +1856,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4011369370341106}
   - component: {fileID: 114911531465076104}
-  - component: {fileID: 114116464542329088}
   m_Layer: 12
   m_Name: Stomp Emitter
   m_TagString: Untagged
@@ -3729,7 +3726,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4374892912082164}
   - component: {fileID: 114625862266763476}
-  - component: {fileID: 114697971076875728}
   m_Layer: 12
   m_Name: Windmill Emitter
   m_TagString: Untagged
@@ -5239,7 +5235,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4304023942675616}
   - component: {fileID: 114681542343765844}
-  - component: {fileID: 114505978019980986}
   m_Layer: 12
   m_Name: Slam Multi Emitter
   m_TagString: Untagged
@@ -9833,8 +9828,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1831128547151142}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4826131022883968}
@@ -9856,7 +9851,7 @@ Transform:
   - {fileID: 4346998378407730}
   m_Father: {fileID: 4755407103881966}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4552374998848962
 Transform:
   m_ObjectHideFlags: 1
@@ -10518,7 +10513,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1127039922942760}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalPosition: {x: 0, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4849423615124910}
@@ -11013,7 +11008,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1045388855846296}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4011369370341106}
@@ -12752,21 +12747,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114116464542329088
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1294348946286864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce8233c448c6cc49b9b321f482c8728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetString: 
-  once: 0
-  speed: Infinity
 --- !u!114 &114287404111521620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12784,7 +12764,7 @@ MonoBehaviour:
   timeBetweenStomps: 0.25
   stompEmitter: {fileID: 1294348946286864}
   stompSpeed: 50
-  timeBetweenBlocks: 0.1
+  timeBetweenBlocks: 0.05
   blockEmitter: {fileID: 0}
   clapSpeed: 40
   timeBetweenClaps: 0.4
@@ -12825,21 +12805,6 @@ MonoBehaviour:
   radius: 120
   offset: 0
   spawnedObjects: []
---- !u!114 &114371698504386614
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1223621552133260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce8233c448c6cc49b9b321f482c8728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetString: 
-  once: 0
-  speed: Infinity
 --- !u!114 &114371846485174092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12852,7 +12817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1045388855846296}
-  startHealth: 10
+  startHealth: 150
   tempStopHitsTime: 0.5
   disableOnDeath: 1
   disableDelay: 0
@@ -12860,21 +12825,6 @@ MonoBehaviour:
   currentHealth: 0
   canBeHit: 1
   dead: 0
---- !u!114 &114505978019980986
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1826385238526110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce8233c448c6cc49b9b321f482c8728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetString: 
-  once: 0
-  speed: Infinity
 --- !u!114 &114625862266763476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12928,21 +12878,6 @@ MonoBehaviour:
   radius: 360
   offset: 45
   spawnedObjects: []
---- !u!114 &114697971076875728
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1582579889365994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce8233c448c6cc49b9b321f482c8728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetString: 
-  once: 0
-  speed: Infinity
 --- !u!114 &114734100128631988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13016,21 +12951,6 @@ MonoBehaviour:
   radius: 80
   offset: 0
   spawnedObjects: []
---- !u!114 &114950582399022222
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146143762926580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce8233c448c6cc49b9b321f482c8728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetString: 
-  once: 0
-  speed: Infinity
 --- !u!137 &137024098766177692
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -142,6 +142,9 @@ public class GameSaver : MonoBehaviour {
         {
             unlockedLevel = 11;
         }
+        if (GameObject.Find("Temp Saver")) {
+            GameObject.Find("Temp Saver").GetComponent<TempSaver>().NewScene();
+        }
     }
 
     public void UpdateSpells () {
