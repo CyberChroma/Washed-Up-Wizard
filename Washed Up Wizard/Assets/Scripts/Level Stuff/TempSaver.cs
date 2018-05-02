@@ -38,9 +38,9 @@ public class TempSaver : MonoBehaviour {
     void Start () {
         if (SceneManager.GetActiveScene().name == "Hospital")
         {
-            spellID1 = new int[] {2, 0, 6};
-            spellID2 = new int[] {3, 7, 9};
-            spellID3 = new int[] {9, 1, 1};
+            spellID1 = new int[] {9, 1, 1};
+            spellID2 = new int[] {2, 0, 6};
+            spellID3 = new int[] {3, 7, 9};
             TransferSpells();
             spellCreator = GameObject.Find("Spell Crafting System").GetComponent<SpellCreator>();
             spellCreator.gameObject.SetActive(false);

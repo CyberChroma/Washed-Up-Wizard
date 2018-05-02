@@ -54,6 +54,7 @@ public class WendigoAI : MonoBehaviour {
     private Health health;
     private Rigidbody rb;
     private Vector3 dir;
+    private Animator anim;
 
     // Use this for initialization
     void Awake () {
@@ -65,6 +66,7 @@ public class WendigoAI : MonoBehaviour {
         moveByForce.enabled = true;
         health = GetComponent<Health>();
         rb = GetComponent<Rigidbody>();
+        anim = GetComponentInChildren<Animator>();
         attackState = AttackState.SnowballBowl;
     }
 
@@ -96,6 +98,7 @@ public class WendigoAI : MonoBehaviour {
             moveByForce.force = normalSpeed;
             movePos = center;
             centerReached = false;
+            anim.SetBool("Is Walking", true);
         }
         else if (attackState == AttackState.LungeClaw)
         {
@@ -109,6 +112,7 @@ public class WendigoAI : MonoBehaviour {
             moveByForce.force = chargeSpeed;
             dir = (player.position - transform.position);
             dir = new Vector3(dir.x, 0, dir.z).normalized;
+            anim.SetTrigger("Bull Charge");
         }
         StartCoroutine(WaitToSpawnHarpies());
         StartCoroutine(WaitToChangeAttackState(stateChangeTime));
@@ -123,6 +127,7 @@ public class WendigoAI : MonoBehaviour {
                 iceShotsEmitter.SetActive(true);
                 canAttack = false;
                 StartCoroutine(WaitToAttack(timeBetweenIceSpread));
+                anim.SetTrigger("Ice Spread");
             }
             dir = (movePos.position - transform.position);
             dir = new Vector3(dir.x, 0, dir.z).normalized;
@@ -142,6 +147,7 @@ public class WendigoAI : MonoBehaviour {
                     moveByForce.dir = Vector3.zero;
                     centerReached = true;
                     StartCoroutine(WaitToAttack(timeBetweenSnowballs));
+                    anim.SetBool("Is Walking", false);
                 }
             }
             else if (canAttack)
@@ -149,6 +155,7 @@ public class WendigoAI : MonoBehaviour {
                 snowBallEmitter.SetActive(true);
                 canAttack = false;
                 StartCoroutine(WaitToAttack(timeBetweenSnowballs));
+                anim.SetTrigger("Snowball Bowl");
             }
             else
             {
@@ -176,6 +183,8 @@ public class WendigoAI : MonoBehaviour {
                     moveByForce.dir = Vector3.zero;
                     centerReached = true;
                     iceBreathEmitter.SetActive(true);
+                    anim.SetBool("Is Walking", false);
+                    anim.SetTrigger("Ice Breath");
                 }
             }
         }
@@ -188,6 +197,7 @@ public class WendigoAI : MonoBehaviour {
                 rb.AddForce(dir * lungeForce);
                 canAttack = false;
                 StartCoroutine(WaitToAttack(timeBetweenLunges));
+                anim.SetTrigger("Lunge Claw");
             }
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 0.1f);
         }
@@ -218,6 +228,7 @@ public class WendigoAI : MonoBehaviour {
                     moveByForce.dir = Vector3.zero;
                     centerReached = true;
                     StartCoroutine(WaitToAttack(timeBetweenShockwaves));
+                    anim.SetBool("Is Walking", false);
                 }
             }
             else if (canAttack)
@@ -225,6 +236,7 @@ public class WendigoAI : MonoBehaviour {
                 shockwaveEmitter.SetActive(true);
                 canAttack = false;
                 StartCoroutine(WaitToAttack(timeBetweenShockwaves));
+                anim.SetTrigger("Stomp Shockwave");
             }
             else
             {
@@ -232,13 +244,12 @@ public class WendigoAI : MonoBehaviour {
                 dir = new Vector3(dir.x, 0, dir.z).normalized;
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 0.1f);
             }
-            if (transform.position.y <= -10)
-            {
-                rb.velocity = Vector3.zero;
-                transform.position = Vector3.up * 20;
-            }
         }
-
+        if (transform.position.y <= -10)
+        {
+            rb.velocity = Vector3.zero;
+            transform.position = Vector3.up * 20;
+        }
         if (canSpawnHarpies) {
             harpyEmitter.transform.position = new Vector3(Random.Range (-19, 19), 1, Random.Range (-19, 19));
             harpyEmitter.SetActive(true);
