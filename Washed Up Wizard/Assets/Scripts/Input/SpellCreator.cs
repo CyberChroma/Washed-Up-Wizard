@@ -37,7 +37,6 @@ public class SpellCreator : MonoBehaviour {
     }
 
     void OnEnable () {
-        GameObject.Find("Temp Saver").GetComponent<TempSaver>().TransferSpells ();
         canCreate = true;
 	}
 	

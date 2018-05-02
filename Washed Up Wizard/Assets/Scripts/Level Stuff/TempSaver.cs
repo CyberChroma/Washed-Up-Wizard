@@ -38,9 +38,9 @@ public class TempSaver : MonoBehaviour {
     void Start () {
         if (SceneManager.GetActiveScene().name == "Hospital")
         {
-            spellID1 = new int[] {2, 0, 6};
-            spellID2 = new int[] {3, 7, 9};
-            spellID3 = new int[] {9, 1, 1};
+            spellID1 = new int[] {9, 1, 1};
+            spellID2 = new int[] {2, 0, 6};
+            spellID3 = new int[] {3, 7, 9};
             TransferSpells();
             spellCreator = GameObject.Find("Spell Crafting System").GetComponent<SpellCreator>();
             spellCreator.gameObject.SetActive(false);
@@ -58,8 +58,18 @@ public class TempSaver : MonoBehaviour {
         }
 	}
 
+    public void NewScene () {
+        TransferHealth();
+        TransferSpells();
+    }
+
     public void TransferHealth () {
-        if (currentHealth > 0) {
+        if (currentHealth > 0 && GameObject.Find("Player"))
+        {
+            if (!health)
+            {
+                health = GameObject.Find("Player").GetComponent<Health>();
+            }
             health.currentHealth = currentHealth;
         }
     }
@@ -79,12 +89,15 @@ public class TempSaver : MonoBehaviour {
     }
 
     public void TransferSpells () {
-        if (!spellCreator)
+        if (GameObject.Find("Player"))
         {
-            spellCreator = GameObject.Find("Spell Crafting System").GetComponent<SpellCreator>();
+            if (!spellCreator)
+            {
+                spellCreator = GameObject.Find("Spell Crafting System").GetComponent<SpellCreator>();
+            }
+            spellCreator.CreateSpell(spellID1, 0);
+            spellCreator.CreateSpell(spellID2, 1);
+            spellCreator.CreateSpell(spellID3, 2);
         }
-        spellCreator.CreateSpell(spellID1, 0);
-        spellCreator.CreateSpell(spellID2, 1);
-        spellCreator.CreateSpell(spellID3, 2);
     }
 }

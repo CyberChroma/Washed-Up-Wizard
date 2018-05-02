@@ -3,67 +3,24 @@ guid: 3e4c27dfc482cb1429f98bd2a35c7a0e
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: bucket
+    100000: Bucket
     100002: //RootNode
-<<<<<<< HEAD
     100004: Slime
-    400000: bucket
+    400000: Bucket
     400002: //RootNode
     400004: Slime
-=======
-    100004: Mball_007
-    100006: Slime
-    100008: Bucket
-    400000: bucket
-    400002: //RootNode
-    400004: Mball_007
-    400006: Slime
-    400008: Bucket
->>>>>>> 7148d1e2710e6f4beda31207fe843f4d27b9539e
-    2100000: Material_003
-    2100002: Material_001
-    2100004: Material_002
-    2100006: Green
-    2100008: Black
-    2100010: Yellow
-    2300000: bucket
-<<<<<<< HEAD
+    2100000: Green
+    2100002: Black
+    2100004: Yellow
+    2300000: Bucket
     2300002: Slime
-    3300000: bucket
+    3300000: Bucket
     3300002: Slime
     4300000: Slime
-    4300002: bucket
-=======
-    2300002: Mball_007
-    2300004: Slime
-    2300006: Bucket
-    3300000: bucket
-    3300002: Mball_007
-    3300004: Slime
-    3300006: Bucket
-    4300000: Mball_007
-    4300002: bucket
-    4300004: Slime
-    4300006: Bucket
->>>>>>> 7148d1e2710e6f4beda31207fe843f4d27b9539e
+    4300002: Bucket
     7400000: Default Take
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Black
-    second: {fileID: 2100000, guid: e559867e0aeb6b24c9a4507922a4a556, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Green
-    second: {fileID: 2100000, guid: 7713098b9b09039478cc21312b0fe16b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Yellow
-    second: {fileID: 2100000, guid: f9e2a56647a106c40b0fe94ab4c81882, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -82,6 +39,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -98,8 +56,8 @@ ModelImporter:
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -114,11 +72,11 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 180
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -134,10 +92,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

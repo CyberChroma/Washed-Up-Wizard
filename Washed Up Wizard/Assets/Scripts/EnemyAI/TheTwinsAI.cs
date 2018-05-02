@@ -273,7 +273,7 @@ public class TheTwinsAI : MonoBehaviour {
 
     void MoveToPos () {
         moveByForce.dir = (player.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), 0.1f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), 0.05f);
         transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0));
     }
 
