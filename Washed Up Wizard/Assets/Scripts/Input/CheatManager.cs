@@ -8,10 +8,6 @@ public class CheatManager : MonoBehaviour {
 
     private bool stopDamage = false;
     private GameSaver gameSaver;
-	
-    void Start () {
-        gameSaver = FindObjectOfType<GameSaver>();
-    }
 
 	// Update is called once per frame
 	void Update () {
@@ -23,6 +19,7 @@ public class CheatManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.O)) {
             if (GameObject.Find("Spell UI"))
             {
+                gameSaver = FindObjectOfType<GameSaver>();
                 for (int i = 0; i < gameSaver.spellUnlockStates.Length; i++)
                 {
                     gameSaver.spellUnlockStates[i].unlocked = true;
