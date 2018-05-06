@@ -61,6 +61,7 @@ public class RingmasterAI : MonoBehaviour {
     private LaunchToTarget launchToTarget;
     private Vector3 moveDir;
     private Health health;
+    private Animator anim;
 
 	// Use this for initialization
 	void Awake () {
@@ -73,6 +74,7 @@ public class RingmasterAI : MonoBehaviour {
         launchToTarget = GetComponent<LaunchToTarget>();
         launchToTarget.enabled = false;
         health = GetComponent<Health>();
+        anim = GetComponentInChildren<Animator>();
         attackState = AttackState.FlamingHoop;
 	}
 	
@@ -87,6 +89,7 @@ public class RingmasterAI : MonoBehaviour {
     }
 	// Update is called once per frame
     void FixedUpdate () {
+        anim.ResetTrigger("Exit");
         if (attackState == AttackState.FlamingHoop)
         {
             if (canSpawn && !isJumping)
@@ -187,6 +190,11 @@ public class RingmasterAI : MonoBehaviour {
 
     void ChangeAttackState () {
         StopAllCoroutines();
+        anim.ResetTrigger("Jump");
+        anim.ResetTrigger("Land Hoop");
+        anim.ResetTrigger("Land Stomp");
+        anim.ResetTrigger("Land Ball");
+        anim.SetTrigger("Exit");
         canSpawn = false;
         canCharge = true;
         charging = false;
@@ -207,6 +215,7 @@ public class RingmasterAI : MonoBehaviour {
         }
         else if (attackState == AttackState.HatBomb)
         {
+            anim.SetTrigger("Enter Bomb");
             StartCoroutine(WaitToSpawn(timeBetweenHatBombs));
             movePos = player;
             moveByForce.force = hatBombFollowSpeed;
@@ -218,11 +227,13 @@ public class RingmasterAI : MonoBehaviour {
         }
         else if (attackState == AttackState.UnicycleCharge)
         {
+            anim.SetTrigger("Enter Unicycle");
             StartCoroutine(WaitToCharge());
             moveByForce.enabled = false;
         }
         else if (attackState == AttackState.BalloonGun)
         {
+            anim.SetTrigger("Enter Balloon");
             StartCoroutine(WaitToSpawn(timeBetweenHatBombs));
             movePos = player;
             moveByForce.force = gunFollowSpeed;
@@ -271,6 +282,9 @@ public class RingmasterAI : MonoBehaviour {
                 attackState = AttackState.RollingBall;
             }
         }
+
+        //canSpawn = false;
+        //yield return new WaitForSeconds(2);
         ChangeAttackState();
     }
 
@@ -288,14 +302,6 @@ public class RingmasterAI : MonoBehaviour {
                 moveByForce.dir = Vector3.zero;
                 isJumping = false;
                 canSpawn = true;
-                if (attackState == AttackState.FlamingHoop)
-                {
-                    StartCoroutine(WaitToJump(timeBetweenHoopJumps));
-                }
-                else if (attackState == AttackState.Stomp)
-                {
-                    StartCoroutine(WaitToJump(timeBetweenStompJumps));
-                }
             }
             else if (Vector3.Distance(new Vector3(movePos.position.x, 0, movePos.position.z), new Vector3(transform.position.x, 0, transform.position.z)) <= 0.1f)
             {
@@ -330,6 +336,7 @@ public class RingmasterAI : MonoBehaviour {
 
     IEnumerator WaitToJump (float delay) {
         yield return new WaitForSeconds(delay);
+        anim.SetTrigger("Jump");
         canSpawn = false;
         if (attackState == AttackState.FlamingHoop)
         {
@@ -374,11 +381,17 @@ public class RingmasterAI : MonoBehaviour {
             canSpawn = true;
             if (attackState == AttackState.FlamingHoop)
             {
+                anim.SetTrigger("Land Hoop");
                 StartCoroutine(WaitToJump(timeBetweenHoopJumps));
             }
             else if (attackState == AttackState.Stomp)
             {
+                anim.SetTrigger("Land Stomp");
                 StartCoroutine(WaitToJump(timeBetweenStompJumps));
+            }
+            else if (attackState == AttackState.RollingBall)
+            {
+                anim.SetTrigger("Land Ball");
             }
         }
     }
