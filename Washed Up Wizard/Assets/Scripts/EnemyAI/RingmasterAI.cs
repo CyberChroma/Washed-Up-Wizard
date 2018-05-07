@@ -162,7 +162,6 @@ public class RingmasterAI : MonoBehaviour {
             }
             MoveToPos();
         }
-
         if (canSpawnAcrobats) {
             acrobatEmitter.transform.position = new Vector3 (Random.insideUnitCircle.x * 19, 0, Random.insideUnitCircle.y * 19);
             acrobatEmitter.SetActive(true);
@@ -282,9 +281,6 @@ public class RingmasterAI : MonoBehaviour {
                 attackState = AttackState.RollingBall;
             }
         }
-
-        //canSpawn = false;
-        //yield return new WaitForSeconds(2);
         ChangeAttackState();
     }
 

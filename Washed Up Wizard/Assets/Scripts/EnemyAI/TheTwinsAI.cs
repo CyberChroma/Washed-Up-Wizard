@@ -57,6 +57,7 @@ public class TheTwinsAI : MonoBehaviour {
     private MoveByForce moveByForce;
     private Vector3 moveDir;
     private Health health;
+    private Animator anim;
 
 	// Use this for initialization
 	void Awake () {
@@ -69,6 +70,7 @@ public class TheTwinsAI : MonoBehaviour {
         moveByForce = GetComponent<MoveByForce>();
         moveByForce.enabled = true;
         health = GetComponent<Health>();
+        anim = GetComponent<Animator>();
         attackState = AttackState.StrideStomp;
 	}
 	
@@ -195,32 +197,38 @@ public class TheTwinsAI : MonoBehaviour {
         moveByForce.enabled = true;
         if (attackState == AttackState.StrideStomp)
         {
+            anim.SetTrigger("Stride Stomp");
             moveByForce.force = strideSpeed;
             StartCoroutine(WaitToSpawn(timeBetweenStomps));
         }
         else if (attackState == AttackState.BlockFall)
         {
+            anim.SetTrigger("Block Fall");
             moveByForce.force = stompSpeed;
             StartCoroutine(WaitToSpawn(timeBetweenBlocks));
         }
         else if (attackState == AttackState.ClapShockwave)
         {
+            anim.SetTrigger("Clap Shockwave");
             moveByForce.force = clapSpeed;
             StartCoroutine(WaitToSpawn(timeBetweenClaps));
         }
         else if (attackState == AttackState.SlamSpread)
         {
+            anim.SetTrigger("SlamSpread");
             moveByForce.dir = Vector3.zero;
             moveByForce.force = 0;
             StartCoroutine(WaitToSpawn(timeBetweenSlams));
         }
         else if (attackState == AttackState.Windmill)
         {
+            anim.SetTrigger("Windmill");
             moveByForce.force = windmillSpeed;
             StartCoroutine(WaitToSpawn(timeBetweenWindmills));
         }
         else if (attackState == AttackState.SlamShockwave)
         {
+            anim.SetTrigger("Slam Shockwave");
             moveByForce.force = slamMultiSpeed;
             StartCoroutine(WaitToSpawn(timeBetweenSlamsMulti));
         }
