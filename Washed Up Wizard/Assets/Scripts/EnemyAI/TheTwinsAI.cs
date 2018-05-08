@@ -45,10 +45,6 @@ public class TheTwinsAI : MonoBehaviour {
     public float timeBetweenToysPhase3;
     public GameObject toysEmitter;
 
-    public GameObject leg;
-    public GameObject arm;
-    public GameObject both;
-
     private int phase = 1;
     private AttackState attackState;
     private bool canSpawn = false;
@@ -70,17 +66,11 @@ public class TheTwinsAI : MonoBehaviour {
         moveByForce = GetComponent<MoveByForce>();
         moveByForce.enabled = true;
         health = GetComponent<Health>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         attackState = AttackState.StrideStomp;
 	}
 	
     void OnEnable () {
-        leg.transform.localPosition = Vector3.up * 0.3f;
-        arm.transform.localPosition = Vector3.up * -10;
-        both.transform.localPosition = Vector3.up * -10;
-        leg.SetActive(true);
-        arm.SetActive(false);
-        both.SetActive(false);
         ChangeAttackState ();
     }
 
@@ -107,6 +97,7 @@ public class TheTwinsAI : MonoBehaviour {
             if (canSpawn)
             {
                 blockEmitter.transform.position = new Vector3 (Random.Range(-14, 14), 10, Random.Range (-25, 25));
+                blockEmitter.transform.rotation = Random.rotation;
                 blockEmitter.SetActive(true);
                 canSpawn = false;
                 StartCoroutine(WaitToSpawn(timeBetweenStomps));
@@ -170,22 +161,15 @@ public class TheTwinsAI : MonoBehaviour {
     void CalculatePhase () {
         if ((health.currentHealth <= health.startHealth / 3) && phase == 2) {
             StopAllCoroutines ();
+            canSpawn = false;
+            anim.SetTrigger("Arm To Twin");
             phase = 3;
-            leg.transform.localPosition = Vector3.up * -10;
-            arm.transform.localPosition = Vector3.up * -10;
-            both.transform.localPosition = Vector3.up * 0.3f;
-            leg.SetActive(false);
-            arm.SetActive(false);
-            both.SetActive(true);
             StartCoroutine (WaitToChangeAttackState(1));
         } else if ((health.currentHealth <= health.startHealth / 3 * 2) && phase == 1) {
+            StopAllCoroutines();
+            canSpawn = false;
+            anim.SetTrigger("Leg To Arm");
             phase = 2;
-            leg.transform.localPosition = Vector3.up * -10;
-            arm.transform.localPosition = Vector3.up * 0.3f;
-            both.transform.localPosition = Vector3.up * -10;
-            leg.SetActive(false);
-            arm.SetActive(true);
-            both.SetActive(false);
             StartCoroutine (WaitToChangeAttackState(1));
         }
     }
@@ -215,7 +199,7 @@ public class TheTwinsAI : MonoBehaviour {
         }
         else if (attackState == AttackState.SlamSpread)
         {
-            anim.SetTrigger("SlamSpread");
+            anim.SetTrigger("Slam Spread");
             moveByForce.dir = Vector3.zero;
             moveByForce.force = 0;
             StartCoroutine(WaitToSpawn(timeBetweenSlams));
