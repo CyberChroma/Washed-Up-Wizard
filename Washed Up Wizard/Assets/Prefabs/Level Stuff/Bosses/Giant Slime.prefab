@@ -897,6 +897,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   m_StaticBatchInfo:
@@ -931,6 +932,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   m_StaticBatchInfo:
@@ -965,6 +967,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   m_StaticBatchInfo:
@@ -999,6 +1002,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   m_StaticBatchInfo:
@@ -1033,6 +1037,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   m_StaticBatchInfo:
@@ -1067,6 +1072,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   m_StaticBatchInfo:
@@ -1101,6 +1107,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   m_StaticBatchInfo:
@@ -1135,6 +1142,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   m_StaticBatchInfo:
@@ -1169,6 +1177,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   m_StaticBatchInfo:
@@ -1203,6 +1212,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   m_StaticBatchInfo:
@@ -1237,6 +1247,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   m_StaticBatchInfo:
@@ -1271,6 +1282,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 35ea18e8f9e8cc04ebccf1e5dd630a27, type: 2}
   m_StaticBatchInfo:
@@ -1305,6 +1317,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   m_StaticBatchInfo:
@@ -1339,6 +1352,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: a8cd48a277d053a41aa7efaba9da4cd7, type: 2}
   m_StaticBatchInfo:
@@ -1562,6 +1576,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114040999925150220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1593,6 +1608,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   delay: 0.2
   randDelay: 0
+  firstDelay: 0
   spawnedObject: {fileID: 0}
 --- !u!114 &114090719178115676
 MonoBehaviour:
@@ -1765,7 +1781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1109968808197330}
-  startHealth: 150
+  startHealth: 100
   tempStopHitsTime: 0.5
   disableOnDeath: 1
   disableDelay: 4
@@ -1804,6 +1820,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   delay: 0.1
   randDelay: 0
+  firstDelay: 0
   spawnedObject: {fileID: 0}
 --- !u!114 &114218384064569736
 MonoBehaviour:
@@ -1930,6 +1947,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   delay: 0.1
   randDelay: 0
+  firstDelay: 0
   spawnedObject: {fileID: 0}
 --- !u!114 &114504189779702954
 MonoBehaviour:
@@ -2041,6 +2059,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   delay: 1
   randDelay: 0.5
+  firstDelay: 0
   spawnedObject: {fileID: 0}
 --- !u!114 &114824978761198918
 MonoBehaviour:
@@ -2073,6 +2092,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   delay: 0.2
   randDelay: 0
+  firstDelay: 0
   spawnedObject: {fileID: 0}
 --- !u!114 &114865560671128692
 MonoBehaviour:
