@@ -6,9 +6,11 @@ using UnityEngine.AI;
 public class MeleeEnemyAI : MonoBehaviour {
 
     // This enemy's attack pattern is to run at the player and attack them
+    public bool shootsProjectile = false;
 	public float moveSensitivity = 0.1f; // Used to make the enemy movement less snappy
     public float radius = 20;
 
+    private SpawnObjectByTime spawnByTime;
 	private Animator anim; // Reference to the animator
     private Health health;
 	private Transform player; // Reference to the player
@@ -17,6 +19,7 @@ public class MeleeEnemyAI : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+        spawnByTime = GetComponentInChildren<SpawnObjectByTime>();
         anim = GetComponentInChildren<Animator> (); // Getting the reference
         health = GetComponent<Health> ();
         damageByTouchCollision = GetComponent<DamageByTouchCollision>();
@@ -35,6 +38,10 @@ public class MeleeEnemyAI : MonoBehaviour {
 	void FixedUpdate () {
         if (player && (player.position.x > transform.position.x - radius && player.position.x < transform.position.x + radius && player.position.z > transform.position.z - radius && player.position.z < transform.position.z + radius)) { 
             nav.destination = player.position;
+            if (shootsProjectile)
+            {
+                spawnByTime.canShoot = true;
+            }
             if (nav.velocity != Vector3.zero) {
                 Quaternion targetRotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(nav.velocity), 0.5f); // Looks at the player
                 transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0); // Ignores x and z values
@@ -42,9 +49,11 @@ public class MeleeEnemyAI : MonoBehaviour {
         }
         else {
             nav.destination = transform.position;
+            spawnByTime.canShoot = false;
         }
         if (health.currentHealth <= 0) {
             damageByTouchCollision.canDamage = false;
+            spawnByTime.canShoot = false;
             nav.destination = transform.position;
             enabled = false;
             health.ChangeHealth();

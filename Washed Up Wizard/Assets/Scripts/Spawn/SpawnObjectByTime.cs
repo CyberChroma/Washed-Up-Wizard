@@ -9,6 +9,7 @@ public class SpawnObjectByTime : MonoBehaviour {
     public float delay = 1; // The time between spawning
 	public float randDelay = 0.1f; // Adds slight randomness to the delay
     public float firstDelay = 0; //adds a delay before the first projectile
+    public bool canShoot = true;
 
 	[HideInInspector] public GameObject spawnedObject; // Reference to the spawned object
 	private bool canSpawn = true; // Whether a object can be spawned
@@ -37,7 +38,7 @@ public class SpawnObjectByTime : MonoBehaviour {
 		canSpawn = false;
 	}
 	void FixedUpdate () {
-		if (Time.time >= timeUntilNextSpawn) { // If the time has elapsed
+        if (Time.time >= timeUntilNextSpawn && canShoot) { // If the time has elapsed
 			canSpawn = true;
 		}
 		if (canSpawn) { // If this emitter can spawn objects
