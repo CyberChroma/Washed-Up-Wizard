@@ -49,11 +49,17 @@ public class MeleeEnemyAI : MonoBehaviour {
         }
         else {
             nav.destination = transform.position;
-            spawnByTime.canShoot = false;
+            if (spawnByTime)
+            {
+                spawnByTime.canShoot = false;
+            }
         }
         if (health.currentHealth <= 0) {
             damageByTouchCollision.canDamage = false;
-            spawnByTime.canShoot = false;
+            if (spawnByTime)
+            {
+                spawnByTime.canShoot = false;
+            }
             nav.destination = transform.position;
             enabled = false;
             health.ChangeHealth();

@@ -77,7 +77,7 @@ public class PlayerMoveInput : MonoBehaviour {
             }
             moveVector *= moveSpeed * Time.deltaTime; // Multiplying move vector for magnutude
             if (moveVector != Vector3.zero) { // Of the move vector is not zero
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveVector), 5f * Time.deltaTime); // Rotates in direction of movement
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveVector), 10f * Time.deltaTime); // Rotates in direction of movement
                 transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.eulerAngles.y, 0)); // Ignores x and z rotation
             }
             rb.MovePosition(rb.position + moveVector); // Moves player

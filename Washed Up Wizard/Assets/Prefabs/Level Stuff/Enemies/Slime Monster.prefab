@@ -174,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1216778629145440}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalPosition: {x: -27.9, y: 0.1, z: 32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4121161531699434}
@@ -247,6 +247,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: d88ea2eddad76c54b9bb0c0daaea040c, type: 2}
   m_StaticBatchInfo:
@@ -281,6 +282,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: d996ec493f9227d448641332a2d69fc4, type: 2}
   m_StaticBatchInfo:
@@ -315,6 +317,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 9a814fb1aa1e1434984379adcb5fa70a, type: 2}
   - {fileID: 2100000, guid: 07126c60df203ac4786a7f774d351f49, type: 2}
@@ -350,6 +353,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 617d653a93fce4748bf1d35ce7ee54d5, type: 2}
   m_StaticBatchInfo:
@@ -384,6 +388,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: d88ea2eddad76c54b9bb0c0daaea040c, type: 2}
   m_StaticBatchInfo:
@@ -484,6 +489,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114336013718962472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -530,6 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d6b837f87e6934d922e5de684abda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootsProjectile: 1
   moveSensitivity: 0.1
   radius: 20
 --- !u!114 &114567957706038586
@@ -560,6 +567,8 @@ MonoBehaviour:
   parent: {fileID: 0}
   delay: 2
   randDelay: 0.5
+  firstDelay: 0
+  canShoot: 1
   spawnedObject: {fileID: 0}
 --- !u!114 &114871143606887624
 MonoBehaviour:
