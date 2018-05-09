@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1600
     height: 767
-  m_MinSize: {x: 683, y: 342}
-  m_MaxSize: {x: 12008, y: 8042}
+  m_MinSize: {x: 681, y: 471}
+  m_MaxSize: {x: 14002, y: 14021}
   vertical: 0
-  controlID: 84
+  controlID: 13255
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,10 +119,10 @@ MonoBehaviour:
     y: 0
     width: 1181
     height: 767
-  m_MinSize: {x: 406, y: 342}
-  m_MaxSize: {x: 8006, y: 8042}
+  m_MinSize: {x: 404, y: 471}
+  m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 85
+  controlID: 13256
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,10 +143,10 @@ MonoBehaviour:
     y: 0
     width: 1181
     height: 490
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 61
+  controlID: 13207
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,8 +165,8 @@ MonoBehaviour:
     y: 0
     width: 365
     height: 490
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -199,9 +199,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 8c2af9ff
     m_LastClickedID: 0
-    m_ExpandedIDs: d6fbffff00000000
+    m_ExpandedIDs: 82c4f8ff8ce5f8ffc6daf9ff8addf9ffaceaf9ff6248faffd2a5faffd4a5faffca3cfbff18b5fbfff43dfcff104dfcffb45dfcffbe67fcffc067fcff58d8fcffce2efdffd42efdff7c37fdffa03afdff941ffefff0fbffff000000004097000046990000869900005c9b0000869c0000ce9e0000909f0000d6ab000072ac00002eae000096ae0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -220,7 +220,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
   m_ExpandedScenes:
-  - Hospital 2
+  - Nursery
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 0
@@ -278,14 +278,14 @@ MonoBehaviour:
     height: 469
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 631.6889592793774
+  lastFramingTime: 615.1758211516496
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 47.884926, y: -79.14772, z: 21.856472}
+    m_Target: {x: -16.132658, y: -7.694104, z: -6.84229}
     speed: 2
-    m_Value: {x: 47.884926, y: -79.14772, z: 21.856472}
+    m_Value: {x: -16.132658, y: -7.694104, z: -6.84229}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -313,13 +313,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.47971028, y: -0.014476606, z: 0.007915997, w: -0.8772718}
+    m_Target: {x: -0.12928382, y: 0.8707108, z: -0.3340233, w: -0.33701172}
     speed: 2
-    m_Value: {x: -0.4797103, y: -0.014476607, z: 0.007915998, w: -0.87727183}
+    m_Value: {x: -0.12928382, y: 0.8707108, z: -0.3340233, w: -0.33701172}
   m_Size:
-    m_Target: 155.08978
+    m_Target: 30.847902
     speed: 2
-    m_Value: 155.08978
+    m_Value: 30.847902
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -408,15 +408,15 @@ MonoBehaviour:
     y: 490
     width: 1181
     height: 277
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
   - {fileID: 12}
   - {fileID: 13}
-  m_Selected: 2
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 2
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -454,21 +454,21 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/Level Stuff
+    - Assets/Prefabs/Level Stuff/Bosses/Attacks/Giant Slime
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Level Stuff
+  - Assets/Prefabs/Level Stuff/Bosses/Attacks/Giant Slime
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Brandon\Documents\GitHub\Washed-Up-Wizard\Washed Up
     Wizard
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 177}
-    m_SelectedIDs: 003f0000
-    m_LastClickedID: 16128
-    m_ExpandedIDs: 000000005a2a00003e2c0000ba2e0000783300001e350000b4360000ac3700002a3900007e390000783b0000b03b0000b43b00000a3e0000d24100002a7000002c7000002e7000003070000032700000347000003670000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 442}
+    m_SelectedIDs: 101f0000
+    m_LastClickedID: 7952
+    m_ExpandedIDs: 00000000e6090000ca0b0000560e000016130000bc1400006c15000052160000ca1600004a170000ca1800001e190000be1a0000181b0000501b0000541b0000aa1d00007221000060930000629300006493000066930000689300006a9300006c93000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -496,7 +496,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005a2a00003e2c0000ba2e0000783300001e350000b4360000ac3700002a3900007e390000783b0000b03b0000b43b00000a3e0000d24100002a7000002c7000002e70000030700000327000003470000036700000
+    m_ExpandedIDs: 00000000e6090000ca0b0000560e000016130000bc1400006c15000052160000ca1600004a170000ca1800001e190000be1a0000181b0000501b0000541b0000aa1d00007221000060930000629300006493000066930000689300006a9300006c93000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -521,10 +521,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000
+    m_SelectedInstanceIDs: 8c2af9ff
+    m_LastClickedInstanceID: -447860
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000e813000040210000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -661,7 +661,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewResizer:
-    m_CachedPref: 178
+    m_CachedPref: 229
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
