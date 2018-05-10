@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4494471981399984}
   - component: {fileID: 135858892329659414}
-  - component: {fileID: 114299593232922334}
   m_Layer: 14
   m_Name: Bottle
   m_TagString: Untagged
@@ -38,7 +37,6 @@ GameObject:
   - component: {fileID: 4222379338648854}
   - component: {fileID: 95114460968484410}
   - component: {fileID: 114987729603616002}
-  - component: {fileID: 114446918466122050}
   - component: {fileID: 135931644600556252}
   m_Layer: 0
   m_Name: bottle
@@ -238,36 +236,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114299593232922334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1143040493027798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e256af723abe10f41a0a24a836268fb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0
-  tagsToDestroy:
-  - Player
-  tagsToIgnore: []
---- !u!114 &114446918466122050
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1203621374970644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e256af723abe10f41a0a24a836268fb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0
-  tagsToDestroy:
-  - Player
-  tagsToIgnore: []
 --- !u!114 &114987729603616002
 MonoBehaviour:
   m_ObjectHideFlags: 1

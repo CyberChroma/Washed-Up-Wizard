@@ -19,13 +19,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4356471517780976}
-  - component: {fileID: 114540445809347086}
   - component: {fileID: 114962645034382534}
   - component: {fileID: 114647515439083070}
   - component: {fileID: 114415495792445410}
   - component: {fileID: 54934578042370622}
   - component: {fileID: 136909529630024390}
   - component: {fileID: 114477670406928316}
+  - component: {fileID: 114463415919633698}
   m_Layer: 0
   m_Name: Bottle Shot Constant Doll
   m_TagString: Projectile
@@ -225,6 +225,21 @@ MonoBehaviour:
   - Player Shield
   - Breakable
   tagsToIgnore: []
+--- !u!114 &114463415919633698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072100834467396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e256af723abe10f41a0a24a836268fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  tagsToDestroy:
+  - Player
+  tagsToIgnore: []
 --- !u!114 &114477670406928316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -240,25 +255,6 @@ MonoBehaviour:
     type: 2}
   deathParticles: {fileID: 1800233777693634, guid: aa2ec2e61b0e5f14f9c79ddbc0194b8a,
     type: 2}
---- !u!114 &114540445809347086
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1072100834467396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6423265acf6d21e469c60f54b6da75d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 5
-  damageAmount: 2
-  oneTime: 1
-  tagsToDamage:
-  - Player
-  push: 1
-  pushForce: 1
-  canDamage: 1
 --- !u!114 &114647515439083070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -283,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
-  dir: {x: 1, y: 0, z: 0}
+  dir: {x: 0, y: 0, z: 1}
   relative: 1
   once: 0
 --- !u!136 &136909529630024390
