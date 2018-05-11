@@ -110,6 +110,7 @@ ModelImporter:
     100208: torso
     100210: tweak_spine
     100212: tweak_spine_003
+    100214: Baby_rig
     400000: //RootNode
     400002: Big_Leg_Baby_rig
     400004: Body
@@ -217,6 +218,7 @@ ModelImporter:
     400208: torso
     400210: tweak_spine
     400212: tweak_spine_003
+    400214: Baby_rig
     2100000: Mouth
     2100002: Nose
     2100004: Eyes
@@ -523,6 +525,151 @@ ModelImporter:
     4300590: Bow
     4300592: Body
     4300594: Bonnet
+    4300596: WGTS_Baby_rig
+    4300598: WGT-Baby_rig_root
+    4300600: WGT-Baby_rig_tweak_thumb_03_R_001
+    4300602: WGT-Baby_rig_tweak_thumb_03_R
+    4300604: WGT-Baby_rig_tweak_thumb_02_R
+    4300606: WGT-Baby_rig_tweak_thumb_01_R
+    4300608: WGT-Baby_rig_thumb_03_R
+    4300610: WGT-Baby_rig_thumb_02_R
+    4300612: WGT-Baby_rig_thumb_01_R
+    4300614: WGT-Baby_rig_tweak_thumb_03_L_001
+    4300616: WGT-Baby_rig_tweak_thumb_03_L
+    4300618: WGT-Baby_rig_tweak_thumb_02_L
+    4300620: WGT-Baby_rig_tweak_thumb_01_L
+    4300622: WGT-Baby_rig_thumb_03_L
+    4300624: WGT-Baby_rig_thumb_02_L
+    4300626: WGT-Baby_rig_thumb_01_L
+    4300628: WGT-Baby_rig_tweak_f_ring_03_R_001
+    4300630: WGT-Baby_rig_tweak_f_ring_03_R
+    4300632: WGT-Baby_rig_tweak_f_ring_02_R
+    4300634: WGT-Baby_rig_tweak_f_ring_01_R
+    4300636: WGT-Baby_rig_f_ring_03_R
+    4300638: WGT-Baby_rig_f_ring_02_R
+    4300640: WGT-Baby_rig_f_ring_01_R
+    4300642: WGT-Baby_rig_tweak_f_ring_03_L_001
+    4300644: WGT-Baby_rig_tweak_f_ring_03_L
+    4300646: WGT-Baby_rig_tweak_f_ring_02_L
+    4300648: WGT-Baby_rig_tweak_f_ring_01_L
+    4300650: WGT-Baby_rig_f_ring_03_L
+    4300652: WGT-Baby_rig_f_ring_02_L
+    4300654: WGT-Baby_rig_f_ring_01_L
+    4300656: WGT-Baby_rig_tweak_f_pinky_03_R_001
+    4300658: WGT-Baby_rig_tweak_f_pinky_03_R
+    4300660: WGT-Baby_rig_tweak_f_pinky_02_R
+    4300662: WGT-Baby_rig_tweak_f_pinky_01_R
+    4300664: WGT-Baby_rig_f_pinky_03_R
+    4300666: WGT-Baby_rig_f_pinky_02_R
+    4300668: WGT-Baby_rig_f_pinky_01_R
+    4300670: WGT-Baby_rig_tweak_f_pinky_03_L_001
+    4300672: WGT-Baby_rig_tweak_f_pinky_03_L
+    4300674: WGT-Baby_rig_tweak_f_pinky_02_L
+    4300676: WGT-Baby_rig_tweak_f_pinky_01_L
+    4300678: WGT-Baby_rig_f_pinky_03_L
+    4300680: WGT-Baby_rig_f_pinky_02_L
+    4300682: WGT-Baby_rig_f_pinky_01_L
+    4300684: WGT-Baby_rig_tweak_f_middle_03_R_001
+    4300686: WGT-Baby_rig_tweak_f_middle_03_R
+    4300688: WGT-Baby_rig_tweak_f_middle_02_R
+    4300690: WGT-Baby_rig_tweak_f_middle_01_R
+    4300692: WGT-Baby_rig_f_middle_03_R
+    4300694: WGT-Baby_rig_f_middle_02_R
+    4300696: WGT-Baby_rig_f_middle_01_R
+    4300698: WGT-Baby_rig_tweak_f_middle_03_L_001
+    4300700: WGT-Baby_rig_tweak_f_middle_03_L
+    4300702: WGT-Baby_rig_tweak_f_middle_02_L
+    4300704: WGT-Baby_rig_tweak_f_middle_01_L
+    4300706: WGT-Baby_rig_f_middle_03_L
+    4300708: WGT-Baby_rig_f_middle_02_L
+    4300710: WGT-Baby_rig_f_middle_01_L
+    4300712: WGT-Baby_rig_tweak_f_index_03_R_001
+    4300714: WGT-Baby_rig_tweak_f_index_03_R
+    4300716: WGT-Baby_rig_tweak_f_index_02_R
+    4300718: WGT-Baby_rig_tweak_f_index_01_R
+    4300720: WGT-Baby_rig_f_index_03_R
+    4300722: WGT-Baby_rig_f_index_02_R
+    4300724: WGT-Baby_rig_f_index_01_R
+    4300726: WGT-Baby_rig_tweak_f_index_03_L_001
+    4300728: WGT-Baby_rig_tweak_f_index_03_L
+    4300730: WGT-Baby_rig_tweak_f_index_02_L
+    4300732: WGT-Baby_rig_tweak_f_index_01_L
+    4300734: WGT-Baby_rig_f_index_03_L
+    4300736: WGT-Baby_rig_f_index_02_L
+    4300738: WGT-Baby_rig_f_index_01_L
+    4300740: WGT-Baby_rig_palm_R
+    4300742: WGT-Baby_rig_palm_L
+    4300744: WGT-Baby_rig_hand_ik_R
+    4300746: WGT-Baby_rig_hand_fk_R
+    4300748: WGT-Baby_rig_forearm_fk_R
+    4300750: WGT-Baby_rig_upper_arm_fk_R
+    4300752: WGT-Baby_rig_VIS_upper_arm_ik_pole_R
+    4300754: WGT-Baby_rig_upper_arm_ik_target_R
+    4300756: WGT-Baby_rig_upper_arm_ik_R
+    4300758: WGT-Baby_rig_hand_tweak_R
+    4300760: WGT-Baby_rig_forearm_tweak_R_001
+    4300762: WGT-Baby_rig_forearm_tweak_R
+    4300764: WGT-Baby_rig_upper_arm_tweak_R_001
+    4300766: WGT-Baby_rig_upper_arm_tweak_R
+    4300768: WGT-Baby_rig_upper_arm_parent_R
+    4300770: WGT-Baby_rig_hand_ik_L
+    4300772: WGT-Baby_rig_hand_fk_L
+    4300774: WGT-Baby_rig_forearm_fk_L
+    4300776: WGT-Baby_rig_upper_arm_fk_L
+    4300778: WGT-Baby_rig_VIS_upper_arm_ik_pole_L
+    4300780: WGT-Baby_rig_upper_arm_ik_target_L
+    4300782: WGT-Baby_rig_upper_arm_ik_L
+    4300784: WGT-Baby_rig_hand_tweak_L
+    4300786: WGT-Baby_rig_forearm_tweak_L_001
+    4300788: WGT-Baby_rig_forearm_tweak_L
+    4300790: WGT-Baby_rig_upper_arm_tweak_L_001
+    4300792: WGT-Baby_rig_upper_arm_tweak_L
+    4300794: WGT-Baby_rig_upper_arm_parent_L
+    4300796: WGT-Baby_rig_shoulder_R
+    4300798: WGT-Baby_rig_shoulder_L
+    4300800: WGT-Baby_rig_breast_R
+    4300802: WGT-Baby_rig_breast_L
+    4300804: WGT-Baby_rig_toe_R
+    4300806: WGT-Baby_rig_foot_heel_ik_R
+    4300808: WGT-Baby_rig_foot_ik_R
+    4300810: WGT-Baby_rig_foot_fk_R
+    4300812: WGT-Baby_rig_shin_fk_R
+    4300814: WGT-Baby_rig_thigh_fk_R
+    4300816: WGT-Baby_rig_VIS_thigh_ik_pole_R
+    4300818: WGT-Baby_rig_thigh_ik_target_R
+    4300820: WGT-Baby_rig_thigh_ik_R
+    4300822: WGT-Baby_rig_foot_tweak_R
+    4300824: WGT-Baby_rig_shin_tweak_R_001
+    4300826: WGT-Baby_rig_shin_tweak_R
+    4300828: WGT-Baby_rig_thigh_tweak_R_001
+    4300830: WGT-Baby_rig_thigh_tweak_R
+    4300832: WGT-Baby_rig_thigh_parent_R
+    4300834: WGT-Baby_rig_toe_L
+    4300836: WGT-Baby_rig_foot_heel_ik_L
+    4300838: WGT-Baby_rig_foot_ik_L
+    4300840: WGT-Baby_rig_foot_fk_L
+    4300842: WGT-Baby_rig_shin_fk_L
+    4300844: WGT-Baby_rig_thigh_fk_L
+    4300846: WGT-Baby_rig_VIS_thigh_ik_pole_L
+    4300848: WGT-Baby_rig_thigh_ik_target_L
+    4300850: WGT-Baby_rig_thigh_ik_L
+    4300852: WGT-Baby_rig_foot_tweak_L
+    4300854: WGT-Baby_rig_shin_tweak_L_001
+    4300856: WGT-Baby_rig_shin_tweak_L
+    4300858: WGT-Baby_rig_thigh_tweak_L_001
+    4300860: WGT-Baby_rig_thigh_tweak_L
+    4300862: WGT-Baby_rig_thigh_parent_L
+    4300864: WGT-Baby_rig_tweak_spine_001
+    4300866: WGT-Baby_rig_tweak_spine
+    4300868: WGT-Baby_rig_tweak_spine_003
+    4300870: WGT-Baby_rig_tweak_spine_002
+    4300872: WGT-Baby_rig_tweak_spine_005
+    4300874: WGT-Baby_rig_tweak_spine_004
+    4300876: WGT-Baby_rig_head
+    4300878: WGT-Baby_rig_neck
+    4300880: WGT-Baby_rig_hips
+    4300882: WGT-Baby_rig_chest
+    4300884: WGT-Baby_rig_torso
     7400000: Default Take
     9500000: //RootNode
     13700000: Body
@@ -534,7 +681,47 @@ ModelImporter:
     13700012: Nose
     13700014: Onesie
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bonnet
+    second: {fileID: 2100000, guid: 3713bff81c95ab54db6a25082eeb7add, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bow
+    second: {fileID: 2100000, guid: 516f7f1be14ab6945831a44621e18790, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyes
+    second: {fileID: 2100000, guid: 420f2ea9e6cf5eb41ac739692a327017, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair
+    second: {fileID: 2100000, guid: a05c4cadf785b5048aa6ca0298b5b67f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mouth
+    second: {fileID: 2100000, guid: e0d4fdec06d2a134eaac84fab0d3082e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nose
+    second: {fileID: 2100000, guid: 943444d2e4c3f154f90d380342a89a09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Onesie
+    second: {fileID: 2100000, guid: 3ed57ce302cb3f64ba941d84775961f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: 7319f4ec89177f04aa60c07dfabc7c55, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -568,10 +755,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -586,8 +773,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 80
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1

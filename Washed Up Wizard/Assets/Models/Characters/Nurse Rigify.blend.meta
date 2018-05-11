@@ -111,6 +111,7 @@ ModelImporter:
     100210: tweak_spine
     100212: tweak_spine_003
     100214: Wizard_rig
+    100216: Nurse_rig
     400000: Body
     400002: DEF-breast_L
     400004: DEF-breast_R
@@ -219,6 +220,7 @@ ModelImporter:
     400210: tweak_spine
     400212: tweak_spine_003
     400214: Wizard_rig
+    400216: Nurse_rig
     2100000: White
     2100002: Dress_Blue
     2100004: Hair
@@ -381,6 +383,151 @@ ModelImporter:
     4300302: Eyelashes
     4300304: Dress
     4300306: Body
+    4300308: WGTS_Nurse_rig
+    4300310: WGT-Nurse_rig_root
+    4300312: WGT-Nurse_rig_tweak_thumb_03_R_001
+    4300314: WGT-Nurse_rig_tweak_thumb_03_R
+    4300316: WGT-Nurse_rig_tweak_thumb_02_R
+    4300318: WGT-Nurse_rig_tweak_thumb_01_R
+    4300320: WGT-Nurse_rig_thumb_03_R
+    4300322: WGT-Nurse_rig_thumb_02_R
+    4300324: WGT-Nurse_rig_thumb_01_R
+    4300326: WGT-Nurse_rig_tweak_thumb_03_L_001
+    4300328: WGT-Nurse_rig_tweak_thumb_03_L
+    4300330: WGT-Nurse_rig_tweak_thumb_02_L
+    4300332: WGT-Nurse_rig_tweak_thumb_01_L
+    4300334: WGT-Nurse_rig_thumb_03_L
+    4300336: WGT-Nurse_rig_thumb_02_L
+    4300338: WGT-Nurse_rig_thumb_01_L
+    4300340: WGT-Nurse_rig_tweak_f_ring_03_R_001
+    4300342: WGT-Nurse_rig_tweak_f_ring_03_R
+    4300344: WGT-Nurse_rig_tweak_f_ring_02_R
+    4300346: WGT-Nurse_rig_tweak_f_ring_01_R
+    4300348: WGT-Nurse_rig_f_ring_03_R
+    4300350: WGT-Nurse_rig_f_ring_02_R
+    4300352: WGT-Nurse_rig_f_ring_01_R
+    4300354: WGT-Nurse_rig_tweak_f_ring_03_L_001
+    4300356: WGT-Nurse_rig_tweak_f_ring_03_L
+    4300358: WGT-Nurse_rig_tweak_f_ring_02_L
+    4300360: WGT-Nurse_rig_tweak_f_ring_01_L
+    4300362: WGT-Nurse_rig_f_ring_03_L
+    4300364: WGT-Nurse_rig_f_ring_02_L
+    4300366: WGT-Nurse_rig_f_ring_01_L
+    4300368: WGT-Nurse_rig_tweak_f_pinky_03_R_001
+    4300370: WGT-Nurse_rig_tweak_f_pinky_03_R
+    4300372: WGT-Nurse_rig_tweak_f_pinky_02_R
+    4300374: WGT-Nurse_rig_tweak_f_pinky_01_R
+    4300376: WGT-Nurse_rig_f_pinky_03_R
+    4300378: WGT-Nurse_rig_f_pinky_02_R
+    4300380: WGT-Nurse_rig_f_pinky_01_R
+    4300382: WGT-Nurse_rig_tweak_f_pinky_03_L_001
+    4300384: WGT-Nurse_rig_tweak_f_pinky_03_L
+    4300386: WGT-Nurse_rig_tweak_f_pinky_02_L
+    4300388: WGT-Nurse_rig_tweak_f_pinky_01_L
+    4300390: WGT-Nurse_rig_f_pinky_03_L
+    4300392: WGT-Nurse_rig_f_pinky_02_L
+    4300394: WGT-Nurse_rig_f_pinky_01_L
+    4300396: WGT-Nurse_rig_tweak_f_middle_03_R_001
+    4300398: WGT-Nurse_rig_tweak_f_middle_03_R
+    4300400: WGT-Nurse_rig_tweak_f_middle_02_R
+    4300402: WGT-Nurse_rig_tweak_f_middle_01_R
+    4300404: WGT-Nurse_rig_f_middle_03_R
+    4300406: WGT-Nurse_rig_f_middle_02_R
+    4300408: WGT-Nurse_rig_f_middle_01_R
+    4300410: WGT-Nurse_rig_tweak_f_middle_03_L_001
+    4300412: WGT-Nurse_rig_tweak_f_middle_03_L
+    4300414: WGT-Nurse_rig_tweak_f_middle_02_L
+    4300416: WGT-Nurse_rig_tweak_f_middle_01_L
+    4300418: WGT-Nurse_rig_f_middle_03_L
+    4300420: WGT-Nurse_rig_f_middle_02_L
+    4300422: WGT-Nurse_rig_f_middle_01_L
+    4300424: WGT-Nurse_rig_tweak_f_index_03_R_001
+    4300426: WGT-Nurse_rig_tweak_f_index_03_R
+    4300428: WGT-Nurse_rig_tweak_f_index_02_R
+    4300430: WGT-Nurse_rig_tweak_f_index_01_R
+    4300432: WGT-Nurse_rig_f_index_03_R
+    4300434: WGT-Nurse_rig_f_index_02_R
+    4300436: WGT-Nurse_rig_f_index_01_R
+    4300438: WGT-Nurse_rig_tweak_f_index_03_L_001
+    4300440: WGT-Nurse_rig_tweak_f_index_03_L
+    4300442: WGT-Nurse_rig_tweak_f_index_02_L
+    4300444: WGT-Nurse_rig_tweak_f_index_01_L
+    4300446: WGT-Nurse_rig_f_index_03_L
+    4300448: WGT-Nurse_rig_f_index_02_L
+    4300450: WGT-Nurse_rig_f_index_01_L
+    4300452: WGT-Nurse_rig_palm_R
+    4300454: WGT-Nurse_rig_palm_L
+    4300456: WGT-Nurse_rig_hand_ik_R
+    4300458: WGT-Nurse_rig_hand_fk_R
+    4300460: WGT-Nurse_rig_forearm_fk_R
+    4300462: WGT-Nurse_rig_upper_arm_fk_R
+    4300464: WGT-Nurse_rig_VIS_upper_arm_ik_pole_R
+    4300466: WGT-Nurse_rig_upper_arm_ik_target_R
+    4300468: WGT-Nurse_rig_upper_arm_ik_R
+    4300470: WGT-Nurse_rig_hand_tweak_R
+    4300472: WGT-Nurse_rig_forearm_tweak_R_001
+    4300474: WGT-Nurse_rig_forearm_tweak_R
+    4300476: WGT-Nurse_rig_upper_arm_tweak_R_001
+    4300478: WGT-Nurse_rig_upper_arm_tweak_R
+    4300480: WGT-Nurse_rig_upper_arm_parent_R
+    4300482: WGT-Nurse_rig_hand_ik_L
+    4300484: WGT-Nurse_rig_hand_fk_L
+    4300486: WGT-Nurse_rig_forearm_fk_L
+    4300488: WGT-Nurse_rig_upper_arm_fk_L
+    4300490: WGT-Nurse_rig_VIS_upper_arm_ik_pole_L
+    4300492: WGT-Nurse_rig_upper_arm_ik_target_L
+    4300494: WGT-Nurse_rig_upper_arm_ik_L
+    4300496: WGT-Nurse_rig_hand_tweak_L
+    4300498: WGT-Nurse_rig_forearm_tweak_L_001
+    4300500: WGT-Nurse_rig_forearm_tweak_L
+    4300502: WGT-Nurse_rig_upper_arm_tweak_L_001
+    4300504: WGT-Nurse_rig_upper_arm_tweak_L
+    4300506: WGT-Nurse_rig_upper_arm_parent_L
+    4300508: WGT-Nurse_rig_shoulder_R
+    4300510: WGT-Nurse_rig_shoulder_L
+    4300512: WGT-Nurse_rig_breast_R
+    4300514: WGT-Nurse_rig_breast_L
+    4300516: WGT-Nurse_rig_toe_R
+    4300518: WGT-Nurse_rig_foot_heel_ik_R
+    4300520: WGT-Nurse_rig_foot_ik_R
+    4300522: WGT-Nurse_rig_foot_fk_R
+    4300524: WGT-Nurse_rig_shin_fk_R
+    4300526: WGT-Nurse_rig_thigh_fk_R
+    4300528: WGT-Nurse_rig_VIS_thigh_ik_pole_R
+    4300530: WGT-Nurse_rig_thigh_ik_target_R
+    4300532: WGT-Nurse_rig_thigh_ik_R
+    4300534: WGT-Nurse_rig_foot_tweak_R
+    4300536: WGT-Nurse_rig_shin_tweak_R_001
+    4300538: WGT-Nurse_rig_shin_tweak_R
+    4300540: WGT-Nurse_rig_thigh_tweak_R_001
+    4300542: WGT-Nurse_rig_thigh_tweak_R
+    4300544: WGT-Nurse_rig_thigh_parent_R
+    4300546: WGT-Nurse_rig_toe_L
+    4300548: WGT-Nurse_rig_foot_heel_ik_L
+    4300550: WGT-Nurse_rig_foot_ik_L
+    4300552: WGT-Nurse_rig_foot_fk_L
+    4300554: WGT-Nurse_rig_shin_fk_L
+    4300556: WGT-Nurse_rig_thigh_fk_L
+    4300558: WGT-Nurse_rig_VIS_thigh_ik_pole_L
+    4300560: WGT-Nurse_rig_thigh_ik_target_L
+    4300562: WGT-Nurse_rig_thigh_ik_L
+    4300564: WGT-Nurse_rig_foot_tweak_L
+    4300566: WGT-Nurse_rig_shin_tweak_L_001
+    4300568: WGT-Nurse_rig_shin_tweak_L
+    4300570: WGT-Nurse_rig_thigh_tweak_L_001
+    4300572: WGT-Nurse_rig_thigh_tweak_L
+    4300574: WGT-Nurse_rig_thigh_parent_L
+    4300576: WGT-Nurse_rig_tweak_spine_001
+    4300578: WGT-Nurse_rig_tweak_spine
+    4300580: WGT-Nurse_rig_tweak_spine_003
+    4300582: WGT-Nurse_rig_tweak_spine_002
+    4300584: WGT-Nurse_rig_tweak_spine_005
+    4300586: WGT-Nurse_rig_tweak_spine_004
+    4300588: WGT-Nurse_rig_head
+    4300590: WGT-Nurse_rig_neck
+    4300592: WGT-Nurse_rig_hips
+    4300594: WGT-Nurse_rig_chest
+    4300596: WGT-Nurse_rig_torso
     7400000: Default Take
     7400002: Wizard_rigAction
     9500000: //RootNode
