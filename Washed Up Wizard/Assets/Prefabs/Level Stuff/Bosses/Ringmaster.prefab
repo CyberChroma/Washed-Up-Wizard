@@ -5410,6 +5410,7 @@ MonoBehaviour:
   delay: 0
   randDelay: 0
   firstDelay: 0
+  canShoot: 1
   spawnedObject: {fileID: 0}
 --- !u!114 &114033683061539512
 MonoBehaviour:
@@ -5436,7 +5437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6423265acf6d21e469c60f54b6da75d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   damageAmount: 3
   oneTime: 1
   tagsToDamage:
@@ -5488,6 +5489,7 @@ MonoBehaviour:
   delay: 0
   randDelay: 0
   firstDelay: 0
+  canShoot: 1
   spawnedObject: {fileID: 0}
 --- !u!114 &114512943748261218
 MonoBehaviour:
@@ -5526,6 +5528,7 @@ MonoBehaviour:
   delay: 0
   randDelay: 0
   firstDelay: 0
+  canShoot: 1
   spawnedObject: {fileID: 0}
 --- !u!114 &114986894883698438
 MonoBehaviour:
