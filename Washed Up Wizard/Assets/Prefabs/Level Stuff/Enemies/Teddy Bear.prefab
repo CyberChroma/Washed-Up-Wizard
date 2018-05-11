@@ -5256,13 +5256,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1083278474801922}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalRotation: {x: 0.00000019861236, y: -0.7071068, z: 0.7071068, w: 0.00000019861236}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4695827112164164}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -179.99998, z: 0}
 --- !u!4 &4018556783204278
 Transform:
   m_ObjectHideFlags: 1
@@ -8576,8 +8576,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729866090755386}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -48.39, y: 0, z: -20.75}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 31.2, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4667984079253736}
@@ -15989,7 +15989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootsProjectile: 1
   moveSensitivity: 0.1
-  radius: 10
+  radius: 15
 --- !u!137 &137280677029504812
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
