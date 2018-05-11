@@ -11,6 +11,7 @@ ModelImporter:
     100010: CLAW_005
     100012: Mball_066
     100014: //RootNode
+    100016: Giraffe
     400000: CLAW
     400002: CLAW_001
     400004: CLAW_002
@@ -19,6 +20,7 @@ ModelImporter:
     400010: CLAW_005
     400012: Mball_066
     400014: //RootNode
+    400016: Giraffe
     2100000: Material_012
     2100002: Material_013
     2100004: Material_009
@@ -34,6 +36,7 @@ ModelImporter:
     2300010: CLAW_005
     2300012: Mball_066
     2300014: //RootNode
+    2300016: Giraffe
     3300000: CLAW
     3300002: CLAW_001
     3300004: CLAW_002
@@ -42,6 +45,7 @@ ModelImporter:
     3300010: CLAW_005
     3300012: Mball_066
     3300014: //RootNode
+    3300016: Giraffe
     4300000: Mball_066
     4300002: CLAW_005
     4300004: CLAW_004
@@ -53,7 +57,32 @@ ModelImporter:
     4300016: Giraffe
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_009
+    second: {fileID: 2100000, guid: 9e262ce74a1d9dc40a65443ceb025a2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_012
+    second: {fileID: 2100000, guid: a288afe20dc6e6641b747cf6806043da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_014
+    second: {fileID: 2100000, guid: 214c106220aa23a4cb24ca9d05d76753, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_015
+    second: {fileID: 2100000, guid: bf70cdab60478544da83d714873e0cda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_016
+    second: {fileID: 2100000, guid: c75f79475d3698e43b0761cdc19bbb37, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -109,7 +138,7 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -125,10 +154,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

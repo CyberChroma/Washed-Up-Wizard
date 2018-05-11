@@ -23,7 +23,12 @@ ModelImporter:
     4300004: Right
     7400000: Spin
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Green
+    second: {fileID: 2100000, guid: be16807ec6e993846baa5f6b9dadc595, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

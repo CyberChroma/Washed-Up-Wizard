@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: a28ed9ecb740aa645954f89982475e1b
-timeCreated: 1523989290
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -14,7 +12,17 @@ ModelImporter:
     4300000: Circle
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black
+    second: {fileID: 2100000, guid: a3359c77ace78064697ca87557cbd629, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red
+    second: {fileID: 2100000, guid: 1ba67945873a78740bf9d285e34a87e5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -33,6 +41,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

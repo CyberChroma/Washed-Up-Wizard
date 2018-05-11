@@ -1,28 +1,53 @@
 fileFormatVersion: 2
 guid: be99c95812392cb4da87c0ac29dd30d3
-timeCreated: 1524169321
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     100002: bottle
     100004: Mball
+    100006: Mball_002
     400000: //RootNode
     400002: bottle
     400004: Mball
+    400006: Mball_002
     2100000: unnamed
     2100002: Material_001
     2100004: Material_002
+    2100006: Bottle_Pink
+    2100008: Bottle_Blue
     2300000: bottle
     2300002: Mball
+    2300004: Mball_002
     3300000: bottle
     3300002: Mball
+    3300004: Mball_002
     4300000: Mball
     4300002: bottle
+    4300004: Mball_002
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottle_Blue
+    second: {fileID: 2100000, guid: 9141d50c551dcdc4fb594830b2666462, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottle_Pink
+    second: {fileID: 2100000, guid: 7ba8f6c292a44ca47b870acd124769ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: 618ae249b2e9bd841b1c06f314fe49ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_002
+    second: {fileID: 2100000, guid: 885c289b688ccaf419ca2e6fa4de364e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -41,6 +66,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -55,10 +81,10 @@ ModelImporter:
     globalScale: 0.2
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -73,11 +99,11 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 80
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -93,10 +119,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

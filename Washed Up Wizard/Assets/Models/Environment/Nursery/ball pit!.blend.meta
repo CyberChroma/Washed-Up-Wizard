@@ -85,6 +85,7 @@ ModelImporter:
     100158: Sphere_077
     100160: Sphere_078
     100162: Sphere_079
+    100164: Balls
     400000: //RootNode
     400002: Cube
     400004: Sphere
@@ -167,6 +168,7 @@ ModelImporter:
     400158: Sphere_077
     400160: Sphere_078
     400162: Sphere_079
+    400164: Balls
     2100000: RED
     2100002: Material_001
     2100004: Material_002
@@ -174,6 +176,7 @@ ModelImporter:
     2100008: Material_004
     2100010: Material_003
     2100012: unnamed
+    2100014: Material
     2300000: Cube
     2300002: Sphere
     2300004: Sphere_001
@@ -255,6 +258,7 @@ ModelImporter:
     2300156: Sphere_077
     2300158: Sphere_078
     2300160: Sphere_079
+    2300162: Balls
     3300000: Cube
     3300002: Sphere
     3300004: Sphere_001
@@ -336,6 +340,7 @@ ModelImporter:
     3300156: Sphere_077
     3300158: Sphere_078
     3300160: Sphere_079
+    3300162: Balls
     4300000: Sphere_079
     4300002: Sphere_078
     4300004: Sphere_077
@@ -417,9 +422,45 @@ ModelImporter:
     4300156: Sphere_001
     4300158: Sphere
     4300160: Cube
+    4300162: Balls
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: 7878f6120e2e87f4da79de96426acc5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_002
+    second: {fileID: 2100000, guid: 108f65002f30f0e4cae4cdbd1efe9dff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_003
+    second: {fileID: 2100000, guid: ab0e51ca7a82bcd4b8eb5325ee565e59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_004
+    second: {fileID: 2100000, guid: e7261dce8a69f5740bf3db6f9cbf5f3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_005
+    second: {fileID: 2100000, guid: 9c1d06a9659c267478feb42f7bac5f66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RED
+    second: {fileID: 2100000, guid: 582031742a0732345b47ad44c3946fd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unnamed
+    second: {fileID: 2100000, guid: 4de9b739cec0ef6429b58f05e15ebc67, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -453,10 +494,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -471,11 +512,11 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 80
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -491,10 +532,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
