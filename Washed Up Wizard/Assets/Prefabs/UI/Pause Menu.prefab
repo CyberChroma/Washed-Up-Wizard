@@ -195,9 +195,10 @@ GameObject:
   - component: {fileID: 224378783805474138}
   - component: {fileID: 222506140746950422}
   - component: {fileID: 114141407156263480}
+  - component: {fileID: 61495430314731188}
   m_Layer: 5
   m_Name: Controls Screen
-  m_TagString: Untagged
+  m_TagString: Default
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -298,9 +299,10 @@ GameObject:
   - component: {fileID: 224308148307897672}
   - component: {fileID: 222814116211937188}
   - component: {fileID: 114386778710598026}
+  - component: {fileID: 61540780688586244}
   m_Layer: 5
   m_Name: Change Controls Screen
-  m_TagString: Untagged
+  m_TagString: Default
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,6 +458,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224843760193087418}
+  - component: {fileID: 114417018797759330}
   m_Layer: 5
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -560,9 +563,10 @@ GameObject:
   - component: {fileID: 224060206749210800}
   - component: {fileID: 222415891911097408}
   - component: {fileID: 114714850138809428}
+  - component: {fileID: 61007373456828054}
   m_Layer: 5
   m_Name: Pause Screen
-  m_TagString: Untagged
+  m_TagString: Default
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1030,6 +1034,81 @@ Transform:
   m_Father: {fileID: 224843760193087418}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61007373456828054
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1524937895761514}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -12.938416, y: 14.01963}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 829.7262, y: 438.53607}
+  m_EdgeRadius: 0
+--- !u!61 &61495430314731188
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1212707934645664}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -7.987549, y: 49.83049}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 870.74646, y: 578.30444}
+  m_EdgeRadius: 0
+--- !u!61 &61540780688586244
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1280604736062984}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.3933716, y: 8.431755}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 840.23157, y: 481.9134}
+  m_EdgeRadius: 0
 --- !u!114 &114011226679373514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2264,6 +2343,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Quit
+--- !u!114 &114417018797759330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1453444516174264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649531f6be93a344cacb5491fa151e76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 4c613da18dd058e4fb50ab71f541a703, type: 3}
+  cursorMode: 0
 --- !u!114 &114432951648105744
 MonoBehaviour:
   m_ObjectHideFlags: 1
