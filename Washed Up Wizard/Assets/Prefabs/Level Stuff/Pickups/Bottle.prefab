@@ -37,7 +37,6 @@ GameObject:
   - component: {fileID: 4222379338648854}
   - component: {fileID: 95114460968484410}
   - component: {fileID: 114987729603616002}
-  - component: {fileID: 135931644600556252}
   m_Layer: 0
   m_Name: bottle
   m_TagString: Untagged
@@ -114,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1143040493027798}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -131.65, y: 1, z: 17.84}
+  m_LocalPosition: {x: -121.6, y: 1, z: -3.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4222379338648854}
@@ -262,15 +261,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: -0.1, y: 0, z: -81.52}
---- !u!135 &135931644600556252
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1203621374970644}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0.3, z: 0}
