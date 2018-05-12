@@ -87,6 +87,14 @@ public class PlayerMoveInput : MonoBehaviour {
             moveVector = Vector3.zero;
             inputController.SetActive(false);
         }
+        if (transform.position.y > 1.5f)
+        {
+            transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
+        }
+        else if (transform.position.y < -5)
+        {
+            health.currentHealth = 0;
+        }
 	}
 
     void OnTriggerEnter (Collider other) {

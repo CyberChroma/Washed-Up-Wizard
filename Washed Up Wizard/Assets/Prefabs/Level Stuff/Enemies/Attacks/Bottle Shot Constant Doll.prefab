@@ -21,11 +21,11 @@ GameObject:
   - component: {fileID: 4356471517780976}
   - component: {fileID: 114962645034382534}
   - component: {fileID: 114647515439083070}
-  - component: {fileID: 114415495792445410}
   - component: {fileID: 54934578042370622}
   - component: {fileID: 114477670406928316}
   - component: {fileID: 114463415919633698}
   - component: {fileID: 65466437592727672}
+  - component: {fileID: 114933530597527248}
   m_Layer: 0
   m_Name: Bottle Shot Constant Doll
   m_TagString: Projectile
@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1072100834467396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -139.76575, y: 0.09999208, z: -124.66608}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4061562632532864}
@@ -171,29 +171,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1072100834467396}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114415495792445410
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1072100834467396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 490fcab7d15cd3747a71e7038a73957c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0
-  tagsToDestroy:
-  - Player
-  - Environment
-  - Player Shield
-  - Breakable
-  tagsToIgnore: []
 --- !u!114 &114463415919633698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,6 +190,9 @@ MonoBehaviour:
   delay: 0
   tagsToDestroy:
   - Player
+  - Player Shield
+  - Environment
+  - Breakable
   tagsToIgnore: []
 --- !u!114 &114477670406928316
 MonoBehaviour:
@@ -236,6 +221,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 10
+--- !u!114 &114933530597527248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072100834467396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214aadae9e17298458d2b2bc1099a46d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  damageAmount: 1.5
+  oneTime: 1
+  tagsToDamage:
+  - Player
+  push: 0
+  pushForce: 1
 --- !u!114 &114962645034382534
 MonoBehaviour:
   m_ObjectHideFlags: 1

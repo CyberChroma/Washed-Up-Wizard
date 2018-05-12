@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 54631666005492300}
   - component: {fileID: 114819049917784708}
   - component: {fileID: 65098399802730894}
+  - component: {fileID: 114783272270864000}
   m_Layer: 0
   m_Name: Bottle Shot Constant TeddyBear
   m_TagString: Projectile
@@ -85,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1346033619133550}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -139.45645, y: 0.0999926, z: -120.27632}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4985507869816300}
@@ -171,7 +172,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1346033619133550}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.4, z: 1}
@@ -221,6 +222,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 10
+--- !u!114 &114783272270864000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346033619133550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214aadae9e17298458d2b2bc1099a46d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  damageAmount: 1.5
+  oneTime: 1
+  tagsToDamage:
+  - Player
+  push: 0
+  pushForce: 1
 --- !u!114 &114819049917784708
 MonoBehaviour:
   m_ObjectHideFlags: 1
