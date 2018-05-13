@@ -64,6 +64,14 @@ public class PlayerMoveInput : MonoBehaviour {
                 else {
                     h = Mathf.MoveTowards(h, 0, currentSensitivity);
                 }
+                if (transform.position.y > 1.5f)
+                {
+                    transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
+                }
+                else if (transform.position.y < -5)
+                {
+                    health.currentHealth = 0;
+                }
             }
             if (v != 0 || h != 0) {
                 anim.SetBool("IsWalking", true);
@@ -86,14 +94,6 @@ public class PlayerMoveInput : MonoBehaviour {
             h = 0;
             moveVector = Vector3.zero;
             inputController.SetActive(false);
-        }
-        if (transform.position.y > 1.5f)
-        {
-            transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
-        }
-        else if (transform.position.y < -5)
-        {
-            health.currentHealth = 0;
         }
 	}
 
