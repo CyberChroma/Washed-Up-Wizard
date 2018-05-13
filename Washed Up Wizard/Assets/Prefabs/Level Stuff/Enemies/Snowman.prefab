@@ -732,6 +732,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114180906021402410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -743,6 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d6b837f87e6934d922e5de684abda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootsProjectile: 0
   moveSensitivity: 0.1
   radius: 15
 --- !u!114 &114201542661246638
@@ -802,7 +804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1139488807825182}
-  startHealth: 2.5
+  startHealth: 3
   tempStopHitsTime: 0.25
   disableOnDeath: 1
   disableDelay: 1.5
@@ -823,6 +825,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 57d1a33870d7de945840fc5f630c5997, type: 2}
   - {fileID: 2100000, guid: bb114c69830a7754e8ce3796a8d46783, type: 2}
