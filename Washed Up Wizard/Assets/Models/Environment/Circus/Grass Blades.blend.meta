@@ -23,7 +23,12 @@ ModelImporter:
     4300004: Grass
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass
+    second: {fileID: 2100000, guid: 1d6c2239fcbf9034a8a46a24ebb9e82b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour {
-
+    
     public string sceneToLoad = "";
     public float delay = 0;
 
-    void OnEnable () {
+    void OnEnable () {  
         if (delay != 0)
         {
             StartCoroutine(WaitToLoadScene());

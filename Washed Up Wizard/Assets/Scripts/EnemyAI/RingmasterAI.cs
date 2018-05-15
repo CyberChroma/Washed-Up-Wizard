@@ -174,6 +174,21 @@ public class RingmasterAI : MonoBehaviour {
             rb.velocity = Vector3.zero;
             transform.position = Vector3.up * 20;
         }
+        if (transform.position.y <= 0.5f && isJumping && attackState != AttackState.UnicycleCharge) {
+            moveByForce.dir = Vector3.zero;
+            isJumping = false;
+            canSpawn = true;
+            if (attackState == AttackState.FlamingHoop)
+            {
+                anim.SetTrigger("Land Hoop");
+                StartCoroutine(WaitToJump(timeBetweenHoopJumps));
+            }
+            else if (attackState == AttackState.Stomp)
+            {
+                anim.SetTrigger("Land Stomp");
+                StartCoroutine(WaitToJump(timeBetweenStompJumps));
+            }
+        }
     }
 
     void CalculatePhase () {

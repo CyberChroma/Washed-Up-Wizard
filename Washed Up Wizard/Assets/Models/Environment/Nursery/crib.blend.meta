@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: a27bfbc7d1b954e43bd8b44e0fc97d04
-timeCreated: 1524169196
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -16,6 +14,9 @@ ModelImporter:
     2100000: Material_002
     2100002: Material_001
     2100004: Material
+    2100006: Crib_White
+    2100008: Crib_Tan
+    2100010: Crib_Dark_Tan
     2300000: BASE_BORD
     2300002: Cube
     2300004: POST
@@ -27,7 +28,37 @@ ModelImporter:
     4300004: POST
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crib_Dark_Tan
+    second: {fileID: 2100000, guid: 742ca0d7b79847f47af9d48a8c9422ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crib_Tan
+    second: {fileID: 2100000, guid: 5de666d4f7721234198b5f44a67401f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crib_White
+    second: {fileID: 2100000, guid: 662a4816a37da1040810e57caabbe8e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 2a2cb9c93378a09439948433a41482b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: 3381c3afd34f672449d1b46cd4ad0bbf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_002
+    second: {fileID: 2100000, guid: ea5db6ca1806edc48848d578c930c014, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -46,6 +77,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -60,10 +92,10 @@ ModelImporter:
     globalScale: 0.5
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -78,11 +110,11 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 80
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -98,10 +130,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

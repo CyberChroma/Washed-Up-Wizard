@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/User/Documents/Builds For WUW/WUW test 1.1/WUW test 1.1.exe
+C:/Users/Brandon/Documents/GitHub/Washed-Up-Wizard-Demo/Washed-Up-Wizard-Demo.exe
 SceneListBegin?
 Assets/Scenes/Level Select.unity
 Assets/Scenes/Hospital.unity
@@ -11,13 +11,12 @@ Assets/Scenes/Frozen Tundra.unity
 Assets/Scenes/Frozen Tundra 2.unity
 Assets/Scenes/Frozen Tundra 3.unity
 Assets/Scenes/Wendigo Boss.unity
-Assets/Scenes/Ice Cave.unity
 Assets/Scenes/Circus Temp.unity
 Assets/Scenes/Ringmaster Boss.unity
 Assets/Scenes/Nursery.unity
-Assets/Scenes/Nursery 1.unity
 Assets/Scenes/Nursery 2.unity
 Assets/Scenes/Nursery 3.unity
+Assets/Scenes/Nursery 4.unity
 Assets/Scenes/The Twins Boss.unity
 Assets/Scenes/Cutscene Scenes/Intro.unity
 Assets/Scenes/Cutscene Scenes/Slime Cube Intro.unity
@@ -49,6 +48,7 @@ e1ff970319fa33ba4daa3ef83c5282a8 Assembly-CSharp.dll:.DialogueManager
 2ef522bf3730373c123b3be0ccc5dcd4 Assembly-CSharp.dll:.InputChange
 3b28070f2551977e159e7f6a29f91be4 Assembly-CSharp.dll:.SpawnAndDestroyEffects
 80969a9ddc72ce5785dd6beba8899cf3 Assembly-CSharp.dll:.SpawnObjectByActivate
+04f004b3c2c7cd814f9e9e020079fb34 Assembly-CSharp.dll:.KillEnemies
 785bed302105a370ce022f9a1e6a3c8d Assembly-CSharp.dll:.Health
 f4ac7031ea1eae2b7e03b3182be88069 Assembly-CSharp.dll:.HealOverTime
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
@@ -174,6 +174,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 c58ccfa229c87e40537326cfb3a3f14c Assembly-CSharp.dll:.SpinInDirection
 178942b3c693e9cfe4214333d0ee402a Assembly-CSharp.dll:.ActivateRotateCopyTarget
 02cdd1d3af1dd7e54299e706c9ec4144 Assembly-CSharp.dll:.CombinationsMenu
+b4fb328b97d47ff96030ac51360397fe Assembly-CSharp.dll:.CursorChange
 593939956b3f314adcbee2841727d5cb Assembly-CSharp.dll:.SpellUnlock
 13ec379acae2d078183bbfdf95d9b483 Assembly-CSharp.dll:.MeleeEnemyAI
 e291966036be598f80b67739568263c4 Assembly-CSharp.dll:.MoveInDirection
@@ -201,7 +202,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 ca348b16bfde558c5758f13519d25dba Assembly-CSharp.dll:.SpawnObjectsByTime
-daa47590dd1edf0ea31d59222897c053 Assembly-CSharp.dll:.DialogueTrigger
+e0c6d5aaa782e6eede772493bedbbaf7 Assembly-CSharp.dll:.DialogueTrigger
 e62861c117e3b7fd6e4e53ab4e8b0b6d Assembly-CSharp.dll:.FollowTargetChangeOnActivate
 f9bb36c90ed6663ff56d6710edf26841 Assembly-CSharp.dll:.SpellInputReceiver
 ee803d59682d21e6281b0e8a165cf658 Assembly-CSharp.dll:.DamageByTouchCollision
@@ -250,4 +251,3 @@ ccb5001a690522a340d624dd627ab8c3 Assembly-CSharp.dll:.ActivateSpawnByTime
 83e2192ff221302d0750b406ad45b654 Assembly-CSharp.dll:.SpawnObjectChangeSpeed
 51f08054d276a82a2721617c063671fe Assembly-CSharp.dll:.MoveInDirectionPattern
 f9af4db43fb81cbab9654cce5776622e Assembly-CSharp.dll:.WaveSpinForce
-b4fb328b97d47ff96030ac51360397fe Assembly-CSharp.dll:.CursorChange
