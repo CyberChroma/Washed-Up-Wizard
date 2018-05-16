@@ -7,9 +7,10 @@ public class DialogueTrigger : MonoBehaviour {
     public Dialogue dialogue;
 
     private Animator anim;
+    private bool canTalk = true;
 
     public void OnTriggerEnter(Collider other) {
-        if (other.CompareTag ("Player"))
+        if (other.CompareTag ("Player") && canTalk)
         {
             FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
             if (!dialogue.hasTask)
@@ -17,7 +18,9 @@ public class DialogueTrigger : MonoBehaviour {
                 gameObject.SetActive(false);
             } else if (dialogue.taskComplete) {
                 GetComponentInChildren<Animator>().SetTrigger("Activate");
+                enabled = false;
             }
+            canTalk = false;
         }
     }
 
@@ -31,6 +34,9 @@ public class DialogueTrigger : MonoBehaviour {
                 {
                     dialogue.taskComplete = false;
                 }
+            }
+            if (dialogue.taskComplete) {
+                canTalk = true;
             }
         }
         dialogue.getSentences();
