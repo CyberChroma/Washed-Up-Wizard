@@ -24340,7 +24340,6 @@ MonoBehaviour:
     - {fileID: 4900000, guid: 17a9f025858e1c74883fca640a752aa2, type: 3}
     taskComplete: 0
     sentences: []
-    thankYou: 0
 --- !u!1001 &734171378
 Prefab:
   m_ObjectHideFlags: 0
@@ -30052,7 +30051,7 @@ GameObject:
   - component: {fileID: 909914559}
   - component: {fileID: 909914561}
   - component: {fileID: 909914560}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43525,6 +43524,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 81767fec31453d04ca0bc87edb40db1a, type: 2}
+    - target: {fileID: 100000, guid: 7ca2b0a1f236d574c833684441cee36c, type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7ca2b0a1f236d574c833684441cee36c, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ca2b0a1f236d574c833684441cee36c, type: 3}
   m_IsPrefabParent: 0
