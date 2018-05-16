@@ -29,6 +29,13 @@ public class DialogueManager : MonoBehaviour {
             sentences.Enqueue(sentence);
         }
         DisplayNextSentence();
+        if (!dialogue.thankYou)
+        {
+            if (dialogue.hasTask && dialogue.taskComplete)
+            {
+                dialogue.thankYou = true;
+            }
+        }
     }
 
     void Update () {
