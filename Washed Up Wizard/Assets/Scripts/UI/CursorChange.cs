@@ -8,11 +8,10 @@ public class CursorChange : MonoBehaviour {
     public Texture2D cursorTexture;
     public CursorMode cursorMode = CursorMode.Auto;
 
-    private Vector2 hotSpot;
+    private Vector2 hotSpot = Vector2.zero;
     private GameObject PauseManager;
     void Start()
     {
-        hotSpot = new Vector2(cursorTexture.width / 2, cursorTexture.width / 2);
         PauseManager = GameObject.Find("Pause Manager");
     }
     void Update ()
@@ -23,7 +22,7 @@ public class CursorChange : MonoBehaviour {
         }
         else if (PauseManager.GetComponent<PauseManager>().isPaused)
         {
-            Cursor.SetCursor(null, Vector2.zero, cursorMode);
+            Cursor.SetCursor(null, hotSpot, cursorMode);
         }
     }
 }

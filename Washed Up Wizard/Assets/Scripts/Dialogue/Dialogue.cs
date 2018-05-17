@@ -15,23 +15,18 @@ public class Dialogue {
 
     [HideInInspector] public bool taskComplete = false;
     [HideInInspector] public string[] sentences;
-    [HideInInspector] public bool thankYou = false;
 
     public void getSentences () {
         numOfLines = textReferences.Length;
         if (hasTask)
         {
-            if (taskComplete == false)
+            if (!taskComplete)
             {
                 sentences = textReferences[0].text.Split('\n');
             }
-            else if (taskComplete == true && thankYou == false)
+            else
             {
                 sentences = textReferences[1].text.Split('\n');
-            }
-            else if (taskComplete == true && thankYou == true)
-            {
-                sentences = textReferences[Random.Range(2, numOfLines)].text.Split('\n');
             }
         }
         else
