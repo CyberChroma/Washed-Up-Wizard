@@ -6,13 +6,12 @@ using UnityEngine.UI;
 public class CursorChange : MonoBehaviour {
 
     public Texture2D cursorTexture;
+    public Vector2 hotSpot;
     public CursorMode cursorMode = CursorMode.Auto;
-
-    private Vector2 hotSpot;
     private GameObject PauseManager;
     void Start()
     {
-        hotSpot = new Vector2(cursorTexture.width / 2, cursorTexture.width / 2);
+        hotSpot = new Vector2(cursorTexture.width/2, cursorTexture.width/2);
         PauseManager = GameObject.Find("Pause Manager");
     }
     void Update ()
