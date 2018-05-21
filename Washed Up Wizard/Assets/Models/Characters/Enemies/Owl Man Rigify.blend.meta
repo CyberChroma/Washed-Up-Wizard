@@ -402,6 +402,8 @@ ModelImporter:
     100792: Eyebrows
     100794: Fur
     100796: Buttons
+    100798: Wing
+    100800: Owl_Man_rig
     400000: //RootNode
     400002: Body
     400004: breast_L
@@ -801,6 +803,8 @@ ModelImporter:
     400792: Eyebrows
     400794: Fur
     400796: Buttons
+    400798: Wing
+    400800: Owl_Man_rig
     2100000: unnamed
     2100002: Skin
     2100004: Shoe
@@ -1005,6 +1009,7 @@ ModelImporter:
     2300344: Eyebrows
     2300346: Fur
     2300348: Buttons
+    2300350: Wing
     3300000: //RootNode
     3300002: Body
     3300004: Cube
@@ -1180,6 +1185,7 @@ ModelImporter:
     3300344: Eyebrows
     3300346: Fur
     3300348: Buttons
+    3300350: Wing
     4300000: Wizard
     4300002: Cube
     4300004: WGTS_Wizard_rig
@@ -1599,6 +1605,164 @@ ModelImporter:
     4300832: Eyebrows
     4300834: Fur
     4300836: Buttons
+    4300838: Wing
+    4300840: WGTS_Owl_Man_rig
+    4300842: WGT-Owl_Man_rig_hand_R_ik_001
+    4300844: WGT-Owl_Man_rig_hand_R_fk_001
+    4300846: WGT-Owl_Man_rig_forearm_R_fk_001
+    4300848: WGT-Owl_Man_rig_upper_arm_R_fk_001
+    4300850: WGT-Owl_Man_rig_VIS_upper_arm_R_ik_pole_001
+    4300852: WGT-Owl_Man_rig_upper_arm_R_ik_target_001
+    4300854: WGT-Owl_Man_rig_upper_arm_R_ik_001
+    4300856: WGT-Owl_Man_rig_hand_R_tweak_001
+    4300858: WGT-Owl_Man_rig_forearm_R_tweak_002
+    4300860: WGT-Owl_Man_rig_forearm_R_tweak_001
+    4300862: WGT-Owl_Man_rig_upper_arm_R_tweak_002
+    4300864: WGT-Owl_Man_rig_upper_arm_R_tweak_001
+    4300866: WGT-Owl_Man_rig_upper_arm_R_parent_001
+    4300868: WGT-Owl_Man_rig_hand_L_ik_001
+    4300870: WGT-Owl_Man_rig_hand_L_fk_001
+    4300872: WGT-Owl_Man_rig_forearm_L_fk_001
+    4300874: WGT-Owl_Man_rig_upper_arm_L_fk_001
+    4300876: WGT-Owl_Man_rig_VIS_upper_arm_L_ik_pole_001
+    4300878: WGT-Owl_Man_rig_upper_arm_L_ik_target_001
+    4300880: WGT-Owl_Man_rig_upper_arm_L_ik_001
+    4300882: WGT-Owl_Man_rig_hand_L_tweak_001
+    4300884: WGT-Owl_Man_rig_forearm_L_tweak_002
+    4300886: WGT-Owl_Man_rig_forearm_L_tweak_001
+    4300888: WGT-Owl_Man_rig_upper_arm_L_tweak_002
+    4300890: WGT-Owl_Man_rig_upper_arm_L_tweak_001
+    4300892: WGT-Owl_Man_rig_upper_arm_L_parent_001
+    4300894: WGT-Owl_Man_rig_root
+    4300896: WGT-Owl_Man_rig_tweak_thumb_03_R_001
+    4300898: WGT-Owl_Man_rig_tweak_thumb_03_R
+    4300900: WGT-Owl_Man_rig_tweak_thumb_02_R
+    4300902: WGT-Owl_Man_rig_tweak_thumb_01_R
+    4300904: WGT-Owl_Man_rig_thumb_03_R
+    4300906: WGT-Owl_Man_rig_thumb_02_R
+    4300908: WGT-Owl_Man_rig_thumb_01_R
+    4300910: WGT-Owl_Man_rig_tweak_thumb_03_L_001
+    4300912: WGT-Owl_Man_rig_tweak_thumb_03_L
+    4300914: WGT-Owl_Man_rig_tweak_thumb_02_L
+    4300916: WGT-Owl_Man_rig_tweak_thumb_01_L
+    4300918: WGT-Owl_Man_rig_thumb_03_L
+    4300920: WGT-Owl_Man_rig_thumb_02_L
+    4300922: WGT-Owl_Man_rig_thumb_01_L
+    4300924: WGT-Owl_Man_rig_tweak_f_ring_03_R_001
+    4300926: WGT-Owl_Man_rig_tweak_f_ring_03_R
+    4300928: WGT-Owl_Man_rig_tweak_f_ring_02_R
+    4300930: WGT-Owl_Man_rig_tweak_f_ring_01_R
+    4300932: WGT-Owl_Man_rig_f_ring_03_R
+    4300934: WGT-Owl_Man_rig_f_ring_02_R
+    4300936: WGT-Owl_Man_rig_f_ring_01_R
+    4300938: WGT-Owl_Man_rig_tweak_f_ring_03_L_001
+    4300940: WGT-Owl_Man_rig_tweak_f_ring_03_L
+    4300942: WGT-Owl_Man_rig_tweak_f_ring_02_L
+    4300944: WGT-Owl_Man_rig_tweak_f_ring_01_L
+    4300946: WGT-Owl_Man_rig_f_ring_03_L
+    4300948: WGT-Owl_Man_rig_f_ring_02_L
+    4300950: WGT-Owl_Man_rig_f_ring_01_L
+    4300952: WGT-Owl_Man_rig_tweak_f_middle_03_R_001
+    4300954: WGT-Owl_Man_rig_tweak_f_middle_03_R
+    4300956: WGT-Owl_Man_rig_tweak_f_middle_02_R
+    4300958: WGT-Owl_Man_rig_tweak_f_middle_01_R
+    4300960: WGT-Owl_Man_rig_f_middle_03_R
+    4300962: WGT-Owl_Man_rig_f_middle_02_R
+    4300964: WGT-Owl_Man_rig_f_middle_01_R
+    4300966: WGT-Owl_Man_rig_tweak_f_middle_03_L_001
+    4300968: WGT-Owl_Man_rig_tweak_f_middle_03_L
+    4300970: WGT-Owl_Man_rig_tweak_f_middle_02_L
+    4300972: WGT-Owl_Man_rig_tweak_f_middle_01_L
+    4300974: WGT-Owl_Man_rig_f_middle_03_L
+    4300976: WGT-Owl_Man_rig_f_middle_02_L
+    4300978: WGT-Owl_Man_rig_f_middle_01_L
+    4300980: WGT-Owl_Man_rig_tweak_f_index_03_R_001
+    4300982: WGT-Owl_Man_rig_tweak_f_index_03_R
+    4300984: WGT-Owl_Man_rig_tweak_f_index_02_R
+    4300986: WGT-Owl_Man_rig_tweak_f_index_01_R
+    4300988: WGT-Owl_Man_rig_f_index_03_R
+    4300990: WGT-Owl_Man_rig_f_index_02_R
+    4300992: WGT-Owl_Man_rig_f_index_01_R
+    4300994: WGT-Owl_Man_rig_tweak_f_index_03_L_001
+    4300996: WGT-Owl_Man_rig_tweak_f_index_03_L
+    4300998: WGT-Owl_Man_rig_tweak_f_index_02_L
+    4301000: WGT-Owl_Man_rig_tweak_f_index_01_L
+    4301002: WGT-Owl_Man_rig_f_index_03_L
+    4301004: WGT-Owl_Man_rig_f_index_02_L
+    4301006: WGT-Owl_Man_rig_f_index_01_L
+    4301008: WGT-Owl_Man_rig_palm_R
+    4301010: WGT-Owl_Man_rig_palm_L
+    4301012: WGT-Owl_Man_rig_hand_ik_R
+    4301014: WGT-Owl_Man_rig_hand_fk_R
+    4301016: WGT-Owl_Man_rig_forearm_fk_R
+    4301018: WGT-Owl_Man_rig_upper_arm_fk_R
+    4301020: WGT-Owl_Man_rig_VIS_upper_arm_ik_pole_R
+    4301022: WGT-Owl_Man_rig_upper_arm_ik_target_R
+    4301024: WGT-Owl_Man_rig_upper_arm_ik_R
+    4301026: WGT-Owl_Man_rig_hand_tweak_R
+    4301028: WGT-Owl_Man_rig_forearm_tweak_R_001
+    4301030: WGT-Owl_Man_rig_forearm_tweak_R
+    4301032: WGT-Owl_Man_rig_upper_arm_tweak_R_001
+    4301034: WGT-Owl_Man_rig_upper_arm_tweak_R
+    4301036: WGT-Owl_Man_rig_upper_arm_parent_R
+    4301038: WGT-Owl_Man_rig_hand_ik_L
+    4301040: WGT-Owl_Man_rig_hand_fk_L
+    4301042: WGT-Owl_Man_rig_forearm_fk_L
+    4301044: WGT-Owl_Man_rig_upper_arm_fk_L
+    4301046: WGT-Owl_Man_rig_VIS_upper_arm_ik_pole_L
+    4301048: WGT-Owl_Man_rig_upper_arm_ik_target_L
+    4301050: WGT-Owl_Man_rig_upper_arm_ik_L
+    4301052: WGT-Owl_Man_rig_hand_tweak_L
+    4301054: WGT-Owl_Man_rig_forearm_tweak_L_001
+    4301056: WGT-Owl_Man_rig_forearm_tweak_L
+    4301058: WGT-Owl_Man_rig_upper_arm_tweak_L_001
+    4301060: WGT-Owl_Man_rig_upper_arm_tweak_L
+    4301062: WGT-Owl_Man_rig_upper_arm_parent_L
+    4301064: WGT-Owl_Man_rig_shoulder_R
+    4301066: WGT-Owl_Man_rig_shoulder_L
+    4301068: WGT-Owl_Man_rig_breast_R
+    4301070: WGT-Owl_Man_rig_breast_L
+    4301072: WGT-Owl_Man_rig_toe_R
+    4301074: WGT-Owl_Man_rig_foot_heel_ik_R
+    4301076: WGT-Owl_Man_rig_foot_ik_R
+    4301078: WGT-Owl_Man_rig_foot_fk_R
+    4301080: WGT-Owl_Man_rig_shin_fk_R
+    4301082: WGT-Owl_Man_rig_thigh_fk_R
+    4301084: WGT-Owl_Man_rig_VIS_thigh_ik_pole_R
+    4301086: WGT-Owl_Man_rig_thigh_ik_target_R
+    4301088: WGT-Owl_Man_rig_thigh_ik_R
+    4301090: WGT-Owl_Man_rig_foot_tweak_R
+    4301092: WGT-Owl_Man_rig_shin_tweak_R_001
+    4301094: WGT-Owl_Man_rig_shin_tweak_R
+    4301096: WGT-Owl_Man_rig_thigh_tweak_R_001
+    4301098: WGT-Owl_Man_rig_thigh_tweak_R
+    4301100: WGT-Owl_Man_rig_thigh_parent_R
+    4301102: WGT-Owl_Man_rig_toe_L
+    4301104: WGT-Owl_Man_rig_foot_heel_ik_L
+    4301106: WGT-Owl_Man_rig_foot_ik_L
+    4301108: WGT-Owl_Man_rig_foot_fk_L
+    4301110: WGT-Owl_Man_rig_shin_fk_L
+    4301112: WGT-Owl_Man_rig_thigh_fk_L
+    4301114: WGT-Owl_Man_rig_VIS_thigh_ik_pole_L
+    4301116: WGT-Owl_Man_rig_thigh_ik_target_L
+    4301118: WGT-Owl_Man_rig_thigh_ik_L
+    4301120: WGT-Owl_Man_rig_foot_tweak_L
+    4301122: WGT-Owl_Man_rig_shin_tweak_L_001
+    4301124: WGT-Owl_Man_rig_shin_tweak_L
+    4301126: WGT-Owl_Man_rig_thigh_tweak_L_001
+    4301128: WGT-Owl_Man_rig_thigh_tweak_L
+    4301130: WGT-Owl_Man_rig_thigh_parent_L
+    4301132: WGT-Owl_Man_rig_tweak_spine_001
+    4301134: WGT-Owl_Man_rig_tweak_spine
+    4301136: WGT-Owl_Man_rig_tweak_spine_003
+    4301138: WGT-Owl_Man_rig_tweak_spine_002
+    4301140: WGT-Owl_Man_rig_tweak_spine_005
+    4301142: WGT-Owl_Man_rig_tweak_spine_004
+    4301144: WGT-Owl_Man_rig_head
+    4301146: WGT-Owl_Man_rig_neck
+    4301148: WGT-Owl_Man_rig_hips
+    4301150: WGT-Owl_Man_rig_chest
+    4301152: WGT-Owl_Man_rig_torso
     7400000: Taunt
     7400002: Wizard_rigAction
     7400004: Jump
@@ -1617,6 +1781,7 @@ ModelImporter:
     7400030: Balloon Gun
     7400032: Exit Balloon
     7400034: Default Take
+    7400036: Owl_Man_rigAction
     9500000: //RootNode
     13700000: Body
     13700002: Eyelashes
@@ -1634,6 +1799,10 @@ ModelImporter:
     13700026: Button_002
     13700028: Tie
     13700030: Child_Hat
+    13700032: Buttons
+    13700034: Eyebrows
+    13700036: Fur
+    13700038: Wings
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
