@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameSaver : MonoBehaviour {
@@ -11,7 +10,7 @@ public class GameSaver : MonoBehaviour {
     [HideInInspector] public SpellUnlockState[] spellUnlockStates;
 
     private int unlockedLevel = 1;
-    private Button[] levelButtons;
+    private GameObject[] levelButtons;
     private bool[] spellsUnlocked;
 
     // Use this for initialization
@@ -37,7 +36,7 @@ public class GameSaver : MonoBehaviour {
         {
             for (int i = 0; i < levelButtons.Length; i++)
             {
-                levelButtons[i].interactable = true;
+                levelButtons[i].SetActive (true);
                 unlockedLevel = 11;
             }
         }
@@ -85,21 +84,21 @@ public class GameSaver : MonoBehaviour {
         }
         if (SceneManager.GetActiveScene().name == "Level Select")
         {
-            levelButtons = new Button[11];
-            levelButtons[0] = GameObject.Find("Hospital").GetComponent<Button>();
-            levelButtons[1] = GameObject.Find("Slime Cube").GetComponent<Button>();
-            levelButtons[2] = GameObject.Find("Frozen Tundra").GetComponent<Button>();
-            levelButtons[3] = GameObject.Find("Wendigo").GetComponent<Button>();
-            levelButtons[4] = GameObject.Find("Circus").GetComponent<Button>();
-            levelButtons[5] = GameObject.Find("Ringmaster").GetComponent<Button>();
-            levelButtons[6] = GameObject.Find("Nursery").GetComponent<Button>();
-            levelButtons[7] = GameObject.Find("The Twins").GetComponent<Button>();
-            levelButtons[8] = GameObject.Find("Glitch Realm").GetComponent<Button>();
-            levelButtons[9] = GameObject.Find("Owl Man").GetComponent<Button>();
-            levelButtons[10] = GameObject.Find("Evil Witch").GetComponent<Button>();
-            for (int i = 0; i < unlockedLevel; i++)
+            levelButtons = new GameObject[11];
+            levelButtons[0] = GameObject.Find("Hospital");
+            levelButtons[1] = GameObject.Find("Slime Cube");
+            levelButtons[2] = GameObject.Find("Frozen Tundra");
+            levelButtons[3] = GameObject.Find("Wendigo");
+            levelButtons[4] = GameObject.Find("Circus");
+            levelButtons[5] = GameObject.Find("Ringmaster");
+            levelButtons[6] = GameObject.Find("Nursery");
+            levelButtons[7] = GameObject.Find("The Twins");
+            levelButtons[8] = GameObject.Find("Glitch Realm");
+            levelButtons[9] = GameObject.Find("Owl Man");
+            levelButtons[10] = GameObject.Find("Evil Witch");
+            for (int i = unlockedLevel; i < levelButtons.Length; i++)
             {
-                levelButtons[i].interactable = true;
+                levelButtons[i].SetActive(false);
             }
         }
         else if (SceneManager.GetActiveScene().name == ("Slime Cube Boss") && unlockedLevel < 2)
