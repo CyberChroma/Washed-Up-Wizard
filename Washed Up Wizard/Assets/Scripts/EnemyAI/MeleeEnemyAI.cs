@@ -9,12 +9,7 @@ public class MeleeEnemyAI : MonoBehaviour {
     public bool shootsProjectile = false;
 	public float moveSensitivity = 0.1f; // Used to make the enemy movement less snappy
     public float radius = 20;
-    public float secondSpeed = 6;
-    public float SpeedChangeDelay = 3;
-    public bool changesSpeed = false;
 
-    private float speed;
-    private float timeUntilSpeedChange;
     private SpawnObjectByTime spawnByTime;
 	private Animator anim; // Reference to the animator
     private Health health;
@@ -31,7 +26,6 @@ public class MeleeEnemyAI : MonoBehaviour {
 		player = GameObject.Find ("Player").transform; // Getting the reference
         nav = GetComponent<NavMeshAgent>();
         anim.logWarnings = false;
-        speed = nav.speed;
 	}
 
 	void OnEnable () {
@@ -70,22 +64,11 @@ public class MeleeEnemyAI : MonoBehaviour {
             enabled = false;
             health.ChangeHealth();
         }
-        if (Time.time >= timeUntilSpeedChange && nav.speed != secondSpeed && changesSpeed)
-        {
-            timeUntilSpeedChange = Time.time + SpeedChangeDelay;
-            nav.speed = secondSpeed;
-        }
-        else if (Time.time >= timeUntilSpeedChange && nav.speed != speed && changesSpeed)
-        {
-            timeUntilSpeedChange = Time.time + SpeedChangeDelay;
-            nav.speed = speed;
-        }
 	}
 
 	void OnCollisionEnter (Collision other) { // If the enemy collided with something, change its move target
         if (other.collider.CompareTag ("Player") && anim) {
             anim.SetTrigger("Attack");
-            timeUntilSpeedChange = Time.time + SpeedChangeDelay;
         }
 	}
 }

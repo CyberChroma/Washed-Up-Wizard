@@ -91,7 +91,7 @@ public class GiantSlimeAI : MonoBehaviour {
     void OnDisable () {
         if (health.currentHealth <= 0)
         {
-            SceneManager.LoadScene("Slime Cube Death");
+            SceneManager.LoadScene("Slime Queen Death");
         }
     }
 
