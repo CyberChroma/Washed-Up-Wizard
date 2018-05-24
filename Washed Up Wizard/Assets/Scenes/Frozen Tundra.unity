@@ -18655,7 +18655,6 @@ GameObject:
   - component: {fileID: 945148726}
   - component: {fileID: 945148729}
   - component: {fileID: 945148728}
-  - component: {fileID: 945148727}
   m_Layer: 0
   m_Name: Tundra
   m_TagString: Untagged
@@ -18676,21 +18675,6 @@ Transform:
   m_Father: {fileID: 1520257750}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &945148727
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 945148725}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &945148728
 MonoBehaviour:
   m_ObjectHideFlags: 0
