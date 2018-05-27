@@ -616,7 +616,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4730091155130924}
   - component: {fileID: 114769068041151166}
-  - component: {fileID: 114754708392970820}
   m_Layer: 0
   m_Name: Bottle Emitter (1)
   m_TagString: Untagged
@@ -2867,9 +2866,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1321453035468690}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4512179665018520}
   m_RootOrder: 1
@@ -3383,21 +3382,6 @@ MonoBehaviour:
   radius: 25
   emitters:
   - {fileID: 1321453035468690}
---- !u!114 &114754708392970820
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1321453035468690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce8233c448c6cc49b9b321f482c8728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetString: 
-  once: 1
-  speed: Infinity
 --- !u!114 &114769068041151166
 MonoBehaviour:
   m_ObjectHideFlags: 1

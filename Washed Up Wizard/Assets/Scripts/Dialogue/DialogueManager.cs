@@ -11,23 +11,20 @@ public class DialogueManager : MonoBehaviour {
 
     [HideInInspector] public Animator animator;
 
-    private Queue<string> sentences;
+    private string[] sentences;
 
-	// Use this for initialization
+    // Use this for initialization
 	void Start () {
         nameText = transform.Find("Name Text").GetComponent<Text>();
         dialogueText = transform.Find("Dialogue Text").GetComponent<Text>(); 
         animator = GetComponent<Animator>();
-        sentences = new Queue <string>();
 	}
 	
-    public void StartDialogue (Dialogue dialogue) {
+    public void StartDialogue (string name, string[] dialogueSentences) {
         animator.SetBool("Is Open", true);
-        nameText.text = dialogue.name;
-        sentences.Clear();
-        foreach (string sentence in dialogue.sentences){
-            sentences.Enqueue(sentence);
-        }
+        nameText.text = name;
+        sentenceNum = 0;
+        sentences = dialogueSentences;
         DisplayNextSentence();
     }
 
@@ -39,12 +36,14 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void DisplayNextSentence () {
-        if (sentences.Count == 0) {
+        if (sentences.Length - 1 < sentenceNum)
+        {
             EndDialogue();
             return;
         }
-        string sentence = sentences.Dequeue();
+        string sentence = sentences[sentenceNum];
         dialogueText.text = sentence;
+        sentenceNum++;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
@@ -61,7 +60,7 @@ public class DialogueManager : MonoBehaviour {
             {
                 dialogueText.text += sentence.Substring(i, 1);
             }
-            yield return new WaitForSeconds (0.02f) ;
+            yield return new WaitForSeconds (0.02f);
         }
     }
 

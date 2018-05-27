@@ -81,7 +81,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4015123390178022}
   - component: {fileID: 114413565686530344}
-  - component: {fileID: 114581359839609438}
   m_Layer: 0
   m_Name: Bottle Emitter
   m_TagString: Untagged
@@ -917,13 +916,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1083278474801922}
-  m_LocalRotation: {x: 0.00000019861236, y: -0.7071068, z: 0.7071068, w: 0.00000019861236}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4695827112164164}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: -179.99998, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4026019308605716
 Transform:
   m_ObjectHideFlags: 1
@@ -1846,21 +1845,6 @@ MonoBehaviour:
   firstDelay: 0
   canShoot: 0
   spawnedObject: {fileID: 0}
---- !u!114 &114581359839609438
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1083278474801922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce8233c448c6cc49b9b321f482c8728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetString: 
-  once: 1
-  speed: Infinity
 --- !u!114 &114647565553880804
 MonoBehaviour:
   m_ObjectHideFlags: 1

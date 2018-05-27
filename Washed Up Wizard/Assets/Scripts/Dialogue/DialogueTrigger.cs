@@ -12,7 +12,7 @@ public class DialogueTrigger : MonoBehaviour {
     public void OnTriggerEnter(Collider other) {
         if (other.CompareTag ("Player") && canTalk)
         {
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue.name, dialogue.sentences);
             if (!dialogue.hasTask)
             {
                 gameObject.SetActive(false);
