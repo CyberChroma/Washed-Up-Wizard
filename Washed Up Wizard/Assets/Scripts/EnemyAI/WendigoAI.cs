@@ -38,6 +38,7 @@ public class WendigoAI : MonoBehaviour {
 
     public float timeBetweenShockwaves;
     public GameObject shockwaveEmitter;
+
     public float timeBetweenHarpiesPhase1;
     public float timeBetweenHarpiesPhase2;
     public float timeBetweenHarpiesPhase3;

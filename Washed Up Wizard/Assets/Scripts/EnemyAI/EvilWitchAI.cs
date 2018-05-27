@@ -72,6 +72,7 @@ public class EvilWitchAI : MonoBehaviour
         moveAndEmitEmitter.SetActive(false);
         dropExplodeEmitter.SetActive(false);
         homingMultiEmitter.SetActive(false);
+        spinMultiEmitter.SetActive(false);
         moveByForce = GetComponent<MoveByForce>();
         health = GetComponent<Health>();
         rb = GetComponent<Rigidbody>();
@@ -97,7 +98,6 @@ public class EvilWitchAI : MonoBehaviour
         canAttack = false;
         targetReached = false;
         movePos = waypoints[Random.Range(0, 9)];
-        StartCoroutine(WaitToChangeAttackState(stateChangeTime));
     }
 
     // Update is called once per frame
@@ -114,6 +114,7 @@ public class EvilWitchAI : MonoBehaviour
                 moveByForce.dir = Vector3.zero;
                 targetReached = true;
                 StartCoroutine(WaitToAttack(1));
+                StartCoroutine(WaitToChangeAttackState(stateChangeTime));
             }
         }
         else
@@ -145,11 +146,6 @@ public class EvilWitchAI : MonoBehaviour
                 {
                     dropAndEmitEmitter.SetActive(true);
                     StartCoroutine(WaitToAttack(timeBetweenDropAndEmit));
-                }
-                else if (attackState == AttackState.SplitShot)
-                {
-                    splitShotEmitter.SetActive(true);
-                    StartCoroutine(WaitToAttack(timeBetweenSplitShot));
                 }
                 else if (attackState == AttackState.MoveAndEmit)
                 {
