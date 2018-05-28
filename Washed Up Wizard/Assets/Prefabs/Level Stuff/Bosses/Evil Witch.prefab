@@ -1542,6 +1542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4370747013693062}
   - component: {fileID: 114106164828852164}
+  - component: {fileID: 114451722038098070}
   m_Layer: 0
   m_Name: Spin Multi Emitter
   m_TagString: Untagged
@@ -2704,7 +2705,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1116969405900582}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1, z: 5}
+  m_LocalPosition: {x: 0, y: 1, z: 10}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children:
   - {fileID: 4202027667492662}
@@ -3599,9 +3600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ec03285180d34499ce76e7c57c1f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateChangeTime: 10
-  toTargetSpeed: 150
-  toPlayerSpeed: 120
+  stateChangeTime: 5
   player: {fileID: 0}
   waypoints:
   - {fileID: 0}
@@ -3613,23 +3612,23 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  timeBetweenFireball: 0.5
+  timeBetweenFireball: 0.25
   fireballEmitter: {fileID: 1900397359289442}
-  timeBetweenSplitShot: 0.8
+  timeBetweenSplitShot: 0.4
   splitShotEmitter: {fileID: 1644060974499494}
-  timeBetweenBoomerang: 0.6
+  timeBetweenBoomerang: 0.3
   boomerangEmitter: {fileID: 1193440470990862}
-  timeBetweenForwardBomb: 0.8
+  timeBetweenForwardBomb: 0.4
   forwardBombEmitter: {fileID: 1387857871824004}
-  timeBetweenDropAndEmit: 0.9
+  timeBetweenDropAndEmit: 0.45
   dropAndEmitEmitter: {fileID: 0}
-  timeBetweenMoveAndEmit: 0.7
+  timeBetweenMoveAndEmit: 0.35
   moveAndEmitEmitter: {fileID: 1124353033994240}
-  timeBetweenDropExplode: 0.9
+  timeBetweenDropExplode: 0.4
   dropExplodeEmitter: {fileID: 0}
-  timeBetweenHomingMulti: 0.7
+  timeBetweenHomingMulti: 0.35
   homingMultiEmitter: {fileID: 1686905533439488}
-  timeBetweenSpinMulti: 0.5
+  timeBetweenSpinMulti: 0.25
   spinMultiEmitter: {fileID: 1886663792293388}
 --- !u!114 &114106164828852164
 MonoBehaviour:
@@ -3648,8 +3647,8 @@ MonoBehaviour:
   parentString: 
   delay: 0
   randDelay: 0
-  numToSpawn: 5
-  radius: 288
+  numToSpawn: 10
+  radius: 324
   offset: 0
   spawnedObjects: []
 --- !u!114 &114134679057786088
@@ -3721,6 +3720,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 6
+--- !u!114 &114451722038098070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1886663792293388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d98f4208f3123a47957e9145a707a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotSpeed: 10
+  dir: {x: 0, y: 1, z: 0}
 --- !u!114 &114480015593365780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3738,7 +3750,7 @@ MonoBehaviour:
   parentString: 
   delay: 0
   randDelay: 0
-  numToSpawn: 3
+  numToSpawn: 4
   radius: 180
   offset: 0
   spawnedObjects: []
@@ -3794,8 +3806,8 @@ MonoBehaviour:
   parentString: 
   delay: 0
   randDelay: 0
-  numToSpawn: 3
-  radius: 60
+  numToSpawn: 5
+  radius: 100
   offset: 0
   spawnedObjects: []
 --- !u!114 &114741881333327368
