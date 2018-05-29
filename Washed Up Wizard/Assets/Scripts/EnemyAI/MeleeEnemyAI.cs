@@ -9,7 +9,12 @@ public class MeleeEnemyAI : MonoBehaviour {
     public bool shootsProjectile = false;
 	public float moveSensitivity = 0.1f; // Used to make the enemy movement less snappy
     public float radius = 20;
+    public bool changesSpeed = false;
+    public float secondSpeed = 15f;
+    public float timeBetwen = 5f;
 
+    private float speedHold;
+    private float nextTime = 0;
     private SpawnObjectByTime spawnByTime;
 	private Animator anim; // Reference to the animator
     private Health health;
@@ -63,6 +68,22 @@ public class MeleeEnemyAI : MonoBehaviour {
             nav.destination = transform.position;
             enabled = false;
             health.ChangeHealth();
+        }
+        if (changesSpeed == true)
+        {
+            if (Time.time >= nextTime)
+            {
+                nextTime = Time.time + timeBetwen;
+                if (nav.speed == secondSpeed)
+                {
+                    nav.speed = speedHold;
+                }
+                else if (nav.speed == speedHold)
+                {
+                    speedHold = nav.speed;
+                    nav.speed = secondSpeed;
+                }
+            }
         }
 	}
 
