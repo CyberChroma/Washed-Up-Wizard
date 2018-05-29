@@ -15,6 +15,13 @@ public class LoadScene : MonoBehaviour {
         }
     }
 
+    void Update () {
+        if (delay != 0 && Input.GetKey(KeyCode.Return))
+        {
+            SceneManager.LoadScene(sceneToLoad);
+        }
+    }
+
     IEnumerator WaitToLoadScene () {
         Time.timeScale = 1;
         yield return new WaitForSeconds(delay);
