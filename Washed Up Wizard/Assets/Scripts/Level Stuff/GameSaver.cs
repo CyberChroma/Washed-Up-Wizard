@@ -101,7 +101,7 @@ public class GameSaver : MonoBehaviour {
                 levelButtons[i].SetActive(false);
             }
         }
-        else if (SceneManager.GetActiveScene().name == ("Slime Cube Boss") && unlockedLevel < 2)
+        else if (SceneManager.GetActiveScene().name == ("Slime Queen Boss") && unlockedLevel < 2)
         {
             unlockedLevel = 2;
         }
@@ -141,8 +141,9 @@ public class GameSaver : MonoBehaviour {
         {
             unlockedLevel = 11;
         }
-        if (GameObject.Find("Temp Saver")) {
-            GameObject.Find("Temp Saver").GetComponent<TempSaver>().NewScene();
+        if (TempSaver.instance != null)
+        {
+            TempSaver.instance.NewScene();
         }
     }
 

@@ -9,15 +9,11 @@ public class Dialogue {
     public GameObject[] items;
     public string name; // Name of character
     public TextAsset[] textReferences; // References to text files
-
-    private int numOfLines;
-    private int whichSentence;
-
+ 
     [HideInInspector] public bool taskComplete = false;
     [HideInInspector] public string[] sentences;
 
     public void getSentences () {
-        numOfLines = textReferences.Length;
         if (hasTask)
         {
             if (!taskComplete)
