@@ -33,7 +33,7 @@ public class SpawnObjectByInput : MonoBehaviour {
 	}
 
 	void Update () {
-		if (emitterNum != 0 && !spellCreator.creatingSpell) { // If the emitter is active and the user is not creating a spell
+        if (emitterNum != 0 && !spellCreator.creatingSpell && Time.timeScale != 0) { // If the emitter is active and the user is not creating a spell
 			if (onRelease) { // If the emitter is activated when the user releases a button
 				if (spellInputReceiver.inputSD [emitterNum - 1]) { // If the user has pressed the required button
 					SpawnReticle (reticle, out tempReticle);

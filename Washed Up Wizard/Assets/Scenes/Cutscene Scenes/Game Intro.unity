@@ -2611,7 +2611,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1956045681}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2784,6 +2784,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 2043971142}
   - {fileID: 1862588247}
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -2793,6 +2794,111 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2043971141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1393929339748100, guid: 4338c4800093dab419a54f923806b594,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2043971142}
+  - component: {fileID: 2043971146}
+  - component: {fileID: 2043971145}
+  - component: {fileID: 2043971144}
+  - component: {fileID: 2043971143}
+  m_Layer: 0
+  m_Name: Input Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2043971142
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4605264530068616, guid: 4338c4800093dab419a54f923806b594,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2043971141}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -407.00003, y: -229, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1956045681}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2043971143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114952546004344370, guid: 4338c4800093dab419a54f923806b594,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2043971141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870284d7fc0901b4e8b6fd7f00778f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleport: 304
+  toggleSpellBook: 9
+  nextPage: 101
+  previous: 113
+  inputTD: 0
+  inputTU: 0
+  inputS: 0
+  inputN: 0
+  inputP: 0
+--- !u!114 &2043971144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114580012312034874, guid: 4338c4800093dab419a54f923806b594,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2043971141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7332ac6a5ad794943a50b0d15ff0772b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  components: 00010000010100000201000003010000040100000501000006010000070100000801000009010000
+  componentsAlt: 30000000310000003200000033000000340000003500000036000000370000003800000039000000
+  inputC: 
+--- !u!114 &2043971145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114313725913909294, guid: 4338c4800093dab419a54f923806b594,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2043971141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d2fc3a2b77253499a79d7427aa6a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellSlots: 200000004301000044010000
+  inputSD: 
+  inputSU: 
+--- !u!114 &2043971146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114461658822088030, guid: 4338c4800093dab419a54f923806b594,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2043971141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fdb040c94cfc14cbd47557cf53c8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveForward: 119
+  moveBack: 115
+  moveLeft: 97
+  moveRight: 100
+  inputMF: 0
+  inputMB: 0
+  inputML: 0
+  inputMR: 0
 --- !u!1 &2119483732
 GameObject:
   m_ObjectHideFlags: 0

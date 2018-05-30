@@ -33,7 +33,7 @@ public class PlayerAbilities : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        if (health.currentHealth > 0) {
+        if (health.currentHealth > 0 && Time.timeScale != 0) {
             if (canTeleport) { // If the player can teleport
                 if (specialInputReceiver.inputTD) { // If they press the teleport button down
                     if (tempReticle) {

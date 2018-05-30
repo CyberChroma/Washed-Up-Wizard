@@ -5,19 +5,20 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
 
+    [HideInInspector] public Animator animator;
+
     private Text nameText;
     private Text dialogueText;
     private int sentenceNum;
-
-    [HideInInspector] public Animator animator;
-
     private string[] sentences;
+    private SpecialInputReceiver specialInputReceiver;
 
     // Use this for initialization
 	void Start () {
+        animator = GetComponent<Animator>();
         nameText = transform.Find("Name Text").GetComponent<Text>();
         dialogueText = transform.Find("Dialogue Text").GetComponent<Text>(); 
-        animator = GetComponent<Animator>();
+        specialInputReceiver = GameObject.Find("Input Controller").GetComponent<SpecialInputReceiver>();
 	}
 	
     public void StartDialogue (string name, string[] dialogueSentences) {
@@ -29,7 +30,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     void Update () {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (specialInputReceiver.inputA && Time.timeScale != 0)
         {
             DisplayNextSentence();
         }
