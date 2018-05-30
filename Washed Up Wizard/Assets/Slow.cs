@@ -7,17 +7,17 @@ public class Slow : MonoBehaviour {
 
     public float slowSpeed = 3f;
 
-    private float hold;
     private PlayerMoveInput player;
+    private float hold;
 
 	void Awake () {
         player = FindObjectOfType<PlayerMoveInput>();
+        hold = player.moveSpeed;
 	}
 	
     void OnTriggerEnter (Collider other) {
         if (other.CompareTag("Player"))
         {
-        hold = player.moveSpeed;
         player.moveSpeed = slowSpeed;
         }
 	}
