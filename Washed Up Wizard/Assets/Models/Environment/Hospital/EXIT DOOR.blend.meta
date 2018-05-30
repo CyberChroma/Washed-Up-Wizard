@@ -8,11 +8,13 @@ ModelImporter:
     100004: //RootNode
     100006: Sphere
     100008: Text
+    100010: Door
     400000: Cube
     400002: Cylinder
     400004: //RootNode
     400006: Sphere
     400008: Text
+    400010: Door
     2100000: Material_001
     2100002: Material_003
     2100004: Material_002
@@ -22,17 +24,45 @@ ModelImporter:
     2300002: Cylinder
     2300004: Sphere
     2300006: Text
+    2300008: Door
     3300000: Cube
     3300002: Cylinder
     3300004: Sphere
     3300006: Text
+    3300008: Door
     4300000: Text
     4300002: Cylinder
     4300004: Sphere
     4300006: Cube
+    4300008: Door
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 5dfc0efd7f1228145b8c3c4d3d9f4027, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: 7aa5c185c4d9d644e9dab64419268a11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_002
+    second: {fileID: 2100000, guid: 9e88e9d973ff6fb40acf6aa8095ac9bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_003
+    second: {fileID: 2100000, guid: abbc0d27221c0244bbd06a3e737a7398, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_004
+    second: {fileID: 2100000, guid: 0cbd5bad9bb2cd944a47b60a3c410322, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -66,10 +96,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -84,11 +114,11 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 80
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -104,10 +134,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
