@@ -42,7 +42,7 @@ public class SpellCreator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (canCreate) { // If the player can create a spell
+        if (canCreate && Time.timeScale != 0) { // If the player can create a spell
 			if (spellSetUp) { // If the player has set up a spell
                 for (int i = 0; i < spellInputReceiver.inputSD.Length; i++) { // Goes through each active spell button
                     if (spellInputReceiver.inputSD[i] && componentsPanelTimesActivated % 2 != 0) { // If the button was pressed
