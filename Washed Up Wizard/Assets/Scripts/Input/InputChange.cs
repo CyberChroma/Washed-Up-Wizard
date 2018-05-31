@@ -11,17 +11,21 @@ public class InputChange : MonoBehaviour {
     private MoveInputReceiver moveInputReceiver;
     private SpellInputReceiver spellInputReceiver;
     private SpecialInputReceiver specialInputReceiver;
-    private PauseManager pauseManager;
     private Event keyEvent;
     private bool waitingForKey = false;
     private KeyCode newKey;
+    private GameSaver gameSaver;
 
 	// Use this for initialization
 	void Awake () {
         moveInputReceiver = inputManager.GetComponent<MoveInputReceiver>();
         spellInputReceiver = inputManager.GetComponent<SpellInputReceiver>();
         specialInputReceiver = inputManager.GetComponent<SpecialInputReceiver>();
-        pauseManager = GetComponent<PauseManager>();
+        gameSaver = FindObjectOfType<GameSaver>();
+        for (int i = 0; i < keyTexts.Length; i++)
+        {
+            keyTexts[i].text = gameSaver.keys[i].ToString();
+        }
 	}
 
     void OnGUI () {
@@ -63,6 +67,7 @@ public class InputChange : MonoBehaviour {
 
     void AssignKey (int keyNum, KeyCode newKey) {
         keyTexts[keyNum].text = newKey.ToString();
+        gameSaver.keys[keyNum] = newKey;
         switch (keyNum) {
             case 0:
                 moveInputReceiver.moveForward = newKey;
@@ -86,19 +91,25 @@ public class InputChange : MonoBehaviour {
                 spellInputReceiver.spellSlots [2] = newKey;
                 return;
             case 7:
-                specialInputReceiver.teleport = newKey;
+                spellInputReceiver.toggleSpellBook = newKey;
                 return;
             case 8:
-                specialInputReceiver.toggleSpellBook = newKey;
-                return;
+                spellInputReceiver.previousPage = newKey;
+                 return;
             case 9:
-                specialInputReceiver.nextPage = newKey;
+                spellInputReceiver.nextPage = newKey;
                 return;
             case 10:
-                specialInputReceiver.previous = newKey;
+                specialInputReceiver.teleport = newKey;
                 return;
             case 11:
-                pauseManager.pause = newKey;
+                specialInputReceiver.pause = newKey;
+                return;
+            case 12:
+                specialInputReceiver.advanceText = newKey;
+                return;
+            case 13:
+                specialInputReceiver.skipCutscenes = newKey;
                 return;
             default:
                 print("Invalid Key Number");

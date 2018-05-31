@@ -5,31 +5,32 @@ using UnityEngine;
 public class SpecialInputReceiver : MonoBehaviour {
 
 	public KeyCode teleport = KeyCode.LeftShift; // The key to teleport
-    public KeyCode toggleSpellBook = KeyCode.Tab; // The key to toggle spell book
-    public KeyCode nextPage = KeyCode.E; // The key to interact
-    public KeyCode previous = KeyCode.Q; // The key to interact
+    public KeyCode pause = KeyCode.Escape;  // The key to pause the game
+    public KeyCode advanceText = KeyCode.LeftControl;  // The key to advance text
+    public KeyCode skipCutscenes = KeyCode.Return;  // The key to skip cutscenes
 
 	// Bools for whether the object is pressing the button
 	[HideInInspector] public bool inputTD;
 	[HideInInspector] public bool inputTU;
-	[HideInInspector] public bool inputS;
-    [HideInInspector] public bool inputN;
     [HideInInspector] public bool inputP;
+    [HideInInspector] public bool inputA;
+    [HideInInspector] public bool inputS;
 
     void OnDisable () {
         inputTD = false;
         inputTU = false;
-        inputS = false;
-        inputN = false;
         inputP = false;
+        inputA = false;
+        inputS = false;
     }
 
 	// Update is called once per frame
 	void Update () {
 		inputTD = Input.GetKeyDown (teleport); // Getting input for teleporting
 		inputTU = Input.GetKeyUp (teleport); // Getting input for teleporting
-        inputS = Input.GetKeyDown (toggleSpellBook); // Getting input for toggling spell book
-        inputN = Input.GetKeyDown (nextPage); // Getting input for flipping to the next page
-        inputP = Input.GetKeyDown (previous); // Getting input for flipping to the previous page
+        inputP = Input.GetKeyDown (pause); // Getting input for flipping to the previous page
+        inputA = Input.GetKeyDown (advanceText); // Getting input for flipping to the previous page
+        inputS = Input.GetKeyDown (skipCutscenes); // Getting input for flipping to the previous page
+
 	}
 }

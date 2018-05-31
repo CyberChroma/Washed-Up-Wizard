@@ -8,7 +8,13 @@ public class LoadScene : MonoBehaviour {
     public string sceneToLoad = "";
     public float delay = 0;
 
-    void OnEnable () {  
+    private SpecialInputReceiver specialInputReceiver;
+
+    void OnEnable () {
+        if (GameObject.Find("Input Controller") != null)
+        {
+            specialInputReceiver = GameObject.Find("Input Controller").GetComponent<SpecialInputReceiver>();
+        }
         if (delay != 0)
         {
             StartCoroutine(WaitToLoadScene());
@@ -16,7 +22,7 @@ public class LoadScene : MonoBehaviour {
     }
 
     void Update () {
-        if (delay != 0 && Input.GetKey(KeyCode.Return))
+        if (delay != 0 && specialInputReceiver.inputS)
         {
             SceneManager.LoadScene(sceneToLoad);
         }

@@ -15,28 +15,30 @@ public class CombinationsMenu : MonoBehaviour {
 	private List<Transform> combos = new List<Transform> (); // Different than an array because the length can be changed
     private ActivateFollowTarget activateFollowTarget;
     private PlayerSpellsReference playerSpellReference; // Script reference
+    private SpellInputReceiver spellInputReceiver;
 
     void Start () {
         playerSpellReference = GameObject.Find("Spell Crafting System").GetComponent<PlayerSpellsReference>();
         activateFollowTarget = GetComponent<ActivateFollowTarget>();
+        spellInputReceiver = GameObject.Find("Input Controller").GetComponent<SpellInputReceiver>();
 		SetUpCombinations ();
 	}
 
     void Update () {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Time.timeScale != 0)
         {
-            activateFollowTarget.Activate();
-        }
-        if (Input.GetKeyDown(KeyCode.Q)) {
-            PreviousPage();
-        }
-        if (Input.GetKeyDown(KeyCode.E)) {
-            NextPage();
-        }
-        if (Input.GetKeyDown(KeyCode.RightBracket))
-        {            
-            SetUpCombinations();
-            GameObject.Find("Game Saver").GetComponent<GameSaver>().UpdateSpells();
+            if (spellInputReceiver.inputT)
+            {
+                activateFollowTarget.Activate();
+            }
+            if (spellInputReceiver.inputP)
+            {
+                PreviousPage();
+            }
+            if (spellInputReceiver.inputN)
+            {
+                NextPage();
+            }
         }
     }
 

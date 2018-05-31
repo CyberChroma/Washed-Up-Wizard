@@ -7,11 +7,16 @@ public class GameSaver : MonoBehaviour {
     
     public static GameSaver instance = null;
 
+    [HideInInspector] public KeyCode[] keys;
     [HideInInspector] public SpellUnlockState[] spellUnlockStates;
 
     private int unlockedLevel = 1;
     private GameObject[] levelButtons;
     private bool[] spellsUnlocked;
+    private GameObject inputController;
+    private MoveInputReceiver moveInputReceiver;
+    private SpellInputReceiver spellInputReceiver;
+    private SpecialInputReceiver specialInputReceiver;
 
     // Use this for initialization
     void Awake()
@@ -24,6 +29,14 @@ public class GameSaver : MonoBehaviour {
         else if (instance != this)
         {
             Destroy(gameObject);
+        }
+        inputController = GameObject.Find("Input Controller");
+        if (inputController)
+        {
+            moveInputReceiver = inputController.GetComponent<MoveInputReceiver>();
+            spellInputReceiver = inputController.GetComponent<SpellInputReceiver>();
+            specialInputReceiver = inputController.GetComponent<SpecialInputReceiver>();
+            keys = new KeyCode[] { moveInputReceiver.moveForward, moveInputReceiver.moveBack, moveInputReceiver.moveLeft, moveInputReceiver.moveRight, spellInputReceiver.spellSlots[0], spellInputReceiver.spellSlots[1], spellInputReceiver.spellSlots[2], spellInputReceiver.toggleSpellBook, spellInputReceiver.previousPage, spellInputReceiver.nextPage, specialInputReceiver.teleport, specialInputReceiver.pause, specialInputReceiver.advanceText, specialInputReceiver.skipCutscenes }; 
         }
         instance.NewScene();
         DontDestroyOnLoad(this.gameObject);
@@ -140,6 +153,23 @@ public class GameSaver : MonoBehaviour {
         else if (SceneManager.GetActiveScene().name == ("Evil Witch Boss") && unlockedLevel < 11)
         {
             unlockedLevel = 11;
+        }
+        if (inputController)
+        {
+            moveInputReceiver.moveForward = keys[0];
+            moveInputReceiver.moveBack = keys[1];
+            moveInputReceiver.moveLeft = keys[2];
+            moveInputReceiver.moveRight = keys[3];
+            spellInputReceiver.spellSlots[0] = keys[4];
+            spellInputReceiver.spellSlots[1] = keys[5];
+            spellInputReceiver.spellSlots[2] = keys[6];
+            spellInputReceiver.toggleSpellBook = keys[7];
+            spellInputReceiver.previousPage = keys[8];
+            spellInputReceiver.nextPage = keys[9];
+            specialInputReceiver.teleport = keys[10];
+            specialInputReceiver.pause = keys[11];
+            specialInputReceiver.advanceText = keys[12];
+            specialInputReceiver.skipCutscenes = keys[13]; 
         }
         if (TempSaver.instance != null)
         {
