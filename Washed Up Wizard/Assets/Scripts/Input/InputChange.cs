@@ -21,13 +21,19 @@ public class InputChange : MonoBehaviour {
         moveInputReceiver = inputManager.GetComponent<MoveInputReceiver>();
         spellInputReceiver = inputManager.GetComponent<SpellInputReceiver>();
         specialInputReceiver = inputManager.GetComponent<SpecialInputReceiver>();
-        gameSaver = FindObjectOfType<GameSaver>();
+	}
+
+    void Start () {
+        gameSaver = GameSaver.instance;
+        if (gameSaver.keys.Length == 0)
+        {
+            gameSaver.keys = new KeyCode[] { moveInputReceiver.moveForward, moveInputReceiver.moveBack, moveInputReceiver.moveLeft, moveInputReceiver.moveRight, spellInputReceiver.spellSlots[0], spellInputReceiver.spellSlots[1], spellInputReceiver.spellSlots[2], spellInputReceiver.toggleSpellBook, spellInputReceiver.previousPage, spellInputReceiver.nextPage, specialInputReceiver.teleport, specialInputReceiver.pause, specialInputReceiver.advanceText, specialInputReceiver.skipCutscenes };         
+        }
         for (int i = 0; i < keyTexts.Length; i++)
         {
             keyTexts[i].text = gameSaver.keys[i].ToString();
         }
-	}
-
+    }
     void OnGUI () {
         keyEvent = Event.current;
         if ((keyEvent.isKey || keyEvent.isMouse || keyEvent.shift) && waitingForKey) {

@@ -26,7 +26,10 @@ public class Health : MonoBehaviour {
 		// Setting start values
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
-        currentHealth = startHealth;
+        if (currentHealth == 0)
+        {
+            currentHealth = startHealth;
+        }
 	}
 
 	public void ChangeHealth () {
