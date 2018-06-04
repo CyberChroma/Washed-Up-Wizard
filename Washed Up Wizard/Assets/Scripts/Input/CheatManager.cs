@@ -17,7 +17,7 @@ public class CheatManager : MonoBehaviour {
             }
         }
         if (Input.GetKeyDown(KeyCode.O)) {
-            if (GameObject.Find("Spell UI"))
+            if (GameObject.Find("Combinations Panel"))
             {
                 gameSaver = FindObjectOfType<GameSaver>();
                 for (int i = 0; i < gameSaver.spellUnlockStates.Length; i++)

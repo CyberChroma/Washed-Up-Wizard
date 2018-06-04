@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour {
     private SpecialInputReceiver specialInputReceiver;
 
     // Use this for initialization
-	void Start () {
+	void Awake () {
         animator = GetComponent<Animator>();
         nameText = transform.Find("Name Text").GetComponent<Text>();
         dialogueText = transform.Find("Dialogue Text").GetComponent<Text>(); 
