@@ -19,31 +19,32 @@ public class GameSaver : MonoBehaviour {
     private SpecialInputReceiver specialInputReceiver;
 
     // Use this for initialization
-    void Awake()
+    void Awake ()
     {
         if (instance == null)
         {
             instance = this;
             spellsUnlocked = new bool[20];
+            inputController = GameObject.Find("Input Controller");
+            if (inputController && keys.Length == 0)
+            {
+                moveInputReceiver = inputController.GetComponent<MoveInputReceiver>();
+                spellInputReceiver = inputController.GetComponent<SpellInputReceiver>();
+                specialInputReceiver = inputController.GetComponent<SpecialInputReceiver>();
+                keys = new KeyCode[] { moveInputReceiver.moveForward, moveInputReceiver.moveBack, moveInputReceiver.moveLeft, moveInputReceiver.moveRight, spellInputReceiver.spellSlots[0], spellInputReceiver.spellSlots[1], spellInputReceiver.spellSlots[2], spellInputReceiver.toggleSpellBook, spellInputReceiver.previousPage, spellInputReceiver.nextPage, specialInputReceiver.teleport, specialInputReceiver.pause, specialInputReceiver.advanceText, specialInputReceiver.skipCutscenes }; 
+            }
         }
         else if (instance != this)
         {
             Destroy(gameObject);
         }
-        inputController = GameObject.Find("Input Controller");
-        if (inputController)
-        {
-            moveInputReceiver = inputController.GetComponent<MoveInputReceiver>();
-            spellInputReceiver = inputController.GetComponent<SpellInputReceiver>();
-            specialInputReceiver = inputController.GetComponent<SpecialInputReceiver>();
-            keys = new KeyCode[] { moveInputReceiver.moveForward, moveInputReceiver.moveBack, moveInputReceiver.moveLeft, moveInputReceiver.moveRight, spellInputReceiver.spellSlots[0], spellInputReceiver.spellSlots[1], spellInputReceiver.spellSlots[2], spellInputReceiver.toggleSpellBook, spellInputReceiver.previousPage, spellInputReceiver.nextPage, specialInputReceiver.teleport, specialInputReceiver.pause, specialInputReceiver.advanceText, specialInputReceiver.skipCutscenes }; 
-        }
+
         instance.NewScene();
         DontDestroyOnLoad(this.gameObject);
     }
 	
     // Update is called once per frame
-    void Update()
+    void Update ()
     {
         if (SceneManager.GetActiveScene().name == "Level Select" && Input.GetKeyDown(KeyCode.P))
         {
@@ -55,7 +56,7 @@ public class GameSaver : MonoBehaviour {
         }
     }
 
-    public void NewScene()
+    public void NewScene ()
     {
         if (GameObject.Find("Spell UI"))
         {
@@ -80,19 +81,19 @@ public class GameSaver : MonoBehaviour {
             spellUnlockStates[17] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("Move and Emit").GetComponent<SpellUnlockState>();
             spellUnlockStates[18] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("Drop and Explode").GetComponent<SpellUnlockState>();
             spellUnlockStates[19] = GameObject.Find("Spell UI").transform.Find("Combinations Panel").Find("5 Way Spin").GetComponent<SpellUnlockState>();
-        }
-        if (!spellsUnlocked[0])
-        {
-            for (int i = 0; i < 6; i++)
+            if (!spellsUnlocked[0])
             {
-                spellsUnlocked[i] = true;
+                for (int i = 0; i < 6; i++)
+                {
+                    spellsUnlocked[i] = true;
+                }
             }
-        }
-        else
-        {
-            for (int i = 0; i < spellUnlockStates.Length; i++)
+            else
             {
-                spellUnlockStates[i].unlocked = spellsUnlocked[i];
+                for (int i = 0; i < spellUnlockStates.Length; i++)
+                {
+                    spellUnlockStates[i].unlocked = spellsUnlocked[i];
+                }
             }
         }
         if (SceneManager.GetActiveScene().name == "Level Select")
@@ -154,8 +155,12 @@ public class GameSaver : MonoBehaviour {
         {
             unlockedLevel = 11;
         }
-        if (inputController)
+        inputController = GameObject.Find("Input Controller");
+        if (inputController && keys.Length != 0)
         {
+            moveInputReceiver = inputController.GetComponent<MoveInputReceiver>();
+            spellInputReceiver = inputController.GetComponent<SpellInputReceiver>();
+            specialInputReceiver = inputController.GetComponent<SpecialInputReceiver>();
             moveInputReceiver.moveForward = keys[0];
             moveInputReceiver.moveBack = keys[1];
             moveInputReceiver.moveLeft = keys[2];
