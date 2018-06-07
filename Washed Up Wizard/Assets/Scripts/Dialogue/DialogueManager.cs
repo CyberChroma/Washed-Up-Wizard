@@ -30,7 +30,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     void Update () {
-        if (specialInputReceiver.inputA && Time.timeScale != 0)
+        if (specialInputReceiver.inputA && sentences != null && Time.timeScale != 0)
         {
             DisplayNextSentence();
         }
