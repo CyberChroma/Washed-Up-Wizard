@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -38,8 +40,10 @@ public class GameSaver : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-
-        instance.NewScene();
+        if (SceneManager.GetActiveScene().name != "Level Select")
+        {
+            instance.NewScene();
+        }
         DontDestroyOnLoad(this.gameObject);
     }
 	
@@ -180,6 +184,20 @@ public class GameSaver : MonoBehaviour {
         {
             TempSaver.instance.NewScene();
         }
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/SaveData.dat");
+        SaveData data = new SaveData();
+        data.unlockedLevel = unlockedLevel;
+        for (int i = 0; i < spellsUnlocked.Length; i++)
+        {
+            data.spellsUnlocked[i] = spellsUnlocked[i];
+        }
+        for (int i = 0; i < keys.Length; i++)
+        {
+            data.keys[i] = keys[i];
+        }
+        bf.Serialize(file, data);
+        file.Close();
     }
 
     public void UpdateSpells () {
@@ -188,4 +206,38 @@ public class GameSaver : MonoBehaviour {
             spellsUnlocked[i] = spellUnlockStates[i].unlocked;
         }
     }
+
+    public void ContinueGame () {
+        if (File.Exists(Application.persistentDataPath + "/SaveData.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/SaveData.dat", FileMode.Open);
+            SaveData data = (SaveData)bf.Deserialize(file);
+            file.Close();
+            unlockedLevel = data.unlockedLevel;
+            for (int i = 0; i < spellsUnlocked.Length; i++)
+            {
+                spellsUnlocked[i] = data.spellsUnlocked[i];
+            }
+            for (int i = 0; i < keys.Length; i++)
+            {
+                keys[i] = data.keys[i];
+            }
+        }
+        LevelSelect();
+    }
+
+    public void LevelSelect () {
+        GameObject.Find("Main Menu").SetActive(false);
+        GameObject.Find("Canvas").transform.Find("Level Select").gameObject.SetActive(true);
+        NewScene(); 
+    }
+}
+
+[System.Serializable]
+class SaveData
+{
+    public int unlockedLevel;
+    public bool[] spellsUnlocked = new bool[20];
+    public KeyCode[] keys = new KeyCode[14];
 }
