@@ -19,6 +19,11 @@ ModelImporter:
     100026: Plane
     100028: Plane_001
     100030: Plane_002
+    100032: Eye
+    100034: Eye_001
+    100036: Face
+    100038: Lower_Teeth
+    100040: Upper_Teeth
     400000: Circle
     400002: EYE_SOCKETS
     400004: fACE
@@ -35,6 +40,11 @@ ModelImporter:
     400026: Plane
     400028: Plane_001
     400030: Plane_002
+    400032: Eye
+    400034: Eye_001
+    400036: Face
+    400038: Lower_Teeth
+    400040: Upper_Teeth
     2100000: unnamed
     2100002: Material
     2100004: Material_003
@@ -44,6 +54,14 @@ ModelImporter:
     2100012: Material_006
     2100014: Material_001
     2100016: Material_007
+    2100018: Blue
+    2100020: Grey
+    2100022: White
+    2100024: Pink
+    2100026: Dark_Blue
+    2100028: Green
+    2100030: Red
+    2100032: White_001
     2300000: Circle
     2300002: EYE_SOCKETS
     2300004: fACE
@@ -59,6 +77,11 @@ ModelImporter:
     2300024: Plane
     2300026: Plane_001
     2300028: Plane_002
+    2300030: Eye
+    2300032: Eye_001
+    2300034: Face
+    2300036: Lower_Teeth
+    2300038: Upper_Teeth
     3300000: Circle
     3300002: EYE_SOCKETS
     3300004: fACE
@@ -74,6 +97,11 @@ ModelImporter:
     3300024: Plane
     3300026: Plane_001
     3300028: Plane_002
+    3300030: Eye
+    3300032: Eye_001
+    3300034: Face
+    3300036: Lower_Teeth
+    3300038: Upper_Teeth
     4300000: Circle
     4300002: Sphere
     4300004: EYE_SOCKETS
@@ -89,10 +117,57 @@ ModelImporter:
     4300024: EYE_RIGHT
     4300026: Plane
     4300028: NECK_RUFFLES
-    7400000: Default Take
+    4300030: Eye_001
+    4300032: Eye
+    4300034: Lower_Teeth
+    4300036: Face
+    4300038: Upper_Teeth
+    7400000: Down
+    7400002: DownToUp
+    7400004: Up
     9500000: //RootNode
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue
+    second: {fileID: 2100000, guid: 7c8d4095ed835d34d84aa41ca9d80973, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark_Blue
+    second: {fileID: 2100000, guid: 71d1e1141f4cb8b41bfbbd2c25a5644c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Green
+    second: {fileID: 2100000, guid: 74289eb21bbeb4c4baa727b914ec841f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey
+    second: {fileID: 2100000, guid: 8bf26dbae1a7bd34aa6102150711594b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pink
+    second: {fileID: 2100000, guid: 8d67ba21d0689004699d58998517791d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: 5e9c369a8e5a2d7418cb074166dac8c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 1b88a2bc4f95b26409d4593084e1094d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White_001
+    second: {fileID: 2100000, guid: 59a6280ae84d9234c888acc9fd34e2d7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -119,17 +194,101 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Down
+      takeName: Default Take
+      firstFrame: 10
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: DownToUp
+      takeName: Default Take
+      firstFrame: 60
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Up
+      takeName: Default Take
+      firstFrame: 90
+      lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -144,8 +303,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 80
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
