@@ -8032,6 +8032,64 @@ BoxCollider:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 3a476390fc3650e4fb57dd5a81d1cb6b, type: 3}
   m_PrefabInternal: {fileID: 1594780695}
+--- !u!1001 &177049924
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 72.4353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.25000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -181.36584
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: randDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: delay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 1275936876107598, guid: d2366134e6400d04d96e2ac1096e3e63,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &178346283 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 61c791f3b45d006409f2f72e720c27d7, type: 3}
@@ -19828,7 +19886,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4259664070678644, guid: f657a0cf890b6bc4cbe5758201ccef86, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -48.21
+      value: -22
       objectReference: {fileID: 0}
     - target: {fileID: 4259664070678644, guid: f657a0cf890b6bc4cbe5758201ccef86, type: 2}
       propertyPath: m_LocalPosition.y
@@ -19836,7 +19894,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4259664070678644, guid: f657a0cf890b6bc4cbe5758201ccef86, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -186.62
+      value: -179.3
       objectReference: {fileID: 0}
     - target: {fileID: 4259664070678644, guid: f657a0cf890b6bc4cbe5758201ccef86, type: 2}
       propertyPath: m_LocalRotation.x
@@ -21489,6 +21547,73 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a476390fc3650e4fb57dd5a81d1cb6b, type: 3}
+  m_IsPrefabParent: 0
+--- !u!1001 &514180580
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 72.4353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.25000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -182.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953624055722004, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_Name
+      value: Stationary Hospital Turret (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: randDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: delay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: firstDelay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 1275936876107598, guid: d2366134e6400d04d96e2ac1096e3e63,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &517937633
 Prefab:
@@ -24552,6 +24677,73 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a476390fc3650e4fb57dd5a81d1cb6b, type: 3}
   m_IsPrefabParent: 0
+--- !u!1001 &599393862
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 72.4353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.25000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -184.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953624055722004, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_Name
+      value: Stationary Hospital Turret (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: delay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: randDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: firstDelay
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 1275936876107598, guid: d2366134e6400d04d96e2ac1096e3e63,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &601076731 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 61c791f3b45d006409f2f72e720c27d7, type: 3}
@@ -26571,6 +26763,73 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e7572c84eb52204387d1407d2a81c2c, type: 3}
+  m_IsPrefabParent: 0
+--- !u!1001 &669738409
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 72.4353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.25000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -185.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953624055722004, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_Name
+      value: Stationary Hospital Turret (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: firstDelay
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: randDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: delay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 1275936876107598, guid: d2366134e6400d04d96e2ac1096e3e63,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &670825587
 Prefab:
@@ -35370,6 +35629,73 @@ BoxCollider:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 3a476390fc3650e4fb57dd5a81d1cb6b, type: 3}
   m_PrefabInternal: {fileID: 1646388931}
+--- !u!1001 &874775311
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 72.4353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.25000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -186.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953624055722004, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_Name
+      value: Stationary Hospital Turret (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: firstDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: delay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: randDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 1275936876107598, guid: d2366134e6400d04d96e2ac1096e3e63,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &875537114 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 61c791f3b45d006409f2f72e720c27d7, type: 3}
@@ -54372,6 +54698,73 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.2, y: 1, z: 4.5}
   m_Center: {x: 0, y: 0, z: -0.75}
+--- !u!1001 &1371032734
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 72.4353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.25000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -182.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_RootOrder
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953624055722004, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_Name
+      value: Stationary Hospital Turret (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: randDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: delay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: firstDelay
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 1275936876107598, guid: d2366134e6400d04d96e2ac1096e3e63,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1371285946 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 9f0d89f0d111d7847b5ab568a4881439, type: 3}
@@ -56540,6 +56933,73 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a476390fc3650e4fb57dd5a81d1cb6b, type: 3}
+  m_IsPrefabParent: 0
+--- !u!1001 &1410391844
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 72.4353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.25000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -184.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953624055722004, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_Name
+      value: Stationary Hospital Turret (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: delay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: randDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: firstDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 1275936876107598, guid: d2366134e6400d04d96e2ac1096e3e63,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1410496266 stripped
 GameObject:
@@ -80059,6 +80519,73 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.199999, y: 1.1000003, z: 5.2000012}
   m_Center: {x: 0.00000047683716, y: 0, z: 0.100000046}
+--- !u!1001 &2051409709
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 72.4353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.25000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -185.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707340995692234, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953624055722004, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+      propertyPath: m_Name
+      value: Stationary Hospital Turret (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: firstDelay
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: randDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: delay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114847218960166348, guid: 6b93fad2508ee1b4db40f8b5785b5beb,
+        type: 2}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 1275936876107598, guid: d2366134e6400d04d96e2ac1096e3e63,
+        type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6b93fad2508ee1b4db40f8b5785b5beb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2053929912 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 3a476390fc3650e4fb57dd5a81d1cb6b, type: 3}
