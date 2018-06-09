@@ -8,7 +8,7 @@ public class SpinTransform : MonoBehaviour {
 	public Vector3 dir = Vector3.zero; // The direction
 
 	// Update is called once per frame
-	void FixedUpdate () {
+    void FixedUpdate () {
         transform.Rotate (rotSpeed * dir * Time.deltaTime); // Rotating the object
 	}
 }

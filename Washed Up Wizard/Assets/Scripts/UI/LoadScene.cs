@@ -24,6 +24,7 @@ public class LoadScene : MonoBehaviour {
     void Update () {
         if (delay != 0 && specialInputReceiver.inputS)
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene(sceneToLoad);
         }
     }
@@ -35,6 +36,7 @@ public class LoadScene : MonoBehaviour {
     }
 
     public void GoToScene (string scene) {
+        Time.timeScale = 1;
         SceneManager.LoadScene(scene);
     }
 }

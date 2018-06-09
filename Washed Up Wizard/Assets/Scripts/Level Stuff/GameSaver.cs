@@ -23,6 +23,7 @@ public class GameSaver : MonoBehaviour {
     // Use this for initialization
     void Awake ()
     {
+        Time.timeScale = 1;
         if (instance == null)
         {
             instance = this;

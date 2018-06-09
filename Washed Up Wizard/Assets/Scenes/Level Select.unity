@@ -533,7 +533,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2136755252}
+      - m_Target: {fileID: 2114332192}
         m_MethodName: LevelSelect
         m_Mode: 1
         m_Arguments:
@@ -691,7 +691,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2136755252}
+      - m_Target: {fileID: 2114332192}
         m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
@@ -1018,7 +1018,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 5a50a11497673444aaf081679b3cf032, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 5a50a11497673444aaf081679b3cf032, type: 3}
       propertyPath: m_LocalScale.x
@@ -2697,7 +2697,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4380688149140976, guid: f63739010cac6e146a1fab4c11fd1277, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f63739010cac6e146a1fab4c11fd1277, type: 2}
@@ -2931,7 +2931,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: e54ca0f23f71fae41802354402637f98, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2300004, guid: e54ca0f23f71fae41802354402637f98, type: 3}
       propertyPath: m_CastShadows
@@ -3699,9 +3699,43 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2020801138}
---- !u!114 &2136755252 stripped
+--- !u!1 &2114332191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2114332193}
+  - component: {fileID: 2114332192}
+  m_Layer: 0
+  m_Name: File Loader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2114332192
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114867355897872804, guid: f63739010cac6e146a1fab4c11fd1277,
-    type: 2}
-  m_PrefabInternal: {fileID: 1622929120}
-  m_Script: {fileID: 11500000, guid: b9658efad9c16cb40ab7a662164c4a77, type: 3}
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2114332191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d069edaf089d18418c65aa60025c4b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2114332193
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2114332191}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
