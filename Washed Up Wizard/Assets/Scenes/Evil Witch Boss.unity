@@ -1287,7 +1287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &470971479
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1297,7 +1297,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 859c33cf40869ea4383f79db0eeabdd5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8e7e8e6be04eb8d4392427136e0409d2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
@@ -1723,10 +1723,6 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1538365106}
-    - target: {fileID: 1212707934645664, guid: 4338c4800093dab419a54f923806b594, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4338c4800093dab419a54f923806b594, type: 2}
   m_IsPrefabParent: 0
@@ -4176,11 +4172,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114089395394422796, guid: 265560de58e385840a292cd2f4968e36,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1838523878}
     - target: {fileID: 114102436710002326, guid: 265560de58e385840a292cd2f4968e36,
         type: 2}
       propertyPath: target

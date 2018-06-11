@@ -47,19 +47,6 @@ public class GameSaver : MonoBehaviour {
         }
         DontDestroyOnLoad(this.gameObject);
     }
-	
-    // Update is called once per frame
-    void Update ()
-    {
-        if (SceneManager.GetActiveScene().name == "Level Select" && Input.GetKeyDown(KeyCode.P))
-        {
-            for (int i = 0; i < levelButtons.Length; i++)
-            {
-                levelButtons[i].SetActive (true);
-                unlockedLevel = 11;
-            }
-        }
-    }
 
     public void NewScene ()
     {

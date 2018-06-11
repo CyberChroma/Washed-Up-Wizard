@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 54941379979522006}
   - component: {fileID: 114102436710002326}
   - component: {fileID: 95355696815501822}
-  - component: {fileID: 114089395394422796}
   m_Layer: 0
   m_Name: Camera Pos
   m_TagString: Untagged
@@ -55,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1517896599083940}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -13}
+  m_LocalPosition: {x: 0, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4859976874054766}
@@ -150,18 +149,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114089395394422796
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1517896599083940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47f74fa7f067868439249534963e01da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114102436710002326
 MonoBehaviour:
   m_ObjectHideFlags: 1
