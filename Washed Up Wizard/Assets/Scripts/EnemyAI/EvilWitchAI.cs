@@ -88,7 +88,7 @@ public class EvilWitchAI : MonoBehaviour
     {
         if (health.currentHealth <= 0)
         {
-            SceneManager.LoadScene("Ending");
+            SceneManager.LoadScene("Evil Witch Death");
         }
     }
 
