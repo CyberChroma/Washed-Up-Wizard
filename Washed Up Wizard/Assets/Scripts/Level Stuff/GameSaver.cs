@@ -92,7 +92,7 @@ public class GameSaver : MonoBehaviour {
         {
             levelButtons = new GameObject[11];
             levelButtons[0] = GameObject.Find("Hospital");
-            levelButtons[1] = GameObject.Find("Slime Cube");
+            levelButtons[1] = GameObject.Find("Slime Queen");
             levelButtons[2] = GameObject.Find("Frozen Tundra");
             levelButtons[3] = GameObject.Find("Wendigo");
             levelButtons[4] = GameObject.Find("Circus");
@@ -104,7 +104,10 @@ public class GameSaver : MonoBehaviour {
             levelButtons[10] = GameObject.Find("Evil Witch");
             for (int i = unlockedLevel; i < levelButtons.Length; i++)
             {
-                levelButtons[i].SetActive(false);
+                if (levelButtons[i])
+                {
+                    levelButtons[i].SetActive(false);
+                }
             }
         }
         else if (SceneManager.GetActiveScene().name == ("Slime Queen Boss") && unlockedLevel < 2)

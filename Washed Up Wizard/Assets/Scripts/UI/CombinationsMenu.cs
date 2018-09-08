@@ -20,7 +20,7 @@ public class CombinationsMenu : MonoBehaviour {
     void Start () {
         playerSpellReference = GameObject.Find("Spell Crafting System").GetComponent<PlayerSpellsReference>();
         activateFollowTarget = GetComponent<ActivateFollowTarget>();
-        spellInputReceiver = GameObject.Find("Input Controller").GetComponent<SpellInputReceiver>();
+        spellInputReceiver = GameObject.Find("Pause Menu").transform.Find("Input Controller").GetComponent<SpellInputReceiver>();
 		SetUpCombinations ();
 	}
 
