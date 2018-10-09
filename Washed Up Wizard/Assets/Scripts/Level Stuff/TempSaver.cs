@@ -10,9 +10,9 @@ public class TempSaver : MonoBehaviour {
     private float currentHealth = 10;
     private static Health health;
     private static SpellCreator spellCreator;
-    private int[] spellID1 = new int[3];
-    private int[] spellID2 = new int[3];
-    private int[] spellID3 = new int[3];
+    private int[] spellID1;
+    private int[] spellID2;
+    private int[] spellID3;
 
 	// Use this for initialization
 	void Awake () {
@@ -36,7 +36,7 @@ public class TempSaver : MonoBehaviour {
     }
 
     void Start () {
-        if (SceneManager.GetActiveScene().name == "Hospital")
+        if (spellID1 == null && spellID2 == null && spellID3 == null)
         {
             spellID1 = new int[] {9, 1, 1};
             spellID2 = new int[] {2, 0, 6};

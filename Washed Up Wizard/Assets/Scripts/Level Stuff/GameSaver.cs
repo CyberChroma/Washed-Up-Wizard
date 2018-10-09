@@ -171,7 +171,7 @@ public class GameSaver : MonoBehaviour {
             specialInputReceiver.advanceText = keys[12];
             specialInputReceiver.skipCutscenes = keys[13]; 
         }
-        if (TempSaver.instance != null)
+        if (TempSaver.instance != null && SceneManager.GetActiveScene().name != "Hospital")
         {
             TempSaver.instance.NewScene();
         }
