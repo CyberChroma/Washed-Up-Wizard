@@ -1,28 +1,68 @@
 fileFormatVersion: 2
 guid: 3d71c858524661e4a88dfb2082e62776
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: Grass
-    100002: //RootNode
-    100004: Grass_001
-    100006: Grass_002
-    400000: Grass
-    400002: //RootNode
-    400004: Grass_001
-    400006: Grass_002
-    2100000: Grass
-    2300000: Grass
-    2300002: Grass_001
-    2300004: Grass_002
-    3300000: Grass
-    3300002: Grass_001
-    3300004: Grass_002
-    4300000: Grass_002
-    4300002: Grass_001
-    4300004: Grass
-    7400000: Default Take
-    9500000: //RootNode
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Grass
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: Grass_001
+  - first:
+      1: 100006
+    second: Grass_002
+  - first:
+      4: 400000
+    second: Grass
+  - first:
+      4: 400002
+    second: //RootNode
+  - first:
+      4: 400004
+    second: Grass_001
+  - first:
+      4: 400006
+    second: Grass_002
+  - first:
+      21: 2100000
+    second: Grass
+  - first:
+      23: 2300000
+    second: Grass
+  - first:
+      23: 2300002
+    second: Grass_001
+  - first:
+      23: 2300004
+    second: Grass_002
+  - first:
+      33: 3300000
+    second: Grass
+  - first:
+      33: 3300002
+    second: Grass_001
+  - first:
+      33: 3300004
+    second: Grass_002
+  - first:
+      43: 4300000
+    second: Grass_002
+  - first:
+      43: 4300002
+    second: Grass_001
+  - first:
+      43: 4300004
+    second: Grass
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -30,7 +70,7 @@ ModelImporter:
       name: Grass
     second: {fileID: 2100000, guid: 1d6c2239fcbf9034a8a46a24ebb9e82b, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -62,21 +102,31 @@ ModelImporter:
     globalScale: 0.4
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -84,10 +134,13 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -97,14 +150,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 0.4
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

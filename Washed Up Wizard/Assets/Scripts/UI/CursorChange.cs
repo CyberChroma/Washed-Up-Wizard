@@ -6,23 +6,26 @@ using UnityEngine.UI;
 public class CursorChange : MonoBehaviour {
 
     public Texture2D cursorTexture;
-    public Vector2 hotSpot;
-    public CursorMode cursorMode = CursorMode.Auto;
-    private GameObject PauseManager;
+
+    private CursorMode cursorMode = CursorMode.Auto;
+    private Vector2 hotSpot;
+    private PauseManager pauseManager;
+
     void Start()
     {
         hotSpot = new Vector2(cursorTexture.width/2, cursorTexture.width/2);
-        PauseManager = GameObject.Find("Pause Manager");
+        pauseManager = GameObject.Find("Pause Manager").GetComponent<PauseManager>();
     }
     void Update ()
     {
-        if (!PauseManager.GetComponent<PauseManager>().isPaused)
+        // Default cursor now set in player settings
+        if (!pauseManager.isPaused)
         {
-            Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+            //Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
         }
-        else if (PauseManager.GetComponent<PauseManager>().isPaused)
+        else if (pauseManager.isPaused)
         {
-            Cursor.SetCursor(null, Vector2.zero, cursorMode);
+            //Cursor.SetCursor(null, Vector2.zero, cursorMode);
         }
     }
 }

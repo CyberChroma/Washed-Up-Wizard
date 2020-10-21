@@ -1,37 +1,89 @@
 fileFormatVersion: 2
 guid: 2cb3a5c4286b6fa4fa25161ef4d56882
-timeCreated: 1520451686
-licenseType: Free
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: ball_001
-    100002: //RootNode
-    100004: Circus_Ball-Striped
-    100006: Bomb
-    100008: Fuse
-    400000: ball_001
-    400002: //RootNode
-    400004: Circus_Ball-Striped
-    400006: Bomb
-    400008: Fuse
-    2100000: Curtain
-    2100002: Yellow
-    2100004: Light_Blue
-    2300000: ball_001
-    2300002: Circus_Ball-Striped
-    2300004: Bomb
-    2300006: Fuse
-    3300000: ball_001
-    3300002: Circus_Ball-Striped
-    3300004: Bomb
-    3300006: Fuse
-    4300000: ball_001
-    4300002: Circus_Ball-Striped
-    4300004: Fuse
-    4300006: Bomb
-    7400000: Default Take
-    9500000: //RootNode
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: ball_001
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: Circus_Ball-Striped
+  - first:
+      1: 100006
+    second: Bomb
+  - first:
+      1: 100008
+    second: Fuse
+  - first:
+      4: 400000
+    second: ball_001
+  - first:
+      4: 400002
+    second: //RootNode
+  - first:
+      4: 400004
+    second: Circus_Ball-Striped
+  - first:
+      4: 400006
+    second: Bomb
+  - first:
+      4: 400008
+    second: Fuse
+  - first:
+      21: 2100000
+    second: Curtain
+  - first:
+      21: 2100002
+    second: Yellow
+  - first:
+      21: 2100004
+    second: Light_Blue
+  - first:
+      23: 2300000
+    second: ball_001
+  - first:
+      23: 2300002
+    second: Circus_Ball-Striped
+  - first:
+      23: 2300004
+    second: Bomb
+  - first:
+      23: 2300006
+    second: Fuse
+  - first:
+      33: 3300000
+    second: ball_001
+  - first:
+      33: 3300002
+    second: Circus_Ball-Striped
+  - first:
+      33: 3300004
+    second: Bomb
+  - first:
+      33: 3300006
+    second: Fuse
+  - first:
+      43: 4300000
+    second: ball_001
+  - first:
+      43: 4300002
+    second: Circus_Ball-Striped
+  - first:
+      43: 4300004
+    second: Fuse
+  - first:
+      43: 4300006
+    second: Bomb
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -44,7 +96,7 @@ ModelImporter:
       name: Yellow
     second: {fileID: 2100000, guid: 3c6942ad8f5f72b418f830463163ca76, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -61,6 +113,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -75,21 +128,31 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -97,10 +160,13 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -110,14 +176,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -10,9 +10,9 @@ public class TempSaver : MonoBehaviour {
     private float currentHealth = 10;
     private static Health health;
     private static SpellCreator spellCreator;
-    private int[] spellID1;
-    private int[] spellID2;
-    private int[] spellID3;
+    private int[] spellID1 = new int[] {9, 1, 1};
+    private int[] spellID2 = new int[] {2, 0, 6};
+    private int[] spellID3 = new int[] {3, 7, 9};
 
 	// Use this for initialization
 	void Awake () {
@@ -20,6 +20,9 @@ public class TempSaver : MonoBehaviour {
         if (instance == null)
         {
             instance = this;
+            spellID1 = new int[] {9, 1, 1};
+            spellID2 = new int[] {2, 0, 6};
+            spellID3 = new int[] {3, 7, 9};
         }
         else if (instance != this)
         {
@@ -43,7 +46,10 @@ public class TempSaver : MonoBehaviour {
             spellID3 = new int[] {3, 7, 9};
             TransferSpells();
             spellCreator = GameObject.Find("Spell Crafting System").GetComponent<SpellCreator>();
-            spellCreator.gameObject.SetActive(false);
+            if (SceneManager.GetActiveScene().name == "Hospital")
+            {
+                spellCreator.gameObject.SetActive(false);
+            }
         }
 	}
 	
@@ -89,11 +95,18 @@ public class TempSaver : MonoBehaviour {
     }
 
     public void TransferSpells () {
+
         if (GameObject.Find("Player"))
         {
             if (!spellCreator)
             {
                 spellCreator = GameObject.Find("Spell Crafting System").GetComponent<SpellCreator>();
+            }
+            if (SceneManager.GetActiveScene().name == "Hospital")
+            {
+                spellID1 = new int[] {9, 1, 1};
+                spellID2 = new int[] {2, 0, 6};
+                spellID3 = new int[] {3, 7, 9};
             }
             spellCreator.CreateSpell(spellID1, 0);
             spellCreator.CreateSpell(spellID2, 1);

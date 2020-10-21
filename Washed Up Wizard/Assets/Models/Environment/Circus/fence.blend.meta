@@ -1,38 +1,98 @@
 fileFormatVersion: 2
 guid: baac96fda4c4e8948adbb29943976c26
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: bottom
-    100002: //RootNode
-    100004: fence
-    100006: middle
-    100008: top
-    400000: bottom
-    400002: //RootNode
-    400004: fence
-    400006: middle
-    400008: top
-    2100000: Material
-    2100002: BROWN_
-    2100004: BROWN2
-    2300000: bottom
-    2300002: fence
-    2300004: middle
-    2300006: top
-    2300008: //RootNode
-    3300000: bottom
-    3300002: fence
-    3300004: middle
-    3300006: top
-    3300008: //RootNode
-    4300000: bottom
-    4300002: middle
-    4300004: top
-    4300006: fence
-    4300008: Fence
-    7400000: Default Take
-    9500000: //RootNode
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: bottom
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: fence
+  - first:
+      1: 100006
+    second: middle
+  - first:
+      1: 100008
+    second: top
+  - first:
+      4: 400000
+    second: bottom
+  - first:
+      4: 400002
+    second: //RootNode
+  - first:
+      4: 400004
+    second: fence
+  - first:
+      4: 400006
+    second: middle
+  - first:
+      4: 400008
+    second: top
+  - first:
+      21: 2100000
+    second: Material
+  - first:
+      21: 2100002
+    second: BROWN_
+  - first:
+      21: 2100004
+    second: BROWN2
+  - first:
+      23: 2300000
+    second: bottom
+  - first:
+      23: 2300002
+    second: fence
+  - first:
+      23: 2300004
+    second: middle
+  - first:
+      23: 2300006
+    second: top
+  - first:
+      23: 2300008
+    second: //RootNode
+  - first:
+      33: 3300000
+    second: bottom
+  - first:
+      33: 3300002
+    second: fence
+  - first:
+      33: 3300004
+    second: middle
+  - first:
+      33: 3300006
+    second: top
+  - first:
+      33: 3300008
+    second: //RootNode
+  - first:
+      43: 4300000
+    second: bottom
+  - first:
+      43: 4300002
+    second: middle
+  - first:
+      43: 4300004
+    second: top
+  - first:
+      43: 4300006
+    second: fence
+  - first:
+      43: 4300008
+    second: Fence
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -45,7 +105,7 @@ ModelImporter:
       name: BROWN_
     second: {fileID: 2100000, guid: 22bf8154f32cb57418f3399178610c09, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -77,21 +137,31 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -99,10 +169,13 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -112,14 +185,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

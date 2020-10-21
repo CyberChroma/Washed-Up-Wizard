@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameSaver : MonoBehaviour {
@@ -15,6 +16,8 @@ public class GameSaver : MonoBehaviour {
     private int unlockedLevel = 1;
     private GameObject[] levelButtons;
     private bool[] spellsUnlocked;
+    private float volume = 1f;
+    private VolumeUI volumeUI;
     private GameObject inputController;
     private MoveInputReceiver moveInputReceiver;
     private SpellInputReceiver spellInputReceiver;
@@ -29,6 +32,7 @@ public class GameSaver : MonoBehaviour {
             instance = this;
             spellsUnlocked = new bool[20];
             inputController = GameObject.Find("Input Controller");
+            volumeUI = FindObjectOfType<VolumeUI>();
             if (inputController && keys.Length == 0)
             {
                 moveInputReceiver = inputController.GetComponent<MoveInputReceiver>();
@@ -171,7 +175,16 @@ public class GameSaver : MonoBehaviour {
             specialInputReceiver.advanceText = keys[12];
             specialInputReceiver.skipCutscenes = keys[13]; 
         }
-        if (TempSaver.instance != null && SceneManager.GetActiveScene().name != "Hospital")
+        if (GameObject.Find("Pause Menu") != null)
+        {
+            volumeUI = GameObject.Find("Pause Menu").transform.Find("Pause Screen").Find("Volume Slider").GetComponent<VolumeUI>();
+            if (volumeUI != null)
+            {
+                volumeUI.GetComponent<Slider>().value = volume;
+                AudioListener.volume = volume;
+            }
+        }
+        if (TempSaver.instance != null)
         {
             TempSaver.instance.NewScene();
         }
@@ -218,6 +231,10 @@ public class GameSaver : MonoBehaviour {
         LevelSelect();
     }
 
+    public void UpdateVolume (float newVolume) {
+        volume = newVolume;
+    }
+
     public void LevelSelect () {
         GameObject.Find("Main Menu").SetActive(false);
         GameObject.Find("Canvas").transform.Find("Level Select").gameObject.SetActive(true);
@@ -231,4 +248,5 @@ class SaveData
     public int unlockedLevel;
     public bool[] spellsUnlocked = new bool[20];
     public KeyCode[] keys = new KeyCode[14];
+    public float volume = 1f;
 }

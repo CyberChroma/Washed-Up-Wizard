@@ -1,49 +1,125 @@
 fileFormatVersion: 2
 guid: 342af101fd6849448b366946071be0f8
-timeCreated: 1518200504
-licenseType: Free
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: Cave
-    100002: //RootNode
-    100004: ice_lump_outside
-    100006: ice_lump_top
-    100008: Snow_lump
-    100010: snow_lump_2
-    400000: Cave
-    400002: //RootNode
-    400004: ice_lump_outside
-    400006: ice_lump_top
-    400008: Snow_lump
-    400010: snow_lump_2
-    2100000: ice
-    2100002: snow_004
-    2100004: snow
-    2100006: grey_cave
-    2100008: grey_inside_cave
-    2300000: Cave
-    2300002: ice_lump_outside
-    2300004: ice_lump_top
-    2300006: Snow_lump
-    2300008: snow_lump_2
-    3300000: Cave
-    3300002: ice_lump_outside
-    3300004: ice_lump_top
-    3300006: Snow_lump
-    3300008: snow_lump_2
-    4300000: ice_lump_outside
-    4300002: ice_lump_top
-    4300004: snow_lump_2
-    4300006: Snow_lump
-    4300008: Cave
-    6400000: Cave
-    6400002: ice_lump_outside
-    6400004: ice_lump_top
-    6400006: Snow_lump
-    6400008: snow_lump_2
-    7400000: Default Take
-    9500000: //RootNode
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Cave
+  - first:
+      1: 100002
+    second: //RootNode
+  - first:
+      1: 100004
+    second: ice_lump_outside
+  - first:
+      1: 100006
+    second: ice_lump_top
+  - first:
+      1: 100008
+    second: Snow_lump
+  - first:
+      1: 100010
+    second: snow_lump_2
+  - first:
+      4: 400000
+    second: Cave
+  - first:
+      4: 400002
+    second: //RootNode
+  - first:
+      4: 400004
+    second: ice_lump_outside
+  - first:
+      4: 400006
+    second: ice_lump_top
+  - first:
+      4: 400008
+    second: Snow_lump
+  - first:
+      4: 400010
+    second: snow_lump_2
+  - first:
+      21: 2100000
+    second: ice
+  - first:
+      21: 2100002
+    second: snow_004
+  - first:
+      21: 2100004
+    second: snow
+  - first:
+      21: 2100006
+    second: grey_cave
+  - first:
+      21: 2100008
+    second: grey_inside_cave
+  - first:
+      23: 2300000
+    second: Cave
+  - first:
+      23: 2300002
+    second: ice_lump_outside
+  - first:
+      23: 2300004
+    second: ice_lump_top
+  - first:
+      23: 2300006
+    second: Snow_lump
+  - first:
+      23: 2300008
+    second: snow_lump_2
+  - first:
+      33: 3300000
+    second: Cave
+  - first:
+      33: 3300002
+    second: ice_lump_outside
+  - first:
+      33: 3300004
+    second: ice_lump_top
+  - first:
+      33: 3300006
+    second: Snow_lump
+  - first:
+      33: 3300008
+    second: snow_lump_2
+  - first:
+      43: 4300000
+    second: ice_lump_outside
+  - first:
+      43: 4300002
+    second: ice_lump_top
+  - first:
+      43: 4300004
+    second: snow_lump_2
+  - first:
+      43: 4300006
+    second: Snow_lump
+  - first:
+      43: 4300008
+    second: Cave
+  - first:
+      64: 6400000
+    second: Cave
+  - first:
+      64: 6400002
+    second: ice_lump_outside
+  - first:
+      64: 6400004
+    second: ice_lump_top
+  - first:
+      64: 6400006
+    second: Snow_lump
+  - first:
+      64: 6400008
+    second: snow_lump_2
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -66,7 +142,7 @@ ModelImporter:
       name: snow
     second: {fileID: 2100000, guid: 8a6b090e1d9628f4bbcbeef7fab455f9, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -83,6 +159,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -97,21 +174,31 @@ ModelImporter:
     globalScale: 2
     meshCompression: 0
     addColliders: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -119,10 +206,13 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -132,14 +222,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 2
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

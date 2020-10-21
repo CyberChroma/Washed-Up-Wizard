@@ -1,42 +1,104 @@
 fileFormatVersion: 2
 guid: f67243c893275464a8be4613ee0dbe34
-timeCreated: 1520275496
-licenseType: Free
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: curtain_left
-    100004: curtain_right
-    100006: Curtain_L
-    100008: Curtain_R
-    400000: //RootNode
-    400002: curtain_left
-    400004: curtain_right
-    400006: Curtain_L
-    400008: Curtain_R
-    2100000: circus_red
-    2100002: Material_005
-    2100004: unnamed
-    2100006: Curtain
-    2300000: curtain_left
-    2300002: curtain_right
-    2300004: //RootNode
-    2300006: Curtain_L
-    2300008: Curtain_R
-    3300000: curtain_left
-    3300002: curtain_right
-    3300004: //RootNode
-    3300006: Curtain_L
-    3300008: Curtain_R
-    4300000: curtain_right
-    4300002: curtain_left
-    4300004: Vert
-    4300006: Curtain_R
-    4300008: Curtain_L
-    7400000: Open and Close
-    7400002: Close
-    9500000: //RootNode
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: curtain_left
+  - first:
+      1: 100004
+    second: curtain_right
+  - first:
+      1: 100006
+    second: Curtain_L
+  - first:
+      1: 100008
+    second: Curtain_R
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: curtain_left
+  - first:
+      4: 400004
+    second: curtain_right
+  - first:
+      4: 400006
+    second: Curtain_L
+  - first:
+      4: 400008
+    second: Curtain_R
+  - first:
+      21: 2100000
+    second: circus_red
+  - first:
+      21: 2100002
+    second: Material_005
+  - first:
+      21: 2100004
+    second: unnamed
+  - first:
+      21: 2100006
+    second: Curtain
+  - first:
+      23: 2300000
+    second: curtain_left
+  - first:
+      23: 2300002
+    second: curtain_right
+  - first:
+      23: 2300004
+    second: //RootNode
+  - first:
+      23: 2300006
+    second: Curtain_L
+  - first:
+      23: 2300008
+    second: Curtain_R
+  - first:
+      33: 3300000
+    second: curtain_left
+  - first:
+      33: 3300002
+    second: curtain_right
+  - first:
+      33: 3300004
+    second: //RootNode
+  - first:
+      33: 3300006
+    second: Curtain_L
+  - first:
+      33: 3300008
+    second: Curtain_R
+  - first:
+      43: 4300000
+    second: curtain_right
+  - first:
+      43: 4300002
+    second: curtain_left
+  - first:
+      43: 4300004
+    second: Vert
+  - first:
+      43: 4300006
+    second: Curtain_R
+  - first:
+      43: 4300008
+    second: Curtain_L
+  - first:
+      74: 7400000
+    second: Open and Close
+  - first:
+      74: 7400002
+    second: Close
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -49,7 +111,7 @@ ModelImporter:
       name: circus_red
     second: {fileID: 2100000, guid: 7ab525347ff5ce14aaa67296849c4489, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -66,6 +128,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -77,6 +140,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Open and Close
       takeName: Default Take
+      internalID: 0
       firstFrame: 10
       lastFrame: 40
       wrapMode: 0
@@ -108,21 +172,31 @@ ModelImporter:
     globalScale: 2
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -130,10 +204,13 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -143,14 +220,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 2
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

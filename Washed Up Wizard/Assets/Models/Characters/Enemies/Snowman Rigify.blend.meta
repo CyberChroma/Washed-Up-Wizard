@@ -1,87 +1,239 @@
 fileFormatVersion: 2
 guid: 2b4df0266f85e384db72ff153acd2d3e
-timeCreated: 1515904910
-licenseType: Free
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Snowman-Bottom
-    100004: Snowman-Head
-    100006: Snowman-Middle
-    100008: Bottom
-    100010: Forarm_L
-    100012: Forarm_R
-    100014: Hand_L
-    100016: Hand_L_001
-    100018: Hand_L_002
-    100020: Hand_L_003
-    100022: Hand_L_004
-    100024: Hand_L_005
-    100026: Hand_R
-    100028: Hand_R_001
-    100030: Hand_R_002
-    100032: Hand_R_003
-    100034: Hand_R_004
-    100036: Hand_R_005
-    100038: Middle
-    100040: Snowman
-    100042: SnowmanRig
-    100044: Top
-    100046: Upperarm_L
-    100048: Upperarm_R
-    400000: //RootNode
-    400002: Snowman-Bottom
-    400004: Snowman-Head
-    400006: Snowman-Middle
-    400008: Bottom
-    400010: Forarm_L
-    400012: Forarm_R
-    400014: Hand_L
-    400016: Hand_L_001
-    400018: Hand_L_002
-    400020: Hand_L_003
-    400022: Hand_L_004
-    400024: Hand_L_005
-    400026: Hand_R
-    400028: Hand_R_001
-    400030: Hand_R_002
-    400032: Hand_R_003
-    400034: Hand_R_004
-    400036: Hand_R_005
-    400038: Middle
-    400040: Snowman
-    400042: SnowmanRig
-    400044: Top
-    400046: Upperarm_L
-    400048: Upperarm_R
-    2100000: unnamed
-    2100002: Snow
-    2100004: Coals
-    2100006: Carrot
-    2100008: Twigs
-    2100010: Hat
-    2100012: Hat-Stripe
-    2300000: //RootNode
-    2300002: Snowman-Bottom
-    2300004: Snowman-Head
-    2300006: Snowman-Middle
-    2300008: Snowman
-    3300000: //RootNode
-    3300002: Snowman-Bottom
-    3300004: Snowman-Head
-    3300006: Snowman-Middle
-    3300008: Snowman
-    4300000: Sphere
-    4300002: Snowman
-    4300004: Snowman-Middle
-    4300006: Snowman-Head
-    4300008: Snowman-Bottom
-    7400000: Moving
-    7400002: SnowmanRigAction_001
-    7400004: Death
-    9500000: //RootNode
-    13700000: Snowman
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Snowman-Bottom
+  - first:
+      1: 100004
+    second: Snowman-Head
+  - first:
+      1: 100006
+    second: Snowman-Middle
+  - first:
+      1: 100008
+    second: Bottom
+  - first:
+      1: 100010
+    second: Forarm_L
+  - first:
+      1: 100012
+    second: Forarm_R
+  - first:
+      1: 100014
+    second: Hand_L
+  - first:
+      1: 100016
+    second: Hand_L_001
+  - first:
+      1: 100018
+    second: Hand_L_002
+  - first:
+      1: 100020
+    second: Hand_L_003
+  - first:
+      1: 100022
+    second: Hand_L_004
+  - first:
+      1: 100024
+    second: Hand_L_005
+  - first:
+      1: 100026
+    second: Hand_R
+  - first:
+      1: 100028
+    second: Hand_R_001
+  - first:
+      1: 100030
+    second: Hand_R_002
+  - first:
+      1: 100032
+    second: Hand_R_003
+  - first:
+      1: 100034
+    second: Hand_R_004
+  - first:
+      1: 100036
+    second: Hand_R_005
+  - first:
+      1: 100038
+    second: Middle
+  - first:
+      1: 100040
+    second: Snowman
+  - first:
+      1: 100042
+    second: SnowmanRig
+  - first:
+      1: 100044
+    second: Top
+  - first:
+      1: 100046
+    second: Upperarm_L
+  - first:
+      1: 100048
+    second: Upperarm_R
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Snowman-Bottom
+  - first:
+      4: 400004
+    second: Snowman-Head
+  - first:
+      4: 400006
+    second: Snowman-Middle
+  - first:
+      4: 400008
+    second: Bottom
+  - first:
+      4: 400010
+    second: Forarm_L
+  - first:
+      4: 400012
+    second: Forarm_R
+  - first:
+      4: 400014
+    second: Hand_L
+  - first:
+      4: 400016
+    second: Hand_L_001
+  - first:
+      4: 400018
+    second: Hand_L_002
+  - first:
+      4: 400020
+    second: Hand_L_003
+  - first:
+      4: 400022
+    second: Hand_L_004
+  - first:
+      4: 400024
+    second: Hand_L_005
+  - first:
+      4: 400026
+    second: Hand_R
+  - first:
+      4: 400028
+    second: Hand_R_001
+  - first:
+      4: 400030
+    second: Hand_R_002
+  - first:
+      4: 400032
+    second: Hand_R_003
+  - first:
+      4: 400034
+    second: Hand_R_004
+  - first:
+      4: 400036
+    second: Hand_R_005
+  - first:
+      4: 400038
+    second: Middle
+  - first:
+      4: 400040
+    second: Snowman
+  - first:
+      4: 400042
+    second: SnowmanRig
+  - first:
+      4: 400044
+    second: Top
+  - first:
+      4: 400046
+    second: Upperarm_L
+  - first:
+      4: 400048
+    second: Upperarm_R
+  - first:
+      21: 2100000
+    second: unnamed
+  - first:
+      21: 2100002
+    second: Snow
+  - first:
+      21: 2100004
+    second: Coals
+  - first:
+      21: 2100006
+    second: Carrot
+  - first:
+      21: 2100008
+    second: Twigs
+  - first:
+      21: 2100010
+    second: Hat
+  - first:
+      21: 2100012
+    second: Hat-Stripe
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: Snowman-Bottom
+  - first:
+      23: 2300004
+    second: Snowman-Head
+  - first:
+      23: 2300006
+    second: Snowman-Middle
+  - first:
+      23: 2300008
+    second: Snowman
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: Snowman-Bottom
+  - first:
+      33: 3300004
+    second: Snowman-Head
+  - first:
+      33: 3300006
+    second: Snowman-Middle
+  - first:
+      33: 3300008
+    second: Snowman
+  - first:
+      43: 4300000
+    second: Sphere
+  - first:
+      43: 4300002
+    second: Snowman
+  - first:
+      43: 4300004
+    second: Snowman-Middle
+  - first:
+      43: 4300006
+    second: Snowman-Head
+  - first:
+      43: 4300008
+    second: Snowman-Bottom
+  - first:
+      74: 7400000
+    second: Moving
+  - first:
+      74: 7400002
+    second: SnowmanRigAction_001
+  - first:
+      74: 7400004
+    second: Death
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Snowman
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -114,7 +266,7 @@ ModelImporter:
       name: Twigs
     second: {fileID: 2100000, guid: 8d03df4b69db2f7458474bcc1bb62f9d, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -131,6 +283,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -142,6 +295,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Moving
       takeName: Default Take
+      internalID: 0
       firstFrame: 10
       lastFrame: 170
       wrapMode: 0
@@ -170,6 +324,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Death
       takeName: Default Take
+      internalID: 0
       firstFrame: 180
       lastFrame: 250
       wrapMode: 0
@@ -201,21 +356,31 @@ ModelImporter:
     globalScale: 0.5
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -223,10 +388,13 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -236,14 +404,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 0.5
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

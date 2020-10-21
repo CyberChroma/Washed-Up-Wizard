@@ -1,84 +1,230 @@
 fileFormatVersion: 2
 guid: 23dda1342cb1d9d46a7f6e4babbea6e5
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: black_eye
-    100002: black_eye_001
-    100004: cart_4
-    100006: //RootNode
-    100008: eye_brow_left
-    100010: eye_brow_right
-    100012: face
-    100014: hat
-    100016: lips
-    100018: lips_001
-    100020: NOSE
-    100022: teeth
-    100024: Top_Star
-    400000: black_eye
-    400002: black_eye_001
-    400004: cart_4
-    400006: //RootNode
-    400008: eye_brow_left
-    400010: eye_brow_right
-    400012: face
-    400014: hat
-    400016: lips
-    400018: lips_001
-    400020: NOSE
-    400022: teeth
-    400024: Top_Star
-    2100000: Material_004
-    2100002: Material_005
-    2100004: Material_002
-    2100006: Material_001
-    2100008: Material_003
-    2100010: Material
-    2100012: Material_010
-    2100014: Material_006
-    2100016: Yellow
-    2300000: black_eye
-    2300002: black_eye_001
-    2300004: cart_4
-    2300006: eye_brow_left
-    2300008: eye_brow_right
-    2300010: face
-    2300012: hat
-    2300014: lips
-    2300016: lips_001
-    2300018: NOSE
-    2300020: teeth
-    2300022: Top_Star
-    3300000: black_eye
-    3300002: black_eye_001
-    3300004: cart_4
-    3300006: eye_brow_left
-    3300008: eye_brow_right
-    3300010: face
-    3300012: hat
-    3300014: lips
-    3300016: lips_001
-    3300018: NOSE
-    3300020: teeth
-    3300022: Top_Star
-    4300000: lips_001
-    4300002: black_eye_001
-    4300004: cart_4
-    4300006: eye_brow_left
-    4300008: eye_brow_right
-    4300010: lips
-    4300012: teeth
-    4300014: hat
-    4300016: black_eye
-    4300018: NOSE
-    4300020: face
-    4300022: Top_Star
-    7400000: Default Take
-    9500000: //RootNode
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: black_eye
+  - first:
+      1: 100002
+    second: black_eye_001
+  - first:
+      1: 100004
+    second: cart_4
+  - first:
+      1: 100006
+    second: //RootNode
+  - first:
+      1: 100008
+    second: eye_brow_left
+  - first:
+      1: 100010
+    second: eye_brow_right
+  - first:
+      1: 100012
+    second: face
+  - first:
+      1: 100014
+    second: hat
+  - first:
+      1: 100016
+    second: lips
+  - first:
+      1: 100018
+    second: lips_001
+  - first:
+      1: 100020
+    second: NOSE
+  - first:
+      1: 100022
+    second: teeth
+  - first:
+      1: 100024
+    second: Top_Star
+  - first:
+      4: 400000
+    second: black_eye
+  - first:
+      4: 400002
+    second: black_eye_001
+  - first:
+      4: 400004
+    second: cart_4
+  - first:
+      4: 400006
+    second: //RootNode
+  - first:
+      4: 400008
+    second: eye_brow_left
+  - first:
+      4: 400010
+    second: eye_brow_right
+  - first:
+      4: 400012
+    second: face
+  - first:
+      4: 400014
+    second: hat
+  - first:
+      4: 400016
+    second: lips
+  - first:
+      4: 400018
+    second: lips_001
+  - first:
+      4: 400020
+    second: NOSE
+  - first:
+      4: 400022
+    second: teeth
+  - first:
+      4: 400024
+    second: Top_Star
+  - first:
+      21: 2100000
+    second: Material_004
+  - first:
+      21: 2100002
+    second: Material_005
+  - first:
+      21: 2100004
+    second: Material_002
+  - first:
+      21: 2100006
+    second: Material_001
+  - first:
+      21: 2100008
+    second: Material_003
+  - first:
+      21: 2100010
+    second: Material
+  - first:
+      21: 2100012
+    second: Material_010
+  - first:
+      21: 2100014
+    second: Material_006
+  - first:
+      21: 2100016
+    second: Yellow
+  - first:
+      23: 2300000
+    second: black_eye
+  - first:
+      23: 2300002
+    second: black_eye_001
+  - first:
+      23: 2300004
+    second: cart_4
+  - first:
+      23: 2300006
+    second: eye_brow_left
+  - first:
+      23: 2300008
+    second: eye_brow_right
+  - first:
+      23: 2300010
+    second: face
+  - first:
+      23: 2300012
+    second: hat
+  - first:
+      23: 2300014
+    second: lips
+  - first:
+      23: 2300016
+    second: lips_001
+  - first:
+      23: 2300018
+    second: NOSE
+  - first:
+      23: 2300020
+    second: teeth
+  - first:
+      23: 2300022
+    second: Top_Star
+  - first:
+      33: 3300000
+    second: black_eye
+  - first:
+      33: 3300002
+    second: black_eye_001
+  - first:
+      33: 3300004
+    second: cart_4
+  - first:
+      33: 3300006
+    second: eye_brow_left
+  - first:
+      33: 3300008
+    second: eye_brow_right
+  - first:
+      33: 3300010
+    second: face
+  - first:
+      33: 3300012
+    second: hat
+  - first:
+      33: 3300014
+    second: lips
+  - first:
+      33: 3300016
+    second: lips_001
+  - first:
+      33: 3300018
+    second: NOSE
+  - first:
+      33: 3300020
+    second: teeth
+  - first:
+      33: 3300022
+    second: Top_Star
+  - first:
+      43: 4300000
+    second: lips_001
+  - first:
+      43: 4300002
+    second: black_eye_001
+  - first:
+      43: 4300004
+    second: cart_4
+  - first:
+      43: 4300006
+    second: eye_brow_left
+  - first:
+      43: 4300008
+    second: eye_brow_right
+  - first:
+      43: 4300010
+    second: lips
+  - first:
+      43: 4300012
+    second: teeth
+  - first:
+      43: 4300014
+    second: hat
+  - first:
+      43: 4300016
+    second: black_eye
+  - first:
+      43: 4300018
+    second: NOSE
+  - first:
+      43: 4300020
+    second: face
+  - first:
+      43: 4300022
+    second: Top_Star
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -107,6 +253,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Default Take
       takeName: Default Take
+      internalID: 0
       firstFrame: -1
       lastFrame: 119
       wrapMode: 0
@@ -138,21 +285,31 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -160,10 +317,13 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -173,14 +333,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

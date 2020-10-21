@@ -1,40 +1,104 @@
 fileFormatVersion: 2
 guid: b3e7e8a1bde4c4d42b1e7d73d458f552
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: 1_WHEEL_cycle
-    100004: Plane
-    100006: Pedals
-    100008: Unicycle
-    400000: //RootNode
-    400002: 1_WHEEL_cycle
-    400004: Plane
-    400006: Pedals
-    400008: Unicycle
-    2100000: black
-    2100002: circus_whte
-    2100004: bue
-    2100006: circus_red
-    2100008: circus_yellow
-    2100010: blue
-    2300000: //RootNode
-    2300002: 1_WHEEL_cycle
-    2300004: Plane
-    2300006: Pedals
-    2300008: Unicycle
-    3300000: //RootNode
-    3300002: 1_WHEEL_cycle
-    3300004: Plane
-    3300006: Pedals
-    3300008: Unicycle
-    4300000: 1_WHEEL_cycle
-    4300002: Plane
-    4300004: Unicycle
-    4300006: Pedals
-    7400000: Default Take
-    9500000: //RootNode
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: 1_WHEEL_cycle
+  - first:
+      1: 100004
+    second: Plane
+  - first:
+      1: 100006
+    second: Pedals
+  - first:
+      1: 100008
+    second: Unicycle
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: 1_WHEEL_cycle
+  - first:
+      4: 400004
+    second: Plane
+  - first:
+      4: 400006
+    second: Pedals
+  - first:
+      4: 400008
+    second: Unicycle
+  - first:
+      21: 2100000
+    second: black
+  - first:
+      21: 2100002
+    second: circus_whte
+  - first:
+      21: 2100004
+    second: bue
+  - first:
+      21: 2100006
+    second: circus_red
+  - first:
+      21: 2100008
+    second: circus_yellow
+  - first:
+      21: 2100010
+    second: blue
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: 1_WHEEL_cycle
+  - first:
+      23: 2300004
+    second: Plane
+  - first:
+      23: 2300006
+    second: Pedals
+  - first:
+      23: 2300008
+    second: Unicycle
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: 1_WHEEL_cycle
+  - first:
+      33: 3300004
+    second: Plane
+  - first:
+      33: 3300006
+    second: Pedals
+  - first:
+      33: 3300008
+    second: Unicycle
+  - first:
+      43: 4300000
+    second: 1_WHEEL_cycle
+  - first:
+      43: 4300002
+    second: Plane
+  - first:
+      43: 4300004
+    second: Unicycle
+  - first:
+      43: 4300006
+    second: Pedals
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -62,7 +126,7 @@ ModelImporter:
       name: circus_yellow
     second: {fileID: 2100000, guid: 5469bee4058627c44bfdefc566863903, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -94,21 +158,31 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -116,10 +190,13 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -129,14 +206,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

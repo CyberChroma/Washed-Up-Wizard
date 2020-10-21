@@ -1,43 +1,107 @@
 fileFormatVersion: 2
 guid: 5d6580cb59ebbac4e85a4c366ca084e2
-timeCreated: 1522349234
-licenseType: Free
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: cart_itself
-    100002: mettal_thinggies
-    100004: //RootNode
-    100006: wheels
-    400000: cart_itself
-    400002: mettal_thinggies
-    400004: //RootNode
-    400006: wheels
-    2100000: unnamed
-    2100002: Material
-    2100004: Material_001
-    2100006: Material_002
-    2100008: Black
-    2100010: Dark_Grey
-    2100012: Grey
-    2100014: red
-    2100016: black
-    2100018: Ice_Clump
-    2300000: cart_itself
-    2300002: mettal_thinggies
-    2300004: wheels
-    2300006: //RootNode
-    3300000: cart_itself
-    3300002: mettal_thinggies
-    3300004: wheels
-    3300006: //RootNode
-    4300000: wheels
-    4300002: mettal_thinggies
-    4300004: cart_itself
-    7400000: Start
-    7400002: Move
-    7400004: End
-    9500000: //RootNode
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: cart_itself
+  - first:
+      1: 100002
+    second: mettal_thinggies
+  - first:
+      1: 100004
+    second: //RootNode
+  - first:
+      1: 100006
+    second: wheels
+  - first:
+      4: 400000
+    second: cart_itself
+  - first:
+      4: 400002
+    second: mettal_thinggies
+  - first:
+      4: 400004
+    second: //RootNode
+  - first:
+      4: 400006
+    second: wheels
+  - first:
+      21: 2100000
+    second: unnamed
+  - first:
+      21: 2100002
+    second: Material
+  - first:
+      21: 2100004
+    second: Material_001
+  - first:
+      21: 2100006
+    second: Material_002
+  - first:
+      21: 2100008
+    second: Black
+  - first:
+      21: 2100010
+    second: Dark_Grey
+  - first:
+      21: 2100012
+    second: Grey
+  - first:
+      21: 2100014
+    second: red
+  - first:
+      21: 2100016
+    second: black
+  - first:
+      21: 2100018
+    second: Ice_Clump
+  - first:
+      23: 2300000
+    second: cart_itself
+  - first:
+      23: 2300002
+    second: mettal_thinggies
+  - first:
+      23: 2300004
+    second: wheels
+  - first:
+      23: 2300006
+    second: //RootNode
+  - first:
+      33: 3300000
+    second: cart_itself
+  - first:
+      33: 3300002
+    second: mettal_thinggies
+  - first:
+      33: 3300004
+    second: wheels
+  - first:
+      33: 3300006
+    second: //RootNode
+  - first:
+      43: 4300000
+    second: wheels
+  - first:
+      43: 4300002
+    second: mettal_thinggies
+  - first:
+      43: 4300004
+    second: cart_itself
+  - first:
+      74: 7400000
+    second: Start
+  - first:
+      74: 7400002
+    second: Move
+  - first:
+      74: 7400004
+    second: End
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -80,7 +144,7 @@ ModelImporter:
       name: unnamed
     second: {fileID: 2100000, guid: 46de95adeeb46994e964e06cc117aea3, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -97,6 +161,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -108,6 +173,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Start
       takeName: Default Take
+      internalID: 0
       firstFrame: 0
       lastFrame: 5
       wrapMode: 0
@@ -136,6 +202,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Move
       takeName: Default Take
+      internalID: 0
       firstFrame: 10
       lastFrame: 30
       wrapMode: 0
@@ -164,6 +231,7 @@ ModelImporter:
     - serializedVersion: 16
       name: End
       takeName: Default Take
+      internalID: 0
       firstFrame: 35
       lastFrame: 40
       wrapMode: 0
@@ -195,21 +263,31 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -217,10 +295,13 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -230,14 +311,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

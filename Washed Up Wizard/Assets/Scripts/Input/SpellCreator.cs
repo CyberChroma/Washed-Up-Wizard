@@ -96,8 +96,8 @@ public class SpellCreator : MonoBehaviour {
         {
             playerSpellsReference = GetComponent<PlayerSpellsReference>();
         }
-        if (playerSpellsReference.spells [currentSpellID [0]].componentSpells [currentSpellID [1] * 10 + currentSpellID [2]] != null && GameObject.Find ("Spell UI").transform.Find ("Combinations Panel").transform.Find ((playerSpellsReference.spells [currentSpellID [0]].componentSpells [currentSpellID [1] * 10 + currentSpellID [2]]).name).GetComponent<SpellUnlockState>().unlocked) { // If the requested spell exists 
-			if (activeEmitters [slotNum] != null) { // If there is a spell in this slot
+        if (playerSpellsReference.spells [currentSpellID [0]].componentSpells [currentSpellID [1] * 10 + currentSpellID [2]] != null && GameObject.Find ("Spell UI").transform.Find ("Combinations Panel").transform.Find ((playerSpellsReference.spells [currentSpellID [0]].componentSpells [currentSpellID [1] * 10 + currentSpellID [2]]).name).GetComponent<SpellUnlockState>().unlocked) { // If the requested spell exists
+            if (activeEmitters [slotNum] != null) { // If there is a spell in this slot
 				activeEmitters [slotNum].GetComponent<SpawnObjectByInput> ().emitterNum = 0; // Unlinking the emitter to the key
 			}
 			if (activeSpellSprites [slotNum] != null) { // If there is a spell image active
@@ -137,9 +137,9 @@ public class SpellCreator : MonoBehaviour {
 				activeEmitters [slotNum] = tempSpawnObjectByInput.gameObject;
 				activeSpellSprites [slotNum] = tempSpellSprite.gameObject;
 			}
+            GameObject.Find("Temp Saver").GetComponent<TempSaver>().UpdateSpells (currentSpellID, slotNum);
 		}
 		StartCoroutine (WaitToCreateSpell ());
-        GameObject.Find("Temp Saver").GetComponent<TempSaver>().UpdateSpells (currentSpellID, slotNum);
 	}
 
 	IEnumerator WaitToCreateSpell () { // Waits then resets spell crafting

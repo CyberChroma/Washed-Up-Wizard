@@ -1,38 +1,92 @@
 fileFormatVersion: 2
 guid: 154e9673c273ef24ab315d42e6fe718f
-timeCreated: 1519846685
-licenseType: Free
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Roundcube
-    100004: Sphere
-    100006: Circus_Ball-Diamond
-    100008: Cube
-    400000: //RootNode
-    400002: Roundcube
-    400004: Sphere
-    400006: Circus_Ball-Diamond
-    400008: Cube
-    2100000: Material_002
-    2100002: Material_003
-    2100004: Yellow
-    2100006: Red
-    2300000: Roundcube
-    2300002: Sphere
-    2300004: Circus_Ball-Diamond
-    2300006: Cube
-    3300000: Roundcube
-    3300002: Sphere
-    3300004: Circus_Ball-Diamond
-    3300006: Cube
-    4300000: Roundcube
-    4300002: Sphere
-    4300004: Cube
-    4300006: Circus_Ball-Diamond
-    7400000: Default Take
-    9500000: //RootNode
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Roundcube
+  - first:
+      1: 100004
+    second: Sphere
+  - first:
+      1: 100006
+    second: Circus_Ball-Diamond
+  - first:
+      1: 100008
+    second: Cube
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Roundcube
+  - first:
+      4: 400004
+    second: Sphere
+  - first:
+      4: 400006
+    second: Circus_Ball-Diamond
+  - first:
+      4: 400008
+    second: Cube
+  - first:
+      21: 2100000
+    second: Material_002
+  - first:
+      21: 2100002
+    second: Material_003
+  - first:
+      21: 2100004
+    second: Yellow
+  - first:
+      21: 2100006
+    second: Red
+  - first:
+      23: 2300000
+    second: Roundcube
+  - first:
+      23: 2300002
+    second: Sphere
+  - first:
+      23: 2300004
+    second: Circus_Ball-Diamond
+  - first:
+      23: 2300006
+    second: Cube
+  - first:
+      33: 3300000
+    second: Roundcube
+  - first:
+      33: 3300002
+    second: Sphere
+  - first:
+      33: 3300004
+    second: Circus_Ball-Diamond
+  - first:
+      33: 3300006
+    second: Cube
+  - first:
+      43: 4300000
+    second: Roundcube
+  - first:
+      43: 4300002
+    second: Sphere
+  - first:
+      43: 4300004
+    second: Cube
+  - first:
+      43: 4300006
+    second: Circus_Ball-Diamond
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      95: 9500000
+    second: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -45,7 +99,7 @@ ModelImporter:
       name: Yellow
     second: {fileID: 2100000, guid: c9e6341d81a9c904ca6579a54c6bdb3b, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -62,6 +116,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -76,21 +131,31 @@ ModelImporter:
     globalScale: 0.25
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -98,10 +163,13 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -111,14 +179,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 0.25
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
